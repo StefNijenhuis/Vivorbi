@@ -1,0 +1,8 @@
+<h1>Nieuwe oproep</h1>
+<%= form_tag("/requests#create", method: "post") do %>
+  <p><input type="text" name="title" placeholder="title" required pattern=".{10,}" title="Minimaal 10 karakters invullen"></p>
+  <p><input type="date" name="date" placeholder="date" required min="<%=DateTime.current.strftime("%F")%>"></p>
+  <!--<p><input type="text" name="title" placeholder="title"></p>
+  <p><input type="date" name="date" placeholder="date"></p>-->
+  <p><input type="submit"></p>
+<% end %>
