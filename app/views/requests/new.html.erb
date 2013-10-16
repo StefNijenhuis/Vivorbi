@@ -1,17 +1,36 @@
-<h1>Nieuwe oproep</h1>
-<% if @request.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@request.errors.count, "error") %> prohibited this user from being saved:</h2>
+<div class="wrapper">
+  <div class="header">
+    <h1>Nieuwe oproep</h1>
+  </div>
+  <% if @request.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@request.errors.count, "error") %> prohibited this user from being saved:</h2>
 
-      <ul>
-        <% @request.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-        <% end %>
-      </ul>
+    <ul>
+      <% @request.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+  <% end %>
+  <div class="request_form_wrapper">
+  <h1>Welke oproep zou u willen toevoegen?</h1>
+    <%= form_for(@request) do |f| %>
+    <p>
+      <input type="text" name="title" placeholder="Naam van uw oproep"  title="Minimaal 10 karakters invullen" value="<%=@request.title%>" id="request_form_name">
+    </p>
+    <p>
+      <input type="date" name="date" placeholder="date" value="<%=@request.date.strftime("%d-%m-%Y") if @request.date != nil %>" id="request_form_date">
+    </p>
+    <p>
+      <input type="submit" id="submit_button">
+    </p>
+  <% end %>
+    <div class="next">
+      Volgende
     </div>
-<% end %>
-<%= form_for(@request) do |f| %>
-  <p><input type="text" name="title" placeholder="title"  title="Minimaal 10 karakters invullen" value="<%=@request.title%>"></p>
-  <p><input type="date" name="date" placeholder="date" value="<%=@request.date.strftime("%d-%m-%Y") if @request.date != nil %>"></p>
-  <p><input type="submit"></p>
-<% end %>
+    <div class="prev">
+      Vorige
+    </div>
+  </div>
+</div>
