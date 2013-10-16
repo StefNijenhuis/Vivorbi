@@ -1,8 +1,17 @@
 <h1>Nieuwe oproep</h1>
-<%= form_tag("/requests#create", method: "post") do %>
+<% if @request.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@request.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+        <% @request.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+<% end %>
+<%= form_for(@request) do |f| %>
   <p><input type="text" name="title" placeholder="title" required pattern=".{10,}" title="Minimaal 10 karakters invullen"></p>
   <p><input type="date" name="date" placeholder="date" required min="<%=DateTime.current.strftime("%F")%>"></p>
-  <!--<p><input type="text" name="title" placeholder="title"></p>
-  <p><input type="date" name="date" placeholder="date"></p>-->
   <p><input type="submit"></p>
 <% end %>
