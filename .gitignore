@@ -16,8 +16,7 @@
 /tmp
 
 # Ignore Rubymine files.
-/.idea/*.xml
-/.idea
+.idea/
 
 # Ignore hidden Mac files.
 /.DS_Store
