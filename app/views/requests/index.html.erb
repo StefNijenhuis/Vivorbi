@@ -1,1 +1,6 @@
+<% @request.each do |request| %>
+<h1><%= request.title %></h1>
+<h2><%= User.find(request.user_id).name %></h2>
+<% end %>
+
 <a href="/requests/new">Nieuwe oproep</a>

@@ -1,5 +1,7 @@
 class RequestsController < ApplicationController
   def index
+    # Get all requests
+    @request = Request.all
   end
 
   def new
@@ -7,11 +9,10 @@ class RequestsController < ApplicationController
   end
 
   def create
-    #render text: "Title: " + params[:title] + "<br>Date: " + params[:date]
+    # Store new request into the database
     request = Request.new
     request.title = params[:title]
     request.date = params[:date]
     request.save
-
   end
 end
