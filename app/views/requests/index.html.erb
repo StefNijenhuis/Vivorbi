@@ -1,6 +1,6 @@
-<% @request.each do |request| %>
+<% @requests.each do |request| %>
 <h1><%= request.title %></h1>
-<h2><%= User.find(request.user_id).name %></h2>
+<h2><%= request.user.name %></h2>
 <h3><%= request.date %></h3>
 <% end %>
 

@@ -11,7 +11,7 @@
     </div>
 <% end %>
 <%= form_for(@request) do |f| %>
-  <p><input type="text" name="title" placeholder="title" required pattern=".{10,}" title="Minimaal 10 karakters invullen"></p>
-  <p><input type="date" name="date" placeholder="date" required min="<%=DateTime.current.strftime("%F")%>"></p>
+  <p><input type="text" name="title" placeholder="title"  title="Minimaal 10 karakters invullen" value="<%=@request.title%>"></p>
+  <p><input type="date" name="date" placeholder="date" value="<%=@request.date.strftime("%d-%m-%Y") if @request.date != nil %>"></p>
   <p><input type="submit"></p>
 <% end %>
