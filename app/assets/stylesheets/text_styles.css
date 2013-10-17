@@ -4,14 +4,6 @@ body{
   line-height: 1.5;
 }
 
-@media only screen and (max-width: 480px) {
-
-   body { 
-    font-size: 0.8em;
-  }
-
-}
-
 h1{
   font-family: 'Open Sans', sans-serif;
   font-size: 3em;
@@ -32,4 +24,12 @@ h2 strong{
 p{
   font-family: 'Open Sans', sans-serif;
   font-size: 1em;
+}
+
+@media only screen and (max-width: 480px) {
+
+   body { 
+    font-size: 0.8em;
+  }
+
 }

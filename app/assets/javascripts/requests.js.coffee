@@ -13,6 +13,7 @@ ready = ->
 		# STAP 2
 		if clicks == 0
 			$('#progress_bar').removeClass("push-4")
+			$('.next').removeClass("push-4")
 			$('#request_form_date').show();
 			$('#request_form_name').hide();
 			$('.prev').css('display', 'inline-block');
@@ -26,7 +27,7 @@ ready = ->
 		# STAP 3
 		else if clicks == 1
 			$('#request_form_date').hide();
-			$('#submit_button').show();
+			$('#submit_button_div').show();
 			$('.next').hide();
 			$('#request_form_overview').show();
 			$('#request_form_overview span#title_overview').html($('#name').val());
@@ -46,7 +47,7 @@ ready = ->
 			$('#request_form_date').show();
 			$('#request_form_name').hide();
 			$('#request_form_overview').hide();
-			$('#submit_button').hide();
+			$('#submit_button_div').hide();
 			$('.next').css('display', 'inline-block')
 			clicks -= 1;
 			$('.third_step').css('background-color', "#bd1633")
@@ -58,6 +59,7 @@ ready = ->
 		# STAP 1
 		else if clicks == 1
 			$('#progress_bar').addClass("push-4")
+			$('.next').addClass("push-4")
 			$('#request_form_date').hide();
 			$('#request_form_name').show();
 			$('#request_form_overview').hide();
@@ -70,7 +72,12 @@ ready = ->
 			$('#title_overview').hide()
 			clicks -= 1;
 
-	$('#date').datepicker({ dateFormat: "dd-mm-yy", altField: "#actualDate" });
+	$('#date').datepicker({
+		dateFormat: "dd-mm-yy",
+		altField: "#actualDate",
+		dayNamesMin: ['Zo', 'Ma', 'Di', 'Wo', 'Do', 'Vr', 'Za'],
+		monthNames: [ "Januari", "Februari", "Maart", "April", "Mei", "Juni", "July", "Augustus", "September", "Oktober", "November", "December" ]
+	});
 
 $(document).ready(ready)
 $(document).on('page:load', ready)
