@@ -12,6 +12,12 @@
 //
 //= require jquery
 //= require jquery_ujs
+<<<<<<< HEAD
 //= require jquery.ui.datepicker
+=======
+//= require foundation
+>>>>>>> 0cba1577b4cb0a78e26dc4541bf548885d73b6f9
 //= require turbolinks
 //= require_tree .
+
+$(function(){ $(document).foundation(); });
