@@ -4,12 +4,18 @@ body{
   line-height: 1.5;
 }
 
+@media only screen and (max-width: 480px) {
+
+   body { 
+    font-size: 0.8em;
+  }
+
+}
+
 h1{
   font-family: 'Open Sans', sans-serif;
   font-size: 3em;
   font-weight: 700;
-  margin: 20px;
-  line-height: auto;
 }
 
 h2{

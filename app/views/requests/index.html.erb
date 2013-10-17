@@ -8,26 +8,26 @@
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
 	</head>
 	<body>
-	<div class="wrapper">
-		<div class="header">
+	<div class="row" id="wrapper">
+		<div class="small-12 columns" id="header">
 			<h1>Hulpvraag overzicht</h1>
 			<p>Hieronder ziet u het overzicht van de hulpvragen.
 				Om in contact te komen klik op de reageeren knop.
 			</p>
-			<a class="new_button" href="/requests/new">Nieuwe oproep</a>
+			<a id="new_button" href="/requests/new">Nieuwe oproep</a>
 		</div>
-		<div class="request_wrapper">
+		<div class="row" id="request_wrapper">
 			<% @requests.each do |request| %>
-			<div class="request">
-				<div class="request_title">
+			<div class="small-12 columns" id="request">
+				<div class="small-6 columns" id="request_title">
 				<h2><%= request.title %></h2>
 				</div>
-				<div class="request_date">
+				<div class="small-6 columns" id="request_date">
 				<h2><strong><%= request.date.strftime("%A %e-%m-%Y") %></strong></h2>
 				</div>
-				<div class="request_buttons">
-					<a href="" class="blue_button">Details</a>
-					<a href="" class="green_button">Reageren</a>
+				<div class="row" id="request_buttons">
+					<a href="" class="small-6 columns" id="blue_button">Details</a>
+					<a href="" class="small-6 columns" id="green_button">Reageren</a>
 				</div>
 			</div>
 			<% end %>
