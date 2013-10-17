@@ -3,10 +3,11 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 ready = ->
-		
+
 	$('#request_form_date').hide();
 	$('#submit_button').hide();
 	$('.prev').hide();
+	$('#request_form_overview').hide();
 
 	clicks = 0
 
@@ -20,6 +21,11 @@ ready = ->
 			$('#submit_button').show();
 			$('.prev').hide();
 			$('.next').hide();
+			$('#request_form_date').hide();
+			$('#request_form_overview').show();
+			$('#request_form_overview span#title').html($('#request_form_name').val());
+			$('#request_form_overview span#date').html($('#request_form_date').val());
+
 
 	$('.prev').click ->
 		if clicks == 1
