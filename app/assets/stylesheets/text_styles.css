@@ -1,0 +1,28 @@
+body{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16pt;
+}
+
+h1{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 36pt;
+  font-weight: 700;
+  margin: 20px;
+  line-height: auto;
+}
+
+h2{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 30pt;
+  font-weight: 700;
+}
+
+h2 strong{
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+}
+
+p{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16pt;
+}
