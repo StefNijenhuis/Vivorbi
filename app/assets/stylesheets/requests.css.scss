@@ -1,9 +1,19 @@
 /* New request form */
+.form_title {
+  text-align: center;
+}
+#title_date, #title_overview {
+  display: none;
+}
 
 #request_form_name {
   display: none;
-
 }
+#name {
+  border: solid 2px black;
+  font-size: 20px;
+}
+
 #request_form_date {
   display: none;
 }
@@ -14,22 +24,31 @@
   display: none;
 }
 
-.next, .prev {
-  width: 100px;
-  height: 50px;
-  background-color: black;
-  color: white;
-  display: none
+#progress_bar {
+  display: inline-block;
+}
+.progress_text {
+  text-align: center;
+}
+.first_step {
+  background-color: #2ecc71;
+  margin-top: 10px;
+  height: 25px;
+}
+.second_step, .third_step {
+  background-color: #bd1633;
+  margin-top: 10px;
+  height: 25px;
 }
 
-#name {
-  width: 96%;
-  max-width: 920px;
-  padding: 0px;
-  margin: 10px 2%;
-  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
-  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
-  box-sizing: border-box;         /* Opera/IE 8+ */
+.next, .prev {
+  text-align: center;
+  padding: 10px 0;
+  background-color: #3498db;
+  color: #fff;
+  display: none;
+  font-size: 30px;
+  text-decoration: none;
 }
 
 // Request overview page 
@@ -44,7 +63,7 @@
   text-align: center;
 }
 
-#header{ 
+#header { 
   border-bottom: solid 1px #95a5a6;
   padding: 20px 0px;
 }

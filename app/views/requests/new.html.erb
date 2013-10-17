@@ -1,41 +1,56 @@
-<div class="wrapper">
-  <div class="header">
-    <h1>Nieuwe oproep</h1>
-  </div>
-  <% if @request.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= pluralize(@request.errors.count, "error") %> prohibited this user from being saved:</h2>
+<div class="row">
+  <div class="small-12 columns">
+    <div id="header">
+      <h1>Nieuwe oproep</h1>
+    </div>
+    <% if @request.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@request.errors.count, "error") %> prohibited this user from being saved:</h2>
 
-    <ul>
-      <% @request.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
+      <ul>
+        <% @request.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+    <% end %>
+    <div class="request_form_wrapper">
+      <h2 class="form_title" id="title_name">Welke oproep zou u willen toevoegen?</h2>
+      <p class="form_subtitle">U kunt hieronder een naam voor een oproep invoeren.</p>
+      <%= form_for(@request) do |f| %>
+      <div id="request_form_name" class="small-11 small-centered columns">
+        <input type="text" name="title" placeholder="Naam van uw oproep"  title="Minimaal 10 karakters invullen" value="<%=@request.title%>" id="name">
+      </div>
+      <h2 class="form_title" id="title_date">Wanneer wilt u de taak uitgevoerd hebben?</h2>
+      <div id="request_form_date">
+        <div id="date"></div>
+        <input type="hidden" name="date" id="actualDate">
+      </div>
+      <h2 class="form_title" id="title_overview">Controleer uw oproep.</h2>
+      <div id="request_form_overview">
+        Titel: <span id="title_overview"></span><br>
+        Datum: <span id="date_overview"></span>
+      </div>
+      <div id="submit_button">
+        <input type="submit">
+      </div>
       <% end %>
-    </ul>
-  </div>
-  <% end %>
-  <div class="request_form_wrapper">
-  <h1>Welke oproep zou u willen toevoegen?</h1>
-    <%= form_for(@request) do |f| %>
-    <div id="request_form_name">
-      <input type="text" name="title" placeholder="Naam van uw oproep"  title="Minimaal 10 karakters invullen" value="<%=@request.title%>" id="name">
-    </div>
-    <div id="request_form_date">
-      <div id="date"></div>
-      <input type="hidden" name="date" id="actualDate">
-    </div>
-    <div id="request_form_overview">
-      Titel: <span id="title_overview"></span><br>
-      Datum: <span id="date_overview"></span>
-    </div>
-    <div id="submit_button">
-      <input type="submit">
-    </div>
-  <% end %>
-    <div class="next">
-      Volgende
-    </div>
-    <div class="prev">
-      Vorige
+      <div class="row">
+        <div class="prev small-4 columns">
+          Vorige
+        </div>
+        <div id="progress_bar" class="small-4 push-4 columns">
+          <span class="small-12 columns progress_text">
+            Stap 1 van 3
+          </span>
+          <div class="small-4 columns first_step"></div>
+          <div class="small-4 columns second_step"></div>
+          <div class="small-4 columns third_step"></div>
+        </div>
+        <div class="next small-4 columns">
+          Volgende
+        </div>
+      </div>
     </div>
   </div>
 </div>
