@@ -17,17 +17,14 @@
 
 /* New request form */
 
-#request_form_wrapper {
-
-}
-
 #request_form_name {
-  width: 100%;
-  max-width: 920px;
-  padding: 0px;
-  margin: 10px 20px;
+  display: none;
+
 }
 #request_form_date {
+  display: none;
+}
+#request_form_overview {
   display: none;
 }
 #submit_button {
@@ -39,6 +36,17 @@
   height: 50px;
   background-color: black;
   color: white;
+  display: none
+}
+
+#name {
+  width: 96%;
+  max-width: 920px;
+  padding: 0px;
+  margin: 10px 2%;
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;         /* Opera/IE 8+ */
 }
 
 // Request overview page 

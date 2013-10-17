@@ -16,19 +16,20 @@
   <div class="request_form_wrapper">
   <h1>Welke oproep zou u willen toevoegen?</h1>
     <%= form_for(@request) do |f| %>
-    <p>
-      <input type="text" name="title" placeholder="Naam van uw oproep"  title="Minimaal 10 karakters invullen" value="<%=@request.title%>" id="request_form_name">
-    </p>
-    <p>
-      <input type="date" name="date" placeholder="date" value="<%=@request.date.strftime("%d-%m-%Y") if @request.date != nil %>" id="request_form_date">
-    </p>
-    <p id="request_form_overview">
-      Titel: <span id="title"></span><br>
-      Datum:<span id="date"></span>
-    </p>
-    <p>
-      <input type="submit" id="submit_button">
-    </p>
+    <div id="request_form_name">
+      <input type="text" name="title" placeholder="Naam van uw oproep"  title="Minimaal 10 karakters invullen" value="<%=@request.title%>" id="name">
+    </div>
+    <div id="request_form_date">
+      <div id="date"></div>
+      <input type="hidden" name="date" id="actualDate">
+    </div>
+    <div id="request_form_overview">
+      Titel: <span id="title_overview"></span><br>
+      Datum: <span id="date_overview"></span>
+    </div>
+    <div id="submit_button">
+      <input type="submit">
+    </div>
   <% end %>
     <div class="next">
       Volgende
