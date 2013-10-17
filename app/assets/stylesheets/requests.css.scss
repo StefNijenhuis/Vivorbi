@@ -26,10 +26,6 @@
   max-width: 920px;
   padding: 0px;
   margin: 10px 20px;
-  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
-  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
-  box-sizing: border-box;         /* Opera/IE 8+ */
-
 }
 #request_form_date {
   display: none;
@@ -44,3 +40,72 @@
   background-color: black;
   color: white;
 }
+
+// Request overview page 
+
+.wrapper{
+  width: 100%;
+  max-width: 960px;
+  margin: 20px auto;
+}
+
+.header h1, p{
+  padding-bottom: 20px;
+}
+
+.header{ 
+  border-top: solid 1px #95a5a6;
+  border-bottom: solid 1px #95a5a6;
+  padding: 20px 0px;
+}
+
+.new_button{
+  padding-bottom: 20px;
+}
+
+/* Requests */
+
+.request_wrapper{
+  width: 100%;
+  margin: 20px 0px;
+}
+
+.request{
+  padding: 30px 0px;
+  border-bottom: solid 1px #95a5a6;
+}
+
+.request_title{
+  width: 49.5%;
+  display: inline-block;
+}
+
+.request_date{
+  width: 49.5%;
+  display: inline-block;
+  text-align: right;
+}
+
+.blue_button{
+  text-align: center;
+  width: 49.5%;
+  padding: 10px 0;
+  background-color: #3498db;
+  color: #fff;
+  display: inline-block;
+  font-size: 30px;
+  text-decoration: none;
+}
+
+.green_button{
+  text-align: center;
+  width: 49.5%;
+  padding: 10px 0;
+  background-color: #2ecc71;
+  color: #fff;
+  display: inline-block;
+  font-size: 30px;
+  text-decoration: none;
+}
+
+// End request overview page 

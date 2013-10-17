@@ -1,7 +1,38 @@
-<% @requests.each do |request| %>
-<h1><%= request.title %></h1>
-<h2><%= request.user.name %></h2>
-<h3><%= request.date %></h3>
-<% end %>
+<!doctype html>
+<html lang="nl">
+	<head>
+		<meta charset="utf-8">
+		<title>Hulpvraag overzicht</title>
+		<link rel="stylesheet" href="normalize.css">
+		<link rel="stylesheet" href="style.css">
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+	</head>
+	<body>
+	<div class="wrapper">
+		<div class="header">
+			<h1>Hulpvraag overzicht</h1>
+			<p>Hieronder ziet u het overzicht van de hulpvragen.
+				Om in contact te komen klik op de reageeren knop.
+			</p>
+			<a class="new_button" href="/requests/new">Nieuwe oproep</a>
+		</div>
+		<div class="request_wrapper">
+			<% @requests.each do |request| %>
+			<div class="request">
+				<div class="request_title">
+				<h2><%= request.title %></h2>
+				</div>
+				<div class="request_date">
+				<h2><strong><%= request.date.strftime("%A %e-%m-%Y") %></strong></h2>
+				</div>
+				<div class="request_buttons">
+					<a href="" class="blue_button">Details</a>
+					<a href="" class="green_button">Reageren</a>
+				</div>
+			</div>
+			<% end %>
+		</div>
+	</div>
 
-<a href="/requests/new">Nieuwe oproep</a>
+	</body>
+</html>
