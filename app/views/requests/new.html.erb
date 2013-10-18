@@ -16,7 +16,7 @@
   </ul>
 </div>
 <% end %>
-<div class="row">
+<div class="row form_name_wrapper">
   <div class="small-12 columns">
     <!-- STEP 1 - TITLE OF REQUEST -->
     <h2 class="form_title" id="title_name">Welke oproep zou u willen toevoegen?</h2>
@@ -27,7 +27,7 @@
     <input type="text" name="title" placeholder="Naam van uw oproep"  title="Minimaal 10 karakters invullen" value="<%=@request.title%>" id="name">
   </div>
 </div>
-<div class="row">
+<div class="row form_date_wrapper">
   <div class="small-12 columns">
     <!-- STEP 2 - DATE OF REQUEST -->
     <h2 class="form_title" id="title_date">Wanneer wilt u de taak uitgevoerd hebben?</h2>
@@ -39,12 +39,34 @@
   </div>
 </div>
 <!-- STEP 3 - OVERVIEW -->
-<div class="row">
-  <div class="small-12 columns">
+<div class="row form_overview_wrapper">
+  <div class="small-12">
     <h2 class="form_title" id="title_overview">Controleer uw oproep.</h2>
     <div id="request_form_overview">
-      Titel: <span id="title_overview"></span><br>
-      Datum: <span id="date_overview"></span>
+      <div class="row" id="overview_name_wrapper">
+        <div class="small-9 small-centered columns">
+          <div class="small-3 columns">
+            Titel:
+          </div>
+          <div id="name_overview_val" class="small-6 columns">
+          </div>
+          <div class="small-3 columns edit-button">
+            Bewerken
+          </div>
+        </div>
+      </div>
+      <div class="row" id="overview_date_wrapper">
+        <div class="small-9 small-centered columns">
+          <div class="small-3 columns">
+            Datum:
+          </div>
+          <div id="date_overview_val" class="small-6 columns">
+          </div>
+          <div class="small-3 columns edit-button">
+            Bewerken
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -64,8 +86,8 @@
   <div class="next small-4 columns push-4">
     Volgende
   </div>
-  <div id="submit_button_div">
-    <input type="submit" id="submit_button" class="small-4 columns">
+  <div id="submit_button_div" class="small-4 columns">
+    <input type="submit" id="submit_button">
   </div>
   <% end %>
 </div>

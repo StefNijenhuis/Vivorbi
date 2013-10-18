@@ -3,59 +3,21 @@
   text-align: center;
 }
 
+// STEP 1 - NAME OF REQUEST
 #name {
   border: solid 2px black;
   font-size: 20px;
 }
-
-#request_form_overview,
-#request_form_date,
-#submit_button_div,
-#request_form_name,
-#title_date,
-#title_overview
+.form_name_wrapper
  {
   display: none;
 }
 
-#submit_button {
-  text-align: center;
-  padding: 10px 0;
-  background-color: #3498db;
-  color: #fff;
-  font-size: 30px;
-  text-decoration: none;
-  border: none;
-}
-
-#progress_bar {
-  display: inline-block;
-}
-.progress_text {
-  text-align: center;
-}
-.first_step {
-  background-color: #2ecc71;
-  margin-top: 10px;
-  height: 25px;
-}
-.second_step, .third_step {
-  background-color: #bd1633;
-  margin-top: 10px;
-  height: 25px;
-}
-
-.next, .prev {
-  text-align: center;
-  padding: 10px 0;
-  background-color: #3498db;
-  color: #fff;
+// STEP 2 - DATE OF REQUEST
+.form_date_wrapper
+{
   display: none;
-  font-size: 30px;
-  text-decoration: none;
-  cursor: pointer;
 }
-
 .ui-datepicker {  
     width: 100%;
     font-family: 'Open Sans', sans-serif;
@@ -115,10 +77,84 @@
 .ui-datepicker tbody td:hover a {
   color: white;
 }
+.ui-datepicker-today {
+  background-color: #3498db;
+  cursor: pointer;
+}
+.ui-datepicker-today a {
+  color: white;
+}
 .ui-datepicker-current-day {  
     background-color: #2ecc71;  
     color: black;
     border: none;
+}
+
+//STEP 3 - OVERVIEW
+.form_overview_wrapper
+{
+  display: none;
+}
+#overview_name_wrapper, #overview_date_wrapper {
+  line-height: 50px;
+  font-size: 1.3em;
+  margin-bottom: 10px;
+}
+.edit-button {
+  text-align: center;
+  background-color: #3498db;
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  height: 40px;
+  margin-top: 5px;
+  line-height: 40px;
+}
+
+
+// PROGRESS BAR AND BUTTONS
+#submit_button_div {
+  display: none;
+}
+#submit_button {
+  text-align: center;
+  padding: 10px 0;
+  background-color: #3498db;
+  border: none;
+  color: #fff;
+  font-size: 30px;
+  text-decoration: none;
+  cursor: pointer;
+  width: 100%;
+  height: 65px;
+}
+
+#progress_bar {
+  display: inline-block;
+}
+.progress_text {
+  text-align: center;
+}
+.first_step {
+  background-color: #2ecc71;
+  margin-top: 10px;
+  height: 25px;
+}
+.second_step, .third_step {
+  background-color: #bd1633;
+  margin-top: 10px;
+  height: 25px;
+}
+
+.next, .prev {
+  text-align: center;
+  padding: 10px 0;
+  background-color: #3498db;
+  color: #fff;
+  display: none;
+  font-size: 30px;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 // Request overview page 
