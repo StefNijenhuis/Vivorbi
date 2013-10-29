@@ -2,10 +2,10 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-ready = ->
+jQuery ->
 	clicks = 0
 
-	if clicks == 0 
+	if clicks == 0
 		$('.form_name_wrapper').show();
 		$('.next').css('display', 'inline-block');
 
@@ -56,6 +56,10 @@ ready = ->
 			$('.progress_text').text('Stap 1 van 3')
 			clicks -= 1;
 
+	$('#new_request').submit ->
+		$(".next").trigger("click")
+		return false
+
 	$('#date').datepicker({
 		dateFormat: "dd-mm-yy",
 		altField: "#actualDate",
@@ -88,7 +92,6 @@ ready = ->
 		$('.progress_text').text('Stap 2 van 3')
 		clicks -= 1;
 
-$(document).ready(ready)
-$(document).on('page:load', ready)
+#$(document).ready(ready)
 
 	
