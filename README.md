@@ -13,3 +13,5 @@
 
 ## Run server
 * `rails s`
+
+[Markdown CheatSheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
