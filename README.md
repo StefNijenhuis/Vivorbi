@@ -1,10 +1,13 @@
 # README
 
-After cloning, run rake db:migrate  
-Start the server and head over to 0.0.0.0:3000/users/new and create a user with the name John Doe  
-If you don't do this you will run into problems because you're missing the dummy user  
+After cloning CD into the project folder and run the following commands
+* _bundle_
+* _rake db:migrate_
+* _rake db:seed_
+
+You can then start the server by running _rails s_.
   
-To get to the new branch run: git checkout --track origin/sprint_2  
-After you check into the new branch run: git pull  
-To be save run: rake db:migrate
+To get to the new branch run: _git checkout --track origin/sprint_2_
+After you check into the new branch run: _git pull_
+To be save run: _rake db:migrate_ and _rake db:seed_ after pulling each time.
 
