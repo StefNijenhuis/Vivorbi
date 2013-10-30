@@ -1,15 +1,15 @@
 # README
 
-After cloning CD into the project folder and run the following commands
-* `bundle`
-* `rake db:migrate`
-* `rake db:seed`
+## Branch
+* Go to project folder: `cd [folder_path]`
+* Check active branch: `git branch`
+* Select branch sprint_2: `git checkout --track origin/sprint_2`
+* `git pull`
 
-You can then start the server by running `rails s`.
-  
-To get to the new branch run: `git checkout --track origin/sprint_2`
+## Get things running
+1. `bundle`
+2. `rake db:migrate`
+3. `rake db:seed`
 
-After you check into the new branch run: `git pull`
-
-To be save run: `rake db:migrate` and `rake db:seed` after pulling each time.
-
+## Run server
+* `rails s`
