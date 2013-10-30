@@ -57,8 +57,9 @@ jQuery ->
 			clicks -= 1;
 
 	$('#new_request').submit ->
-		$(".next").trigger("click")
-		return false
+		if clicks == 0
+			$(".next").trigger("click")
+			return false
 
 	$('#date').datepicker({
 		dateFormat: "dd-mm-yy",
