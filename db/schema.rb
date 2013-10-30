@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131015083915) do
+ActiveRecord::Schema.define(version: 20131030110256) do
 
   create_table "requests", force: true do |t|
     t.string   "title"
@@ -24,9 +24,21 @@ ActiveRecord::Schema.define(version: 20131015083915) do
   add_index "requests", ["user_id"], name: "index_requests_on_user_id"
 
   create_table "users", force: true do |t|
-    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "first_name"
+    t.string   "in_between"
+    t.string   "last_name"
+    t.string   "street"
+    t.string   "house_number"
+    t.string   "postal_code"
+    t.string   "place"
+    t.date     "date_of_birth"
+    t.string   "cellphone"
+    t.string   "phone"
+    t.string   "email"
+    t.text     "hobbies"
+    t.boolean  "has_avatar"
   end
 
 end
