@@ -47,3 +47,6 @@ end
 
 # Foundation
 gem 'zurb-foundation'
+
+# Paperclip
+gem "paperclip", "~> 3.0"
