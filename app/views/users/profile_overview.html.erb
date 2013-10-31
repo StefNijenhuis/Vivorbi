@@ -1,1 +1,31 @@
 <h1>Kloppen uw gegevens?</h1>
+
+<p>
+	<%=@user.first_name%> <%=@user.in_between%> <%=@user.last_name%>
+</p>
+<p>
+	<%=@user.date_of_birth.strftime("%d-%m-%Y")%>
+</p>
+<p>
+	<%=@user.street%> <%=@user.house_number%>, <%=@user.postal_code%> <%=@user.place%>
+</p>
+<p>tel: <%=@user.phone%></p>
+<p>mob: <%=@user.cellphone%></p>
+<p>e-mail: <%=@user.email%></p>
+<p><%=@user.hobbies%></p>
+
+<%= form_for @user do |f| %>
+	<%= f.hidden_field :first_name %>
+	<%= f.hidden_field :in_between %>
+	<%= f.hidden_field :last_name %>
+	<%= f.hidden_field :has_avatar %>
+	<%= f.hidden_field :street %>
+	<%= f.hidden_field :house_number %>
+	<%= f.hidden_field :postal_code %>
+	<%= f.hidden_field :place %>
+	<%= f.hidden_field :date_of_birth %>
+	<%= f.hidden_field :phone %>
+	<%= f.hidden_field :cellphone %>
+	<%= f.hidden_field :email %>
+	<%= f.hidden_field :hobbies %>
+<% end %>

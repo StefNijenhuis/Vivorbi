@@ -16,11 +16,15 @@
 	</div>
 	<div id="overlay">
 		<button id="close_overlay">Nee</button>
-		<%= f.hidden_field :first_name, value:@user.first_name %>
-		<%= f.hidden_field :in_between, value:@user.in_between %>
-		<%= f.hidden_field :last_name, value:@user.last_name %>
-		<%= f.hidden_field :has_avatar, value:@user.has_avatar %>
+		<%= f.hidden_field :first_name %>
+		<%= f.hidden_field :in_between %>
+		<%= f.hidden_field :last_name %>
+		<%= f.hidden_field :has_avatar %>
 		<%= f.hidden_field :date_of_birth %>
+		<%= f.hidden_field :phone %>
+		<%= f.hidden_field :cellphone %>
+		<%= f.hidden_field :email %>
+		<%= f.hidden_field :hobbies %>
 		<%= f.submit "Ja" %>
 	</div>
 <% end %>

@@ -1,34 +1,43 @@
 <h1>Wanneer bent u geboren?</h1>
 
 <label for="day">Wat is uw geboortedag?</label>
-<input id="day" name="day" placeholder="Dag">
+<input id="day" name="day" placeholder="Dag" value="<%=@user.date_of_birth.day%>">
 
 <label for="month">Wat is uw geboortemaand?</label>
 <select id="month" name="month">
-	<option value="1">Januari</option>
-	<option value="2">Februari</option>
-	<option value="3">Maart</option>
-	<option value="4">April</option>
-	<option value="5">Mei</option>
-	<option value="6">Juni</option>
-	<option value="7">Juli</option>
-	<option value="8">Augustus</option>
-	<option value="9">September</option>
-	<option value="10">Oktober</option>
-	<option value="11">November</option>
-	<option value="12">December</option>
+	<%
+	@months.each_with_index do | text, value | 
+		if value == @user.date_of_birth.month
+			sel = " selected"
+		else
+			sel = ""
+		end
+		%>
+	<option value="<%=value%>"<%=sel%>><%=text%></option>
+	<% end %>
 </select>
 
 <label for="year">Wat is uw geboortejaar?</label>
-<input id="year" name="year" placeholder="Jaar">
+<input id="year" name="year" placeholder="Jaar" value="<%=@user.date_of_birth.year%>">
 
 <!-- om dit te laten werken moet met jquery de datum in :date_of_birth worden geplaatst nadat de velden zijn ingevuld. -->
 
 <%= form_for @user, url: '/users/'+@user.id.to_s+'/profile_3' do |f| %>
-	<%= f.hidden_field :first_name, value:@user.first_name %>
-	<%= f.hidden_field :in_between, value:@user.in_between %>
-	<%= f.hidden_field :last_name, value:@user.last_name %>
-	<%= f.hidden_field :has_avatar, value:@user.has_avatar %>
+	<%= f.hidden_field :first_name %>
+	<%= f.hidden_field :in_between %>
+	<%= f.hidden_field :last_name %>
+	<%= f.hidden_field :has_avatar %>
 	<%= f.hidden_field :date_of_birth %>
+
+	<!-- alleen van toepassing bij bewerken -->
+	<%= f.hidden_field :street %>
+	<%= f.hidden_field :house_number %>
+	<%= f.hidden_field :postal_code %>
+	<%= f.hidden_field :place %>
+	<%= f.hidden_field :phone %>
+	<%= f.hidden_field :cellphone %>
+	<%= f.hidden_field :email %>
+	<%= f.hidden_field :hobbies %>
+	
 	<%= f.submit %>
 <% end %>

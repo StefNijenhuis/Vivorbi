@@ -34,6 +34,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     # avatar hier opslaan
     @user.has_avatar = false
+    @months = ["Kies een maand","Januari","Februari","Maart","April","Mei","Juni","Juli","Augustus","September","Oktober","November","December"]
     user_params.each { |key,value| @user[key] = value }
   end
 
