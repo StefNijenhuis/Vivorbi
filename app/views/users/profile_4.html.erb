@@ -1,0 +1,13 @@
+<h1>Hoe kunnen we u bereiken?</h1>
+<%= form_for @user, url: '/users/'+@user.id.to_s+'/profile_5' do |f| %>
+	<%= f.label :phone, "Wat is uw telefoonnummer?" %>
+	<%= f.text_field :phone, placeholder: "Telefoonnummer" %>
+
+	<%= f.label :cellphone, "Wat is uw mobiele nummer?" %>
+	<%= f.text_field :cellphone, placeholder: "Mobiele nummer" %>
+	
+	<%= f.label :email, "Wat is uw e-mailadres?" %>
+	<%= f.text_field :email, type: "email", placeholder: "E-mailadres" %>
+	
+	<%= f.submit %>
+<% end %>

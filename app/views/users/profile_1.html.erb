@@ -1,0 +1,21 @@
+<h1>Wie bent u?</h1>
+<%= form_for @user, url: '/users/'+@user.id.to_s+'/profile_2' do |f| %>
+
+	<%= f.label :first_name, "Wat is uw voornaam?" %>
+	<%= f.text_field :first_name, placeholder: "Voornaam" %>
+
+	<%= f.label :last_name, "Wat is uw achternaam?" %>
+	<%= f.text_field :in_between, placeholder: "Tussenv" %>
+	<%= f.text_field :last_name, placeholder: "Achternaam" %>
+	
+	<%= f.label :avatar, "Hoe ziet u er uit?" %>
+	<img src="<%= image_path('avatar_placeholder.png') %>">
+
+	<!-- deze verbergen -->
+	<%= f.file_field :avatar, class: "hidden" %>
+
+	<!-- met jquery voert #upload_avatar een click uit op :avatar, zie TO -->
+	<button id="upload_avatar">Kies een foto</button>
+
+	<%= f.submit %>
+<% end %>

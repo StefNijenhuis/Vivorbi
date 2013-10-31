@@ -1,0 +1,6 @@
+<h1>Wat vindt u leuk om te doen?</h1>
+<%= form_for @user, url: '/users/'+@user.id.to_s+'/profile_overview' do |f| %>
+	<%= f.text_area :hobbies %>
+	
+	<%= f.submit %>
+<% end %>

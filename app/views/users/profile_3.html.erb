@@ -1,0 +1,26 @@
+<h1>Waar woont u?</h1>
+<%= form_for @user, url: '/users/'+@user.id.to_s+'/profile_4' do |f| %>
+	<div>
+		<%= f.label :postal_code, "Wat is uw postcode?" %>
+		<%= f.text_field :postal_code, placeholder: "1234AA" %>
+
+		<%= f.label :house_number, "Wat is uw huisnummer?" %>
+		<%= f.text_field :house_number, placeholder: "Huisnummer" %>
+		
+		<!-- met jquery juiste straat en plaats in hidden inputs plaatsen -->
+		<%= f.hidden_field :street %>
+		<%= f.hidden_field :place %>
+		
+		<!-- met jquery straat en woonplaats opzoeken en in hidden inputs plaatsen -->
+		<button id="check_address">Volgende</button>
+	</div>
+	<div id="overlay">
+		<button id="close_overlay">Nee</button>
+		<%= f.hidden_field :first_name, value:@user.first_name %>
+		<%= f.hidden_field :in_between, value:@user.in_between %>
+		<%= f.hidden_field :last_name, value:@user.last_name %>
+		<%= f.hidden_field :has_avatar, value:@user.has_avatar %>
+		<%= f.hidden_field :date_of_birth %>
+		<%= f.submit "Ja" %>
+	</div>
+<% end %>

@@ -17,6 +17,50 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  # GET /users/1/profile_1
+  def profile_1
+    @user = User.find(params[:id])
+  end
+
+  # PATXH /users/1/edit_profile
+  def edit_profile
+    @user = User.find(params[:id])
+    user_params.each { |key,value| @user[key] = value }
+    render :profile_1
+  end
+
+  # PATCH /users/1/profile_2
+  def profile_2
+    @user = User.find(params[:id])
+    # avatar hier opslaan
+    @user.has_avatar = false
+    user_params.each { |key,value| @user[key] = value }
+  end
+
+  # PATCH /users/1/profile_3
+  def profile_3
+    @user = User.find(params[:id])
+    user_params.each { |key,value| @user[key] = value }
+  end
+
+  # PATCH /users/1/profile_4
+  def profile_4
+    @user = User.find(params[:id])
+    user_params.each { |key,value| @user[key] = value }
+  end
+
+  # PATCH /users/1/profile_5
+  def profile_5
+    @user = User.find(params[:id])
+    user_params.each { |key,value| @user[key] = value }
+  end
+
+  # PATCH /users/1/profile_overview
+  def profile_overview
+    @user = User.find(params[:id])
+    user_params.each { |key,value| @user[key] = value }
+  end
+
   # GET /users/1/edit
   def edit
   end
