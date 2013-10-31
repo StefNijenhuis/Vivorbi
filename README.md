@@ -14,6 +14,11 @@
 2. `rake db:migrate`
 3. `rake db:seed`
 
+## Installing ImageMagick
+In order for image manipulation to work you'll need to install ImageMagick
+* Linux/Debian: `sudo apt-get install imagemagick`
+* MacOS: `brew install imagemagick`
+
 ## Run server
 * `rails s`
 
