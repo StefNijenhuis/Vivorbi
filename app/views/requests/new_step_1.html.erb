@@ -1,0 +1,44 @@
+<% content_for :title, "Nieuwe oproep" %>
+<div class="row">
+  <div class="small-12 columns">
+    <div id="header">
+      <h1>Nieuwe oproep</h1>
+    </div>
+  </div>
+</div>
+<% if @request.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@request.errors.count, "error") %> prohibited this user from being saved:</h2>
+  <ul>
+    <% @request.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+<form action="/requests/new_step_2" method="post">
+  <div class="row">
+    <div class="small-12 columns">
+      <!-- STEP 1 - TITLE OF REQUEST -->
+      <h2 class="form_title" id="title_name">Welke oproep zou u willen toevoegen?</h2>
+      <p class="form_subtitle">U kunt hieronder een naam voor een oproep invoeren.</p>
+    </div>
+    <div id="request_form_name" class="small-11 small-centered columns">
+      <input type="text" name="request[title]" placeholder="Naam van uw oproep"  title="Minimaal 10 karakters invullen" value="<%=@request.title%>" id="name">
+    </div>
+  </div>
+  <!-- PROGRESS BAR AND BUTTONS -->
+  <div class="row">
+    <div id="progress_bar" class="small-4 push-4 columns">
+      <span class="small-12 columns progress_text">
+        Stap 1 van 3
+      </span>
+      <div class="small-4 columns first_step"></div>
+      <div class="small-4 columns second_step"></div>
+      <div class="small-4 columns third_step"></div>
+    </div>
+    <div class="next small-4 columns" style="display:inline-block">
+      <input type="submit" id="submit_button" value="Volgende">
+    </div>
+  </div>
+</form>

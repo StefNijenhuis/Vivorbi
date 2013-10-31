@@ -1,0 +1,49 @@
+<% content_for :title, "Nieuwe oproep" %>
+<div class="row">
+  <div class="small-12 columns">
+    <div id="header">
+      <h1>Nieuwe oproep</h1>
+    </div>
+  </div>
+</div>
+<% if @request.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@request.errors.count, "error") %> prohibited this user from being saved:</h2>
+  <ul>
+    <% @request.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+<form action="/requests/new_overview" method="post">
+	<div class="row">
+	  <div class="small-12 columns">
+	    <!-- STEP 2 - DATE OF REQUEST -->
+	    <h2 class="form_title" id="title_date">Wanneer wilt u de taak uitgevoerd hebben?</h2>
+
+	    <div id="request_form_date">
+	      <div id="date"></div>
+	      <input type="hidden" name="request[title]" value="<%=@request.title%>">
+	      <input type="hidden" name="request[date]" id="actualDate">
+	    </div>
+	  </div>
+	</div>
+	<!-- PROGRESS BAR AND BUTTONS -->
+	<div class="row">
+	  <div class="prev small-4 columns" style="display:inline-block" onclick="history.back()">
+	    Vorige
+	  </div>
+	  <div id="progress_bar" class="small-4 columns">
+	    <span class="small-12 columns progress_text">
+	      Stap 2 van 3
+	    </span>
+	    <div class="small-4 columns first_step"></div>
+	    <div class="small-4 columns second_step" style="background-color:#2ecc71;"></div>
+	    <div class="small-4 columns third_step"></div>
+	  </div>
+	  <div class="next small-4 columns" style="display:inline-block">
+	    <input type="submit" id="submit_button" value="Volgende">
+	  </div>
+	</div>
+</form>

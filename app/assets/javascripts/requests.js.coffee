@@ -2,7 +2,8 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-jQuery ->
+###jQuery ->
+
 	clicks = 0
 
 	if clicks == 0
@@ -59,8 +60,8 @@ jQuery ->
 	$('#new_request').submit ->
 		if clicks == 0
 			$(".next").trigger("click")
-			return false
-
+			return false ###
+jQuery ->
 	$('#date').datepicker({
 		dateFormat: "dd-mm-yy",
 		altField: "#actualDate",

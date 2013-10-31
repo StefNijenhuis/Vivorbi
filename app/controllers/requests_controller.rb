@@ -1,4 +1,5 @@
 class RequestsController < ApplicationController
+  skip_before_filter :verify_authenticity_token  
 
   def index
     # Get all requests
@@ -9,8 +10,20 @@ class RequestsController < ApplicationController
     # No view available (yet)
   end
 
-  def new
+  def new_step_1
     @request = Request.new
+  end
+
+  def new_step_2
+    @request = Request.new(request_params)
+    @request.date = Date.tomorrow
+    if(@request.invalid?)
+      render :new_step_1
+    end
+  end
+
+  def new_overview
+    @request = Request.new(request_params)
   end
 
   def create
