@@ -1,5 +1,8 @@
 # README
 
+## Clone Branch
+`git clone -b sprint_2 git@github.com:StefNijenhuis/Vivorbi.git`
+
 ## Branch
 * Go to project folder: `cd [folder_path]`
 * Check active branch: `git branch`
