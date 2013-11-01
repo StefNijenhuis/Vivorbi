@@ -20,3 +20,6 @@
 
 # Ignore hidden Mac files.
 .DS_Store
+
+# Ignore avatar files
+/public/avatars/
