@@ -2,17 +2,34 @@
 
 <p>
 	<%=@user.first_name%> <%=@user.in_between%> <%=@user.last_name%>
+	<%
+	base_form_path = '/users/'+@user.id.to_s
+	@form_path = base_form_path+'/edit_profile'
+	%>
+	<%=render 'hidden_form'%>
 </p>
 <p>
-	<%=@user.date_of_birth.strftime("%d-%m-%Y")%>
+	<% if @user.date_of_birth then puts @user.date_of_birth.strftime("%d-%m-%Y") end%>
+	<% @form_path = base_form_path+'/profile_2' %>
+	<%=render 'hidden_form'%>
 </p>
 <p>
 	<%=@user.street%> <%=@user.house_number%>, <%=@user.postal_code%> <%=@user.place%>
+	<% @form_path = base_form_path+'/profile_3' %>
+	<%=render 'hidden_form'%>
 </p>
-<p>tel: <%=@user.phone%></p>
-<p>mob: <%=@user.cellphone%></p>
-<p>e-mail: <%=@user.email%></p>
-<p><%=@user.hobbies%></p>
+<p>
+	tel: <%=@user.phone%>
+	mob: <%=@user.cellphone%>
+	e-mail: <%=@user.email%>
+	<% @form_path = base_form_path+'/profile_4' %>
+	<%=render 'hidden_form'%>
+</p>
+<p>
+	<%=@user.hobbies%>
+	<% @form_path = base_form_path+'/profile_5' %>
+	<%=render 'hidden_form'%>
+</p>
 
 <%= form_for @user do |f| %>
 	<%= f.hidden_field :first_name %>
@@ -28,4 +45,5 @@
 	<%= f.hidden_field :cellphone %>
 	<%= f.hidden_field :email %>
 	<%= f.hidden_field :hobbies %>
+	<%= f.submit "Voltooien" %>
 <% end %>

@@ -1,7 +1,4 @@
-<h1>Wat vindt u leuk om te doen?</h1>
-<%= form_for @user, url: '/users/'+@user.id.to_s+'/profile_overview' do |f| %>
-	<%= f.text_area :hobbies %>
-	
+<%= form_for @user, url: @form_path do |f| %>
 	<%= f.hidden_field :first_name %>
 	<%= f.hidden_field :in_between %>
 	<%= f.hidden_field :last_name %>
@@ -14,6 +11,6 @@
 	<%= f.hidden_field :phone %>
 	<%= f.hidden_field :cellphone %>
 	<%= f.hidden_field :email %>
-	
-	<%= f.submit "Volgende" %>
+	<%= f.hidden_field :hobbies %>
+	<%=f.submit "Bewerken" %>
 <% end %>

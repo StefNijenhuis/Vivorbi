@@ -1,33 +1,32 @@
-<h1>Wie bent u?</h1>
-<%= form_for @user, url: '/users/'+@user.id.to_s+'/profile_2' do |f| %>
+<div id="profile_1">
+	<h1>Wie bent u?</h1>
+	<%= form_for @user, url: '/users/'+@user.id.to_s+'/profile_2' do |f| %>
+		<%= f.label :first_name, "Wat is uw voornaam?" %>
+		<%= f.text_field :first_name, placeholder: "Voornaam" %>
 
-	<%= f.label :first_name, "Wat is uw voornaam?" %>
-	<%= f.text_field :first_name, placeholder: "Voornaam" %>
+		<%= f.label :last_name, "Wat is uw achternaam?" %>
+		<%= f.text_field :in_between, placeholder: "Tussenv" %>
+		<%= f.text_field :last_name, placeholder: "Achternaam" %>
+		
+		<%= f.label :avatar, "Hoe ziet u er uit?" %>
+		<img src="<%=image_path('avatar_placeholder.png')%>">
 
-	<%= f.label :last_name, "Wat is uw achternaam?" %>
-	<%= f.text_field :in_between, placeholder: "Tussenv" %>
-	<%= f.text_field :last_name, placeholder: "Achternaam" %>
-	
-	<%= f.label :avatar, "Hoe ziet u er uit?" %>
-	<img src="">
+		<!-- deze verbergen -->
+		<%= f.file_field :avatar, class: "hidden" %>
 
-	<!-- deze verbergen -->
-	<%= f.file_field :avatar, class: "hidden" %>
+		<button id="upload_avatar">Kies een foto</button>
+		
+		<%= f.hidden_field :has_avatar %>
+		<%= f.hidden_field :street %>
+		<%= f.hidden_field :house_number %>
+		<%= f.hidden_field :postal_code %>
+		<%= f.hidden_field :place %>
+		<%= f.hidden_field :date_of_birth %>
+		<%= f.hidden_field :phone %>
+		<%= f.hidden_field :cellphone %>
+		<%= f.hidden_field :email %>
+		<%= f.hidden_field :hobbies %>
 
-	<!-- met jquery voert #upload_avatar een click uit op :avatar, zie TO -->
-	<button id="upload_avatar">Kies een foto</button>
-	
-
-	<%= f.hidden_field :has_avatar %>
-	<%= f.hidden_field :street %>
-	<%= f.hidden_field :house_number %>
-	<%= f.hidden_field :postal_code %>
-	<%= f.hidden_field :place %>
-	<%= f.hidden_field :date_of_birth %>
-	<%= f.hidden_field :phone %>
-	<%= f.hidden_field :cellphone %>
-	<%= f.hidden_field :email %>
-	<%= f.hidden_field :hobbies %>
-
-	<%= f.submit %>
-<% end %>
+		<%= f.submit "Volgende" %>
+	<% end %>
+</div>
