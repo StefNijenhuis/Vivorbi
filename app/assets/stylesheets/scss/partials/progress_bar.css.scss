@@ -1,0 +1,16 @@
+#progress_bar {
+  display: inline-block;
+}
+.progress_text {
+  text-align: center;
+}
+.first_step {
+  background-color: #2ecc71;
+  margin-top: 10px;
+  height: 25px;
+}
+.second_step, .third_step {
+  background-color: #bd1633;
+  margin-top: 10px;
+  height: 25px;
+}
