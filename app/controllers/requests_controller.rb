@@ -16,11 +16,14 @@ class RequestsController < ApplicationController
 
   def new_step_2
     @request = Request.new(request_params)
+    olddate = @request.date
     if @request.date == nil
       @request.date = Date.tomorrow
     end
     if(@request.invalid?)
       render :new_step_1
+    else
+      @request.date = olddate
     end
   end
 
