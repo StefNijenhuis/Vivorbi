@@ -1,44 +1,38 @@
-body{
-  font-family: $font-family;
-  font-size: 16px;
-  line-height: 1.5;
+p,a{
+  font-weight: $normal-font-weight;
 }
 
-h1{
-  font-family: $font-family;
-  font-size: 3em;
-  font-weight: 700;
-  color: $primary-green;
+h1,h3,h4,h5,h6{
+  font-weight: $header-font-weight;
 }
 
 h2{
-  font-family: $font-family;
-  font-size: 2.5em;
-  font-weight: 400;
+  font-weight: $sub-header-font-weight;
+}
+
+h1,h2{
   color: $primary-green;
 }
 
-h2 strong{
-  font-family: $font-family;
-  font-weight: 400;
-}
-
-h3{
-  font-family: $font-family;
-  font-size: 1.5em;
-  font-weight: 400;
-  color: #fff;
+h3,h4,h5,h6{
+  color: $text-color;
 }
 
 p{
-  font-family: $font-family;
-  font-size: 1em;
+  font-size: $font-size-base;
 }
+
+h1{ font-size: floor($font-size-base * 2.60); }
+h2{ font-size: floor($font-size-base * 2.15); }
+h3{ font-size: ceil($font-size-base * 1.70); }
+h4{ font-size: ceil($font-size-base * 1.25); }
+h5{ font-size:  $font-size-base; }
+h6{ font-size: ceil($font-size-base * 0.85); }
 
 @media only screen and (max-width: 480px) {
 
    body { 
-    font-size: 0.8em;
+    font-size: ceil($font-size-base * 0.85);
   }
 
 }

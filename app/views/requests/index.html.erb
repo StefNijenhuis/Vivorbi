@@ -13,10 +13,10 @@
 			<% @requests.each do |request| %>
 			<div class="small-12 columns" id="request">
 				<div class="small-6 columns" id="request_title">
-				<h2><%= request.title %></h2>
+				<h2><strong><%= request.title %></strong></h2>
 				</div>
 				<div class="small-6 columns" id="request_date">
-				<h2><strong><%= request.date.strftime("%A %e-%m-%Y") %></strong></h2>
+				<h2><%= request.date.strftime("%A %e-%m-%Y") %></h2>
 				</div>
 				<div class="row" id="request_buttons">
 					<a href="" class="small-6 columns" id="details_button">Details</a>
