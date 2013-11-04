@@ -32,23 +32,9 @@
   text-align: right;
 }
 #details_button {
-  text-align: center;
-  padding: 10px 0;
-  background-color: #3498db;
-  color: #fff;
-  display: inline-block;
-  font-size: 30px;
-  text-decoration: none;
-  cursor: pointer;
+  @include button($color: $brand-normal, $text-color: $button-text-color);
 }
 
 #react_button {
-  text-align: center;
-  padding: 10px 0;
-  background-color: #2ecc71;
-  color: #fff;
-  display: inline-block;
-  font-size: 30px;
-  text-decoration: none;
-  cursor: pointer;
+  @include button($color: $brand-success, $text-color: $button-text-color);
 }
