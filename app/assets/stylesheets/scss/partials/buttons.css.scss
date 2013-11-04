@@ -32,9 +32,9 @@
   text-align: right;
 }
 #details_button {
-  @include button($color: $brand-normal, $text-color: $button-text-color);
+  @include button($color: $brand-normal, $text-color: $button-text-color, $button-radius: 5px 0px 0px 5px);
 }
 
 #react_button {
-  @include button($color: $brand-success, $text-color: $button-text-color);
+  @include button($color: $brand-success, $text-color: $button-text-color, $button-radius: 0px 5px 5px 0px);
 }

@@ -5,3 +5,9 @@ body{
   color: $base-text-color;
   background-color: $body-bg;
 }
+
+.wrapper{
+	background-color: $wrapper-bg;
+	// margin-top: 50px;
+	padding: 20px;
+}
