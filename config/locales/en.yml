@@ -20,4 +20,17 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  activerecord:
+    attributes:
+      request:
+        title: "Een oproep"
+        date: "Een datum"
+    errors:
+      template:
+        header: "Los de volgende problemen op om verder te gaan"
+      models:
+        request:
+          attributes:
+            title:
+              blank: "moet een naam hebben"
+              too_short: "moet een naam hebben van ten minste 10 tekens"
