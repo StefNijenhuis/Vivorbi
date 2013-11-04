@@ -16,7 +16,11 @@
   </ul>
 </div>
 <% end %>
-<form action="/requests/new_step_2" method="post">
+<% if params[:origin] == "overview" %>
+  <form action="/requests/new/overview" method="post">
+<% else %>
+  <form action="/requests/new/step_2" method="post">
+<% end %>
   <div class="row">
     <div class="small-12 columns">
       <!-- STEP 1 - TITLE OF REQUEST -->
@@ -25,6 +29,8 @@
     </div>
     <div id="request_form_name" class="small-11 small-centered columns">
       <input type="text" placeholder="Naam van uw oproep" title="Minimaal 10 karakters invullen" name="request[title]" value="<%=@request.title%>" id="name">
+      <input type="hidden" name="request[date]" value="<%=@request.date%>">
+      <input type="hidden" name="origin" value="<%=params[:origin]%>">
     </div>
   </div>
   <!-- PROGRESS BAR AND BUTTONS -->
@@ -38,7 +44,11 @@
       <div class="small-4 columns third_step"></div>
     </div>
     <div class="small-4 columns">
-      <input type="submit" id="submit_button" value="Volgende">
+      <% if params[:origin] == "overview" %>
+        <input type="submit" id="submit_button" value="Gereed">
+      <% else %>
+        <input type="submit" id="submit_button" value="Volgende">
+      <% end %>
     </div>
   </div>
 </form>

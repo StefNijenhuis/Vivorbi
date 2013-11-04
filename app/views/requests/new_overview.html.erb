@@ -12,9 +12,10 @@
             <%= @request.title %>
           </div>
           <div class="small-3 columns">
-            <form action="/requests/new_step_1" method="post">
+            <form action="/requests/new/step_1" method="post">
               <input type="hidden" name="request[title]" value="<%=@request.title%>">
               <input type="hidden" name="request[date]" value="<%=@request.date%>">
+              <input type="hidden" name="origin" value="overview">
               <input type="submit" class="edit-button" value="Bewerken">
             </form>
           </div>
@@ -29,9 +30,10 @@
             <%= @request.date.strftime("%d-%m-%Y") %>
           </div>
           <div class="small-3 columns">
-            <form action="/requests/new_step_2" method="post">
+            <form action="/requests/new/step_2" method="post">
               <input type="hidden" name="request[title]" value="<%=@request.title%>">
               <input type="hidden" name="request[date]" value="<%=@request.date%>">
+              <input type="hidden" name="origin" value="overview">
               <input type="submit" class="edit-button" value="Bewerken">
             </form>
           </div>
@@ -51,7 +53,7 @@
           <div class="small-4 columns third_step"></div>
         </div>
         <div class="small-4 columns">
-          <form action="create" method="post">
+          <form action="/requests/create" method="post">
             <input type="hidden" name="request[title]" value="<%=@request.title%>">
             <input type="hidden" name="request[date]" value="<%=@request.date%>">
             <input type="submit" id="submit_button" value="Verstuur">

@@ -1,8 +1,6 @@
 Vivorbi::Application.routes.draw do
   post "requests/create"
-  post "requests/new_step_1"
-  post "requests/new_step_2"
-  post "requests/new_overview"
+  post "requests/new/:step" => 'requests#new'
   get "requests/index"
 
   get 'users/:id/profile_1' => 'users#profile_1'
