@@ -1,6 +1,6 @@
 Vivorbi::Application.routes.draw do
-  get "requests/create"
-  get "requests/new_step_1"
+  post "requests/create"
+  post "requests/new_step_1"
   post "requests/new_step_2"
   post "requests/new_overview"
   get "requests/index"

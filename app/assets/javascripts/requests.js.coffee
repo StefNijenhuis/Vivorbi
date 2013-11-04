@@ -60,14 +60,8 @@
 	$('#new_request').submit ->
 		if clicks == 0
 			$(".next").trigger("click")
-			return false ###
-jQuery ->
-	$('#date').datepicker({
-		dateFormat: "dd-mm-yy",
-		altField: "#actualDate",
-		dayNamesMin: ['Zo', 'Ma', 'Di', 'Wo', 'Do', 'Vr', 'Za'],
-		monthNames: [ "Januari", "Februari", "Maart", "April", "Mei", "Juni", "July", "Augustus", "September", "Oktober", "November", "December" ]
-	});
+			return false
+
 
 	$('#overview_name_wrapper .edit-button').click ->
 		$('.form_date_wrapper').hide();
@@ -92,8 +86,19 @@ jQuery ->
 		$('.next').css('display', 'inline-block')
 		$('.third_step').css('background-color', "#bd1633")
 		$('.progress_text').text('Stap 2 van 3')
-		clicks -= 1;
+		clicks -= 1;	###
 
-#$(document).ready(ready)
+jQuery ->
+	$('#date').datepicker({
+		dateFormat: "dd-mm-yy",
+		altField: "#actualDate",
+		dayNamesMin: ['Zo', 'Ma', 'Di', 'Wo', 'Do', 'Vr', 'Za'],
+		monthNames: [ "Januari", "Februari", "Maart", "April", "Mei", "Juni", "July", "Augustus", "September", "Oktober", "November", "December" ],
+		defaultDate: $("#actualDate").val()
+		dateFormat: "yy-mm-dd 00:00:00 UTC"
+	});
 
+$ ->
+	$('.prev').click ->
+		history.back()
 	

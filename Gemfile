@@ -45,5 +45,8 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-# Foundation
+# Foundation framework
 gem 'zurb-foundation'
+
+# Paperclip
+gem "paperclip", "~> 3.0"

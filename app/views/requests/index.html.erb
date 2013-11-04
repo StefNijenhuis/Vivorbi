@@ -4,7 +4,10 @@
 			<p>Hieronder ziet u het overzicht van de hulpvragen.
 				Om in contact te komen klik op de reageeren knop.
 			</p>
-			<a id="new_button" href="/requests/new_step_1">Nieuwe oproep</a>
+			<form action="/requests/new_step_1" method="post">
+				<input type="hidden" name="request[title]" value="">
+				<input type="submit" value="Nieuwe oproep" id="new_button">
+			</form>
 		</div>
 		<div class="row" id="request_wrapper">
 			<% @requests.each do |request| %>

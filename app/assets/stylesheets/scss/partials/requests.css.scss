@@ -8,16 +8,8 @@
   border: solid 2px black;
   font-size: 20px;
 }
-.form_name_wrapper
- {
-  display: none;
-}
 
 // STEP 2 - DATE OF REQUEST
-.form_date_wrapper
-{
-  display: none;
-}
 .ui-datepicker {  
     width: 100%;
     font-family: 'Open Sans', sans-serif;
@@ -91,10 +83,6 @@
 }
 
 //STEP 3 - OVERVIEW
-.form_overview_wrapper
-{
-  display: none;
-}
 #overview_name_wrapper, #overview_date_wrapper {
   line-height: 50px;
   font-size: 1.3em;
@@ -104,19 +92,14 @@
   text-align: center;
   background-color: #3498db;
   color: #fff;
-  text-decoration: none;
   border: none;
   height: 40px;
-  margin-top: 5px;
   line-height: 40px;
-  cursor: pointer;
+  width: 100%;
 }
 
 
 // PROGRESS BAR AND BUTTONS
-#submit_button_div {
-  display: none;
-}
 #submit_button {
   text-align: center;
   padding: 10px 0;
@@ -124,8 +107,6 @@
   border: none;
   color: #fff;
   font-size: 30px;
-  text-decoration: none;
-  cursor: pointer;
   width: 100%;
   height: 65px;
 }
@@ -152,10 +133,10 @@
   padding: 10px 0;
   background-color: #3498db;
   color: #fff;
-  display: none;
   font-size: 30px;
   text-decoration: none;
   cursor: pointer;
+  display: inline-block
 }
 
 /* Disable placeholder on input focus */

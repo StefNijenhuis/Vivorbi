@@ -1,0 +1,12 @@
+// Combines the sass from the folders
+
+// modules
+@import "modules/foundation_and_overrides.scss";
+@import "modules/normalize.css.scss";
+@import "modules/base.css.scss";
+@import "modules/colors.css.scss";
+
+// partials
+@import "partials/all.css.scss";
+
+// vendor

@@ -1,5 +1,8 @@
 # README
 
+## Clone Branch
+`git clone -b sprint_2 git@github.com:StefNijenhuis/Vivorbi.git`
+
 ## Branch
 * Go to project folder: `cd [folder_path]`
 * Check active branch: `git branch`
@@ -10,6 +13,11 @@
 1. `bundle`
 2. `rake db:migrate`
 3. `rake db:seed`
+
+## Installing ImageMagick
+In order for image manipulation to work you'll need to install ImageMagick
+* Linux/Debian: `sudo apt-get install imagemagick`
+* MacOS: `brew install imagemagick`
 
 ## Run server
 * `rails s`
