@@ -10,7 +10,7 @@
     width: 100%;  
 }
 .ui-datepicker-header {  
-    background-color: #3498db;  
+    background-color: $brand-normal;  
     color: #fff;  
     font-weight: bold;
     line-height: 50px;
@@ -51,21 +51,24 @@
     text-align: center;
 }
 .ui-datepicker tbody td:hover {  
-    background-color: #3498db;
+    background-color: $brand-normal;
     cursor: pointer;
 }
 .ui-datepicker tbody td:hover a {
   color: white;
 }
 .ui-datepicker-today {
-  background-color: #3498db;
+  background-color: $brand-normal;
   cursor: pointer;
 }
 .ui-datepicker-today a {
   color: white;
 }
 .ui-datepicker-current-day {  
-    background-color: #2ecc71;  
-    color: black;
+    background-color: $brand-success;  
+    color: white;
     border: none;
+}
+.ui-datepicker-current-day a {  
+    color: white;
 }

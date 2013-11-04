@@ -31,7 +31,9 @@
   text-decoration: none;
   font-size: floor($font-size-base * 2.15);
   padding: 10px 0;
+  border: none;
   @include rounded($radius: $button-radius);
+  @include shadow($offset: 7px, $blur: 3px, $color: rgba(0, 0, 0, 0.35));
  
   color: $text-color !important;
   background: $color;
@@ -39,6 +41,7 @@
   &:hover {
     text-decoration: none;
     background: saturate($color, 10%);
+    @include shadow($offset: 4px, $blur: 3px, $color: rgba(0, 0, 0, 0.35));
   }
  
   &:active {
@@ -53,3 +56,10 @@
   -moz-border-radius: $radius;
   border-radius: $radius;
 }
+
+@mixin shadow($offset, $blur, $color) {
+  -webkit-box-shadow: $offset $offset $blur $color;
+  -moz-box-shadow:    $offset $offset $blur $color;
+  box-shadow:         $offset $offset $blur $color;
+}
+

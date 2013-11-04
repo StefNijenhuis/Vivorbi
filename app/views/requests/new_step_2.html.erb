@@ -1,7 +1,7 @@
 <% content_for :title, "Nieuwe oproep" %>
 <div class="row">
   <div class="small-12 columns">
-    <div id="header">
+    <div class="header">
       <h1>Nieuwe oproep</h1>
     </div>
   </div>
@@ -38,9 +38,9 @@
 	    <span class="small-12 columns progress_text">
 	      Stap 2 van 3
 	    </span>
-	    <div class="small-4 columns first_step"></div>
-	    <div class="small-4 columns second_step"></div>
-	    <div class="small-4 columns third_step"></div>
+	    <div class="small-4 columns done" id="first"></div>
+	    <div class="small-4 columns done"></div>
+	    <div class="small-4 columns not-done" id="last"></div>
 	  </div>
 	  <div class="small-4 columns">
 	    <% if params[:origin] == "overview" %>
