@@ -3,7 +3,8 @@ Vivorbi::Application.routes.draw do
   post "requests/create"
   post "requests/new/:step" => 'requests#new'
   get "requests/index"
-
+  
+  get 'users/:id/profile/:step' => 'users#profile'
   patch 'users/:id/profile/:step' => 'users#profile'
   resources :requests
   resources :users

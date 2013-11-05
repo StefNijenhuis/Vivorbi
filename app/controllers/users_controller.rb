@@ -15,6 +15,9 @@ class UsersController < ApplicationController
   # GET /users/new
   def new
     @user = User.new
+    @user.save(validate: false)
+    @form_target = 'step_2'
+    render :profile_1
   end
 
   # PATCH /users/1/profile/step_x
@@ -48,6 +51,7 @@ class UsersController < ApplicationController
         render :profile_3
       else
         @form_target = 'step_3' if @form_target==nil
+        @months = ["Kies een maand","Januari","Februari","Maart","April","Mei","Juni","Juli","Augustus","September","Oktober","November","December"]
         render :profile_2
       end
     when "step_4"
