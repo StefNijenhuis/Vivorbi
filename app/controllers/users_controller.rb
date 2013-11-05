@@ -61,12 +61,14 @@ class UsersController < ApplicationController
       end
     when "step_5"
       if @user.errors[:email].empty? && @user.errors[:phone].empty? && @user.errors[:cellphone].empty?
+        @form_target = 'overview'
         render :profile_5
       else
         @form_target = 'step_5' if @form_target==nil
         render :profile_4
       end
     when "overview"
+      @form_target = 'overview'
       render :profile_overview
     end
   end

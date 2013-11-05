@@ -12,9 +12,15 @@ class RequestsController < ApplicationController
 
   def new
     @request = Request.new(request_params)
+    
+    @form_target = nil
+    if params[:origin]=="overview"
+      @form_target='overview'
+    end
 
     case params[:step]  
       when "step_1"
+        @form_target = 'step_2' if @form_target==nil
         render :new_step_1
       when "step_2"
         olddate = @request.date
@@ -22,8 +28,10 @@ class RequestsController < ApplicationController
           @request.date = Date.tomorrow
         end
         if(@request.invalid?)
+          @form_target='step_2' if @form_target==nil
           render :new_step_1
         else
+          @form_target = 'overview' if @form_target==nil
           @request.date = olddate
           render :new_step_2
         end
@@ -32,8 +40,10 @@ class RequestsController < ApplicationController
         if(@request.errors[:date].empty? && @request.errors[:title].empty?)
           render :new_overview
         elsif (@request.errors[:date].any?)
+          @form_target = 'overview'
           render :new_step_2
         elsif (@request.errors[:title].any?)
+          @form_target="overview"
           render :new_step_1
         end
     end

@@ -1,6 +1,6 @@
 <div id="profile_4">
 	<h1>Hoe kunnen we u bereiken?</h1>
-	<%= form_for @user, url: '/users/'+@user.id.to_s+'/profile/step_5' do |f| %>
+	<%= form_for @user, url: '/users/'+@user.id.to_s+'/profile/'+@form_target do |f| %>
 		<%= f.label :phone, "Wat is uw telefoonnummer?" %>
 		<%= f.text_field :phone, placeholder: "Telefoonnummer" %>
 
