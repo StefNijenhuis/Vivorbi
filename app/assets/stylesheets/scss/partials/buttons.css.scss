@@ -3,16 +3,7 @@
   height: 50px;
   font-size: 20px;
 }
-#submit_button {
-  @include button($color: $brand-normal, $text-color: $button-text-color, $button-radius: 5px);
-}
-.prev {
-  @include button($color: $brand-normal, $text-color: $button-text-color, $button-radius: 5px);
-}
-#new_button{
-  @include button($color: $brand-normal, $text-color: $button-text-color, $button-radius: 5px);
-}
-#details_button {
+#submit_button, .prev, #new_button, #details_button {
   @include button($color: $brand-normal, $text-color: $button-text-color, $button-radius: 5px);
 }
 
