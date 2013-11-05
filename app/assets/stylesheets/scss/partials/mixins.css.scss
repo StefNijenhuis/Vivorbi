@@ -24,6 +24,7 @@
  
 // Mixin for button
 @mixin button($color: $brand-normal, $text-color: $button-text-color, $button-radius: 5px) {
+  width: 100%;
   outline: none;
   display: inline-block;
   cursor: pointer;
