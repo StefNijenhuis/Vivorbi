@@ -1,6 +1,7 @@
 <div id="profile_1">
+	<%= @user.errors["first_name"]%>
 	<h1>Wie bent u?</h1>
-	<%= form_for @user, url: '/users/'+@user.id.to_s+'/profile_2' do |f| %>
+	<%= form_for @user, url: '/users/'+@user.id.to_s+'/profile/step_2' do |f| %>
 		<%= f.label :first_name, "Wat is uw voornaam?" %>
 		<%= f.text_field :first_name, placeholder: "Voornaam" %>
 
@@ -8,15 +9,6 @@
 		<%= f.text_field :in_between, placeholder: "Tussenv" %>
 		<%= f.text_field :last_name, placeholder: "Achternaam" %>
 		
-		<%= f.label :avatar, "Hoe ziet u er uit?" %>
-		<img src="<%=image_path('avatar_placeholder.png')%>">
-
-		<!-- deze verbergen -->
-		<%= f.file_field :avatar, class: "hidden" %>
-
-		<button id="upload_avatar">Kies een foto</button>
-		
-		<%= f.hidden_field :has_avatar %>
 		<%= f.hidden_field :street %>
 		<%= f.hidden_field :house_number %>
 		<%= f.hidden_field :postal_code %>

@@ -25,19 +25,20 @@ jQuery ->
 	if $("#profile_3").length>0
 		$("#check_address").click ->
 			# ajax get address
-			ajaxUrl = "http://api.postcodeapi.nu/"
+			ajaxUrl = "/api_requests/postal_code/"
 			ajaxUrl+= $("#user_postal_code").val().split(" ").join("")
 			ajaxUrl+= "/"+$("#user_house_number").val()
 			$.ajax ajaxUrl,
 				type: 'GET'
 				dataType: 'html'
-				headers: 'Api-Key: 6451884210699c31101d4309a92ba3253095b9e9'
 				error: (jqXHR, textStatus, errorThrown) ->
 					alert(textStatus)
 					console.log(errorThrown)
 				success: (data, textStatus, jqXHR) ->
 					# set street and place
-					$('body').append "Successful AJAX call: #{data}"
+					resource = JSON.parse(data).resource
+					$("#address").html(resource.street+" "+resource.house_number+"<br>"+resource.postcode+" "+resource.town)
+					$("#user_street").val(resource.street)
+					$("#user_place").val(resource.town)
 					$("#overlay").show()
-			# TODO: allow cross site reference
 			return false

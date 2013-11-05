@@ -1,17 +1,12 @@
 Vivorbi::Application.routes.draw do
+  get "api_requests/postal_code/:pc/:nr" => 'api_requests#postal_code'
   post "requests/create"
   post "requests/new_step_1"
   post "requests/new_step_2"
   post "requests/new_overview"
   get "requests/index"
 
-  get 'users/:id/profile_1' => 'users#profile_1'
-  patch 'users/:id/edit_profile' => 'users#edit_profile'
-  patch 'users/:id/profile_2' => 'users#profile_2'
-  patch 'users/:id/profile_3' => 'users#profile_3'
-  patch 'users/:id/profile_4' => 'users#profile_4'
-  patch 'users/:id/profile_5' => 'users#profile_5'
-  patch 'users/:id/profile_overview' => 'users#profile_overview'
+  patch 'users/:id/profile/:step' => 'users#profile'
   resources :requests
   resources :users
   # The priority is based upon order of creation: first created -> highest priority.

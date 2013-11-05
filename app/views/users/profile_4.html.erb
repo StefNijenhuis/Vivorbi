@@ -1,5 +1,5 @@
 <h1>Hoe kunnen we u bereiken?</h1>
-<%= form_for @user, url: '/users/'+@user.id.to_s+'/profile_5' do |f| %>
+<%= form_for @user, url: '/users/'+@user.id.to_s+'/profile/step_5' do |f| %>
 	<%= f.label :phone, "Wat is uw telefoonnummer?" %>
 	<%= f.text_field :phone, placeholder: "Telefoonnummer" %>
 
@@ -12,7 +12,6 @@
 	<%= f.hidden_field :first_name %>
 	<%= f.hidden_field :in_between %>
 	<%= f.hidden_field :last_name %>
-	<%= f.hidden_field :has_avatar %>
 	<%= f.hidden_field :street %>
 	<%= f.hidden_field :house_number %>
 	<%= f.hidden_field :postal_code %>

@@ -1,11 +1,10 @@
 <h1>Wat vindt u leuk om te doen?</h1>
-<%= form_for @user, url: '/users/'+@user.id.to_s+'/profile_overview' do |f| %>
+<%= form_for @user, url: '/users/'+@user.id.to_s+'/profile/overview' do |f| %>
 	<%= f.text_area :hobbies %>
 	
 	<%= f.hidden_field :first_name %>
 	<%= f.hidden_field :in_between %>
 	<%= f.hidden_field :last_name %>
-	<%= f.hidden_field :has_avatar %>
 	<%= f.hidden_field :street %>
 	<%= f.hidden_field :house_number %>
 	<%= f.hidden_field :postal_code %>

@@ -1,7 +1,7 @@
 <div id="profile_2">
 	<h1>Wanneer bent u geboren?</h1>
 
-	<%= form_for @user, url: '/users/'+@user.id.to_s+'/profile_3' do |f| %>
+	<%= form_for @user, url: '/users/'+@user.id.to_s+'/profile/step_3' do |f| %>
 		<label for="day">Wat is uw geboortedag?</label>
 		<input id="day" name="day" placeholder="Dag" value="<%if @user.date_of_birth then puts @user.date_of_birth.day end %>">
 
@@ -29,7 +29,6 @@
 		<%= f.hidden_field :first_name %>
 		<%= f.hidden_field :in_between %>
 		<%= f.hidden_field :last_name %>
-		<%= f.hidden_field :has_avatar %>
 		<%= f.hidden_field :date_of_birth %>
 
 		<!-- alleen van toepassing bij bewerken -->

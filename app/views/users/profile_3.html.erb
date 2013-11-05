@@ -1,6 +1,6 @@
 <div id="profile_3">
 	<h1>Waar woont u?</h1>
-	<%= form_for @user, url: '/users/'+@user.id.to_s+'/profile_4' do |f| %>
+	<%= form_for @user, url: '/users/'+@user.id.to_s+'/profile/step_4' do |f| %>
 		<div>
 			<%= f.label :postal_code, "Wat is uw postcode?" %>
 			<%= f.text_field :postal_code, placeholder: "1234AA" %>
@@ -22,7 +22,6 @@
 			<%= f.hidden_field :first_name %>
 			<%= f.hidden_field :in_between %>
 			<%= f.hidden_field :last_name %>
-			<%= f.hidden_field :has_avatar %>
 			<%= f.hidden_field :date_of_birth %>
 			<%= f.hidden_field :phone %>
 			<%= f.hidden_field :cellphone %>
