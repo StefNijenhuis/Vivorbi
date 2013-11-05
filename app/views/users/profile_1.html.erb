@@ -1,12 +1,34 @@
 <div id="profile_1">
 	<h1>Wie bent u?</h1>
 	<%= form_for @user, url: '/users/'+@user.id.to_s+'/profile/'+@form_target do |f| %>
-		<%= f.label :first_name, "Wat is uw voornaam?" %>
-		<%= f.text_field :first_name, placeholder: "Voornaam" %>
+		<div class="row">
+			<div class="small-12 columns">
+				<h2>
+					<%= f.label :first_name, "Wat is uw voornaam?" %>
+				</h2>
+			</div>
+		</div>
+		<div class="row">
+			<div class="small-12 columns">
+				<%= f.text_field :first_name, placeholder: "Voornaam" %>
+			</div>
+		</div>
 
-		<%= f.label :last_name, "Wat is uw achternaam?" %>
-		<%= f.text_field :in_between, placeholder: "Tussenv" %>
-		<%= f.text_field :last_name, placeholder: "Achternaam" %>
+		<div class="row">
+			<div class="small-12 columns">
+				<h2>
+					<%= f.label :last_name, "Wat is uw achternaam?" %>
+				</h2>
+			</div>
+		</div>
+		<div class="row">
+			<div class="small-4 columns">
+				<%= f.text_field :in_between, placeholder: "Tussenv" %>
+			</div>
+			<div class="small-8 columns">
+				<%= f.text_field :last_name, placeholder: "Achternaam" %>
+			</div>
+		</div>
 		
 		<%= f.hidden_field :street %>
 		<%= f.hidden_field :house_number %>
@@ -18,6 +40,21 @@
 		<%= f.hidden_field :email %>
 		<%= f.hidden_field :hobbies %>
 
-		<%= f.submit "Volgende" %>
+		<div class="row">
+			<div class="small-4 push-4 columns">
+				<span class="small-12 columns progress_text">
+			        Stap 1 van 6
+			    </span>
+			    <div class="small-2 columns done" id="first"></div>
+			    <div class="small-2 columns not-done"></div>
+			    <div class="small-2 columns not-done"></div>
+			    <div class="small-2 columns not-done"></div>
+			    <div class="small-2 columns not-done"></div>
+			    <div class="small-2 columns not-done end" id="last"></div>
+			</div>
+			<div class="small-4 columns">
+				<%= f.submit "Volgende", :class => 'submit_button' %>
+			</div>
+		</div>
 	<% end %>
 </div>

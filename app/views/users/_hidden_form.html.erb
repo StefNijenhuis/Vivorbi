@@ -12,5 +12,7 @@
 	<%= f.hidden_field :cellphone %>
 	<%= f.hidden_field :email %>
 	<%= f.hidden_field :hobbies %>
-	<%=f.submit "Bewerken" %>
+	<div class="small-3 columns">
+		<%=f.submit "Bewerken", :class => 'edit-button' %>
+	</div>
 <% end %>

@@ -1,29 +1,49 @@
 <div id="profile_2">
-	<h1>Wanneer bent u geboren?</h1>
+	<div class="small-12">
+		<h1>
+			Wanneer bent u geboren?
+		</h1>
+	</div>
 	<%= form_for @user, url: '/users/'+@user.id.to_s+'/profile/'+@form_target do |f| %>
-		<label for="day">Wat is uw geboortedag?</label>
-		<input id="day" name="day" placeholder="Dag" value="<%=@user.date_of_birth.day unless @user.date_of_birth == nil%>">
+		<div class="row">
+			<div class="small-4 columns">
+				<label for="day">Wat is uw geboortedag?</label>
+			</div>
+			<div class="small-4 columns">
+				<label for="month">Wat is uw geboortemaand?</label>
+			</div>
+			<div class="small-4 columns">
+				<label for="year">Wat is uw geboortejaar?</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="small-4 columns">
+				<input id="day" name="day" placeholder="Dag" value="<%=@user.date_of_birth.day unless @user.date_of_birth == nil%>">
+			</div>
 
-		<label for="month">Wat is uw geboortemaand?</label>
-		<select id="month" name="month">
-			<%
-			@months.each_with_index do | text, value | 
-				if @user.date_of_birth != nil
-					if value == @user.date_of_birth.month
-						sel = " selected"
-					else
-						sel = ""
-					end
-				else
-					sel = ""
-				end
-				%>
-			<option value="<%=value%>"<%=sel%>><%=text%></option>
-			<% end %>
-		</select>
-		
-		<label for="year">Wat is uw geboortejaar?</label>
-		<input id="year" name="year" placeholder="Jaar" value="<%=@user.date_of_birth.year unless @user.date_of_birth==nil%>">
+			<div class="small-4 columns">
+				<select id="month" name="month">
+					<%
+					@months.each_with_index do | text, value | 
+						if @user.date_of_birth != nil
+							if value == @user.date_of_birth.month
+								sel = " selected"
+							else
+								sel = ""
+							end
+						else
+							sel = ""
+						end
+						%>
+					<option value="<%=value%>"<%=sel%>><%=text%></option>
+					<% end %>
+				</select>
+			</div>
+			
+			<div class="small-4 columns">
+				<input id="year" name="year" placeholder="Jaar" value="<%=@user.date_of_birth.year unless @user.date_of_birth==nil%>">
+			</div>
+		</div>
 		
 		<%= f.hidden_field :first_name %>
 		<%= f.hidden_field :in_between %>
@@ -40,6 +60,24 @@
 		<%= f.hidden_field :email %>
 		<%= f.hidden_field :hobbies %>
 		
-		<%= f.submit "Volgende" %>
+		<div class="row">
+			<div class="small-4 columns">
+				<div class="prev">Vorige</div>
+			</div>
+			<div class="small-4 columns">
+				<span class="small-12 columns progress_text">
+			        Stap 2 van 6
+			    </span>
+			    <div class="small-2 columns done" id="first"></div>
+			    <div class="small-2 columns done"></div>
+			    <div class="small-2 columns not-done"></div>
+			    <div class="small-2 columns not-done"></div>
+			    <div class="small-2 columns not-done"></div>
+			    <div class="small-2 columns not-done end" id="last"></div>
+			</div>
+			<div class="small-4 columns">
+				<%= f.submit "Volgende", :class => 'submit_button' %>
+			</div>
+		</div>
 	<% end %>
 </div>

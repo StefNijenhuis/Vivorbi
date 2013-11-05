@@ -1,7 +1,17 @@
 <div id="profile_5">
-	<h1>Wat vindt u leuk om te doen?</h1>
+	<div class="row">
+		<div class="small-12 columns">
+			<h1>
+				Wat vindt u leuk om te doen?
+			</h1>
+		</div>
+	</div>
 	<%= form_for @user, url: '/users/'+@user.id.to_s+'/profile/'+@form_target do |f| %>
-		<%= f.text_area :hobbies %>
+	<div class="row">
+		<div class="small-12 columns">
+			<%= f.text_area :hobbies %>
+		</div>
+	</div>
 		
 		<%= f.hidden_field :first_name %>
 		<%= f.hidden_field :in_between %>
@@ -15,6 +25,24 @@
 		<%= f.hidden_field :cellphone %>
 		<%= f.hidden_field :email %>
 		
-		<%= f.submit "Volgende" %>
+		<div class="row">
+			<div class="small-4 columns">
+				<div class="prev">Vorige</div>
+			</div>
+			<div class="small-4 columns">
+				<span class="small-12 columns progress_text">
+			        Stap 5 van 6
+			    </span>
+			    <div class="small-2 columns done" id="first"></div>
+			    <div class="small-2 columns done"></div>
+			    <div class="small-2 columns done"></div>
+			    <div class="small-2 columns done"></div>
+			    <div class="small-2 columns done"></div>
+			    <div class="small-2 columns not-done end" id="last"></div>
+			</div>
+			<div class="small-4 columns">
+				<%= f.submit "Volgende", :class => 'submit_button' %>
+			</div>
+		</div>
 	<% end %>
 </div>

@@ -43,4 +43,10 @@ jQuery ->
 					$("#user_street").val(resource.street)
 					$("#user_place").val(resource.town)
 					$("#overlay").show()
+					$("#background_overlay").show()
+			return false
+
+		$("#close_overlay").click ->
+			$("#overlay").hide()
+			$("#background_overlay").hide()
 			return false

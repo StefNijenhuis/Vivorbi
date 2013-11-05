@@ -1,36 +1,53 @@
 <div id="profile_overview">
-	<h1>Kloppen uw gegevens?</h1>
+	<div class="row">
+		<div class="small-12 columns">
+			<h1>Kloppen uw gegevens?</h1>
+		</div>
+	</div>
 
-	<p>
-		<%=@user.first_name%> <%=@user.in_between%> <%=@user.last_name%>
+	<div class="row">
+		<div class="small-6 columns">
+			<%=@user.first_name%> <%=@user.in_between%> <%=@user.last_name%>
+		</div>
 		<%
 		base_form_path = '/users/'+@user.id.to_s+'/profile'
 		@form_path = base_form_path+'/step_1'
 		%>
 		<%=render 'hidden_form'%>
-	</p>
-	<p>
-		<%= @user.date_of_birth.strftime("%d-%m-%Y") unless @user.date_of_birth == nil %>
+	</div>
+
+	<div class="row">
+		<div class="small-6 columns">
+			<%= @user.date_of_birth.strftime("%d-%m-%Y") unless @user.date_of_birth == nil %>
+		</div>
 		<% @form_path = base_form_path+'/step_2' %>
 		<%=render 'hidden_form'%>
-	</p>
-	<p>
-		<%=@user.street%> <%=@user.house_number%>, <%=@user.postal_code%> <%=@user.place%>
+	</div>
+	<div class="row">
+		<div class="small-6 columns">
+			<%=@user.street%> <%=@user.house_number%>, <%=@user.postal_code%> <%=@user.place%>
+		</div>
 		<% @form_path = base_form_path+'/step_3' %>
 		<%=render 'hidden_form'%>
-	</p>
-	<p>
-		<%= "tel: "+@user.phone unless @user.phone.empty? %>
-		<%= "mob: "+@user.cellphone unless @user.cellphone.empty? %>
-		<%= "e-mail: "+@user.email unless @user.email.empty? %>
+	</div>
+	<div class="row">
+		<div class="small-6 columns">
+			<div><%= "tel: "+@user.phone unless @user.phone.empty? %></div>
+			<div><%= "mob: "+@user.cellphone unless @user.cellphone.empty? %></div>
+			<div><%= "e-mail: "+@user.email unless @user.email.empty? %></div>
+		</div>
 		<% @form_path = base_form_path+'/step_4' %>
 		<%=render 'hidden_form'%>
-	</p>
-	<p>
-		<%=@user.hobbies%>
-		<% @form_path = base_form_path+'/step_5' %>
-		<%=render 'hidden_form'%>
-	</p>
+	</div>
+	<% unless @user.hobbies.empty? %>
+		<div class="row">
+			<div class="small-6 columns">
+			<%= @user.hobbies%>
+			</div>
+			<% @form_path = base_form_path+'/step_5' %>
+			<%=render 'hidden_form'%>
+		</div>
+	<% end %>
 
 	<%= form_for @user do |f| %>
 		<%= f.hidden_field :first_name %>
@@ -45,6 +62,25 @@
 		<%= f.hidden_field :cellphone %>
 		<%= f.hidden_field :email %>
 		<%= f.hidden_field :hobbies %>
-		<%= f.submit "Voltooien" %>
+
+		<div class="row">
+			<div class="small-4 columns">
+				<div class="prev">Vorige</div>
+			</div>
+			<div class="small-4 columns">
+				<span class="small-12 columns progress_text">
+			        Stap 6 van 6
+			    </span>
+			    <div class="small-2 columns done" id="first"></div>
+			    <div class="small-2 columns done"></div>
+			    <div class="small-2 columns done"></div>
+			    <div class="small-2 columns done"></div>
+			    <div class="small-2 columns done"></div>
+			    <div class="small-2 columns done end" id="last"></div>
+			</div>
+			<div class="small-4 columns">
+				<%= f.submit "Voltooien", :class => 'submit_button' %>
+			</div>
+		</div>
 	<% end %>
 </div>

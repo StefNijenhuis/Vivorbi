@@ -1,33 +1,86 @@
 <div id="profile_3">
-	<h1>Waar woont u?</h1>
+	<div class="row small-12 columns">
+		<h1>
+			Waar woont u?
+		</h1>
+	</div>
 	<%= form_for @user, url: '/users/'+@user.id.to_s+'/profile/'+@form_target do |f| %>
-		<div>
+		<div class="row">
+			<div class="small-12 columns">
 			<%= f.label :postal_code, "Wat is uw postcode?" %>
-			<%= f.text_field :postal_code, placeholder: "1234AA" %>
-
-			<%= f.label :house_number, "Wat is uw huisnummer?" %>
-			<%= f.text_field :house_number, placeholder: "Huisnummer" %>
-			
-			<!-- met jquery juiste straat en plaats in hidden inputs plaatsen -->
-			<%= f.hidden_field :street %>
-			<%= f.hidden_field :place %>
-			
-			<!-- met jquery straat en woonplaats opzoeken en in hidden inputs plaatsen -->
-			<button id="check_address">Volgende</button>
+			</div>
 		</div>
+		<div class="row">
+			<div class="small-12 columns">
+				<%= f.text_field :postal_code, placeholder: "1234AA" %>
+			</div>
+		</div>
+		<div class="row">
+			<div class="small-12 columns">
+				<%= f.label :house_number, "Wat is uw huisnummer?" %>
+			</div>
+		</div>
+		<div class="row">
+			<div class="small-12 columns">
+				<%= f.text_field :house_number, placeholder: "Huisnummer" %>
+			</div>
+		</div>
+			
+		<!-- met jquery juiste straat en plaats in hidden inputs plaatsen -->
+		<%= f.hidden_field :street %>
+		<%= f.hidden_field :place %>
+		
+		<!-- met jquery straat en woonplaats opzoeken en in hidden inputs plaatsen -->
+		<div class="row">
+			<div class="small-4 columns">
+				<div class="prev">Vorige</div>
+			</div>
+			<div class="small-4 columns">
+				<span class="small-12 columns progress_text">
+			        Stap 3 van 6
+			    </span>
+			    <div class="small-2 columns done" id="first"></div>
+			    <div class="small-2 columns done"></div>
+			    <div class="small-2 columns done"></div>
+			    <div class="small-2 columns not-done"></div>
+			    <div class="small-2 columns not-done"></div>
+			    <div class="small-2 columns not-done end" id="last"></div>
+			</div>
+			<div class="small-4 columns">
+				<button id="check_address" class="submit_button">Volgende</button>
+			</div>
+		</div>
+
+		<div >
+
+		<div id="background_overlay"></div>
 		<div id="overlay">
-			<h2>Klopt dit adres?</h2>
-			<p id="address"></p>
-			<button id="close_overlay">Nee</button>
-			<%= f.hidden_field :first_name %>
-			<%= f.hidden_field :in_between %>
-			<%= f.hidden_field :last_name %>
-			<%= f.hidden_field :date_of_birth %>
-			<%= f.hidden_field :phone %>
-			<%= f.hidden_field :cellphone %>
-			<%= f.hidden_field :email %>
-			<%= f.hidden_field :hobbies %>
-			<%= f.submit "Ja" %>
+			<div class="row">
+				<div class="small-12 columns">
+				<h2>Klopt dit adres?</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="small-12 columns">
+					<p id="address"></p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="small-6 columns">
+					<button id="close_overlay" class="submit_button">Nee</button>
+				</div>
+				<%= f.hidden_field :first_name %>
+				<%= f.hidden_field :in_between %>
+				<%= f.hidden_field :last_name %>
+				<%= f.hidden_field :date_of_birth %>
+				<%= f.hidden_field :phone %>
+				<%= f.hidden_field :cellphone %>
+				<%= f.hidden_field :email %>
+				<%= f.hidden_field :hobbies %>
+				<div class="small-6 columns">
+					<%= f.submit "Ja", :class => 'submit_button' %>
+				</div>
+			</div>
 		</div>
 	<% end %>
 </div>
