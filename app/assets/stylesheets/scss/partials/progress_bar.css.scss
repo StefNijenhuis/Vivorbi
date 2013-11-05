@@ -4,13 +4,19 @@
 .progress_text {
   text-align: center;
 }
-.first_step {
-  background-color: #2ecc71;
+.done {
+  background-color: $brand-success;
   margin-top: 10px;
   height: 25px;
 }
-.second_step, .third_step {
-  background-color: #bd1633;
+.not-done {
+  background-color: $brand-alert;
   margin-top: 10px;
   height: 25px;
+}
+#first {
+	@include rounded($radius: 5px 0px 0px 5px);
+}
+#last {
+	@include rounded($radius: 0px 5px 5px 0px);
 }

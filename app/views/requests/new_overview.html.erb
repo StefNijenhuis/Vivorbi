@@ -1,10 +1,18 @@
 <!-- STEP 3 - OVERVIEW -->
+<% content_for :title, "Nieuwe oproep" %>
 <div class="row">
-  <div class="small-12">
+  <div class="small-12 columns">
+    <div class="header">
+      <h1>Nieuwe oproep</h1>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="small-12 columns">
     <h2 class="form_title" id="title_overview">Controleer uw oproep.</h2>
     <div id="request_form_overview">
       <div class="row" id="overview_name_wrapper">
-        <div class="small-9 small-centered columns">
+        <div class="small-9 columns">
           <div class="small-3 columns">
             Titel:
           </div>
@@ -12,16 +20,17 @@
             <%= @request.title %>
           </div>
           <div class="small-3 columns">
-            <form action="/requests/new_step_1" method="post">
+            <form action="/requests/new/step_1" method="post">
               <input type="hidden" name="request[title]" value="<%=@request.title%>">
               <input type="hidden" name="request[date]" value="<%=@request.date%>">
+              <input type="hidden" name="origin" value="overview">
               <input type="submit" class="edit-button" value="Bewerken">
             </form>
           </div>
         </div>
       </div>
       <div class="row" id="overview_date_wrapper">
-        <div class="small-9 small-centered columns">
+        <div class="small-9 columns">
           <div class="small-3 columns">
             Datum:
           </div>
@@ -29,9 +38,10 @@
             <%= @request.date.strftime("%d-%m-%Y") %>
           </div>
           <div class="small-3 columns">
-            <form action="/requests/new_step_2" method="post">
+            <form action="/requests/new/step_2" method="post">
               <input type="hidden" name="request[title]" value="<%=@request.title%>">
               <input type="hidden" name="request[date]" value="<%=@request.date%>">
+              <input type="hidden" name="origin" value="overview">
               <input type="submit" class="edit-button" value="Bewerken">
             </form>
           </div>
@@ -46,12 +56,12 @@
           <span class="small-12 columns progress_text">
             Stap 3 van 3
           </span>
-          <div class="small-4 columns first_step"></div>
-          <div class="small-4 columns second_step"></div>
-          <div class="small-4 columns third_step"></div>
+          <div class="small-4 columns done" id="first"></div>
+          <div class="small-4 columns done"></div>
+          <div class="small-4 columns done" id="last"></div>
         </div>
         <div class="small-4 columns">
-          <form action="create" method="post">
+          <form action="/requests/create" method="post">
             <input type="hidden" name="request[title]" value="<%=@request.title%>">
             <input type="hidden" name="request[date]" value="<%=@request.date%>">
             <input type="submit" id="submit_button" value="Verstuur">

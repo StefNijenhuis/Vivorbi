@@ -1,9 +1,7 @@
 Vivorbi::Application.routes.draw do
   get "api_requests/postal_code/:pc/:nr" => 'api_requests#postal_code'
   post "requests/create"
-  post "requests/new_step_1"
-  post "requests/new_step_2"
-  post "requests/new_overview"
+  post "requests/new/:step" => 'requests#new'
   get "requests/index"
 
   patch 'users/:id/profile/:step' => 'users#profile'

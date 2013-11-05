@@ -1,7 +1,7 @@
 <% content_for :title, "Nieuwe oproep" %>
 <div class="row">
   <div class="small-12 columns">
-    <div id="header">
+    <div class="header">
       <h1>Nieuwe oproep</h1>
     </div>
   </div>
@@ -16,15 +16,23 @@
   </ul>
 </div>
 <% end %>
-<form action="/requests/new_step_2" method="post">
+<% if params[:origin] == "overview" %>
+  <form action="/requests/new/overview" method="post">
+<% else %>
+  <form action="/requests/new/step_2" method="post">
+<% end %>
   <div class="row">
     <div class="small-12 columns">
       <!-- STEP 1 - TITLE OF REQUEST -->
       <h2 class="form_title" id="title_name">Welke oproep zou u willen toevoegen?</h2>
       <p class="form_subtitle">U kunt hieronder een naam voor een oproep invoeren.</p>
     </div>
-    <div id="request_form_name" class="small-11 small-centered columns">
+  </div>
+  <div class="row">
+    <div id="request_form_name" class="small-12 columns">
       <input type="text" placeholder="Naam van uw oproep" title="Minimaal 10 karakters invullen" name="request[title]" value="<%=@request.title%>" id="name">
+      <input type="hidden" name="request[date]" value="<%=@request.date%>">
+      <input type="hidden" name="origin" value="<%=params[:origin]%>">
     </div>
   </div>
   <!-- PROGRESS BAR AND BUTTONS -->
@@ -33,12 +41,16 @@
       <span class="small-12 columns progress_text">
         Stap 1 van 3
       </span>
-      <div class="small-4 columns first_step"></div>
-      <div class="small-4 columns second_step"></div>
-      <div class="small-4 columns third_step"></div>
+      <div class="small-4 columns done" id="first"></div>
+      <div class="small-4 columns not-done"></div>
+      <div class="small-4 columns not-done end" id="last"></div>
     </div>
     <div class="small-4 columns">
-      <input type="submit" id="submit_button" value="Volgende">
+      <% if params[:origin] == "overview" %>
+        <input type="submit" id="submit_button" value="Gereed">
+      <% else %>
+        <input type="submit" id="submit_button" value="Volgende">
+      <% end %>
     </div>
   </div>
 </form>

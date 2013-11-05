@@ -10,27 +10,32 @@ class RequestsController < ApplicationController
     # No view available (yet)
   end
 
-  def new_step_1
+  def new
     @request = Request.new(request_params)
-  end
 
-  def new_step_2
-    @request = Request.new(request_params)
-    olddate = @request.date
-    if @request.date == nil
-      @request.date = Date.tomorrow
-    end
-    if(@request.invalid?)
-      render :new_step_1
-    else
-      @request.date = olddate
-    end
-  end
-
-  def new_overview
-    @request = Request.new(request_params)
-    if(@request.invalid?)
-      render :new_step_2
+    case params[:step]  
+      when "step_1"
+        render :new_step_1
+      when "step_2"
+        olddate = @request.date
+        if @request.date == nil
+          @request.date = Date.tomorrow
+        end
+        if(@request.invalid?)
+          render :new_step_1
+        else
+          @request.date = olddate
+          render :new_step_2
+        end
+      when "overview"
+        @request.invalid?
+        if(@request.errors[:date].empty? && @request.errors[:title].empty?)
+          render :new_overview
+        elsif (@request.errors[:date].any?)
+          render :new_step_2
+        elsif (@request.errors[:title].any?)
+          render :new_step_1
+        end
     end
   end
 
@@ -52,4 +57,4 @@ class RequestsController < ApplicationController
     def request_params
       params.require(:request).permit(:title, :date)
     end
-end
+  end
