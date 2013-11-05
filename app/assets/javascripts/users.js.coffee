@@ -39,7 +39,7 @@ jQuery ->
 				success: (data, textStatus, jqXHR) ->
 					# set street and place
 					resource = JSON.parse(data).resource
-					$("#address").html(resource.street+" "+resource.house_number+"<br>"+resource.postcode+" "+resource.town)
+					$("#address").html(resource.street+" "+$("#user_house_number").val()+"<br>"+resource.postcode+" "+resource.town)
 					$("#user_street").val(resource.street)
 					$("#user_place").val(resource.town)
 					$("#overlay").show()
