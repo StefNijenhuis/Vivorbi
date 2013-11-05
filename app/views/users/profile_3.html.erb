@@ -1,6 +1,6 @@
 <div id="profile_3">
 	<h1>Waar woont u?</h1>
-	<%= form_for @user, url: '/users/'+@user.id.to_s+'/profile/step_4' do |f| %>
+	<%= form_for @user, url: '/users/'+@user.id.to_s+'/profile/'+@form_target do |f| %>
 		<div>
 			<%= f.label :postal_code, "Wat is uw postcode?" %>
 			<%= f.text_field :postal_code, placeholder: "1234AA" %>

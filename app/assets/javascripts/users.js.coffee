@@ -25,9 +25,11 @@ jQuery ->
 	if $("#profile_3").length>0
 		$("#check_address").click ->
 			# ajax get address
+			newPostalCode = $("#user_postal_code").val().split(" ").join("")
 			ajaxUrl = "/api_requests/postal_code/"
-			ajaxUrl+= $("#user_postal_code").val().split(" ").join("")
+			ajaxUrl+= newPostalCode
 			ajaxUrl+= "/"+$("#user_house_number").val()
+			$("#user_postal_code").val(newPostalCode)
 			$.ajax ajaxUrl,
 				type: 'GET'
 				dataType: 'html'
