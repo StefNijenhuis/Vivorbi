@@ -45,17 +45,11 @@ class User < ActiveRecord::Base
   validates_format_of :email, with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/, on: :create
 
   def date_cannot_be_in_the_future
-<<<<<<< HEAD
-    if date_of_birth
-      if date_of_birth > Date.today
-        errors.add(:date, "kan niet in de toekomst zijn")
-=======
     if date_of_birth.blank?
       errors.add(:date_of_birth, "Datum kan niet leeg zijn")
     else
       if date_of_birth > Date.today
         errors.add(:date_of_birth, "kan niet in de toekomst zijn")
->>>>>>> 519c309cc76e29d6a51c98b9cbbd4422f7795c11
       end
     end
   end
