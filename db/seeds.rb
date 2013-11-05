@@ -14,6 +14,7 @@ User.create([{
  place: 'Leeuwarden',
  date_of_birth: '2009-09-1',
  phone: '0582512345',
+ cellphone: '0612345678',
  email: 'info@nhl.nl',
  hobbies: 'Being a building'
 }])
