@@ -2,13 +2,13 @@
 	<h1>Wanneer bent u geboren?</h1>
 	<%= form_for @user, url: '/users/'+@user.id.to_s+'/profile/'+@form_target do |f| %>
 		<label for="day">Wat is uw geboortedag?</label>
-		<input id="day" name="day" placeholder="Dag" value="<%if @user.date_of_birth then puts @user.date_of_birth.day end %>">
+		<input id="day" name="day" placeholder="Dag" value="<%=@user.date_of_birth.day unless @user.date_of_birth == nil%>">
 
 		<label for="month">Wat is uw geboortemaand?</label>
 		<select id="month" name="month">
 			<%
 			@months.each_with_index do | text, value | 
-				if @user.date_of_birth
+				if @user.date_of_birth != nil
 					if value == @user.date_of_birth.month
 						sel = " selected"
 					else
@@ -23,7 +23,7 @@
 		</select>
 		
 		<label for="year">Wat is uw geboortejaar?</label>
-		<input id="year" name="year" placeholder="Jaar" value="<%if @user.date_of_birth then puts @user.date_of_birth.year end%>">
+		<input id="year" name="year" placeholder="Jaar" value="<%=@user.date_of_birth.year unless @user.date_of_birth==nil%>">
 		
 		<%= f.hidden_field :first_name %>
 		<%= f.hidden_field :in_between %>

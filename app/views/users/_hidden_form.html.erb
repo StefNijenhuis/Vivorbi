@@ -1,4 +1,5 @@
 <%= form_for @user, url: @form_path do |f| %>
+	<input type="hidden" name="origin" value="overview">
 	<%= f.hidden_field :first_name %>
 	<%= f.hidden_field :in_between %>
 	<%= f.hidden_field :last_name %>
