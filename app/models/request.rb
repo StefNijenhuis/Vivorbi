@@ -1,7 +1,7 @@
 class Request < ActiveRecord::Base
   belongs_to :user
 
-  validates :title, :presence => true, :length => { :minimum => 10 }
+  validates :title, :presence => true
   validates :date, :presence => true
   validate :date_cannot_be_in_the_past
 

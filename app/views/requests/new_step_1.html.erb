@@ -1,31 +1,34 @@
 <% content_for :title, "Nieuwe oproep" %>
-<div class="row">
-  <div class="small-12 columns">
-    <div class="header">
-      <h1>Nieuwe oproep</h1>
-    </div>
-  </div>
-</div>
-<% if @request.errors.any? %>
-<div id="error_explanation">
-  <h2><%= I18n.t('activerecord.errors.template.header', :count => @request.errors.count) %></h2>
-  <ul>
-    <% @request.errors.full_messages.each do |msg| %>
-    <li><%= msg %></li>
-    <% end %>
-  </ul>
-</div>
-<% end %>
+    
 <%= form_for @request, url: @base_form_path+@form_target do |f| %>
   <div class="row">
     <div class="small-12 columns">
       <!-- STEP 1 - TITLE OF REQUEST -->
-      <h2 class="form_title" id="title_name">Welke oproep zou u willen toevoegen?</h2>
-      <p class="form_subtitle">U kunt hieronder een naam voor een oproep invoeren.</p>
+      <h1 class="form_title" id="title_name">Wat is uw oproep?</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-12 columns">
+      <h4>
+        <%= f.label :title, "Wat voor oproep wilt u plaatsen?" %>
+      </h4>
     </div>
   </div>
   <div class="row">
     <div id="request_form_name" class="small-12 columns">
+      <% if @request.errors.any? %>
+        <div id="error_explanation">
+          <div class="row">
+            <div class="small-12 columns">
+              <ul>
+                <% @request.errors.full_messages.each do |msg| %>
+                <%= msg %><br>
+                <% end %>
+              </ul>
+            </div>
+          </div>
+        </div>
+      <% end %>
       <%= f.text_field :title, placeholder:"Naam van uw oproep", title:"Minimaal 10 karakters invullen" %>
       <%= f.hidden_field :date %>
     </div>

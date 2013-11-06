@@ -7,3 +7,16 @@ select {
 	height: 46px;
 	font-size: ceil($font-size-base * 1.25);
 }
+// Disable placeholder on input focus
+input:focus::-webkit-input-placeholder {
+  color: transparent!important;
+}
+input:focus::-moz-placeholder {
+  color: transparent!important;
+}
+input:focus:-ms-input-placeholder {
+  color: transparent!important;
+}
+input:focus:placeholder {
+  color: transparent!important;
+}
