@@ -32,6 +32,7 @@ class UsersController < ApplicationController
     user_params.each { |key,value| @user[key] = value }
     @user.valid?
 
+    @base_form_path = '/users/'+@user.id.to_s+'/profile'
     @form_target = nil
 
     if params[:origin]=="overview"

@@ -16,11 +16,7 @@
   </ul>
 </div>
 <% end %>
-<% if params[:origin] == "overview" %>
-  <form action="/requests/new/overview" method="post">
-<% else %>
-  <form action="/requests/new/step_2" method="post">
-<% end %>
+<%= form_for @request, url: @base_form_path+@form_target do |f| %>
   <div class="row">
     <div class="small-12 columns">
       <!-- STEP 1 - TITLE OF REQUEST -->
@@ -30,9 +26,8 @@
   </div>
   <div class="row">
     <div id="request_form_name" class="small-12 columns">
-      <input type="text" placeholder="Naam van uw oproep" title="Minimaal 10 karakters invullen" name="request[title]" value="<%=@request.title%>" id="name">
-      <input type="hidden" name="request[date]" value="<%=@request.date%>">
-      <input type="hidden" name="origin" value="<%=params[:origin]%>">
+      <%= f.text_field :title, placeholder:"Naam van uw oproep", title:"Minimaal 10 karakters invullen" %>
+      <%= f.hidden_field :date %>
     </div>
   </div>
   <!-- PROGRESS BAR AND BUTTONS -->
@@ -46,11 +41,7 @@
       <div class="small-4 columns not-done end" id="last"></div>
     </div>
     <div class="small-4 columns">
-      <% if params[:origin] == "overview" %>
-        <input type="submit" class="submit_button" value="Gereed">
-      <% else %>
-        <input type="submit" class="submit_button" value="Volgende">
-      <% end %>
+      <%= f.submit @submit_text, class:"submit_button" %>
     </div>
   </div>
-</form>
+<% end %>

@@ -12,40 +12,28 @@
     <h2 class="form_title" id="title_overview">Controleer uw oproep.</h2>
     <div id="request_form_overview">
       <div class="row" id="overview_name_wrapper">
-<!--         <div class="small-9 columns"> -->
           <div class="small-3 columns">
             Titel:
           </div>
           <div id="name_overview_val" class="small-6 columns">
             <%= @request.title %>
           </div>
-          <div class="small-3 columns">
-            <form action="/requests/new/step_1" method="post">
-              <input type="hidden" name="request[title]" value="<%=@request.title%>">
-              <input type="hidden" name="request[date]" value="<%=@request.date%>">
-              <input type="hidden" name="origin" value="overview">
-              <input type="submit" class="edit-button" value="Bewerken">
-            </form>
-          </div>
-<!--         </div> -->
+          <%
+          @form_path = @base_form_path+'/step_1'
+          %>
+          <%=render 'hidden_form'%>
       </div>
       <div class="row" id="overview_date_wrapper">
-<!--         <div class="small-9 columns"> -->
           <div class="small-3 columns">
             Datum:
           </div>
           <div id="date_overview_val" class="small-6 columns">
             <%= @request.date.strftime("%d-%m-%Y") %>
           </div>
-          <div class="small-3 columns">
-            <form action="/requests/new/step_2" method="post">
-              <input type="hidden" name="request[title]" value="<%=@request.title%>">
-              <input type="hidden" name="request[date]" value="<%=@request.date%>">
-              <input type="hidden" name="origin" value="overview">
-              <input type="submit" class="edit-button" value="Bewerken">
-            </form>
-          </div>
-<!--         </div> -->
+          <%
+          @form_path = @base_form_path+'/step_2'
+          %>
+          <%=render 'hidden_form'%>
       </div>
       <!-- PROGRESS BAR AND BUTTONS -->
       <div class="row">
@@ -61,11 +49,11 @@
           <div class="small-4 columns done" id="last"></div>
         </div>
         <div class="small-4 columns">
-          <form action="/requests/create" method="post">
-            <input type="hidden" name="request[title]" value="<%=@request.title%>">
-            <input type="hidden" name="request[date]" value="<%=@request.date%>">
-            <input type="submit" class="submit_button" value="Verstuur">
-          </form>
+          <%= form_for @request do |f| %>
+            <%= f.hidden_field :title %>
+            <%= f.hidden_field :date %>
+            <%= f.submit "Verstuur", :class=>"submit_button" %>
+          <% end %>
         </div>
       </div>
     </div>

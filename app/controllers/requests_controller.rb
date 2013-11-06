@@ -13,9 +13,12 @@ class RequestsController < ApplicationController
   def new
     @request = Request.new(request_params)
     
+    @base_form_path = '/requests/new/'
     @form_target = nil
+    @submit_text = 'Volgende'
     if params[:origin]=="overview"
       @form_target='overview'
+      @submit_text = 'Gereed'
     end
 
     case params[:step]  
@@ -36,15 +39,15 @@ class RequestsController < ApplicationController
           render :new_step_2
         end
       when "overview"
-        @request.invalid?
-        if(@request.errors[:date].empty? && @request.errors[:title].empty?)
-          render :new_overview
-        elsif (@request.errors[:date].any?)
-          @form_target = 'overview'
-          render :new_step_2
-        elsif (@request.errors[:title].any?)
+        @request.valid?
+        if (@request.errors[:title].any?)
           @form_target="overview"
           render :new_step_1
+        elsif (@request.errors[:date].any?)
+          @form_target="overview"
+          render :new_step_2
+        else
+          render :new_overview
         end
     end
   end

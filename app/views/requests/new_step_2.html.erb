@@ -16,16 +16,15 @@
   </ul>
 </div>
 <% end %>
-<form action="/requests/new/overview" method="post">
+<%= form_for @request, url: @base_form_path+@form_target do |f| %>
 	<div class="row">
 	  <div class="small-12 columns">
 	    <!-- STEP 2 - DATE OF REQUEST -->
 	    <h2 class="form_title" id="title_date">Wanneer wilt u de taak uitgevoerd hebben?</h2>
 	    <div id="request_form_date">
 	      <div id="date"></div>
-	      <input type="hidden" name="request[title]" value="<%=@request.title%>">
-	      <input type="hidden" name="request[date]" id="actualDate" value="<%=@request.date%>">
-	      <input type="hidden" name="origin" value="<%=params[:origin]%>">
+	      <%= f.hidden_field :title %>
+	      <%= f.hidden_field :date %>
 	    </div>
 	  </div>
 	</div>
@@ -45,11 +44,7 @@
 	    <div class="small-4 columns not-done" id="last"></div>
 	  </div>
 	  <div class="small-4 columns">
-	    <% if params[:origin] == "overview" %>
-	        <input type="submit" class="submit_button" value="Gereed">
-	    <% else %>
-	        <input type="submit" class="submit_button" value="Volgende">
-	    <% end %>
+      	<%= f.submit @submit_text, class:"submit_button" %>
 	  </div>
 	</div>
-</form>
+<% end %>

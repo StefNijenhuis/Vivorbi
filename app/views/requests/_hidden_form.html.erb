@@ -1,0 +1,8 @@
+<div class="small-3 columns">
+<%= form_for @request, url: @form_path do |f| %>
+	<input type="hidden" name="origin" value="overview">
+	<%= f.hidden_field :title %>
+	<%= f.hidden_field :date %>
+		<%=f.submit "Bewerken", :class => 'edit-button' %>
+<% end %>
+</div>
