@@ -6,6 +6,7 @@ Vivorbi::Application.routes.draw do
   
   get 'users/:id/profile/:step' => 'users#profile'
   patch 'users/:id/profile/:step' => 'users#profile'
+  post 'users/:id/profile/:step' => 'users#profile'
   resources :requests
   resources :users
   # The priority is based upon order of creation: first created -> highest priority.

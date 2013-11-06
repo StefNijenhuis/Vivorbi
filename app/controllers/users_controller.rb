@@ -15,14 +15,20 @@ class UsersController < ApplicationController
   # GET /users/new
   def new
     @user = User.new
-    @user.save(validate: false)
+    @user.id = 0
     @form_target = 'step_2'
     render :profile_1
   end
 
   # PATCH /users/1/profile/step_x
   def profile
-    @user = User.find(params[:id])
+    if(params[:id].to_i==0) 
+      @user = User.new
+      @user.id = 0
+    else
+      @user = User.find(params[:id])
+    end
+    @i = params[:id]
     user_params.each { |key,value| @user[key] = value }
     @user.valid?
 
