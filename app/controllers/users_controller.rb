@@ -97,21 +97,7 @@ class UsersController < ApplicationController
           end
         end
       end
-      @form_target = 'overview'
-      render :profile_overview
     end
-  end
-
-  # PATCH /users/1/profile_5
-  def profile_5
-    @user = User.find(params[:id])
-    user_params.each { |key,value| @user[key] = value }
-  end
-
-  # PATCH /users/1/profile_overview
-  def profile_overview
-    @user = User.find(params[:id])
-    user_params.each { |key,value| @user[key] = value }
   end
 
   # GET /users/1/edit

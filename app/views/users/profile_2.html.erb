@@ -5,30 +5,43 @@
 		</h1>
 	</div>
 	<%= form_for @user, url: '/users/'+@user.id.to_s+'/profile/'+@form_target do |f| %>
+		<%
+		custom_error_class='error'
+		error_text=''
+		if @user.errors[:date_of_birth].any?
+			custom_class=custom_error_class
+			error_text="<small class='"+custom_class+"'>"+@user.errors.full_messages_for(:date_of_birth).join("<br>")+"</small>"
+		end
+		%>
 		<div class="row">
 			<div class="small-4 columns">
 				<h4>
-					<label for="day">Wat is uw geboortedag?</label>
+					<label class="<%=custom_class%>" for="day">Wat is uw geboortedag?</label>
 				</h4>
 			</div>
 			<div class="small-4 columns">
 				<h4>
-					<label for="month">Wat is uw geboortemaand?</label>
+					<label class="<%=custom_class%>" for="month">Wat is uw geboortemaand?</label>
 				</h4>
 			</div>
 			<div class="small-4 columns">
 				<h4>
-					<label for="year">Wat is uw geboortejaar?</label>
+					<label class="<%=custom_class%>" for="year">Wat is uw geboortejaar?</label>
 				</h4>
 			</div>
 		</div>
 		<div class="row">
+			<div class="small-12 columns">
+				<%= raw error_text %>
+			</div>
+		</div>
+		<div class="row">
 			<div class="small-4 columns">
-				<input type="text" id="day" name="day" placeholder="Dag" value="<%=@user.date_of_birth.day unless @user.date_of_birth == nil%>">
+				<input class="<%=custom_class%>" type="text" id="day" name="day" placeholder="Dag" value="<%=@user.date_of_birth.day unless @user.date_of_birth == nil%>">
 			</div>
 
 			<div class="small-4 columns">
-				<select id="month" name="month">
+				<select class="<%=custom_class%>" id="month" name="month">
 					<%
 					@months.each_with_index do | text, value | 
 						if @user.date_of_birth != nil
@@ -47,7 +60,7 @@
 			</div>
 			
 			<div class="small-4 columns">
-				<input type="text" id="year" name="year" placeholder="Jaar" value="<%=@user.date_of_birth.year unless @user.date_of_birth==nil%>">
+				<input class="<%=custom_class%>" type="text" id="year" name="year" placeholder="Jaar" value="<%=@user.date_of_birth.year unless @user.date_of_birth==nil%>">
 			</div>
 		</div>
 		
