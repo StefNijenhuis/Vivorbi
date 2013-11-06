@@ -54,6 +54,19 @@
 				<%= f.text_field :last_name, placeholder: "Achternaam", class:custom_class %>
 			</div>
 		</div>
+		<div class="row">
+			<div class="small-4 columns">
+				<h4>
+					<%= f.label :avatar, "Hoe ziet u eruit?" %>
+				</h4>
+			</div>
+			<div class="small-8 columns">
+				<%= f.file_field :avatar, class:"hidden" %>
+				<button id="upload_avatar" class="submit_button">
+					Kies een foto
+				</button>
+			</div>
+		</div>
 		
 		<%= f.hidden_field :street %>
 		<%= f.hidden_field :house_number %>

@@ -25,6 +25,8 @@ en:
       request:
         title: "Een oproep"
         date: "Een datum"
+      user:
+        first_name: "Voornaam"
     errors:
       template:
         header: "Los de volgende problemen op om verder te gaan"

@@ -30,7 +30,7 @@ class UsersController < ApplicationController
       @user = User.find(params[:id])
     end
     @i = params[:id]
-    user_params.each { |key,value| @user[key] = value }
+    user_params.each { |key,value| if key!="avatar" then @user[key] = value end }
     @user.valid?
 
     @base_form_path = '/users/'+@user.id.to_s+'/profile/'
