@@ -22,11 +22,39 @@
   </head>
 
   <body>
-
-  <div class="row wrapper">
+      <div class="row">
+        <div class="small-2 columns logo">
+          <a href="#">Vivorbi</a>
+        </div>
+        <a class="toggleMenu" href="#">Menu</a>
+          <ul class="small-10 columns nav">
+            <div class="nav_button">
+              <li>
+                <a href="#">Pagina1</a>
+              </li>
+            </div>
+              <div class="nav_button">
+              <li>
+                <a href="#">Pagina3</a>
+              </li>
+            </div>
+              <div class="nav_button">
+              <li>
+                <a href="#">Pagina3</a>
+              </li>
+            </div>
+              <div class="nav_button">
+              <li>
+                <a href="#">Pagina4</a>
+              </li>
+            </div>
+          </ul>
+      </div>
+    </div>
+    </div> 
+    <div class="row wrapper">
       <%= yield %>
     </div>
-  </div>
 
     <%= javascript_include_tag "application" %>
   </body>
