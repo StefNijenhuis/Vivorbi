@@ -1,16 +1,27 @@
 <div id="profile_1">
 	<h1>Wie bent u?</h1>
 	<%= form_for @user, url: '/users/'+@user.id.to_s+'/profile/'+@form_target do |f| %>
+		<%
+		custom_error_class='error'
+		# validation display
+		custom_class=''
+		error_text=''
+		if @user.errors[:first_name].any?
+			custom_class=custom_error_class
+			error_text="<small class='"+custom_class+"'>"+@user.errors.full_messages_for(:first_name).join("<br>")+"</small>"
+		end
+		%>
 		<div class="row">
 			<div class="small-12 columns">
 				<h4>
-					<%= f.label :first_name, "Wat is uw voornaam?" %>
+					<%= f.label :first_name, "Wat is uw voornaam?", class:custom_class %>
 				</h4>
+				<%= raw error_text %>
 			</div>
 		</div>
 		<div class="row">
 			<div class="small-12 columns">
-				<%= f.text_field :first_name, placeholder: "Voornaam" %>
+				<%= f.text_field :first_name, placeholder: "Voornaam", class:custom_class, autofocus:"autofocus" %>
 			</div>
 		</div>
 
@@ -20,18 +31,27 @@
 					<%= f.label :in_between, "Heeft uw naam een tussenvoegsel?" %>
 				</h4>
 			</div>
+		<%
+		custom_class=''
+		error_text=''
+		if @user.errors[:last_name].any?
+			custom_class='error'
+			error_text="<small class='error'>"+@user.errors.full_messages_for(:last_name).join("<br>")+"</small>"
+		end
+		%>
 			<div class="small-8 columns">
 				<h4>
-					<%= f.label :last_name, "Wat is uw achternaam?" %>
+					<%= f.label :last_name, "Wat is uw achternaam?", class:custom_class %>
 				</h4>
+				<%= raw error_text %>
 			</div>
 		</div>
 		<div class="row">
 			<div class="small-4 columns">
-				<%= f.text_field :in_between, placeholder: "Tussenv" %>
+				<%= f.text_field :in_between, placeholder: "Tussenvoegsel" %>
 			</div>
 			<div class="small-8 columns">
-				<%= f.text_field :last_name, placeholder: "Achternaam" %>
+				<%= f.text_field :last_name, placeholder: "Achternaam", class:custom_class %>
 			</div>
 		</div>
 		
