@@ -1,6 +1,6 @@
 <div id="profile_1">
 	<h1>Wie bent u?</h1>
-	<%= form_for @user, url: '/users/'+@user.id.to_s+'/profile/'+@form_target do |f| %>
+	<%= form_for @user, url: @base_form_path+@form_target do |f| %>
 		<%
 		custom_error_class='error'
 		# validation display
@@ -64,6 +64,7 @@
 		<%= f.hidden_field :cellphone %>
 		<%= f.hidden_field :email %>
 		<%= f.hidden_field :hobbies %>
+		<input type="hidden" name="origin" value="step_1">
 
 		<div class="row">
 			<div class="small-4 push-4 columns">

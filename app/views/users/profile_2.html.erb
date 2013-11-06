@@ -4,11 +4,11 @@
 			Wanneer bent u geboren?
 		</h1>
 	</div>
-	<%= form_for @user, url: '/users/'+@user.id.to_s+'/profile/'+@form_target do |f| %>
+	<%= form_for @user, url: @base_form_path+@form_target do |f| %>
 		<%
 		custom_error_class='error'
 		error_text=''
-		if @user.errors[:date_of_birth].any?
+		if @user.errors[:date_of_birth].any? && params[:origin]!="step_1"
 			custom_class=custom_error_class
 			error_text="<small class='"+custom_class+"'>"+@user.errors.full_messages_for(:date_of_birth).join("<br>")+"</small>"
 		end
@@ -78,6 +78,7 @@
 		<%= f.hidden_field :cellphone %>
 		<%= f.hidden_field :email %>
 		<%= f.hidden_field :hobbies %>
+		<input type="hidden" name="origin" value="step_2">
 		
 		<div class="row">
 			<div class="small-4 columns">

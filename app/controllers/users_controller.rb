@@ -16,6 +16,7 @@ class UsersController < ApplicationController
   def new
     @user = User.new
     @user.id = 0
+    @base_form_path = '/users/'+@user.id.to_s+'/profile/'
     @form_target = 'step_2'
     render :profile_1
   end
@@ -32,7 +33,7 @@ class UsersController < ApplicationController
     user_params.each { |key,value| @user[key] = value }
     @user.valid?
 
-    @base_form_path = '/users/'+@user.id.to_s+'/profile'
+    @base_form_path = '/users/'+@user.id.to_s+'/profile/'
     @form_target = nil
 
     if params[:origin]=="overview"

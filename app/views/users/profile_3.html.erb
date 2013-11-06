@@ -4,7 +4,7 @@
 			Waar woont u?
 		</h1>
 	</div>
-	<%= form_for @user, url: '/users/'+@user.id.to_s+'/profile/'+@form_target do |f| %>
+	<%= form_for @user, url: @base_form_path+@form_target do |f| %>
 		<div class="row">
 			<div class="small-12 columns">
 				<h4><%= f.label :postal_code, "Wat is uw postcode?" %></h4>
@@ -77,6 +77,7 @@
 				<%= f.hidden_field :cellphone %>
 				<%= f.hidden_field :email %>
 				<%= f.hidden_field :hobbies %>
+				<input type="hidden" name="origin" value="step_3">
 				<div class="small-6 columns">
 					<%= f.submit "Ja", :class => 'submit_button' %>
 				</div>

@@ -10,7 +10,7 @@
 			<%=@user.first_name%> <%=@user.in_between%> <%=@user.last_name%>
 		</div>
 		<%
-		@form_path = @base_form_path+'/step_1'
+		@form_path = @base_form_path+'step_1'
 		%>
 		<%=render 'hidden_form'%>
 	</div>
@@ -19,14 +19,14 @@
 		<div class="small-6 columns">
 			<%= @user.date_of_birth.strftime("%d-%m-%Y") unless @user.date_of_birth == nil %>
 		</div>
-		<% @form_path = @base_form_path+'/step_2' %>
+		<% @form_path = @base_form_path+'step_2' %>
 		<%=render 'hidden_form'%>
 	</div>
 	<div class="row">
 		<div class="small-6 columns">
 			<%=@user.street%> <%=@user.house_number%>, <%=@user.postal_code%> <%=@user.place%>
 		</div>
-		<% @form_path = @base_form_path+'/step_3' %>
+		<% @form_path = @base_form_path+'step_3' %>
 		<%=render 'hidden_form'%>
 	</div>
 	<div class="row">
@@ -35,7 +35,7 @@
 			<div><%= "mob: "+@user.cellphone unless @user.cellphone.blank? %></div>
 			<div><%= "e-mail: "+@user.email unless @user.email.blank? %></div>
 		</div>
-		<% @form_path = @base_form_path+'/step_4' %>
+		<% @form_path = @base_form_path+'step_4' %>
 		<%=render 'hidden_form'%>
 	</div>
 		<div class="row">
@@ -46,7 +46,7 @@
 					Er zijn geen hobbies ingevuld, klik op bewerken als u alsnog een hobby wilt toevoegen.
 				<% end %>
 			</div>
-			<% @form_path = @base_form_path+'/step_5' %>
+			<% @form_path = @base_form_path+'step_5' %>
 			<%=render 'hidden_form'%>
 		</div>
 
