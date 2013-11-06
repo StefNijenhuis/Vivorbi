@@ -1,6 +1,7 @@
 // Mixin for text field
 @mixin text-field {
- 
+    border: solid 2px #000;
+    font-size: ceil($font-size-base * 1.25);
 }
  
 // Mixin for button
@@ -15,9 +16,10 @@
   font-size: floor($font-size-base * 2.15);
   padding: 10px 0;
   border: none;
+  margin: 10px 0;
   @include rounded($radius: $button-radius);
   @include shadow($offset: 7px, $blur: 3px, $color: rgba(0, 0, 0, 0.35));
- 
+
   color: $text-color !important;
   background: $color;
  

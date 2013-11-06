@@ -9,10 +9,10 @@
 	<%= form_for @user, url: '/users/'+@user.id.to_s+'/profile/'+@form_target do |f| %>
 		<div class="row">
 			<div class="small-6 columns">
-				<%= f.label :phone, "Wat is uw telefoonnummer?" %>
+				<h4><%= f.label :phone, "Wat is uw telefoonnummer?" %></h4>
 			</div>
 			<div class="small-6 columns">
-				<%= f.label :cellphone, "Wat is uw mobiele nummer?" %>
+				<h4><%= f.label :cellphone, "Wat is uw mobiele nummer?" %></h4>
 			</div>
 		</div>
 		<div class="row">
@@ -26,7 +26,11 @@
 		
 		<div class="row">
 			<div class="small-12 columns">
-				<%= f.label :email, "Wat is uw e-mailadres?" %>
+				<h4><%= f.label :email, "Wat is uw e-mailadres?" %></h4>
+			</div>
+		</div>
+		<div class="row">
+			<div class="small-12 columns">
 				<%= f.text_field :email, type: "email", placeholder: "E-mailadres" %>
 			</div>
 		</div>

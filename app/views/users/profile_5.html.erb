@@ -8,6 +8,11 @@
 	</div>
 	<%= form_for @user, url: '/users/'+@user.id.to_s+'/profile/'+@form_target do |f| %>
 	<div class="row">
+			<div class="small-12 columns">
+				<h4><%= f.label :hobbies, "Wat zijn uw hobbies?" %></h4>
+			</div>
+		</div>
+	<div class="row">
 		<div class="small-12 columns">
 			<%= f.text_area :hobbies %>
 		</div>

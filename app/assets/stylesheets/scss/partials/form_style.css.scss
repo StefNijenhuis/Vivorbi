@@ -1,0 +1,9 @@
+input[type="text"], input[type="email"], textarea {
+	@include text-field;
+	@include rounded($radius: $button-radius);
+}
+select {
+	@include rounded($radius: $button-radius);
+	height: 46px;
+	font-size: ceil($font-size-base * 1.25);
+}

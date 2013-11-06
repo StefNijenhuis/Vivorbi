@@ -7,22 +7,22 @@
 	<%= form_for @user, url: '/users/'+@user.id.to_s+'/profile/'+@form_target do |f| %>
 		<div class="row">
 			<div class="small-12 columns">
-			<%= f.label :postal_code, "Wat is uw postcode?" %>
+				<h4><%= f.label :postal_code, "Wat is uw postcode?" %></h4>
 			</div>
 		</div>
 		<div class="row">
 			<div class="small-12 columns">
-				<%= f.text_field :postal_code, placeholder: "1234AA" %>
+				<h4><%= f.text_field :postal_code, placeholder: "1234AA" %></h4>
 			</div>
 		</div>
 		<div class="row">
 			<div class="small-12 columns">
-				<%= f.label :house_number, "Wat is uw huisnummer?" %>
+				<h4><%= f.label :house_number, "Wat is uw huisnummer?" %></h4>
 			</div>
 		</div>
 		<div class="row">
 			<div class="small-12 columns">
-				<%= f.text_field :house_number, placeholder: "Huisnummer" %>
+				<h4><%= f.text_field :house_number, placeholder: "Huisnummer" %></h4>
 			</div>
 		</div>
 			
@@ -62,7 +62,7 @@
 			</div>
 			<div class="row">
 				<div class="small-12 columns">
-					<p id="address"></p>
+					<div id="address"></div>
 				</div>
 			</div>
 			<div class="row">

@@ -31,22 +31,24 @@
 	</div>
 	<div class="row">
 		<div class="small-6 columns">
-			<div><%= "tel: "+@user.phone unless @user.phone.empty? %></div>
-			<div><%= "mob: "+@user.cellphone unless @user.cellphone.empty? %></div>
-			<div><%= "e-mail: "+@user.email unless @user.email.empty? %></div>
+			<div><%= "tel: "+@user.phone unless @user.phone.blank? %></div>
+			<div><%= "mob: "+@user.cellphone unless @user.cellphone.blank? %></div>
+			<div><%= "e-mail: "+@user.email unless @user.email.blank? %></div>
 		</div>
 		<% @form_path = @base_form_path+'/step_4' %>
 		<%=render 'hidden_form'%>
 	</div>
-	<% unless @user.hobbies.empty? %>
 		<div class="row">
 			<div class="small-6 columns">
-			<%= @user.hobbies%>
+				<% unless @user.hobbies.blank? %>
+					<%= @user.hobbies%>
+				<% else %>
+					Er zijn geen hobbies ingevuld, klik op bewerken als u alsnog een hobby wilt toevoegen.
+				<% end %>
 			</div>
 			<% @form_path = @base_form_path+'/step_5' %>
 			<%=render 'hidden_form'%>
 		</div>
-	<% end %>
 
 	<%= form_for @user do |f| %>
 		<%= f.hidden_field :first_name %>

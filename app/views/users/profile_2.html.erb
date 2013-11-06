@@ -7,18 +7,24 @@
 	<%= form_for @user, url: '/users/'+@user.id.to_s+'/profile/'+@form_target do |f| %>
 		<div class="row">
 			<div class="small-4 columns">
-				<label for="day">Wat is uw geboortedag?</label>
+				<h4>
+					<label for="day">Wat is uw geboortedag?</label>
+				</h4>
 			</div>
 			<div class="small-4 columns">
-				<label for="month">Wat is uw geboortemaand?</label>
+				<h4>
+					<label for="month">Wat is uw geboortemaand?</label>
+				</h4>
 			</div>
 			<div class="small-4 columns">
-				<label for="year">Wat is uw geboortejaar?</label>
+				<h4>
+					<label for="year">Wat is uw geboortejaar?</label>
+				</h4>
 			</div>
 		</div>
 		<div class="row">
 			<div class="small-4 columns">
-				<input id="day" name="day" placeholder="Dag" value="<%=@user.date_of_birth.day unless @user.date_of_birth == nil%>">
+				<input type="text" id="day" name="day" placeholder="Dag" value="<%=@user.date_of_birth.day unless @user.date_of_birth == nil%>">
 			</div>
 
 			<div class="small-4 columns">
@@ -41,7 +47,7 @@
 			</div>
 			
 			<div class="small-4 columns">
-				<input id="year" name="year" placeholder="Jaar" value="<%=@user.date_of_birth.year unless @user.date_of_birth==nil%>">
+				<input type="text" id="year" name="year" placeholder="Jaar" value="<%=@user.date_of_birth.year unless @user.date_of_birth==nil%>">
 			</div>
 		</div>
 		

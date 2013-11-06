@@ -3,9 +3,9 @@
 	<%= form_for @user, url: '/users/'+@user.id.to_s+'/profile/'+@form_target do |f| %>
 		<div class="row">
 			<div class="small-12 columns">
-				<h2>
+				<h4>
 					<%= f.label :first_name, "Wat is uw voornaam?" %>
-				</h2>
+				</h4>
 			</div>
 		</div>
 		<div class="row">
@@ -15,10 +15,15 @@
 		</div>
 
 		<div class="row">
-			<div class="small-12 columns">
-				<h2>
+			<div class="small-4 columns">
+				<h4>
+					<%= f.label :in_between, "Heeft uw naam een tussenvoegsel?" %>
+				</h4>
+			</div>
+			<div class="small-8 columns">
+				<h4>
 					<%= f.label :last_name, "Wat is uw achternaam?" %>
-				</h2>
+				</h4>
 			</div>
 		</div>
 		<div class="row">
