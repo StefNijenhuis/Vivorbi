@@ -7,31 +7,82 @@
 		</div>
 	</div>
 	<%= form_for @user, url: '/users/'+@user.id.to_s+'/profile/'+@form_target do |f| %>
+	<%
+	custom_error_class='error'
+	%>
 		<div class="row">
+	<%
+	# validation display
+	custom_class=''
+	error_text=''
+	if @user.errors[:phone].any?
+		custom_class=custom_error_class
+		error_text="<small class='"+custom_class+"'>"+@user.errors.full_messages_for(:phone).join("<br>")+"</small>"
+	end
+	%>
 			<div class="small-6 columns">
-				<h4><%= f.label :phone, "Wat is uw telefoonnummer?" %></h4>
+				<h4>
+					<%= f.label :phone, "Wat is uw telefoonnummer?", class:custom_class %>
+				</h4>
+				<%= raw error_text %>
 			</div>
+	<%
+	# validation display
+	custom_class=''
+	error_text=''
+	if @user.errors[:cellphone].any?
+		custom_class=custom_error_class
+		error_text="<small class='"+custom_class+"'>"+@user.errors.full_messages_for(:cellphone).join("<br>")+"</small>"
+	end
+	%>
 			<div class="small-6 columns">
-				<h4><%= f.label :cellphone, "Wat is uw mobiele nummer?" %></h4>
+				<h4>
+					<%= f.label :cellphone, "Wat is uw mobiele nummer?", class:custom_class %>
+				</h4>
+				<%= raw error_text %>
 			</div>
 		</div>
 		<div class="row">
+	<%
+	# validation display
+	custom_class=''
+	if @user.errors[:phone].any?
+		custom_class=custom_error_class
+	end
+	%>
 			<div class="small-6 columns">
-				<%= f.text_field :phone, placeholder: "Telefoonnummer" %>
+				<%= f.text_field :phone, placeholder: "Telefoonnummer", class:custom_class %>
 			</div>
+	<%
+	# validation display
+	custom_class=''
+	if @user.errors[:cellphone].any?
+		custom_class=custom_error_class
+	end
+	%>
 			<div class="small-6 columns">
-				<%= f.text_field :cellphone, placeholder: "Mobiele nummer" %>
+				<%= f.text_field :cellphone, placeholder: "Mobiele nummer", class:custom_class %>
 			</div>
 		</div>
 		
+	<%
+	# validation display
+	custom_class=''
+	error_text=''
+	if @user.errors[:email].any?
+		custom_class=custom_error_class
+		error_text="<small class='"+custom_class+"'>"+@user.errors.full_messages_for(:email).join("<br>")+"</small>"
+	end
+	%>
 		<div class="row">
 			<div class="small-12 columns">
-				<h4><%= f.label :email, "Wat is uw e-mailadres?" %></h4>
+				<h4><%= f.label :email, "Wat is uw e-mailadres?", class:custom_class %></h4>
+				<%= raw error_text %>
 			</div>
 		</div>
 		<div class="row">
 			<div class="small-12 columns">
-				<%= f.text_field :email, type: "email", placeholder: "E-mailadres" %>
+				<%= f.text_field :email, type: "email", placeholder: "E-mailadres", class:custom_class %>
 			</div>
 		</div>
 		
