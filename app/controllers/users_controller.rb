@@ -44,7 +44,7 @@ class UsersController < ApplicationController
       @form_target = 'step_2' if @form_target==nil
       render :profile_1
     when "step_2"
-      if @user.errors[:first_name].empty? && @user.errors[:last_name].empty?
+      if @user.validates_step_1?
         @months = ["Kies een maand","Januari","Februari","Maart","April","Mei","Juni","Juli","Augustus","September","Oktober","November","December"]
         @form_target = 'step_3' if @form_target==nil
         render :profile_2
@@ -53,7 +53,7 @@ class UsersController < ApplicationController
         render :profile_1
       end
     when "step_3"
-      if @user.errors[:date_of_birth].empty?
+      if @user.validates_step_2?
         @form_target = 'step_4' if @form_target==nil
         render :profile_3
       else
@@ -62,7 +62,7 @@ class UsersController < ApplicationController
         render :profile_2
       end
     when "step_4"
-      if @user.errors[:street].empty? && @user.errors[:house_number].empty? && @user.errors[:postal_code].empty? && @user.errors[:place].empty?
+      if @user.validates_step_3?
         @user.postal_code.split(" ").join("")
         @form_target = 'step_5' if @form_target==nil
         render :profile_4
@@ -71,7 +71,7 @@ class UsersController < ApplicationController
         render :profile_3
       end
     when "step_5"
-      if @user.errors[:email].empty? && @user.errors[:phone].empty? && @user.errors[:cellphone].empty?
+      if @user.validates_step_4?
         @form_target = 'overview'
         render :profile_5
       else
@@ -79,6 +79,24 @@ class UsersController < ApplicationController
         render :profile_4
       end
     when "overview"
+      @form_target='overview'
+      unless @user.validates_step_1?
+        render :profile_1
+      else
+        unless @user.validates_step_2?
+          render :profile_2
+        else
+          unless @user.validates_step_3?
+            render :profile_3
+          else
+            unless @user.validates_step_4?
+              render :profile_4
+            else
+              render :profile_overview
+            end
+          end
+        end
+      end
       @form_target = 'overview'
       render :profile_overview
     end
