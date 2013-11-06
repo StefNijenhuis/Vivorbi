@@ -19,4 +19,12 @@ body{
 	background-color: $wrapper-bg;
 	// margin-top: 50px;
 	padding: 30px;
+  @include rounded($radius: 0 0 10px 10px);
+}
+
+form {
+  margin: 0px
+}
+.wrapper hr {
+  margin: 0px;
 }

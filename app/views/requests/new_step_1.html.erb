@@ -1,50 +1,50 @@
 <% content_for :title, "Nieuwe oproep" %>
     
 <%= form_for @request, url: @base_form_path+@form_target do |f| %>
+  <%
+    custom_error_class='error'
+    # validation display
+    custom_class=''
+    error_text=''
+    if @request.errors[:title].any?
+      custom_class=custom_error_class
+      error_text="<small class='"+custom_class+"'>"+@request.errors.full_messages_for(:title).join("<br>")+"</small>"
+    end
+    %>
   <div class="row">
     <div class="small-12 columns">
-      <!-- STEP 1 - TITLE OF REQUEST -->
       <h1 class="form_title" id="title_name">Wat is uw oproep?</h1>
     </div>
   </div>
   <div class="row">
     <div class="small-12 columns">
       <h4>
-        <%= f.label :title, "Wat voor oproep wilt u plaatsen?" %>
+        <%= f.label :title, "Wat voor oproep wilt u plaatsen?", class:custom_class %>
       </h4>
+      <%= raw error_text %>
     </div>
   </div>
   <div class="row">
     <div id="request_form_name" class="small-12 columns">
-      <% if @request.errors.any? %>
-        <div id="error_explanation">
-          <div class="row">
-            <div class="small-12 columns">
-              <ul>
-                <% @request.errors.full_messages.each do |msg| %>
-                <%= msg %><br>
-                <% end %>
-              </ul>
-            </div>
-          </div>
-        </div>
-      <% end %>
-      <%= f.text_field :title, placeholder:"Naam van uw oproep", title:"Minimaal 10 karakters invullen" %>
+      <%= f.text_field :title, placeholder:"Naam van uw oproep", title:"Minimaal 10 karakters invullen", class:custom_class %>
       <%= f.hidden_field :date %>
+      <input type="hidden" name="origin" value="<%= params[:origin]%>">
     </div>
   </div>
-  <!-- PROGRESS BAR AND BUTTONS -->
+
   <div class="row">
-    <div id="progress_bar" class="small-4 push-4 columns">
-      <span class="small-12 columns progress_text">
-        Stap 1 van 3
-      </span>
-      <div class="small-4 columns done" id="first"></div>
-      <div class="small-4 columns not-done"></div>
-      <div class="small-4 columns not-done end" id="last"></div>
-    </div>
-    <div class="small-4 columns">
+    <div class="large-4 push-8 columns">
       <%= f.submit @submit_text, class:"submit_button" %>
     </div>
   </div>
+  <div class="row">
+        <div id="progress_bar" class="small-12 columns">
+          <span class="small-12 columns progress_text">
+            Stap 1 van 3
+          </span>
+          <div class="small-4 columns done" id="first"></div>
+          <div class="small-4 columns not-done"></div>
+          <div class="small-4 columns not-done" id="last"></div>
+        </div>
+     </div>
 <% end %>

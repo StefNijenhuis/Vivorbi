@@ -3,21 +3,30 @@
 }
 .progress_text {
   text-align: center;
-  margin: 10px 0 0 0;
+  position: relative;
+  bottom: -30px;
 }
 .done {
   background-color: $brand-success;
   margin-top: 10px;
-  height: 25px;
+  height: 10px;
+  position: relative;
+  margin: 0 -30px;
+  bottom: -30px;
+  width: calc(33.33% + 60px);
 }
 .not-done {
   background-color: $brand-alert;
   margin-top: 10px;
-  height: 25px;
+  height: 10px;
+  position: relative;
+  margin: 0 -30px;
+  bottom: -30px;
+  width: calc(33.33% + 60px);
 }
 #first {
-	@include rounded($radius: 5px 0px 0px 5px);
+	@include rounded($radius: 0px 0px 0px 5px);
 }
 #last {
-	@include rounded($radius: 0px 5px 5px 0px);
+	@include rounded($radius: 0px 0px 5px 0px);
 }

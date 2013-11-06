@@ -2,53 +2,42 @@
 <% content_for :title, "Nieuwe oproep" %>
 <div class="row">
   <div class="small-12 columns">
-    <div class="header">
-      <h1>Nieuwe oproep</h1>
+    <h1 class="form_title" id="title_overview">Is dit de oproep die u wilt plaatsen?</h1>
     </div>
-  </div>
-</div>
-<div class="row">
-  <div class="small-12 columns">
-    <h2 class="form_title" id="title_overview">Controleer uw oproep.</h2>
-    <div id="request_form_overview">
-      <div class="row" id="overview_name_wrapper">
-          <div class="small-3 columns">
-            Titel:
+    </div>
+      <div class="row">
+          <div class="large-2 small-3 columns overview_title">
+            <h4>Titel:</h4>
           </div>
-          <div id="name_overview_val" class="small-6 columns">
+          <div class="large-8 small-5 columns overview_val">
             <%= @request.title %>
           </div>
-          <%
-          @form_path = @base_form_path+'/step_1'
-          %>
+            <%
+            @form_path = @base_form_path+'/step_1'
+            %>
           <%=render 'hidden_form'%>
       </div>
-      <div class="row" id="overview_date_wrapper">
-          <div class="small-3 columns">
-            Datum:
+      <hr>
+      <div class="row">
+          <div class="large-2 small-3 columns overview_title">
+            <h4>Datum:</h4>
           </div>
-          <div id="date_overview_val" class="small-6 columns">
+          <div class="large-8 small-5 columns overview_val">
             <%= @request.date.strftime("%d-%m-%Y") %>
           </div>
-          <%
-          @form_path = @base_form_path+'/step_2'
-          %>
+            <%
+            @form_path = @base_form_path+'/step_2'
+            %>
           <%=render 'hidden_form'%>
       </div>
       <!-- PROGRESS BAR AND BUTTONS -->
       <div class="row">
-        <div class="prev small-4 columns">
-          Vorige
+        <div class="small-6 large-4 columns">
+          <div class="prev">
+            Vorige
+          </div>
         </div>
-        <div id="progress_bar" class="small-4 columns">
-          <span class="small-12 columns progress_text">
-            Stap 3 van 3
-          </span>
-          <div class="small-4 columns done" id="first"></div>
-          <div class="small-4 columns done"></div>
-          <div class="small-4 columns done" id="last"></div>
-        </div>
-        <div class="small-4 columns">
+        <div class="small-6 large-4 columns">
           <%= form_for @request do |f| %>
             <%= f.hidden_field :title %>
             <%= f.hidden_field :date %>
@@ -56,6 +45,17 @@
           <% end %>
         </div>
       </div>
-    </div>
-  </div>
-</div>
+      <div class="row">
+        <div id="progress_bar" class="small-12 columns">
+          <div class="small-4 small-centered columns progress_text">
+            Stap 3 van 3
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="small-12 columns">
+          <div class="small-4 columns done" id="first"></div>
+          <div class="small-4 columns done"></div>
+          <div class="small-4 columns done" id="last"></div>
+        </div>
+      </div>
