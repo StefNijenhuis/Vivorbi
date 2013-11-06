@@ -5,6 +5,7 @@
 		</h1>
 	</div>
 	<%= form_for @user, url: @base_form_path+@form_target do |f| %>
+	<%= @p.inspect %>
 		<%
 		custom_error_class='error'
 		error_text=''

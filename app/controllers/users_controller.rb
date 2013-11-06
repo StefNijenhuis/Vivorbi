@@ -46,6 +46,7 @@ class UsersController < ApplicationController
       render :profile_1
     when "step_2"
       if @user.validates_step_1?
+        @p = params[:user][:avatar].tempfile
         @months = ["Kies een maand","Januari","Februari","Maart","April","Mei","Juni","Juli","Augustus","September","Oktober","November","December"]
         @form_target = 'step_3' if @form_target==nil
         render :profile_2
