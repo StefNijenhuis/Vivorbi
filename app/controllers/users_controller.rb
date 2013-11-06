@@ -46,7 +46,15 @@ class UsersController < ApplicationController
       render :profile_1
     when "step_2"
       if @user.validates_step_1?
-        @p = params[:user][:avatar].tempfile
+        # file upload
+        require 'FileUtils'
+        Dir.mkdir("#{Rails.root}/public/avatars/tmp") unless File.exists?("#{Rails.root}/public/avatars/tmp")
+        
+        @avatar_temp_name = (0...25).map { (65 + rand(26)).chr }.join
+        tempfile = user_params[:avatar].tempfile
+        
+        FileUtils.mv(tempfile, "#{Rails.root}/public/avatars/tmp/#{@avatar_temp_name}.tmp")
+
         @months = ["Kies een maand","Januari","Februari","Maart","April","Mei","Juni","Juli","Augustus","September","Oktober","November","December"]
         @form_target = 'step_3' if @form_target==nil
         render :profile_2
@@ -112,7 +120,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     @user.phone.gsub!(/[^0-9 ]/i, '')
     @user.cellphone.gsub!(/[^0-9 ]/i, '')
-
+    @user.avatar = File.open("#{Rails.root}/public/avatars/tmp/#{params[:avatar_temp_name]}.tmp")
     respond_to do |format|
       if @user.save
         format.html { redirect_to @user, notice: 'User was successfully created.' }

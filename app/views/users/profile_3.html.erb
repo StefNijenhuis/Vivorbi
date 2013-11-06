@@ -77,6 +77,7 @@
 				<%= f.hidden_field :cellphone %>
 				<%= f.hidden_field :email %>
 				<%= f.hidden_field :hobbies %>
+				<input type="hidden" name="avatar_temp_name" value="<%=params[:avatar_temp_name]%>">
 				<input type="hidden" name="origin" value="step_3">
 				<div class="small-6 columns">
 					<%= f.submit "Ja", :class => 'submit_button' %>
