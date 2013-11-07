@@ -29,27 +29,6 @@ h4{ font-size: ceil($font-size-base * 1.25); }
 h5{ font-size: $font-size-base; }
 h6{ font-size: ceil($font-size-base * 0.85); }
 
-.logo a {
-    color: $logo-color;
-    font-size: ceil($font-size-base * 1.25);
-    font-weight: $header-font-weight;
-
-}
-
-.nav a {
-    color: $nav-link-color;
-    font-size: ceil($font-size-base * 1.25);
-}
-
-.nav li{
-	:hover{
-    	background-color: $nav-link-active-bg-color;
-    }
-    :active{
-    	background-color: $nav-link-active-bg-color;
-    }
-}
-
 @media only screen and (max-width: 480px) {
 
    body { 
