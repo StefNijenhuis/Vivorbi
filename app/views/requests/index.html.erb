@@ -10,20 +10,22 @@
 		</div>
 		<div class="row" id="request_wrapper">
 			<% @requests.each do |request| %>
-			<div class="small-12 columns" id="request">
-				<div class="small-6 columns" id="request_title">
-				<h2><strong><%= request.title %></strong></h2>
-				</div>
-				<div class="small-6 columns" id="request_date">
-				<h2><%= request.date.strftime("%A %e-%m-%Y") %></h2>
+			<div class="row" id="request">
+					<div class="small-12 columns">
+						<div class="large-6 small-12 columns" id="request_title">
+						<h2><strong><%= request.title %></strong></h2>
+						</div>
+						<div class="large-6 small-12 end columns" id="request_date">
+						<h2><%= request.date.strftime("%A %e-%m-%Y") %></h2>
+					</div>
 				</div>
 				<div class="row" id="request_buttons">
-					<a href="" class="small-6 columns">
+					<a href="" class="large-6 small-6 columns">
 						<div id="details_button">
 							Details
 						</div>
 					</a>
-					<a href="" class="small-6 columns">
+					<a href="" class="large-6 small-6 columns">
 						<div id="react_button">
 							Reageren
 						</div>
