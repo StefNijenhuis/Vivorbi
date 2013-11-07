@@ -1,0 +1,31 @@
+.top-bar {
+    background: $primary-purple;
+    height: 45px;
+    line-height: 45px;
+    margin-bottom: 0;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.top-bar-section ul {
+    background: $primary-purple;
+}
+.top-bar-section .right li:hover a {
+    background-color: $primary-green;
+    color: #fff;
+}
+.top-bar-section > ul > .divider {
+	border-left: none;
+	border-right: solid 1px white;
+	border-top: none;
+	border-bottom: none;
+}
+.top-bar-section li a:not(.button) {
+    background: $primary-purple;
+    line-height: 45px;
+}
+.name {
+	background-color: $primary-purple;
+}
+.toggle-topbar a span {
+	text-transform: none;
+}
