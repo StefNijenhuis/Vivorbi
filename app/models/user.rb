@@ -68,33 +68,33 @@ class User < ActiveRecord::Base
 
   def validates_step_1?
     if self.errors[:first_name].empty? && self.errors[:last_name].empty?
-      return true
+      true
     else
-      return false
+      false
     end
   end
 
   def validates_step_2?
     if self.errors[:date_of_birth].empty?
-      return true
+      true
     else
-      return false
+      false
     end
   end
 
   def validates_step_3?
     if self.errors[:street].empty? && self.errors[:house_number].empty? && self.errors[:postal_code].empty? && self.errors[:place].empty?
-      return true
+      true
     else
-      return false
+      false
     end
   end
 
   def validates_step_4?
     if self.errors[:email].empty? && self.errors[:phone].empty? && self.errors[:cellphone].empty?
-      return true
+      true
     else
-      return false
+      false
     end
   end
 end
