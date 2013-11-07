@@ -26,12 +26,12 @@ class User < ActiveRecord::Base
           :less_than => 20.megabytes
       }
     },
-    :path => ":rails_root/public/avatars/:style/:id.:extension",
-    :default_url => ":rails_root/public/avatars/missing.jpg"
+    :path => ':rails_root/public/avatars/:style/:id.:extension',
+    :default_url => ':rails_root/public/avatars/missing.jpg'
 
   validates :avatar, :attachment_presence => true, :allow_blank => true
   validates_with AttachmentPresenceValidator, :attributes => :avatar, :allow_blank => true
-  validates_attachment :avatar, content_type: { content_type: ["image/jpeg", "image/bmp", "image/png"] }
+  validates_attachment :avatar, content_type: { content_type: ['image/jpeg', 'image/bmp', 'image/png'] }
 
   validates :first_name, :presence => true
   validates :last_name, :presence => true
@@ -60,10 +60,10 @@ class User < ActiveRecord::Base
 
   def date_cannot_be_in_the_future
     if date_of_birth.blank?
-      errors.add(:date_of_birth, "Datum kan niet leeg zijn")
+      errors.add(:date_of_birth, 'mag niet leeg zijn')
     else
       if date_of_birth > Date.today
-        errors.add(:date_of_birth, "kan niet in de toekomst zijn")
+        errors.add(:date_of_birth, 'mag niet in de toekomst zijn')
       end
     end
   end

@@ -7,7 +7,7 @@ class Request < ActiveRecord::Base
 
   def date_cannot_be_in_the_past
 	if date.present? && date < Date.today
-      errors.add(:date, "kan niet in het verleden zijn")
+      errors.add(:date, 'mag niet in het verleden zijn')
     end
   end
 end
