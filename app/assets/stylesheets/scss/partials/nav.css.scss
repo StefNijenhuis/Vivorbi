@@ -1,0 +1,11 @@
+$include-html-top-bar-classes: $include-html-classes;
+
+.top-bar{
+	background: none;
+	max-width: 1000px;
+	margin: 0 auto;
+}
+
+.top-bar-section .right li a {
+	background-color: white;
+}
