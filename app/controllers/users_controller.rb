@@ -90,23 +90,19 @@ class UsersController < ApplicationController
       end
     when "overview"
       @form_target='overview'
-      unless @user.validates_step_1?
+      if !@user.validates_step_1?
         render :profile_1
+      elsif !@user.validates_step_2?
+        render :profile_2
+      elsif !@user.validates_step_3?
+        render :profile_3
+      elsif !@user.validates_step_4?
+        render :profile_4
       else
-        unless @user.validates_step_2?
-          render :profile_2
-        else
-          unless @user.validates_step_3?
-            render :profile_3
-          else
-            unless @user.validates_step_4?
-              render :profile_4
-            else
-              render :profile_overview
-            end
-          end
-        end
+        render :profile_overview
       end
+    else
+      # do nothing
     end
   end
 
