@@ -6,9 +6,9 @@ class ApiRequestsController < ApplicationController
 	nr = params[:nr]
 	
 	if nr != nil
-		uri = URI('http://api.postcodeapi.nu/'+pc+'/'+nr)
+		uri = URI("http://api.postcodeapi.nu/#{pc}/#{nr}")
 	else
-		uri = URI('http://api.postcodeapi.nu/'+pc)
+		uri = URI("http://api.postcodeapi.nu/#{pc}")
 	end
 	
 	req = Net::HTTP::Get.new(uri)

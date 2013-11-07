@@ -60,10 +60,10 @@ class User < ActiveRecord::Base
 
   def date_cannot_be_in_the_future
     if date_of_birth.blank?
-      errors.add(:date_of_birth, "Datum kan niet leeg zijn")
+      errors.add(:date_of_birth, 'mag niet leeg zijn')
     else
       if date_of_birth > Date.today
-        errors.add(:date_of_birth, "kan niet in de toekomst zijn")
+        errors.add(:date_of_birth, 'mag niet in de toekomst zijn')
       end
     end
   end
