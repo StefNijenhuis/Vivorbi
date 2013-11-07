@@ -23,28 +23,29 @@ class UsersController < ApplicationController
 
   # PATCH /users/1/profile/step_x
   def profile
-    if(params[:id].to_i==0) 
-      @user = User.new
-      @user.id = 0
-    else
+    @user = User.new
+    @user.id = 0
+    if params[:id].to_i!=0
       @user = User.find(params[:id])
     end
-    @i = params[:id]
-    user_params.each { |key,value| if key!="avatar" then @user[key] = value end }
+    user_params.each do |key, value|
+      @user[key] = value unless key=='avatar'
+    end
     @user.valid?
 
     @base_form_path = '/users/'+@user.id.to_s+'/profile/'
     @form_target = nil
 
-    if params[:origin]=="overview"
+    if params[:origin]=='overview'
       @form_target = 'overview'
     end
 
+    @months = ['Kies een maand','Januari','Februari','Maart','April','Mei','Juni','Juli','Augustus', 'September', 'Oktober', 'November', 'December']
     case params[:step]
-    when "step_1"
+    when 'step_1'
       @form_target = 'step_2' if @form_target==nil
       render :profile_1
-    when "step_2"
+    when 'step_2'
       if @user.validates_step_1?
         # file upload
         require 'fileutils'
@@ -55,32 +56,30 @@ class UsersController < ApplicationController
         
         FileUtils.mv(tempfile, "#{Rails.root}/public/avatars/tmp/#{@avatar_temp_name}.tmp")
 
-        @months = ["Kies een maand","Januari","Februari","Maart","April","Mei","Juni","Juli","Augustus","September","Oktober","November","December"]
         @form_target = 'step_3' if @form_target==nil
         render :profile_2
       else
         @form_target = 'step_2' if @form_target==nil
         render :profile_1
       end
-    when "step_3"
+    when 'step_3'
       if @user.validates_step_2?
         @form_target = 'step_4' if @form_target==nil
         render :profile_3
       else
         @form_target = 'step_3' if @form_target==nil
-        @months = ["Kies een maand","Januari","Februari","Maart","April","Mei","Juni","Juli","Augustus","September","Oktober","November","December"]
         render :profile_2
       end
-    when "step_4"
+    when 'step_4'
       if @user.validates_step_3?
-        @user.postal_code.split(" ").join("")
+        @user.postal_code.split(' ').join('')
         @form_target = 'step_5' if @form_target==nil
         render :profile_4
       else
         @form_target = 'step_4' if @form_target==nil
         render :profile_3
       end
-    when "step_5"
+    when 'step_5'
       if @user.validates_step_4?
         @form_target = 'overview'
         render :profile_5
@@ -88,7 +87,7 @@ class UsersController < ApplicationController
         @form_target = 'step_5' if @form_target==nil
         render :profile_4
       end
-    when "overview"
+    when 'overview'
       @form_target='overview'
       if !@user.validates_step_1?
         render :profile_1
