@@ -1,0 +1,618 @@
+commit 10390c8a4f0caf780916062a38067747d3c7b2c5
+Author: johman10 <johan@MacBook-Pro-van-Johan.local>
+Date:   Tue Nov 5 21:06:48 2013 +0100
+
+    User form styling part 1
+
+commit 124728e49d8588a6ee4a59198fa3fc2694d1caa4
+Author: Joucke Hempenius <joucke@gmail.com>
+Date:   Tue Nov 5 19:07:43 2013 +0100
+
+    huisnummer met toevoeging correct tonen
+
+commit 4b708f7ea68c3ba266ae2bc5c4d433ed9043d196
+Author: Joucke Hempenius <joucke@gmail.com>
+Date:   Tue Nov 5 14:13:45 2013 +0100
+
+    edit user vanaf index naar overview
+
+commit 3ed7447c8a77e708809dc06f1ff1954281369bac
+Author: Joucke Hempenius <joucke@gmail.com>
+Date:   Tue Nov 5 14:12:58 2013 +0100
+
+    new user aanmaken
+
+commit 1c28bc2af4dc38d04e1fa6f13e0c61cd73738784
+Author: Bullace <bullace@gmail.com>
+Date:   Tue Nov 5 13:47:17 2013 +0100
+
+    Error display fix
+
+commit 3d844d37e106ac6e7d8742928d7fe631b63efab2
+Author: Jan-Jurjen Lemstra <janjurjen.lemstra@gmail.com>
+Date:   Tue Nov 5 13:44:48 2013 +0100
+
+    Changed wrapper padding
+
+commit ed21091acf9ce6d061a4752cce6f34c9e9ff90d3
+Author: Jan-Jurjen Lemstra <janjurjen.lemstra@gmail.com>
+Date:   Tue Nov 5 13:40:37 2013 +0100
+
+    Changed wrapper
+
+commit ed9b1b02c331a8ce84f81600e26243a03556f3df
+Author: Joucke Hempenius <joucke@gmail.com>
+Date:   Tue Nov 5 13:38:24 2013 +0100
+
+    formulier aangepast aan origin
+
+commit 10bd63be6254c67747ddefad8e77e5521740bcd1
+Author: Jan-Jurjen Lemstra <janjurjen.lemstra@gmail.com>
+Date:   Tue Nov 5 13:21:12 2013 +0100
+
+    Changed buttons
+
+commit 445b2a4a0c96f974bd6fac3c55e661ff2f062ae8
+Author: Joucke Hempenius <joucke@gmail.com>
+Date:   Tue Nov 5 13:04:03 2013 +0100
+
+    header-kolom toegevoegd aan users index
+
+commit 84c1147a1f17fe2b4291c671e177e7ebcf41dc08
+Author: Joucke Hempenius <joucke@gmail.com>
+Date:   Tue Nov 5 12:58:12 2013 +0100
+
+    origin veld toevoegen aan bewerk-knop
+
+commit bd0d5642fcc4abc469bf4d68751af9b4d757f364
+Author: Joucke Hempenius <joucke@gmail.com>
+Date:   Tue Nov 5 12:50:31 2013 +0100
+
+    profile views updated
+
+commit 813ff181abedd0823975a8c1a1a69a0fa727f5c4
+Author: Bullace <bullace@gmail.com>
+Date:   Tue Nov 5 12:43:26 2013 +0100
+
+    Added cellphone field to seed
+
+commit e8c53da16b824eafa06480bb7a8ab7c5b211b848
+Author: Stef Nijenhuis <admin@stefnijenhuis.nl>
+Date:   Tue Nov 5 12:12:51 2013 +0100
+
+    merge fix
+
+commit 20f1eef941b9e29c8726be35748ee59de60dd0a5
+Author: Joucke Hempenius <joucke@gmail.com>
+Date:   Tue Nov 5 07:23:56 2013 +0100
+
+    geen idee wat hier gewijzigd is :/
+
+commit 1307cb370c653b3e186c3ffca7e012098bca3f57
+Merge: 0c25aea 519c309
+Author: Joucke Hempenius <joucke@gmail.com>
+Date:   Tue Nov 5 07:23:02 2013 +0100
+
+    Merge branch 'sprint_2' of https://github.com/StefNijenhuis/Vivorbi into sprint_2
+    
+    Conflicts:
+    	app/models/user.rb
+
+commit 0c25aea09ee43fa9d821581892cf0033845fe654
+Author: Joucke Hempenius <joucke@gmail.com>
+Date:   Tue Nov 5 07:21:41 2013 +0100
+
+    profiel vanuit 1 method
+
+commit 519c309cc76e29d6a51c98b9cbbd4422f7795c11
+Author: johman10 <johan@MacBook-Pro-van-Johan.local>
+Date:   Mon Nov 4 20:31:29 2013 +0100
+
+    Added some CSS styling within the request form
+
+commit 06ae2c61013c6ae552a6d94fbda6f25ca3c4d632
+Author: johman10 <johan@MacBook-Pro-van-Johan.local>
+Date:   Mon Nov 4 19:18:45 2013 +0100
+
+    Changed requests controller for a cleaner code
+
+commit c51c610c745ce9c5493b846cc69933523f3dff61
+Author: Stef Nijenhuis <admin@stefnijenhuis.nl>
+Date:   Mon Nov 4 17:38:43 2013 +0100
+
+    date_of_birth error handeling fix
+
+commit dbaccf093516b51f835a2ec12b477762c8c79b51
+Author: Jan-Jurjen Lemstra <janjurjen.lemstra@gmail.com>
+Date:   Mon Nov 4 14:38:11 2013 +0100
+
+    Added styling with scss
+
+commit bc363dd7271fd7ab4b7396c4ebbe7ba5b5ac9427
+Author: Jan-Jurjen Lemstra <janjurjen.lemstra@gmail.com>
+Date:   Mon Nov 4 13:30:11 2013 +0100
+
+    Added scss styles
+
+commit 7370524bc3917538f2b4139fa2027cf9a47c9ccf
+Author: Stef Nijenhuis <admin@stefnijenhuis.nl>
+Date:   Mon Nov 4 13:04:25 2013 +0100
+
+    User validations added
+
+commit c9867fb352a46fb161feb0f99225dc7d7f383a78
+Author: Jan-Jurjen Lemstra <janjurjen.lemstra@gmail.com>
+Date:   Mon Nov 4 12:18:02 2013 +0100
+
+    changed scss styles
+    
+    changed typography,colors,base,index.html and added global.css.scss
+
+commit 21456f485445f91be9383dd5d92938900314161e
+Author: johman10 <johan@wijnand-lusthof.lan.nhl.nl>
+Date:   Mon Nov 4 12:05:27 2013 +0100
+
+    Split CSS to SCSS
+    
+    CSS file has been split in seperate files.
+
+commit 944202343e21f5dafedbba06fa284a881d51d6b3
+Author: Joucke Hempenius <joucke@gmail.com>
+Date:   Mon Nov 4 12:05:05 2013 +0100
+
+    datum fixen
+
+commit b50671819a1c03214d3cddb5892da3cf8d3f8526
+Merge: cf23211 d78b64d
+Author: Joucke Hempenius <joucke@gmail.com>
+Date:   Mon Nov 4 11:02:37 2013 +0100
+
+    Merge branch 'sprint_2' of https://github.com/StefNijenhuis/Vivorbi into sprint_2
+
+commit cf23211cd9b289ddc5680046b2c4d41563de0b2f
+Author: Joucke Hempenius <joucke@gmail.com>
+Date:   Mon Nov 4 10:59:06 2013 +0100
+
+    profiel aanmaken html stuff en controller stuff
+
+commit d78b64dfa7e28e402a5b86f4efed59736719eb15
+Author: johman10 <johan@MacBook-Pro-van-Johan.local>
+Date:   Mon Nov 4 07:56:20 2013 +0100
+
+    Added translation for error messages
+    
+    All error messages within the form are now in dutch.
+
+commit 6253a1533ce4d4d8f6758f6c1e5b80db51a813fc
+Author: Jan-Jurjen Lemstra <janjurjen.lemstra@gmail.com>
+Date:   Fri Nov 1 14:19:46 2013 +0100
+
+    Changed regualr css to sass
+    
+    Added folder structure for sass
+
+commit 338b9cd9196f5e73fedfa98fb32d5c57cb271031
+Author: Bullace <bullace@gmail.com>
+Date:   Fri Nov 1 01:12:01 2013 +0100
+
+    Added avatars folder to ignore list
+
+commit a456c79c10dc7b4ba5e4e34f9f1f439e247be280
+Author: Bullace <bullace@gmail.com>
+Date:   Thu Oct 31 19:29:57 2013 +0100
+
+    Added ImageMagick install instructions
+
+commit 3c43cc47570c8fe8650a787437f3f48c2dad8baa
+Author: Bullace <bullace@gmail.com>
+Date:   Thu Oct 31 19:24:51 2013 +0100
+
+    Added avatar upload to user
+
+commit cc5e731cee24f0aaf93b399508bbf7b2b14b09d2
+Author: Bullace <bullace@gmail.com>
+Date:   Thu Oct 31 14:16:29 2013 +0100
+
+    Added clone
+
+commit e0a029862eda5dfc772a98e40509712b3a98ae05
+Author: johman10 <johan@rc13030.lan.nhl.nl>
+Date:   Thu Oct 31 13:56:55 2013 +0100
+
+    Edited Request form
+    
+    The request form is now seperated in different views.
+
+commit ec3ac487cd88929d20c62f5ee5d032e3f2a71728
+Author: Joucke Hempenius <joucke@gmail.com>
+Date:   Thu Oct 31 12:59:31 2013 +0100
+
+    gegevens onthouden bij bladeren door profiel
+
+commit cb6d33ab834c036477aeb2b7d60b41e7624fd76f
+Author: Joucke Hempenius <joucke@gmail.com>
+Date:   Thu Oct 31 12:02:00 2013 +0100
+
+    views voor profile, user_contr
+
+commit e652f540a13f84bd9e2f9a649419393c15901208
+Merge: eb563cc 2a9a0ad
+Author: Joucke Hempenius <joucke@gmail.com>
+Date:   Thu Oct 31 10:07:13 2013 +0100
+
+    Merge branch 'sprint_2' of https://github.com/StefNijenhuis/Vivorbi into sprint_2
+
+commit eb563ccd220160a42a7c24e37f916ce9dcc6989b
+Author: Joucke Hempenius <joucke@gmail.com>
+Date:   Thu Oct 31 10:06:36 2013 +0100
+
+    opsplitsen van add_request views
+
+commit 2a9a0adb694bd3b2707a0658ede26188c71e5902
+Author: Bullace <bullace@gmail.com>
+Date:   Wed Oct 30 14:15:57 2013 +0100
+
+    schema update
+
+commit a75224fce0e61adae61925ef8419f676f4166d40
+Author: Bullace <bullace@gmail.com>
+Date:   Wed Oct 30 14:15:01 2013 +0100
+
+    Updated Users controller and views to make use of new table views.
+
+commit ac0b7eb512b27f7873c8877c9da8ae61a2dcf01d
+Author: Bullace <bullace@gmail.com>
+Date:   Wed Oct 30 12:45:33 2013 +0100
+
+    Added new migration that will add new fields to the users table
+
+commit 92491776024b887c0f1f00dfa80f6ad05256effa
+Author: Joucke Hempenius <joucke@gmail.com>
+Date:   Wed Oct 30 12:28:55 2013 +0100
+
+    README verbeterd
+
+commit ab090f173b938ecfb21066c8e70b7ada2d3a0bef
+Author: Joucke Hempenius <joucke@gmail.com>
+Date:   Wed Oct 30 12:26:23 2013 +0100
+
+    README verbeterd
+
+commit 91eedbd8652fe7b74302c8d66f32203da9e7a6ab
+Author: Joucke Hempenius <joucke@gmail.com>
+Date:   Wed Oct 30 12:19:25 2013 +0100
+
+    README verbeterd
+
+commit a53d2308f13c2e625bbc24f521c5ef41f426ae07
+Author: Joucke Hempenius <joucke@gmail.com>
+Date:   Wed Oct 30 12:16:18 2013 +0100
+
+    README verbeterd
+
+commit 8beb0f89512bc792707bff18452183d7f4b5240b
+Author: Joucke Hempenius <joucke@gmail.com>
+Date:   Wed Oct 30 12:14:34 2013 +0100
+
+    README verbeterd
+
+commit ca322b3fb58018691519a9cbedb189667e0b9918
+Author: Joucke Hempenius <joucke@gmail.com>
+Date:   Wed Oct 30 12:12:54 2013 +0100
+
+    README verbeterd
+
+commit 4eb1c13e2b0c4be4c7791cc51b8b5a0f0250ce7b
+Author: Bullace <bullace@gmail.com>
+Date:   Wed Oct 30 11:37:34 2013 +0100
+
+    Added seed that creates a new user and updated readme with instructions.
+
+commit 35eac85220a6b36dd71f6740ba54e1b6e17cccc0
+Author: Bullace <bullace@gmail.com>
+Date:   Wed Oct 30 11:21:11 2013 +0100
+
+    Added title
+
+commit 51fce55d2c7619bcb57a9e58a179cc9ce8e0b1ee
+Author: Bullace <bullace@gmail.com>
+Date:   Wed Oct 30 11:14:27 2013 +0100
+
+    Fixed unable to submit form
+
+commit bf886dab5cbc83c15f693bbf6a7d1384de536453
+Author: Stef Nijenhuis <admin@stefnijenhuis.nl>
+Date:   Tue Oct 29 14:51:18 2013 +0100
+
+    README update
+
+commit b41e998ecf0542c8e8d3bd320be4e4db54652842
+Author: Stef Nijenhuis <admin@stefnijenhuis.nl>
+Date:   Tue Oct 29 14:28:02 2013 +0100
+
+    README update
+
+commit 0f682b754bd591b19f95256c4225ba3eede7019a
+Author: Bullace <bullace@gmail.com>
+Date:   Tue Oct 29 14:22:49 2013 +0100
+
+    Hovering over .edit-button class did not change mouse cursor to pointer.
+
+commit de763d1b78553e9e531a71a79727813af05790cf
+Author: Stef Nijenhuis <admin@stefnijenhuis.nl>
+Date:   Tue Oct 29 14:15:28 2013 +0100
+
+    README update
+
+commit 27670ad0aed5a1d86070a9aa8a95717bf38c9b40
+Author: Bullace <bullace@gmail.com>
+Date:   Tue Oct 29 14:10:22 2013 +0100
+
+    Placeholder empties on focus (sprint 1 fix)
+
+commit 632041126bf00600de0f49eaf8decaf39b502a1a
+Author: Bullace <bullace@gmail.com>
+Date:   Tue Oct 29 13:49:53 2013 +0100
+
+    New branch Sprint 2 + Sprint 1 fixes
+
+commit 99a903990882940f3900716de4878d99299dc4ac
+Author: Bullace <bullace@gmail.com>
+Date:   Sun Oct 27 12:31:50 2013 +0100
+
+    form_for verplaatst, form wou nog steeds niet submitten. 3 </div>'s verwijderd die aan het eind van het document stonden terwijl alle divs al gesloten waren.
+
+commit a22a62826392c3eb032e129d813c62170de1e4db
+Author: Bullace <bullace@gmail.com>
+Date:   Sat Oct 26 17:33:50 2013 +0200
+
+    Knop had geen value waardoor de waarde afhangt van het besturings systeem & taal
+
+commit 0d9e9940eee49100513cb462a14775660497413d
+Author: Bullace <bullace@gmail.com>
+Date:   Fri Oct 25 15:11:36 2013 +0200
+
+    Form end fix
+    
+    Form eindigde op verkeerde locatie waardoor de verzend knop niet
+    functioneerde in Chrome (Windows).
+
+commit 1331af8dd5d694c0e39859f95b1a143dcadafc8e
+Author: Johman10 <johveck@gmail.com>
+Date:   Fri Oct 18 15:44:58 2013 +0200
+
+    Actual Submit button fix
+    
+    First fix didn't work, new fix make the submit button work
+
+commit fed01b70a04ebc8142bc5bf25bae00a9323a32ad
+Author: Johman10 <johveck@gmail.com>
+Date:   Fri Oct 18 15:09:44 2013 +0200
+
+    Submit button fix
+    
+    Added a tab to fix the submit button problem
+
+commit e4c840fc98fb362b6367d01c58a5eae0cbcc729c
+Author: Johman10 <johveck@gmail.com>
+Date:   Fri Oct 18 14:16:28 2013 +0200
+
+    Styled the overview page
+    
+    Styled the overview page and added javascript for the edit buttons on
+    the overview page.
+    Added english comments in CSS, Javascript and HTML files for the
+    requests form
+
+commit 18d0b08432c3fb876dcff122198846ac0d93cdf4
+Author: Johman10 <johveck@gmail.com>
+Date:   Fri Oct 18 01:08:46 2013 +0200
+
+    Styled the calendar
+    
+    The calendar is styled as thought
+    Some bug fixes
+
+commit e7d461953da88dcce4c413c610f3e419812acef0
+Author: Johman10 <johveck@gmail.com>
+Date:   Thu Oct 17 22:10:46 2013 +0200
+
+    CSS and Javascript request form
+    
+    Added a lot of CSS and Javascript for the request form
+
+commit 987e8050ef5df62de74c5a8dd3154db4ef5346b6
+Author: Jan-Jurjen Lemstra <janjurjen.lemstra@gmail.com>
+Date:   Thu Oct 17 14:47:31 2013 +0200
+
+    Added text-align for header
+
+commit 5f299dca7be8011f1ef83bf43ece5df020f208af
+Author: Jan-Jurjen Lemstra <janjurjen.lemstra@gmail.com>
+Date:   Thu Oct 17 14:35:47 2013 +0200
+
+    Added foundation classes for request overview.
+
+commit e9d2562502f1ef25e7153b786bf9b5cfa791a598
+Author: Bullace <bullace@gmail.com>
+Date:   Thu Oct 17 14:26:42 2013 +0200
+
+    Merge fix
+
+commit 74b0407defeb21b1c0d4277ca4395619f009be05
+Author: Johman10 <johveck@gmail.com>
+Date:   Thu Oct 17 14:22:22 2013 +0200
+
+    I don't know
+
+commit 5274b1bfb9fcb700959ce473565a9269b6c1f508
+Merge: 85bc4e2 0cba157
+Author: Johman10 <johveck@gmail.com>
+Date:   Thu Oct 17 14:20:46 2013 +0200
+
+    Merge branch 'master' of https://github.com/StefNijenhuis/Vivorbi
+    
+    Conflicts:
+    	app/assets/javascripts/application.js
+    	app/views/layouts/application.html.erb
+
+commit 85bc4e252919cba385f5370d821c87c7b4308bf4
+Author: Johman10 <johveck@gmail.com>
+Date:   Thu Oct 17 14:18:49 2013 +0200
+
+    Fixed form issues and changed calendar
+    
+    Form is showing as it should, calender is changed from HTML5 to Jquery
+    UI
+
+commit 0cba1577b4cb0a78e26dc4541bf548885d73b6f9
+Author: Jan-Jurjen Lemstra <janjurjen.lemstra@gmail.com>
+Date:   Thu Oct 17 13:03:25 2013 +0200
+
+    Added foundation elements
+    
+    app/assets/javascripts/application.js
+    app/assets/javascripts/application.js
+    app/assets/stylesheets/foundation_and_overrides.scss
+    app/assets/stylesheets/foundation_and_overrides.scss
+    app/assets/stylesheets/application.css
+
+commit 37b67ad78d53bfba594da8ca20088754abc9cb62
+Author: Bullace <bullace@gmail.com>
+Date:   Thu Oct 17 12:43:28 2013 +0200
+
+    Added Foundation
+
+commit f978eab5cea013d1a9c91a56275c0806be1172e5
+Author: Jan-Jurjen Lemstra <janjurjen.lemstra@gmail.com>
+Date:   Thu Oct 17 12:38:24 2013 +0200
+
+    Add html/css for request overview
+    
+    Changed pt to em, added html/css for request overview.
+
+commit 9cc092390530e228e863425b034efe2cad6546f5
+Author: Johman10 <johveck@gmail.com>
+Date:   Thu Oct 17 11:12:10 2013 +0200
+
+    Seperated stylesheet for text
+
+commit e077f57279ae340144d52c552adc705c644266e8
+Author: Johman10 <johveck@gmail.com>
+Date:   Thu Oct 17 11:07:55 2013 +0200
+
+    Deleted reset added normalize
+    
+    Made the decision to delete the reset and use the normalize instead.
+
+commit 46ec5ac7587a108642af2919e1246c6ca19c2785
+Author: Bullace <bullace@gmail.com>
+Date:   Thu Oct 17 10:42:57 2013 +0200
+
+    Input overview added
+
+commit 7d0e1e33fbb193864e6bf1a6245c0d978b74b1af
+Author: Bullace <bullace@gmail.com>
+Date:   Thu Oct 17 10:23:46 2013 +0200
+
+    Coffee script fix
+
+commit a05ae197d8d6109d5c5805aae6129201c48d341e
+Author: Johman10 <johveck@gmail.com>
+Date:   Wed Oct 16 23:55:47 2013 +0200
+
+    New Request CSS First Setup
+    
+    First try to setup styling for the new request form
+
+commit 28688fb7ede83e9bee94ce416552077566ead4d0
+Author: Johman10 <johveck@gmail.com>
+Date:   Wed Oct 16 22:21:08 2013 +0200
+
+    .gitignore fix
+    
+    fixed a .DS_Store problem
+
+commit 65753bde451e1ae9fe11219eba96e19432a27b15
+Author: Joucke Hempenius <joucke@gmail.com>
+Date:   Wed Oct 16 15:18:34 2013 +0200
+
+    Fixes
+
+commit 67ff543b8883592b70df2ad2b51c0bd07feedc8c
+Author: Bullace <bullace@gmail.com>
+Date:   Wed Oct 16 12:38:34 2013 +0200
+
+    rdoc version of reamdme deleted
+
+commit 1792932a3e5aa5c4e6f58c666e3319d6d81c9adb
+Author: Bullace <bullace@gmail.com>
+Date:   Wed Oct 16 12:34:29 2013 +0200
+
+    Readme update
+
+commit 99bcddb35d7c4f59f73f71d05a4f90f0707cd95e
+Author: Bullace <bullace@gmail.com>
+Date:   Wed Oct 16 12:27:45 2013 +0200
+
+    Readme updated
+
+commit e066d0e55a090ea05dbd8fe8f6b863105b1caf0f
+Author: Bullace <bullace@gmail.com>
+Date:   Wed Oct 16 12:23:10 2013 +0200
+
+    Database deleted
+
+commit 8b5dea29ab56aa4e93361660463b332b6b5a64ad
+Author: Bullace <bullace@gmail.com>
+Date:   Wed Oct 16 12:19:38 2013 +0200
+
+    Input validation with rails
+
+commit 2d4032ff84fec51a6eafc072c018ceb8b795f9d6
+Author: Bullace <bullace@gmail.com>
+Date:   Wed Oct 16 11:43:26 2013 +0200
+
+    .ignore fix
+
+commit 3663d10ab1e57556bcb9e995a31be893e94c0aaa
+Author: Bullace <bullace@gmail.com>
+Date:   Wed Oct 16 11:42:00 2013 +0200
+
+    derp
+
+commit 90bb460fda7cf69689e8df53dcd418502bcfd1b1
+Author: Bullace <bullace@gmail.com>
+Date:   Wed Oct 16 11:23:15 2013 +0200
+
+    List all requests on /requests
+
+commit 2350aff922134995fca85100b996289826183037
+Author: Bullace <bullace@gmail.com>
+Date:   Wed Oct 16 10:50:06 2013 +0200
+
+    Requests are saved into database
+
+commit 17ad02b52437ca13990cf36e802daeb15802aa21
+Author: Bullace <bullace@gmail.com>
+Date:   Wed Oct 16 10:34:31 2013 +0200
+
+    .gitignore fix
+
+commit 6b08e62aa0fe2b3faaa6eb1ce4c84a1122979acf
+Author: Bullace <bullace@gmail.com>
+Date:   Wed Oct 16 10:32:13 2013 +0200
+
+    .idea folder removal
+
+commit b493c28aa506cd4f2cb256bdfdb0a367fefb1bd3
+Author: Stef Nijenhuis <admin@stefnijenhuis.nl>
+Date:   Wed Oct 16 10:14:59 2013 +0200
+
+    Hai
+
+commit 62527c500bfd787e619d3a456c76ec10d7fb5445
+Author: Stef Nijenhuis <admin@stefnijenhuis.nl>
+Date:   Tue Oct 15 14:54:54 2013 +0200
+
+    Initial commit

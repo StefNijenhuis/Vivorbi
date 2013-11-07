@@ -14,10 +14,14 @@
 2. `rake db:migrate`
 3. `rake db:seed`
 
+## Resetting the database
+* Reset will clear the database and run migrate for you.
+1. `rake db:reset`
+
 ## Installing ImageMagick
 In order for image manipulation to work you'll need to install ImageMagick
 * Linux/Debian: `sudo apt-get install imagemagick`
-* MacOS: `brew install imagemagick`
+* MacOS: `brew install imagemagick```
 
 ## Run server
 * `rails s`
