@@ -9,6 +9,7 @@
 		<div class="small-12 columns">
 			<h4>Naam:</h4>
 			<%=@user.first_name%> <%=@user.in_between%> <%=@user.last_name%>
+            <br><img src="/avatars/tmp/<%=params[:avatar_temp_name]%>.tmp" width=50>
 		</div>
 		<%
 		@form_path = @base_form_path+'step_1'
