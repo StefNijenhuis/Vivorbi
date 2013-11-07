@@ -50,7 +50,7 @@ class User < ActiveRecord::Base
     require 'FileUtils'
     Dir.glob('/#{Rails.root}/public/avatars/tmp/*.tmp') do |temp_file|
       # do work on files ending in .tmp in the desired directory
-      if File.ctime(temp_file) < (Time.now - 1.day)
+      if File.ctime(temp_file) < (Time.now - 1.hour)
         File.delete(temp_file)
       end
     end
