@@ -48,6 +48,7 @@ class UsersController < ApplicationController
     when 'step_2'
       if @user.validates_step_1?
         # file upload
+        # TODO alleen wanneer er een bestand is meegestuurd
         require 'fileutils'
         Dir.mkdir("#{Rails.root}/public/avatars/tmp") unless File.exists?("#{Rails.root}/public/avatars/tmp")
         
