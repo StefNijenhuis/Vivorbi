@@ -1,5 +1,7 @@
 #progress_bar {
   display: inline-block;
+  width: calc(100% + 60px);
+  margin-left: -30px;
 }
 .progress_text {
   text-align: center;
@@ -11,18 +13,14 @@
   margin-top: 10px;
   height: 10px;
   position: relative;
-  margin: 0 -30px;
   bottom: -30px;
-  width: calc(33.33% + 60px);
 }
-.not-done {
+.not_done {
   background-color: $brand-alert;
   margin-top: 10px;
   height: 10px;
   position: relative;
-  margin: 0 -30px;
   bottom: -30px;
-  width: calc(33.33% + 60px);
 }
 #first {
 	@include rounded($radius: 0px 0px 0px 5px);

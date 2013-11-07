@@ -22,6 +22,10 @@ body{
   @include rounded($radius: 0 0 10px 10px);
 }
 
+.hidden {
+  display: none;
+}
+
 form {
   margin: 0px
 }

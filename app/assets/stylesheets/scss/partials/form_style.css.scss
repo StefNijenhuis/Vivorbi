@@ -2,6 +2,7 @@ input[type="text"], input[type="email"], textarea {
 	@include text-field;
 	@include rounded($radius: $button-radius);
 }
+//Day of birth month selector style
 select {
 	@include rounded($radius: $button-radius);
 	height: 46px;
@@ -20,6 +21,7 @@ input:focus:-ms-input-placeholder {
 input:focus:placeholder {
   color: transparent!important;
 }
+//styling for overview text
 .overview_val, .overview_title, .button_wrapper{
 	line-height: 40px;
 }

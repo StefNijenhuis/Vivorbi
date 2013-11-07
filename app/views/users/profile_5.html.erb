@@ -33,10 +33,15 @@
 		<input type="hidden" name="avatar_temp_name" value="<%=params[:avatar_temp_name]%>">
 		
 		<div class="row">
-			<div class="small-4 columns">
+			<div class="small-6 large-4 columns">
 				<div class="prev">Vorige</div>
 			</div>
-			<div class="small-4 columns">
+			<div class="small-6 large-4 columns">
+				<%= f.submit "Volgende", :class => 'submit_button' %>
+			</div>
+		</div>
+		<div class="row">
+			<div class="small-12 columns" id="progress_bar">
 				<span class="small-12 columns progress_text">
 			        Stap 5 van 6
 			    </span>
@@ -45,10 +50,7 @@
 			    <div class="small-2 columns done"></div>
 			    <div class="small-2 columns done"></div>
 			    <div class="small-2 columns done"></div>
-			    <div class="small-2 columns not-done end" id="last"></div>
-			</div>
-			<div class="small-4 columns">
-				<%= f.submit "Volgende", :class => 'submit_button' %>
+			    <div class="small-2 columns not_done end" id="last"></div>
 			</div>
 		</div>
 	<% end %>

@@ -6,7 +6,8 @@
 	</div>
 
 	<div class="row">
-		<div class="small-6 columns">
+		<div class="small-12 columns">
+			<h4>Naam:</h4>
 			<%=@user.first_name%> <%=@user.in_between%> <%=@user.last_name%>
 		</div>
 		<%
@@ -16,21 +17,24 @@
 	</div>
 
 	<div class="row">
-		<div class="small-6 columns">
+		<div class="small-12 columns">
+			<h4>Geboortedatum:</h4>
 			<%= @user.date_of_birth.strftime("%d-%m-%Y") unless @user.date_of_birth == nil %>
 		</div>
 		<% @form_path = @base_form_path+'step_2' %>
 		<%=render 'hidden_form'%>
 	</div>
 	<div class="row">
-		<div class="small-6 columns">
+		<div class="small-12 columns">
+			<h4>Adres:</h4>
 			<%=@user.street%> <%=@user.house_number%>, <%=@user.postal_code%> <%=@user.place%>
 		</div>
 		<% @form_path = @base_form_path+'step_3' %>
 		<%=render 'hidden_form'%>
 	</div>
 	<div class="row">
-		<div class="small-6 columns">
+		<div class="small-12 columns">
+			<h4>Contactgegevens:</h4>
 			<div><%= "tel: "+@user.phone unless @user.phone.blank? %></div>
 			<div><%= "mob: "+@user.cellphone unless @user.cellphone.blank? %></div>
 			<div><%= "e-mail: "+@user.email unless @user.email.blank? %></div>
@@ -39,7 +43,8 @@
 		<%=render 'hidden_form'%>
 	</div>
 		<div class="row">
-			<div class="small-6 columns">
+			<div class="small-12 columns">
+				<h4>Hobbies:</h4>
 				<% unless @user.hobbies.blank? %>
 					<%= @user.hobbies%>
 				<% else %>
@@ -66,10 +71,15 @@
 		<input type="hidden" name="avatar_temp_name" value="<%=params[:avatar_temp_name]%>">
 
 		<div class="row">
-			<div class="small-4 columns">
+			<div class="small-6 large-4 columns">
 				<div class="prev">Vorige</div>
 			</div>
-			<div class="small-4 columns">
+			<div class="small-6 large-4 columns">
+				<%= f.submit "Voltooien", :class => 'submit_button' %>
+			</div>
+		</div>
+		<div class="row">
+			<div class="small-12 columns" id="progress_bar">
 				<span class="small-12 columns progress_text">
 			        Stap 6 van 6
 			    </span>
@@ -79,9 +89,6 @@
 			    <div class="small-2 columns done"></div>
 			    <div class="small-2 columns done"></div>
 			    <div class="small-2 columns done end" id="last"></div>
-			</div>
-			<div class="small-4 columns">
-				<%= f.submit "Voltooien", :class => 'submit_button' %>
 			</div>
 		</div>
 	<% end %>
