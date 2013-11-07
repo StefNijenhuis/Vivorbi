@@ -44,16 +44,9 @@ class User < ActiveRecord::Base
   validates_format_of :phone, with: /\A((0)[1-9]{2}[0-9][1-9][0-9]{5})\z/, on: :create
   validates_format_of :email, with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/, on: :create
   
-  after_save :remove_original
-  
-  def remove_original
-    require 'FileUtils'
-    Dir.glob('/#{Rails.root}/public/avatars/tmp/*.tmp') do |temp_file|
-      # do work on files ending in .tmp in the desired directory
-      if File.ctime(temp_file) < (Time.now - 1.hour)
-        File.delete(temp_file)
-      end
-    end
+  def remove_file(temp_file)
+    require 'fileutils'
+    File.delete(temp_file)
   end
 
   def date_cannot_be_in_the_future

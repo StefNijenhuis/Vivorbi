@@ -47,7 +47,7 @@ class UsersController < ApplicationController
     when "step_2"
       if @user.validates_step_1?
         # file upload
-        require 'FileUtils'
+        require 'fileutils'
         Dir.mkdir("#{Rails.root}/public/avatars/tmp") unless File.exists?("#{Rails.root}/public/avatars/tmp")
         
         @avatar_temp_name = (0...25).map { (65 + rand(26)).chr }.join
@@ -120,9 +120,11 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     @user.phone.gsub!(/[^0-9 ]/i, '')
     @user.cellphone.gsub!(/[^0-9 ]/i, '')
-    @user.avatar = File.open("#{Rails.root}/public/avatars/tmp/#{params[:avatar_temp_name]}.tmp")
+    temp_file = "#{Rails.root}/public/avatars/tmp/#{params[:avatar_temp_name]}.tmp"
+    @user.avatar = File.open(temp_file)
     respond_to do |format|
       if @user.save
+        @user.remove_file temp_file
         format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.json { render action: 'show', status: :created, location: @user }
       else
