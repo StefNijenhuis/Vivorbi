@@ -68,7 +68,11 @@
 				</button>
 			</div>
             <div class="large-8 columns">
-              <%=image_tag 'avatar_placeholder.png', id:"avatar_placeholder" %>
+              <% if params[:avatar_temp_name].blank? %>
+              <%=image_tag 'avatar_placeholder.png', id:"avatar_placeholder", width:50 %>
+              <% else %>
+              <img src="/avatars/tmp/<%=params[:avatar_temp_name]%>.tmp" id="avatar_placeholder" width=50>
+              <% end %>
                 <%= f.file_field :avatar, class:"none_visable", accept:"image/*,capture=camera" %>
             </div>
 		</div>
