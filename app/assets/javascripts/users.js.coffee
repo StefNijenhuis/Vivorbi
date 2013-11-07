@@ -8,7 +8,8 @@ jQuery ->
       return false
     $("#user_avatar").change ->
       # TODO duidelijk aangeven dat er een bestand is gekozen
-      $("#avatar_placeholder").css("border","3px solid lime")
+      $("#avatar_placeholder").html("U heeft een foto geslecteerd");
+      $("#avatar_placeholder").css("color", "#55ae3a");
 
   if $("#profile_2").length>0
     dateParts = $("#user_date_of_birth").val().split("-")
