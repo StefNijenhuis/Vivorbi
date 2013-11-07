@@ -69,9 +69,11 @@
 			</div>
             <div class="large-8 columns">
               <% if params[:avatar_temp_name].blank? %>
-              <%=image_tag 'avatar_placeholder.png', id:"avatar_placeholder", width:50 %>
+              	<span id="avatar_placeholder">
+              		U heeft nog geen foto geupload.
+              	</span>
               <% else %>
-              <img src="/avatars/tmp/<%=params[:avatar_temp_name]%>.tmp" id="avatar_placeholder" width=50>
+              	<img src="/avatars/tmp/<%=params[:avatar_temp_name]%>.tmp" id="avatar_placeholder">
               <% end %>
                 <%= f.file_field :avatar, class:"none_visable", accept:"image/*,capture=camera" %>
             </div>
