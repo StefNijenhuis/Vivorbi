@@ -49,6 +49,15 @@ class User < ActiveRecord::Base
     File.delete(temp_file)
   end
 
+  def remove_old_temps
+    require 'fileutils'
+    Dir.glob("#{Rails.root}/public/avatars/tmp/*.tmp") do |file|
+      if File.open(file).ctime < 1.day.ago
+        File.delete file
+      end
+    end
+  end
+
   def date_cannot_be_in_the_future
     if date_of_birth.blank?
       errors.add(:date_of_birth, "Datum kan niet leeg zijn")
