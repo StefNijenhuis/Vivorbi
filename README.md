@@ -1,13 +1,18 @@
 # README
 
 ## Clone Branch
-`git clone -b sprint_2 git@github.com:StefNijenhuis/Vivorbi.git`
+`git clone -b branch_name git@github.com:StefNijenhuis/Vivorbi.git`
 
 ## Branch
 * Go to project folder: `cd [folder_path]`
 * Check active branch: `git branch`
-* Select branch sprint_2: `git checkout --track origin/sprint_2`
+* Select branch branch_name: `git checkout --track origin/branch_name`
 * `git pull`
+
+## Reverting to a previous commit
+1. Use `git log` to view a list of commits. the SHA hash is the commit-id you're looking for, or look on github for the commit-id
+2. `git reset --hard commit-id`
+3. `git push -f`
 
 ## Get things running
 1. `bundle`
