@@ -1,7 +1,8 @@
-<% content_for :title, "Nieuwe oproep" %>
+<% content_for :title, t(:request_title) %>
     
 <%= form_for @request, url: @base_form_path+@form_target do |f| %>
   <%
+    # TODO handle this in controller!
     custom_error_class='error'
     # validation display
     custom_class=''
@@ -10,25 +11,25 @@
       custom_class=custom_error_class
       error_text="<small class='"+custom_class+"'>"+@request.errors.full_messages_for(:title).join("<br>")+"</small>"
     end
-    %>
+  %>
   <div class="row">
     <div class="small-12 columns">
-      <h1 class="form_title" id="title_name">Wat is uw oproep?</h1>
+      <h1 class="form_title" id="title_name"><%=t('.title')%></h1>
     </div>
   </div>
   <div class="row">
     <div class="small-12 columns">
       <h4>
-        <%= f.label :title, "Wat voor oproep wilt u plaatsen?", class:custom_class %>
+        <%= f.label :title, class:custom_class %>
       </h4>
       <%= raw error_text %>
     </div>
   </div>
   <div class="row">
     <div id="request_form_name" class="small-12 columns">
-      <%= f.text_field :title, placeholder:"Naam van uw oproep", title:"Minimaal 10 karakters invullen", class:custom_class %>
+      <%= f.text_field :title, placeholder:t('.title_placeholder'), title:t('.title_title'), class:custom_class %>
       <%= f.hidden_field :date %>
-      <input type="hidden" name="origin" value="<%= params[:origin]%>">
+      <input type="hidden" name="origin" value="<%=params[:origin]%>">
     </div>
   </div>
 
@@ -40,7 +41,7 @@
   <div class="row">
     <div id="progress_bar" class="small-12 columns">
       <span class="small-12 columns progress_text">
-        Stap 1 van 3
+        <%=t('step',:current=>1,:total=>3)%>
       </span>
       <div class="small-4 columns done" id="first"></div>
       <div class="small-4 columns not_done"></div>

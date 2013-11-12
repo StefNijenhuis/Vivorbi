@@ -20,13 +20,35 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 nl:
+  request_title: "Nieuwe oproep"
+  step: "Stap %{current} van %{total}"
+  edit: "Bewerken"
+  back: "Vorige"
+  requests:
+    index:
+      title: "Hulpvraag overzicht"
+      intro: "Hieronder ziet u het overzicht van de hulpvragen. Om in contact te komen klik op de reageerknop."
+      details: "Details"
+      respond: "Reageren"
+    new_step_1:
+      title: "Wat is uw oproep?"
+      title_placeholder: "Naam van uw oproep"
+      title_title: "Minimaal 10 karakters invullen"
+    new_step_2:
+      title: "Voor wanneer is deze oproep?"
+    new_overview:
+      title: "Is dit de oproep die u wilt plaatsen?"
+      submit: "Plaatsen"
   helpers:
     label:
       request:
         title: "Wat voor oproep wilt u plaatsen?"
-        date: "Selecteer de datum waarop deze oproep uitgevoerd worden?"
+        date: "Selecteer de datum waarop deze oproep uitgevoerd moet worden."
       user:
         first_name: "Wat is uw voornaam?"
+    submit:
+      request:
+        create: "Nieuwe oproep"
   activerecord:
     attributes:
       request:
@@ -34,3 +56,7 @@ nl:
         date: "Datum"
       user:
         first_name: "Voornaam"
+  time:
+    formats:
+      medium: '%A %e-%m-%Y'
+      short_date: '%d-%m-%Y'

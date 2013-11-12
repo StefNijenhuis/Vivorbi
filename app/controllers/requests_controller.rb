@@ -3,6 +3,8 @@ class RequestsController < ApplicationController
 
   def index
     # Get all requests
+    @request = Request.new
+    @form_path = '/requests/new/step_1'
     @requests = Request.all
   end
 
