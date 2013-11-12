@@ -26,9 +26,18 @@ body{
   display: none;
 }
 
+.none_visable {
+  visibility:hidden;
+}
+
 form {
   margin: 0px
 }
 .wrapper hr {
   margin: 0px;
+}
+
+#avatar_placeholder {
+  color: $brand-alert;
+  line-height: 100px;
 }

@@ -63,11 +63,20 @@
 		</div>
 		<div class="row">
 			<div class="large-4 columns">
-				<%= f.file_field :avatar, class:"hidden", accept:"image/*,capture=camera" %>
 				<button id="upload_avatar" class="submit_button">
 					Kies een foto
 				</button>
 			</div>
+            <div class="large-8 columns">
+              <% if params[:avatar_temp_name].blank? %>
+              	<span id="avatar_placeholder">
+              		U heeft nog geen foto geupload.
+              	</span>
+              <% else %>
+              	<img src="/avatars/tmp/<%=params[:avatar_temp_name]%>.tmp" id="avatar_placeholder">
+              <% end %>
+                <%= f.file_field :avatar, class:"none_visable", accept:"image/*,capture=camera" %>
+            </div>
 		</div>
 		
 		<%= f.hidden_field :street %>
@@ -79,6 +88,7 @@
 		<%= f.hidden_field :cellphone %>
 		<%= f.hidden_field :email %>
 		<%= f.hidden_field :hobbies %>
+        <input type="hidden" name="avatar_temp_name" value="<%=params[:avatar_temp_name]%>">
 		<input type="hidden" name="origin" value="step_1">
 
 		<div class="row">

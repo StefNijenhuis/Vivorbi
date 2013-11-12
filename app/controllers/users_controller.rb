@@ -50,12 +50,18 @@ class UsersController < ApplicationController
         # file upload
         # TODO alleen wanneer er een bestand is meegestuurd
         require 'fileutils'
+        Dir.mkdir("#{Rails.root}/public/avatars") unless File.exists?("#{Rails.root}/public/avatars")
         Dir.mkdir("#{Rails.root}/public/avatars/tmp") unless File.exists?("#{Rails.root}/public/avatars/tmp")
-        
-        @avatar_temp_name = (0...25).map { (65 + rand(26)).chr }.join
-        tempfile = user_params[:avatar].tempfile
-        
-        FileUtils.mv(tempfile, "#{Rails.root}/public/avatars/tmp/#{@avatar_temp_name}.tmp")
+
+        # TODO wanneer params[:avatar_temp_name] bestaat, afbeelding verwijderen en nieuwe tmp afbeelding maken
+        if user_params[:avatar]!=nil
+          @avatar_temp_name = (0...25).map { (65 + rand(26)).chr }.join
+          tempfile = user_params[:avatar].tempfile
+
+          FileUtils.mv(tempfile, "#{Rails.root}/public/avatars/tmp/#{@avatar_temp_name}.tmp")
+        else
+          @avatar_temp_name = params[:avatar_temp_name]
+        end
 
         @form_target = 'step_3' if @form_target==nil
         render :profile_2
