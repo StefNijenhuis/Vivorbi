@@ -20,19 +20,17 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 nl:
+  helpers:
+    label:
+      request:
+        title: "Wat voor oproep wilt u plaatsen?"
+        date: "Selecteer de datum waarop deze oproep uitgevoerd worden?"
+      user:
+        first_name: "Wat is uw voornaam?"
   activerecord:
     attributes:
       request:
-        title: "Een oproep"
-        date: "Een datum"
+        title: "Naam"
+        date: "Datum"
       user:
         first_name: "Voornaam"
-    errors:
-      template:
-        header: "Los de volgende problemen op om verder te gaan"
-      models:
-        request:
-          attributes:
-            title:
-              blank: "moet een naam hebben"
-              too_short: "moet een naam hebben van ten minste 10 tekens"
