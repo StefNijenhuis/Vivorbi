@@ -18,10 +18,10 @@ class RequestsController < ApplicationController
     
     @base_form_path = '/requests/new/'
     @form_target = nil
-    @submit_text = t :next
+    @submit_text = t('global.next')
     if params[:origin]=='overview'
       @form_target='overview'
-      @submit_text = t :done
+      @submit_text = t('global.done')
     end
 
     case params[:step]  

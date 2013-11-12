@@ -20,12 +20,32 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 nl:
-  request_title: "Nieuwe oproep"
-  step: "Stap %{current} van %{total}"
-  edit: "Bewerken"
-  back: "Vorige"
-  next: "Volgende"
-  done: "Gereed"
+  activerecord:
+    attributes:
+      request:
+        title: "Naam"
+        date: "Datum"
+      user:
+        first_name: "Voornaam"
+  errors:
+    messages:
+      cannot_be_in_the_past: 'mag niet in het verleden zijn'
+  global:
+    step: "Stap %{current} van %{total}"
+    back: "Vorige"
+    done: "Gereed"
+    edit: "Bewerken"
+    next: "Volgende"
+  helpers:
+    label:
+      request:
+        title: "Wat voor oproep wilt u plaatsen?"
+        date: "Selecteer de datum waarop deze oproep uitgevoerd moet worden."
+      user:
+        first_name: "Wat is uw voornaam?"
+    submit:
+      request:
+        create: "Nieuwe oproep"
   requests:
     index:
       title: "Hulpvraag overzicht"
@@ -43,23 +63,7 @@ nl:
       submit: "Plaatsen"
     create:
       success: "Het plaatsen van de oproep is geslaagd."
-  helpers:
-    label:
-      request:
-        title: "Wat voor oproep wilt u plaatsen?"
-        date: "Selecteer de datum waarop deze oproep uitgevoerd moet worden."
-      user:
-        first_name: "Wat is uw voornaam?"
-    submit:
-      request:
-        create: "Nieuwe oproep"
-  activerecord:
-    attributes:
-      request:
-        title: "Naam"
-        date: "Datum"
-      user:
-        first_name: "Voornaam"
+      title: "Nieuwe oproep"
   time:
     formats:
       medium: '%A %e-%m-%Y'
