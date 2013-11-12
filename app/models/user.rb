@@ -40,9 +40,9 @@ class User < ActiveRecord::Base
   validates_format_of :postal_code, with: /\A[1-9][0-9]{3}[\s]?[A-Za-z]{2}\z/i, on: :create
   validates :place, :presence => true
   validate :date_cannot_be_in_the_future
-  validate :phone_number_present
-  validates_format_of :cellphone, with: /\A((0(6|7)){1}[1-9]{1}[0-9]{7})\z/i, :allow_blank => true, on: :create
-  validates_format_of :phone, with: /\A((0)[1-9]{2}[0-9][1-9][0-9]{5})\z/, :allow_blank => true, on: :create
+  validate :phone_number
+  #validates_format_of :cellphone, with: /\A((0(6|7)){1}[1-9]{1}[0-9]{7})\z/i, :allow_blank => true, on: :create
+  #validates_format_of :phone, with: /\A((0)[1-9]{2}[0-9][1-9][0-9]{5})\z/, :allow_blank => true, on: :create
   validates_format_of :email, with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/, on: :create
 
   def remove_file(temp_file)
@@ -59,10 +59,19 @@ class User < ActiveRecord::Base
     end
   end
 
-  def phone_number_present
+  def phone_number
     if phone.blank? && cellphone.blank?
       errors.add(:phone, ' of Cellphone moet ingevuld worden')
       errors.add(:cellphone, ' of Phone moet ingevuld worden')
+    else
+      unless phone.blank?
+        phone.gsub!(/[^0-9 ]/i, '')
+        validates_format_of :phone, with: /\A((0)[1-9]{2}[0-9][1-9][0-9]{5})\z/, on: :create
+      end
+      unless cellphone.blank?
+        cellphone.gsub!(/[^0-9 ]/i, '')
+        validates_format_of :cellphone, with: /\A((0(6|7)){1}[1-9]{1}[0-9]{7})\z/i, on: :create
+      end
     end
   end
 

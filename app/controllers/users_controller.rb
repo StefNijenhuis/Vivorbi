@@ -120,8 +120,6 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(user_params)
-    @user.phone.gsub!(/[^0-9 ]/i, '')
-    @user.cellphone.gsub!(/[^0-9 ]/i, '')
     temp_file = "#{Rails.root}/public/avatars/tmp/#{params[:avatar_temp_name]}.tmp"
     @user.avatar = File.open(temp_file)
     respond_to do |format|
