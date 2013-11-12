@@ -1,37 +1,37 @@
 class User < ActiveRecord::Base
   has_attached_file :avatar,
-    :styles => {
-      :large => {
-          :geometry => '400x400#',
-          :quality => 80,
-          :format => 'JPG',
-          :less_than => 20.megabytes
-      },
-      :medium => {
-          :geometry => '300x300#',
-          :quality => 80,
-          :format => 'JPG',
-          :less_than => 20.megabytes
-      },
-      :small => {
-          :geometry => '200x200#',
-          :quality => 80,
-          :format => 'JPG',
-          :less_than => 20.megabytes
-      },
-      :thumbnail => {
-          :geometry => '100x100#',
-          :quality => 80,
-          :format => 'JPG',
-          :less_than => 20.megabytes
-      }
-    },
-    :path => ':rails_root/public/avatars/:style/:id.:extension',
-    :default_url => ':rails_root/public/avatars/missing.jpg'
+                    :styles => {
+                        :large => {
+                            :geometry => '400x400#',
+                            :quality => 80,
+                            :format => 'JPG',
+                            :less_than => 20.megabytes
+                        },
+                        :medium => {
+                            :geometry => '300x300#',
+                            :quality => 80,
+                            :format => 'JPG',
+                            :less_than => 20.megabytes
+                        },
+                        :small => {
+                            :geometry => '200x200#',
+                            :quality => 80,
+                            :format => 'JPG',
+                            :less_than => 20.megabytes
+                        },
+                        :thumbnail => {
+                            :geometry => '100x100#',
+                            :quality => 80,
+                            :format => 'JPG',
+                            :less_than => 20.megabytes
+                        }
+                    },
+                    :path => ":rails_root/public/avatars/:style/:id.:extension",
+                    :default_url => ":rails_root/public/avatars/missing.jpg"
 
   validates :avatar, :attachment_presence => true, :allow_blank => true
   validates_with AttachmentPresenceValidator, :attributes => :avatar, :allow_blank => true
-  validates_attachment :avatar, content_type: { content_type: ['image/jpeg', 'image/bmp', 'image/png'] }
+  validates_attachment :avatar, content_type: { content_type: ["image/jpeg", "image/bmp", "image/png"] }
 
   validates :first_name, :presence => true
   validates :last_name, :presence => true
@@ -40,10 +40,11 @@ class User < ActiveRecord::Base
   validates_format_of :postal_code, with: /\A[1-9][0-9]{3}[\s]?[A-Za-z]{2}\z/i, on: :create
   validates :place, :presence => true
   validate :date_cannot_be_in_the_future
-  validates_format_of :cellphone, with: /\A((0(6|7)){1}[1-9]{1}[0-9]{7})\z/i, on: :create
-  validates_format_of :phone, with: /\A((0)[1-9]{2}[0-9][1-9][0-9]{5})\z/, on: :create
+  validate :phone_number_present
+  validates_format_of :cellphone, with: /\A((0(6|7)){1}[1-9]{1}[0-9]{7})\z/i, :allow_blank => true, on: :create
+  validates_format_of :phone, with: /\A((0)[1-9]{2}[0-9][1-9][0-9]{5})\z/, :allow_blank => true, on: :create
   validates_format_of :email, with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/, on: :create
-  
+
   def remove_file(temp_file)
     require 'fileutils'
     File.delete(temp_file)
@@ -55,6 +56,13 @@ class User < ActiveRecord::Base
       if File.open(file).ctime < 1.day.ago
         File.delete file
       end
+    end
+  end
+
+  def phone_number_present
+    if phone.blank? && cellphone.blank?
+      errors.add(:phone, ' of Cellphone moet ingevuld worden')
+      errors.add(:cellphone, ' of Phone moet ingevuld worden')
     end
   end
 
