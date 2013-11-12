@@ -1,113 +1,116 @@
 <div id="profile_1">
-	<h1>Wie bent u?</h1>
-	<%= form_for @user, url: @base_form_path+@form_target do |f| %>
-		<%
-		custom_error_class='error'
-		# validation display
-		custom_class=''
-		error_text=''
-		if @user.errors[:first_name].any?
-			custom_class=custom_error_class
-			error_text="<small class='"+custom_class+"'>"+@user.errors.full_messages_for(:first_name).join("<br>")+"</small>"
-		end
-		%>
-		<div class="row">
-			<div class="small-12 columns">
-				<h4>
-					<%= f.label :first_name, class:custom_class %>
-				</h4>
-				<%= raw error_text %>
-			</div>
-		</div>
-		<div class="row">
-			<div class="small-12 columns">
-				<%= f.text_field :first_name, placeholder: "Voornaam", class:custom_class %>
-			</div>
-		</div>
+  <h1><%=t('.title')%></h1>
+  <%= form_for @user, url: @base_form_path+@form_target do |f| %>
+    <%
+      # TODO handle validation in controller
+      custom_error_class='error'
+      # validation display
+      custom_class=''
+      error_text=''
+      if @user.errors[:first_name].any?
+        custom_class=custom_error_class
+        error_text="<small class='"+custom_class+"'>"+@user.errors.full_messages_for(:first_name).join("<br>")+"</small>"
+      end
+    %>
+    <div class="row">
+      <div class="small-12 columns">
+        <h4>
+          <%= f.label :first_name, class:custom_class %>
+        </h4>
+        <%= raw error_text %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="small-12 columns">
+        <%= f.text_field :first_name, placeholder: t('activerecord.attributes.user.first_name'), class:custom_class %>
+      </div>
+    </div>
 
-		<div class="row">
-			<div class="small-4 columns">
-				<h4>
-					<%= f.label :in_between, "Heeft uw naam een tussenvoegsel?" %>
-				</h4>
-			</div>
-		<%
-		custom_class=''
-		error_text=''
-		if @user.errors[:last_name].any?
-			custom_class='error'
-			error_text="<small class='error'>"+@user.errors.full_messages_for(:last_name).join("<br>")+"</small>"
-		end
-		%>
-			<div class="small-8 columns">
-				<h4>
-					<%= f.label :last_name, "Wat is uw achternaam?", class:custom_class %>
-				</h4>
-				<%= raw error_text %>
-			</div>
-		</div>
-		<div class="row">
-			<div class="small-4 columns">
-				<%= f.text_field :in_between, placeholder: "Tussenvoegsel" %>
-			</div>
-			<div class="small-8 columns">
-				<%= f.text_field :last_name, placeholder: "Achternaam", class:custom_class %>
-			</div>
-		</div>
-		<div class="row">
-			<div class="small-12 columns">
-				<h4>
-					<%= f.label :avatar, "Hoe ziet u eruit?" %>
-				</h4>
-			</div>
-		</div>
-		<div class="row">
-			<div class="large-4 columns">
-				<button id="upload_avatar" class="submit_button">
-					Kies een foto
-				</button>
-			</div>
-            <div class="large-8 columns">
-              <% if params[:avatar_temp_name].blank? %>
-              	<span id="avatar_placeholder">
-              		U heeft nog geen foto geupload.
-              	</span>
-              <% else %>
-              	<img src="/avatars/tmp/<%=params[:avatar_temp_name]%>.tmp" id="avatar_placeholder">
-              <% end %>
-                <%= f.file_field :avatar, class:"none_visable", accept:"image/*,capture=camera" %>
-            </div>
-		</div>
-		
-		<%= f.hidden_field :street %>
-		<%= f.hidden_field :house_number %>
-		<%= f.hidden_field :postal_code %>
-		<%= f.hidden_field :place %>
-		<%= f.hidden_field :date_of_birth %>
-		<%= f.hidden_field :phone %>
-		<%= f.hidden_field :cellphone %>
-		<%= f.hidden_field :email %>
-		<%= f.hidden_field :hobbies %>
-        <input type="hidden" name="avatar_temp_name" value="<%=params[:avatar_temp_name]%>">
-		<input type="hidden" name="origin" value="step_1">
-
-		<div class="row">
-			<div class="large-4 push-8 columns">
-				<%= f.submit "Volgende", :class => 'submit_button' %>
-			</div>
-		</div>
-		<div class="row">
-			<div class="small-12 columns" id="progress_bar">
-				<span class="small-12 columns progress_text">
-			        Stap 1 van 6
-			    </span>
-			    <div class="small-2 columns done" id="first"></div>
-			    <div class="small-2 columns not_done"></div>
-			    <div class="small-2 columns not_done"></div>
-			    <div class="small-2 columns not_done"></div>
-			    <div class="small-2 columns not_done"></div>
-			    <div class="small-2 columns not_done end" id="last"></div>
-			</div>
-		</div>
-	<% end %>
+    <div class="row">
+      <div class="small-4 columns">
+        <h4>
+          <%= f.label :in_between %>
+        </h4>
+      </div>
+    <%
+      # TODO handle validation in controller
+      custom_class=''
+      error_text=''
+      if @user.errors[:last_name].any?
+        custom_class='error'
+        error_text="<small class='error'>"+@user.errors.full_messages_for(:last_name).join("<br>")+"</small>"
+      end
+    %>
+      <div class="small-8 columns">
+        <h4>
+          <%= f.label :last_name, class:custom_class %>
+        </h4>
+        <%= raw error_text %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="small-4 columns">
+        <%= f.text_field :in_between, placeholder: t('activerecord.attributes.user.in_between') %>
+      </div>
+      <div class="small-8 columns">
+        <%= f.text_field :last_name, placeholder: t('activerecord.attributes.user.last_name'), class:custom_class %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="small-12 columns">
+        <h4>
+          <%= f.label :avatar %>
+        </h4>
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-4 columns">
+        <button id="upload_avatar" class="submit_button"><%=t('.avatar_button')%></button>
+      </div>
+      <div class="large-8 columns">
+        <% if params[:avatar_temp_name].blank? %>
+          <span id="avatar_placeholder">
+            <%=t('.avatar_unavailable')%>
+          </span>
+          <span id="avatar_placeholder_selected" class="none_visable">
+            <%=t('.avatar_available')%>
+          </span>
+        <% else %>
+          <img src="/avatars/tmp/<%=params[:avatar_temp_name]%>.tmp" id="avatar_placeholder">
+        <% end %>
+        <%= f.file_field :avatar, class:"none_visable", accept:"image/*,capture=camera" %>
+      </div>
+    </div>
+    
+    <%= f.hidden_field :street %>
+    <%= f.hidden_field :house_number %>
+    <%= f.hidden_field :postal_code %>
+    <%= f.hidden_field :place %>
+    <%= f.hidden_field :date_of_birth %>
+    <%= f.hidden_field :phone %>
+    <%= f.hidden_field :cellphone %>
+    <%= f.hidden_field :email %>
+    <%= f.hidden_field :hobbies %>
+    <input type="hidden" name="avatar_temp_name" value="<%=params[:avatar_temp_name]%>">
+    <input type="hidden" name="origin" value="step_1">
+    
+    <div class="row">
+      <div class="large-4 push-8 columns">
+        <%= f.submit t('global.next'), :class => 'submit_button' %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="small-12 columns" id="progress_bar">
+        <span class="small-12 columns progress_text">
+          <%=t('global.step',current:1,total:6)%>
+        </span>
+        <div class="small-2 columns done" id="first"></div>
+        <div class="small-2 columns not_done"></div>
+        <div class="small-2 columns not_done"></div>
+        <div class="small-2 columns not_done"></div>
+        <div class="small-2 columns not_done"></div>
+        <div class="small-2 columns not_done end" id="last"></div>
+      </div>
+    </div>
+  <% end %>
 </div>

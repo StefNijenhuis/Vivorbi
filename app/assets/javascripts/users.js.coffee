@@ -7,8 +7,7 @@ jQuery ->
       $("#user_avatar").trigger("click")
       return false
     $("#user_avatar").change ->
-      # TODO duidelijk aangeven dat er een bestand is gekozen
-      $("#avatar_placeholder").html("U heeft een foto geselecteerd");
+      $("#avatar_placeholder").html($("#avatar_placeholder_selected").text())
       $("#avatar_placeholder").css("color", "#55ae3a");
 
   if $("#profile_2").length>0
@@ -33,6 +32,7 @@ jQuery ->
         # niet ingevuld -> toon foutmelding
         if !$("label[for=user_house_number]").hasClass("error")
           $("label[for=user_house_number]").addClass("error")
+          # TODO i18n
           $("label[for=user_house_number]").parent().append("<small id='hn_error' class='error'>Het is verplicht een huisnummer in te vullen</small>")
           $("#user_house_number").addClass("error")
       else
@@ -58,6 +58,7 @@ jQuery ->
           type: 'GET'
           dataType: 'html'
           error: (jqXHR, textStatus, errorThrown) ->
+            # TODO i18n
             alert("error: geen verbinding oid")
             console.log(errorThrown)
           success: (data, textStatus, jqXHR) ->
@@ -77,6 +78,7 @@ jQuery ->
                 type: 'GET'
                 dataType: 'html'
                 error: (jqXHR, textStatus, errorThrown) ->
+                  # TODO i18n
                   alert("error: geen verbinding oid")
                   console.log(errorThrown)
                 success: (data, textStatus, jqXHR) ->
@@ -87,12 +89,14 @@ jQuery ->
                     r = data.resource
                     if !$("label[for=user_house_number]").hasClass("error")
                       $("label[for=user_house_number]").addClass("error")
+                      # TODO i18n
                       $("label[for=user_house_number]").parent().append("<small id='hn_error' class='error'>De "+r.street+" heeft geen nummer "+$("#user_house_number").val()+"!</small>")
                       $("#user_house_number").addClass("error")
                   else
                     # nee, postcode is dus ongeldig
                     if !$("label[for=user_postal_code]").hasClass("error")
                       $("label[for=user_postal_code]").addClass("error")
+                      # TODO i18n
                       $("label[for=user_postal_code]").parent().append("<small id='pc_error' class='error'>Bij deze postcode kon geen adres gevonden worden</small>")
                       $("#user_postal_code").addClass("error")
       return false

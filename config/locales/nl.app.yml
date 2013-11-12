@@ -27,6 +27,8 @@ nl:
         date: "Datum"
       user:
         first_name: "Voornaam"
+        in_between: "Tussenvoegsel"
+        last_name: "Achternaam"
   errors:
     messages:
       cannot_be_in_the_past: 'mag niet in het verleden zijn'
@@ -36,6 +38,8 @@ nl:
     done: "Gereed"
     edit: "Bewerken"
     next: "Volgende"
+    no_button: "Nee"
+    yes_button: "Ja"
   helpers:
     label:
       request:
@@ -43,6 +47,15 @@ nl:
         date: "Selecteer de datum waarop deze oproep uitgevoerd moet worden."
       user:
         first_name: "Wat is uw voornaam?"
+        in_between: "Heeft uw naam een tussenvoegsel?"
+        last_name: "Wat is uw achternaam?"
+        avatar: "Hoe ziet u eruit?"
+        postal_code: "Wat is uw postcode?"
+        house_number: "Wat is uw huisnummer?"
+        phone: "Wat is uw telefoonnummer?"
+        cellphone: "Wat is uw mobiele nummer?"
+        email: "Wat is uw e-mailadres?"
+        hobbies: "Wat zijn uw hobby's?"
     submit:
       request:
         create: "Nieuwe oproep"
@@ -64,7 +77,55 @@ nl:
     create:
       success: "Het plaatsen van de oproep is geslaagd."
       title: "Nieuwe oproep"
+  users:
+    profile:
+      months:
+        choose: "Kies een maand"
+    profile_1:
+      title: "Wie bent u?"
+      avatar_button: "Kies een foto"
+      avatar_unavailable: "U heeft nog geen foto geupload."
+      avatar_available: "U heeft een foto geselecteerd."
+    profile_2:
+      title: "Wanneer bent u geboren?"
+      label:
+        day: "Wat is uw geboortedag?"
+        month: "Wat is uw geboortemaand?"
+        year: "Wat is uw geboortejaar?"
+      day: "Dag"
+      year: "Jaar"
+    profile_3:
+      title: "Waar woont u?"
+      postal_code: "1234AA"
+      house_number: "Huisnummer"
+      confirm_address: "Klopt dit adres?"
+    profile_4:
+      title: "Hoe kunnen we u bereiken?"
+      phone: "Telefoonnummer"
+      cellphone: "Mobiele nummer"
+      email: "E-mailadres"
+    profile_5:
+      title: "Wat vindt u leuk om te doen?"
+    profile_overview:
+      title: "Kloppen uw gegevens?"
+      name: "Naam"
+      date_of_birth: "Geboortedatum"
+      address: "Adres"
+      contact_info: "Contactgegevens"
+      phone:  "tel"
+      cell: "mob"
+      email: "e-mail"
+      hobbies: "Hobby's"
+      no_hobbies: "Er zijn geen hobby's ingevuld, klik op bewerken als u alsnog een hobby wilt toevoegen."
+      submit: "Voltooien"
+    create:
+      success: "Het aanmaken van de gebruiker is geslaagd."
+    update:
+      success: "Het bijwerken van de gebruiker is geslaagd."
   time:
     formats:
       medium: '%A %e-%m-%Y'
+      short_date: '%d-%m-%Y'
+  date:
+    formats:
       short_date: '%d-%m-%Y'

@@ -59,6 +59,7 @@ class User < ActiveRecord::Base
 
   def phone_number
     if phone.blank? && cellphone.blank?
+      # TODO i18n
       errors.add(:phone, ' or Cellphone required')
       errors.add(:cellphone, ' or Phone required')
     else
@@ -75,8 +76,10 @@ class User < ActiveRecord::Base
 
   def date_cannot_be_in_the_future
     if date_of_birth.blank?
+      # TODO i18n
       errors.add(:date_of_birth, 'mag niet leeg zijn')
     elsif date_of_birth > Date.today
+      # TODO i18n
       errors.add(:date_of_birth, 'mag niet in de toekomst zijn')
     end
   end

@@ -1,106 +1,105 @@
 <div id="profile_2">
-	<div class="small-12">
-		<h1>
-			Wanneer bent u geboren?
-		</h1>
-	</div>
-	<%= form_for @user, url: @base_form_path+@form_target do |f| %>
-		<%
-		custom_error_class='error'
-		error_text=''
-		if @user.errors[:date_of_birth].any? && params[:origin]!="step_1"
-			custom_class=custom_error_class
-			error_text="<small class='"+custom_class+"'>"+@user.errors.full_messages_for(:date_of_birth).join("<br>")+"</small>"
-		end
-		%>
-		<div class="row">
-			<div class="small-4 columns">
-				<h4>
-					<label class="<%=custom_class%>" for="day">Wat is uw geboortedag?</label>
-				</h4>
-			</div>
-			<div class="small-4 columns">
-				<h4>
-					<label class="<%=custom_class%>" for="month">Wat is uw geboortemaand?</label>
-				</h4>
-			</div>
-			<div class="small-4 columns">
-				<h4>
-					<label class="<%=custom_class%>" for="year">Wat is uw geboortejaar?</label>
-				</h4>
-			</div>
-		</div>
-		<div class="row">
-			<div class="small-12 columns">
-				<%= raw error_text %>
-			</div>
-		</div>
-		<div class="row">
-			<div class="small-4 columns">
-				<input class="<%=custom_class%>" type="text" id="day" name="day" placeholder="Dag" value="<%=@user.date_of_birth.day unless @user.date_of_birth == nil%>">
-			</div>
+  <div class="small-12">
+    <h1><%=t('.title')%></h1>
+  </div>
+  <%= form_for @user, url: @base_form_path+@form_target do |f| %>
+    <%
+    # TODO handle validation in controller
+    custom_error_class='error'
+    error_text=''
+    if @user.errors[:date_of_birth].any? && params[:origin]!="step_1"
+      custom_class=custom_error_class
+      error_text="<small class='"+custom_class+"'>"+@user.errors.full_messages_for(:date_of_birth).join("<br>")+"</small>"
+    end
+    %>
+    <div class="row">
+      <div class="small-4 columns">
+        <h4>
+          <label class="<%=custom_class%>" for="day"><%=t('.label.day')%></label>
+        </h4>
+      </div>
+      <div class="small-4 columns">
+        <h4>
+          <label class="<%=custom_class%>" for="month"><%=t('.label.month')%></label>
+        </h4>
+      </div>
+      <div class="small-4 columns">
+        <h4>
+          <label class="<%=custom_class%>" for="year"><%=t('.label.year')%></label>
+        </h4>
+      </div>
+    </div>
+    <div class="row">
+      <div class="small-12 columns">
+        <%= raw error_text %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="small-4 columns">
+        <input class="<%=custom_class%>" type="text" id="day" name="day" placeholder="<%=t('.day')%>" value="<%=@user.date_of_birth.day unless @user.date_of_birth == nil%>">
+      </div>
 
-			<div class="small-4 columns">
-				<select class="<%=custom_class%>" id="month" name="month">
-					<%
-					@months.each_with_index do | text, value | 
-						if @user.date_of_birth != nil
-							if value == @user.date_of_birth.month
-								sel = " selected"
-							else
-								sel = ""
-							end
-						else
-							sel = ""
-						end
-						%>
-					<option value="<%=value%>"<%=sel%>><%=text%></option>
-					<% end %>
-				</select>
-			</div>
-			
-			<div class="small-4 columns">
-				<input class="<%=custom_class%>" type="text" id="year" name="year" placeholder="Jaar" value="<%=@user.date_of_birth.year unless @user.date_of_birth==nil%>">
-			</div>
-		</div>
-		
-		<%= f.hidden_field :first_name %>
-		<%= f.hidden_field :in_between %>
-		<%= f.hidden_field :last_name %>
-		<%= f.hidden_field :date_of_birth %>
+      <div class="small-4 columns">
+        <select class="<%=custom_class%>" id="month" name="month">
+          <%
+          @months.each_with_index do | text, value | 
+            if @user.date_of_birth != nil
+              if value == @user.date_of_birth.month
+                sel = " selected"
+              else
+                sel = ""
+              end
+            else
+              sel = ""
+            end
+            %>
+          <option value="<%=value%>"<%=sel%>><%=text%></option>
+          <% end %>
+        </select>
+      </div>
+      
+      <div class="small-4 columns">
+        <input class="<%=custom_class%>" type="text" id="year" name="year" placeholder="<%=t('.year')%>" value="<%=@user.date_of_birth.year unless @user.date_of_birth==nil%>">
+      </div>
+    </div>
+    
+    <%= f.hidden_field :first_name %>
+    <%= f.hidden_field :in_between %>
+    <%= f.hidden_field :last_name %>
+    <%= f.hidden_field :date_of_birth %>
 
-		<!-- alleen van toepassing bij bewerken -->
-		<%= f.hidden_field :street %>
-		<%= f.hidden_field :house_number %>
-		<%= f.hidden_field :postal_code %>
-		<%= f.hidden_field :place %>
-		<%= f.hidden_field :phone %>
-		<%= f.hidden_field :cellphone %>
-		<%= f.hidden_field :email %>
-		<%= f.hidden_field :hobbies %>
-		<input type="hidden" name="origin" value="step_2">
-		<input type="hidden" name="avatar_temp_name" value="<%=@avatar_temp_name%>">
-		
-		<div class="row">
-			<div class="large-4 small-6 columns">
-				<div class="prev">Vorige</div>
-			</div>
-			<div class="large-4 small-6 columns">
-				<%= f.submit "Volgende", :class => 'submit_button' %>
-			</div>
-		</div>
-		<div class="row">
-			<div class="small-12 columns" id="progress_bar">
-				<span class="small-12 columns progress_text">
-			        Stap 2 van 6
-			    </span>
-			    <div class="small-2 columns done" id="first"></div>
-			    <div class="small-2 columns done"></div>
-			    <div class="small-2 columns not_done"></div>
-			    <div class="small-2 columns not_done"></div>
-			    <div class="small-2 columns not_done"></div>
-			    <div class="small-2 columns not_done end" id="last"></div>
-			</div>
-		</div>
-	<% end %>
+    <!-- alleen van toepassing bij bewerken -->
+    <%= f.hidden_field :street %>
+    <%= f.hidden_field :house_number %>
+    <%= f.hidden_field :postal_code %>
+    <%= f.hidden_field :place %>
+    <%= f.hidden_field :phone %>
+    <%= f.hidden_field :cellphone %>
+    <%= f.hidden_field :email %>
+    <%= f.hidden_field :hobbies %>
+    <input type="hidden" name="origin" value="step_2">
+    <input type="hidden" name="avatar_temp_name" value="<%=@avatar_temp_name%>">
+    
+    <div class="row">
+      <div class="large-4 small-6 columns">
+        <div class="prev"><%=t('global.back')%></div>
+      </div>
+      <div class="large-4 small-6 columns">
+        <%= f.submit t('global.next'), :class => 'submit_button' %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="small-12 columns" id="progress_bar">
+        <span class="small-12 columns progress_text">
+          <%=t('global.step',current:2,total:6)%>
+        </span>
+        <div class="small-2 columns done" id="first"></div>
+        <div class="small-2 columns done"></div>
+        <div class="small-2 columns not_done"></div>
+        <div class="small-2 columns not_done"></div>
+        <div class="small-2 columns not_done"></div>
+        <div class="small-2 columns not_done end" id="last"></div>
+      </div>
+    </div>
+  <% end %>
 </div>
