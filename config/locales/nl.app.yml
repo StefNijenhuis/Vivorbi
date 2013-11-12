@@ -24,6 +24,8 @@ nl:
   step: "Stap %{current} van %{total}"
   edit: "Bewerken"
   back: "Vorige"
+  next: "Volgende"
+  done: "Gereed"
   requests:
     index:
       title: "Hulpvraag overzicht"
@@ -39,6 +41,8 @@ nl:
     new_overview:
       title: "Is dit de oproep die u wilt plaatsen?"
       submit: "Plaatsen"
+    create:
+      success: "Het plaatsen van de oproep is geslaagd."
   helpers:
     label:
       request:

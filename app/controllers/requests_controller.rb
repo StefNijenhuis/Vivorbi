@@ -2,9 +2,10 @@ class RequestsController < ApplicationController
   skip_before_filter :verify_authenticity_token  
 
   def index
-    # Get all requests
+    # load single new request for new request form
     @request = Request.new
     @form_path = '/requests/new/step_1'
+    # Get all requests
     @requests = Request.all
   end
 
@@ -17,10 +18,10 @@ class RequestsController < ApplicationController
     
     @base_form_path = '/requests/new/'
     @form_target = nil
-    @submit_text = 'Volgende'
+    @submit_text = t :next
     if params[:origin]=='overview'
       @form_target='overview'
-      @submit_text = 'Gereed'
+      @submit_text = t :done
     end
 
     case params[:step]  
@@ -63,7 +64,7 @@ class RequestsController < ApplicationController
 
     if @request.save
       # Redirect to index function on success
-      redirect_to :action => 'index', notice: 'User was successfully created.'
+      redirect_to :action => 'index', notice: t('.success')
     else
       render action: 'new_overview'
     end
