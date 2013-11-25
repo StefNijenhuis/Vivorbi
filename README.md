@@ -10,6 +10,11 @@
 3. Select branch branch_name: `git checkout --track origin/branch_name`
 4. `git pull`
 
+## Merge Branch to master
+In order to merge a branch to the master branch you need to do the following
+1. Checkout to the master branch `git checkout master`
+2. `git merge branch_name`
+
 ## Reverting to a previous commit
 1. Use `git log` to view a list of commits. the SHA hash is the commit-id you're looking for, or look on github for the commit-id
 2. `git reset --hard commit-id`
