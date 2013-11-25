@@ -1,88 +1,86 @@
 <div id="profile_3">
-	<div class="row small-12 columns">
-		<h1>
-			Waar woont u?
-		</h1>
-	</div>
-	<%= form_for @user, url: @base_form_path+@form_target do |f| %>
-		<div class="row">
-			<div class="small-12 columns">
-				<h4><%= f.label :postal_code, "Wat is uw postcode?" %></h4>
-			</div>
-		</div>
-		<div class="row">
-			<div class="small-12 columns">
-				<h4><%= f.text_field :postal_code, placeholder: "1234AA" %></h4>
-			</div>
-		</div>
-		<div class="row">
-			<div class="small-12 columns">
-				<h4><%= f.label :house_number, "Wat is uw huisnummer?" %></h4>
-			</div>
-		</div>
-		<div class="row">
-			<div class="small-12 columns">
-				<h4><%= f.text_field :house_number, placeholder: "Huisnummer" %></h4>
-			</div>
-		</div>
-			
-		<!-- met jquery juiste straat en plaats in hidden inputs plaatsen -->
-		<%= f.hidden_field :street %>
-		<%= f.hidden_field :place %>
-		
-		<!-- met jquery straat en woonplaats opzoeken en in hidden inputs plaatsen -->
-		<div class="row">
-			<div class="large-4 small-6 columns">
-				<div class="prev">Vorige</div>
-			</div>
-			<div class="large-4 small-6 columns">
-				<button id="check_address" class="submit_button">Volgende</button>
-			</div>
-		</div>
-		<div class="row">
-			<div class="small-12 columns" id="progress_bar">
-				<span class="small-12 columns progress_text">
-			        Stap 3 van 6
-			    </span>
-			    <div class="small-2 columns done" id="first"></div>
-			    <div class="small-2 columns done"></div>
-			    <div class="small-2 columns done"></div>
-			    <div class="small-2 columns not_done"></div>
-			    <div class="small-2 columns not_done"></div>
-			    <div class="small-2 columns not_done end" id="last"></div>
-			</div>
-		</div>
+  <div class="row small-12 columns">
+    <h1><%=t('.title')%></h1>
+  </div>
+  <%= form_for @user, url: @base_form_path+@form_target do |f| %>
+    <div class="row">
+      <div class="small-12 columns">
+        <h4><%= f.label :postal_code %></h4>
+      </div>
+    </div>
+    <div class="row">
+      <div class="small-12 columns">
+        <h4><%= f.text_field :postal_code, placeholder: t('.postal_code') %></h4>
+      </div>
+    </div>
+    <div class="row">
+      <div class="small-12 columns">
+        <h4><%= f.label :house_number %></h4>
+      </div>
+    </div>
+    <div class="row">
+      <div class="small-12 columns">
+        <h4><%= f.text_field :house_number, placeholder: t('.house_number') %></h4>
+      </div>
+    </div>
+      
+    <!-- met jquery juiste straat en plaats in hidden inputs plaatsen -->
+    <%= f.hidden_field :street %>
+    <%= f.hidden_field :place %>
+    
+    <!-- met jquery straat en woonplaats opzoeken en in hidden inputs plaatsen -->
+    <div class="row">
+      <div class="large-4 small-6 columns">
+        <div class="prev"><%=t('global.back')%></div>
+      </div>
+      <div class="large-4 small-6 columns">
+        <button id="check_address" class="submit_button"><%=t('global.next')%></button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="small-12 columns" id="progress_bar">
+        <span class="small-12 columns progress_text">
+          <%=t('global.step',current:3,total:6)%>
+        </span>
+        <div class="small-2 columns done" id="first"></div>
+        <div class="small-2 columns done"></div>
+        <div class="small-2 columns done"></div>
+        <div class="small-2 columns not_done"></div>
+        <div class="small-2 columns not_done"></div>
+        <div class="small-2 columns not_done end" id="last"></div>
+      </div>
+    </div>
 
-		<div id="background_overlay"></div>
-		<div id="overlay">
-			<div class="row">
-				<div class="small-12 columns">
-				<h2>Klopt dit adres?</h2>
-				</div>
-			</div>
-			<div class="row">
-				<div class="small-12 columns">
-					<div id="address"></div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="small-6 columns">
-					<button id="close_overlay" class="submit_button">Nee</button>
-				</div>
-				<%= f.hidden_field :first_name %>
-				<%= f.hidden_field :in_between %>
-				<%= f.hidden_field :last_name %>
-				<%= f.hidden_field :date_of_birth %>
-				<%= f.hidden_field :phone %>
-				<%= f.hidden_field :cellphone %>
-				<%= f.hidden_field :email %>
-				<%= f.hidden_field :hobbies %>
-				<input type="hidden" name="avatar_temp_name" value="<%=params[:avatar_temp_name]%>">
-				<input type="hidden" name="origin" value="step_3">
-				<div class="small-6 columns">
-					<%= f.submit "Ja", :class => 'submit_button' %>
-				</div>
-			</div>
-		</div>
-	<% end %>
+    <div id="background_overlay"></div>
+    <div id="overlay">
+      <div class="row">
+        <div class="small-12 columns">
+        <h2><%=t('.confirm_address')%></h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="small-12 columns">
+          <div id="address"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="small-6 columns">
+          <button id="close_overlay" class="submit_button"><%=t('global.no_button')%></button>
+        </div>
+        <%= f.hidden_field :first_name %>
+        <%= f.hidden_field :in_between %>
+        <%= f.hidden_field :last_name %>
+        <%= f.hidden_field :date_of_birth %>
+        <%= f.hidden_field :phone %>
+        <%= f.hidden_field :cellphone %>
+        <%= f.hidden_field :email %>
+        <%= f.hidden_field :hobbies %>
+        <input type="hidden" name="avatar_temp_name" value="<%=params[:avatar_temp_name]%>">
+        <input type="hidden" name="origin" value="step_3">
+        <div class="small-6 columns">
+          <%= f.submit t('global.yes_button'), :class => 'submit_button' %>
+        </div>
+      </div>
+    </div>
+  <% end %>
 </div>

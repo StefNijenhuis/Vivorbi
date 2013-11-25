@@ -1,0 +1,131 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+nl:
+  activerecord:
+    attributes:
+      request:
+        title: "Naam"
+        date: "Datum"
+      user:
+        first_name: "Voornaam"
+        in_between: "Tussenvoegsel"
+        last_name: "Achternaam"
+  errors:
+    messages:
+      cannot_be_in_the_past: 'mag niet in het verleden zijn'
+  global:
+    step: "Stap %{current} van %{total}"
+    back: "Vorige"
+    done: "Gereed"
+    edit: "Bewerken"
+    next: "Volgende"
+    no_button: "Nee"
+    yes_button: "Ja"
+  helpers:
+    label:
+      request:
+        title: "Wat voor oproep wilt u plaatsen?"
+        date: "Selecteer de datum waarop deze oproep uitgevoerd moet worden."
+      user:
+        first_name: "Wat is uw voornaam?"
+        in_between: "Heeft uw naam een tussenvoegsel?"
+        last_name: "Wat is uw achternaam?"
+        avatar: "Hoe ziet u eruit?"
+        postal_code: "Wat is uw postcode?"
+        house_number: "Wat is uw huisnummer?"
+        phone: "Wat is uw telefoonnummer?"
+        cellphone: "Wat is uw mobiele nummer?"
+        email: "Wat is uw e-mailadres?"
+        hobbies: "Wat zijn uw hobby's?"
+    submit:
+      request:
+        create: "Nieuwe oproep"
+  requests:
+    index:
+      title: "Hulpvraag overzicht"
+      intro: "Hieronder ziet u het overzicht van de hulpvragen. Om in contact te komen klik op de reageerknop."
+      details: "Details"
+      respond: "Reageren"
+    new_step_1:
+      title: "Wat is uw oproep?"
+      title_placeholder: "Naam van uw oproep"
+      title_title: "Minimaal 10 karakters invullen"
+    new_step_2:
+      title: "Voor wanneer is deze oproep?"
+    new_overview:
+      title: "Is dit de oproep die u wilt plaatsen?"
+      submit: "Plaatsen"
+    create:
+      success: "Het plaatsen van de oproep is geslaagd."
+      title: "Nieuwe oproep"
+  users:
+    profile:
+      months:
+        choose: "Kies een maand"
+    profile_1:
+      title: "Wie bent u?"
+      avatar_button: "Kies een foto"
+      avatar_unavailable: "U heeft nog geen foto geupload."
+      avatar_available: "U heeft een foto geselecteerd."
+    profile_2:
+      title: "Wanneer bent u geboren?"
+      label:
+        day: "Wat is uw geboortedag?"
+        month: "Wat is uw geboortemaand?"
+        year: "Wat is uw geboortejaar?"
+      day: "Dag"
+      year: "Jaar"
+    profile_3:
+      title: "Waar woont u?"
+      postal_code: "1234AA"
+      house_number: "Huisnummer"
+      confirm_address: "Klopt dit adres?"
+    profile_4:
+      title: "Hoe kunnen we u bereiken?"
+      phone: "Telefoonnummer"
+      cellphone: "Mobiele nummer"
+      email: "E-mailadres"
+    profile_5:
+      title: "Wat vindt u leuk om te doen?"
+    profile_overview:
+      title: "Kloppen uw gegevens?"
+      name: "Naam"
+      date_of_birth: "Geboortedatum"
+      address: "Adres"
+      contact_info: "Contactgegevens"
+      phone:  "tel"
+      cell: "mob"
+      email: "e-mail"
+      hobbies: "Hobby's"
+      no_hobbies: "Er zijn geen hobby's ingevuld, klik op bewerken als u alsnog een hobby wilt toevoegen."
+      submit: "Voltooien"
+    create:
+      success: "Het aanmaken van de gebruiker is geslaagd."
+    update:
+      success: "Het bijwerken van de gebruiker is geslaagd."
+  time:
+    formats:
+      medium: '%A %e-%m-%Y'
+      short_date: '%d-%m-%Y'
+  date:
+    formats:
+      short_date: '%d-%m-%Y'

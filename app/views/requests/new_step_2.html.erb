@@ -1,7 +1,8 @@
-<% content_for :title, "Nieuwe oproep" %>
+<% content_for :title, t('requests.create.title') %>
 
 <%= form_for @request, url: @base_form_path+@form_target do |f| %>
-	<%
+  <%
+    # TODO handle this in controller!
     custom_error_class='error'
     # validation display
     custom_class=''
@@ -10,50 +11,49 @@
       custom_class=custom_error_class
       error_text="<small class='"+custom_class+"'>"+@request.errors.full_messages_for(:date).join("<br>")+"</small>"
     end
-    %>
-	<div class="row">
-		<div class="small-12 columns">
-	    <!-- STEP 2 - DATE OF REQUEST -->
-			<h1 class="form_title" id="title_date">Voor wanneer is deze oproep?</h1>
-		</div>
-	</div>
-	<div class="row">
-		<div class="small-12 columns">
-			<h4>
-				<%= f.label :date, "Selecteer de datum waarop deze oproep uitgevoerd worden?", class:custom_class %>
-			</h4>
-			<%= raw error_text %>
-		</div>
-	</div>
-	<div class="row">
-		<div class="small-12 columns">
-	    	<div id="request_form_date">
-			    <div id="date"></div>
-			    <%= f.hidden_field :title %>
-			    <%= f.hidden_field :date %>
-			    <input type="hidden" name="origin" value="<%= params[:origin]%>">
-	    	</div>
-	  	</div>
-	</div>
-	<!-- PROGRESS BAR AND BUTTONS -->
-	<div class="row">
-	  <div class="large-4 small-6 columns">
-	  	<div class="prev">
-	    	Vorige
-	    </div>
-	  </div>
-	  <div class="large-4 small-6 columns">
-      	<%= f.submit @submit_text, class:"submit_button" %>
-	  </div>
-	</div>
-	<div class="row">
-        <div id="progress_bar" class="small-12 columns">
-          <span class="small-12 columns progress_text">
-            Stap 2 van 3
-          </span>
-          <div class="small-4 columns done" id="first"></div>
-          <div class="small-4 columns done"></div>
-          <div class="small-4 columns not_done" id="last"></div>
-        </div>
-     </div>
+  %>
+  <div class="row">
+    <div class="small-12 columns">
+      <h1 class="form_title" id="title_date"><%=t('.title')%></h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-12 columns">
+      <h4>
+        <%= f.label :date, class:custom_class %>
+      </h4>
+      <%= raw error_text %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-12 columns">
+      <div id="request_form_date">
+        <div id="date"></div>
+        <%= f.hidden_field :title %>
+        <%= f.hidden_field :date %>
+        <input type="hidden" name="origin" value="<%=params[:origin]%>">
+      </div>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="large-4 small-6 columns">
+      <div class="prev">
+        <%=t('global.back')%>
+      </div>
+    </div>
+    <div class="large-4 small-6 columns">
+        <%=f.submit @submit_text, class:"submit_button" %>
+    </div>
+  </div>
+  <div class="row">
+    <div id="progress_bar" class="small-12 columns">
+      <span class="small-12 columns progress_text">
+        <%=t('global.step',:current=>2,:total=>3)%>
+      </span>
+      <div class="small-4 columns done" id="first"></div>
+      <div class="small-4 columns done"></div>
+      <div class="small-4 columns not_done" id="last"></div>
+    </div>
+  </div>
 <% end %>

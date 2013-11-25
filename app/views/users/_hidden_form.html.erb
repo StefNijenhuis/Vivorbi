@@ -14,6 +14,6 @@
 	<%= f.hidden_field :hobbies %>
     <input type="hidden" name="avatar_temp_name" value="<%=params[:avatar_temp_name]%>">
 	<div class="small-3 columns">
-		<%=f.submit "Bewerken", :class => 'edit-button' %>
+		<%=f.submit t('global.edit'), :class => 'edit-button' %>
 	</div>
 <% end %>

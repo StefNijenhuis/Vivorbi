@@ -39,8 +39,9 @@ class UsersController < ApplicationController
     if params[:origin]=='overview'
       @form_target = 'overview'
     end
-
-    @months = ['Kies een maand','Januari','Februari','Maart','April','Mei','Juni','Juli','Augustus', 'September', 'Oktober', 'November', 'December']
+    
+    @months = t('date.month_names')
+    @months[0]=t('.months.choose')
     case params[:step]
     when 'step_1'
       @form_target = 'step_2' if @form_target==nil
@@ -52,8 +53,12 @@ class UsersController < ApplicationController
         Dir.mkdir("#{Rails.root}/public/avatars") unless File.exists?("#{Rails.root}/public/avatars")
         Dir.mkdir("#{Rails.root}/public/avatars/tmp") unless File.exists?("#{Rails.root}/public/avatars/tmp")
 
-        # TODO wanneer params[:avatar_temp_name] bestaat, afbeelding verwijderen en nieuwe tmp afbeelding maken
         if user_params[:avatar]!=nil
+          # if temp avatar exists, remove old temp avatar
+          if params[:avatar_temp_name]!=nil
+            FileUtils.rm "#{Rails.root}/public/avatars/tmp/#{params[:avatar_temp_name]}.tmp"
+          end
+          # create temp avatar
           @avatar_temp_name = (0...25).map { (65 + rand(26)).chr }.join
           tempfile = user_params[:avatar].tempfile
 
@@ -78,7 +83,6 @@ class UsersController < ApplicationController
       end
     when 'step_4'
       if @user.validates_step_3?
-        @user.postal_code.split(' ').join('')
         @form_target = 'step_5' if @form_target==nil
         render :profile_4
       else
@@ -113,25 +117,25 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+    @user = User.find(:id)
   end
 
   # POST /users
   # POST /users.json
   def create
     @user = User.new(user_params)
-    @user.phone.gsub!(/[^0-9 ]/i, '')
-    @user.cellphone.gsub!(/[^0-9 ]/i, '')
     temp_file = "#{Rails.root}/public/avatars/tmp/#{params[:avatar_temp_name]}.tmp"
     @user.avatar = File.open(temp_file)
     respond_to do |format|
       if @user.save
         @user.remove_file temp_file
         @user.remove_old_temps
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
+        format.html { redirect_to @user, notice: t('users.create.success') }
         format.json { render action: 'show', status: :created, location: @user }
       else
         @errors = @user.errors
         @user = User.new(user_params)
+        # TODO render profile overview page, not new page
         format.html { render action: 'new' }
         format.json { render json: @errors, status: :unprocessable_entity }
       end
@@ -143,7 +147,7 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
+        format.html { redirect_to @user, notice: t('users.update.success') }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
