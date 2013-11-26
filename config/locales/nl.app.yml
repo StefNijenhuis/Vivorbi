@@ -25,13 +25,8 @@ nl:
       message:
         title: "Titel"
         body: "Bericht"
-      request:
-        title: "Naam"
-        date: "Datum"
       user:
-        first_name: "Voornaam"
-        in_between: "Tussenvoegsel"
-        last_name: "Achternaam"
+        name: "Naam"
   errors:
     messages:
       cannot_be_in_the_past: 'mag niet in het verleden zijn'
@@ -68,67 +63,59 @@ nl:
     create:
       success: "Het plaatsen van uw bericht is geslaagd."
     index:
-      title: "Hulpvraag overzicht"
-      intro: "Hieronder ziet u het overzicht van de hulpvragen. Om in contact te komen klik op de reageerknop."
+      title: "Berichten overzicht"
+      intro: "Hieronder ziet u het overzicht van de berichten. Om in contact te komen klik op de reageerknop."
       details: "Details"
       respond: "Reageren"
     new:
       title: "Wat is uw oproep?"
       title_placeholder: "Naam van uw oproep"
       title_title: "Minimaal 10 karakters invullen"
-    new_step_2:
-      title: "Voor wanneer is deze oproep?"
-    new_overview:
-      title: "Is dit de oproep die u wilt plaatsen?"
-      submit: "Plaatsen"
-    create:
-      success: "Het plaatsen van de oproep is geslaagd."
-      title: "Nieuwe oproep"
-  users:
-    profile:
-      months:
-        choose: "Kies een maand"
-    profile_1:
-      title: "Wie bent u?"
-      avatar_button: "Kies een foto"
-      avatar_unavailable: "U heeft nog geen foto geupload."
-      avatar_available: "U heeft een foto geselecteerd."
-    profile_2:
-      title: "Wanneer bent u geboren?"
-      label:
-        day: "Wat is uw geboortedag?"
-        month: "Wat is uw geboortemaand?"
-        year: "Wat is uw geboortejaar?"
-      day: "Dag"
-      year: "Jaar"
-    profile_3:
-      title: "Waar woont u?"
-      postal_code: "1234AA"
-      house_number: "Huisnummer"
-      confirm_address: "Klopt dit adres?"
-    profile_4:
-      title: "Hoe kunnen we u bereiken?"
-      phone: "Telefoonnummer"
-      cellphone: "Mobiele nummer"
-      email: "E-mailadres"
-    profile_5:
-      title: "Wat vindt u leuk om te doen?"
-    profile_overview:
-      title: "Kloppen uw gegevens?"
-      name: "Naam"
-      date_of_birth: "Geboortedatum"
-      address: "Adres"
-      contact_info: "Contactgegevens"
-      phone:  "tel"
-      cell: "mob"
-      email: "e-mail"
-      hobbies: "Hobby's"
-      no_hobbies: "Er zijn geen hobby's ingevuld, klik op bewerken als u alsnog een hobby wilt toevoegen."
-      submit: "Voltooien"
-    create:
-      success: "Het aanmaken van de gebruiker is geslaagd."
-    update:
-      success: "Het bijwerken van de gebruiker is geslaagd."
+  # users:
+  #   profile:
+  #     months:
+  #       choose: "Kies een maand"
+  #   profile_1:
+  #     title: "Wie bent u?"
+  #     avatar_button: "Kies een foto"
+  #     avatar_unavailable: "U heeft nog geen foto geupload."
+  #     avatar_available: "U heeft een foto geselecteerd."
+  #   profile_2:
+  #     title: "Wanneer bent u geboren?"
+  #     label:
+  #       day: "Wat is uw geboortedag?"
+  #       month: "Wat is uw geboortemaand?"
+  #       year: "Wat is uw geboortejaar?"
+  #     day: "Dag"
+  #     year: "Jaar"
+  #   profile_3:
+  #     title: "Waar woont u?"
+  #     postal_code: "1234AA"
+  #     house_number: "Huisnummer"
+  #     confirm_address: "Klopt dit adres?"
+  #   profile_4:
+  #     title: "Hoe kunnen we u bereiken?"
+  #     phone: "Telefoonnummer"
+  #     cellphone: "Mobiele nummer"
+  #     email: "E-mailadres"
+  #   profile_5:
+  #     title: "Wat vindt u leuk om te doen?"
+  #   profile_overview:
+  #     title: "Kloppen uw gegevens?"
+  #     name: "Naam"
+  #     date_of_birth: "Geboortedatum"
+  #     address: "Adres"
+  #     contact_info: "Contactgegevens"
+  #     phone:  "tel"
+  #     cell: "mob"
+  #     email: "e-mail"
+  #     hobbies: "Hobby's"
+  #     no_hobbies: "Er zijn geen hobby's ingevuld, klik op bewerken als u alsnog een hobby wilt toevoegen."
+  #     submit: "Voltooien"
+  #   create:
+  #     success: "Het aanmaken van de gebruiker is geslaagd."
+  #   update:
+  #     success: "Het bijwerken van de gebruiker is geslaagd."
   time:
     formats:
       medium: '%A %e-%m-%Y'

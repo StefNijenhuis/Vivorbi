@@ -15,7 +15,7 @@ class MessagesController < ApplicationController
   end
 
   def create
-    @message = Message.new(request_params)
+    @message = Message.new(message_params)
     # TODO change to user session after building login system
     @message.user = User.first
 
@@ -27,7 +27,7 @@ class MessagesController < ApplicationController
   end
 
   private
-  def request_params
+  def message_params
     params.require(:message).permit(:title, :body)
   end
 end

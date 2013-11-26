@@ -8,6 +8,6 @@
 User.create([{
  name: 'John Doe',
  postal_code: '8857BP',
- longitude: '5.459779',
- latitude: '53.195657'
+ longitude: '5.460613',
+ latitude: '53.19323'
 }])
