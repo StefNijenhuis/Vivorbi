@@ -31,12 +31,17 @@ input:focus:placeholder {
 	border: solid 1px $border-color;
 	padding: 10px;
 	margin-top: 90px;
-	max-height: 100px;
 }
 
 .hint{
 	color: $brand-normal;
 	font-weight: 700;
+}
+
+@media screen and (max-width: 768px) {
+	.hint_wrapper_1{
+		display: none;
+	}
 }
 
 .arrow{
