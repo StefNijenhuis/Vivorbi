@@ -25,4 +25,4 @@
 /public/avatars/
 
 # Ignore database file
-/config/database.yml
+config/database.yml
