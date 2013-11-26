@@ -24,3 +24,48 @@ input:focus:placeholder {
 .overview_val, .overview_title, .button_wrapper{
 	word-wrap: break-word;
 }
+
+// Hints
+.hint_wrapper_1{
+	background-color: #ffffff;
+	border: solid 1px $border-color;
+	padding: 10px;
+	margin-top: 90px;
+}
+
+.hint{
+	color: $brand-normal;
+	font-weight: 700;
+}
+
+@media screen and (max-width: 768px) {
+	.hint_wrapper_1{
+		display: none;
+	}
+}
+
+.arrow{
+	width: 14px;
+	height: 27px;
+	overflow: hidden;
+	position: absolute;
+	left: -14px;
+	top: 35px;
+}
+
+.arrow span{
+	-moz-transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+	-ms-filter: "progid:DXImageTransform.Microsoft.Matrix(M11=0.7071067811865474,M12=-0.7071067811865477,M21=0.7071067811865477,M22=0.7071067811865474,SizingMethod='auto expand')";
+
+	display: block;
+	margin: 6px;
+	width: 14px;
+	height: 14px;
+	overflow: hidden;
+	border: solid 1px $border-color;
+	background: #ffffff;
+}
