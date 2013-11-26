@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131126101841) do
+ActiveRecord::Schema.define(version: 20131126123219) do
 
   create_table "comments", force: true do |t|
     t.integer "user_id"
@@ -31,10 +31,10 @@ ActiveRecord::Schema.define(version: 20131126101841) do
   add_index "messages", ["user_id"], name: "index_messages_on_user_id"
 
   create_table "users", force: true do |t|
-    t.string  "name"
-    t.string  "postal_code"
-    t.decimal "latitude",    precision: 10, scale: 6
-    t.decimal "longitude",   precision: 10, scale: 6
+    t.string "name"
+    t.string "postal_code"
+    t.float  "latitude",    limit: 10
+    t.float  "longitude",   limit: 10
   end
 
 end
