@@ -13,14 +13,17 @@
 
 ActiveRecord::Schema.define(version: 20131126123219) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "comments", force: true do |t|
     t.integer "user_id"
     t.integer "message_id"
     t.text    "body"
   end
 
-  add_index "comments", ["message_id"], name: "index_comments_on_message_id"
-  add_index "comments", ["user_id"], name: "index_comments_on_user_id"
+  add_index "comments", ["message_id"], name: "index_comments_on_message_id", using: :btree
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
   create_table "messages", force: true do |t|
     t.integer "user_id"
@@ -28,13 +31,13 @@ ActiveRecord::Schema.define(version: 20131126123219) do
     t.text    "body"
   end
 
-  add_index "messages", ["user_id"], name: "index_messages_on_user_id"
+  add_index "messages", ["user_id"], name: "index_messages_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string "name"
     t.string "postal_code"
-    t.float  "latitude",    limit: 10
-    t.float  "longitude",   limit: 10
+    t.float  "latitude"
+    t.float  "longitude"
   end
 
 end
