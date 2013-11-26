@@ -23,3 +23,4 @@
 
 # Ignore avatar files
 /public/avatars/
+config/database.yml
