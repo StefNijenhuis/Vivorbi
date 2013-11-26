@@ -14,7 +14,7 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
-        <td>  <%= user.first_name %> <%= user.in_between + ' ' if user.in_between %><%= user.last_name %></td>
+        <td>  <%= user.name %><%=user.inspect%></td>
         <td><%= link_to 'Show', user %></td>
         <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <td><%= form_for user, url: "/users/"+user.id.to_s+"/profile/overview" do |f| %><%= f.hidden_field :id %><%= f.submit "Edit Profile" %><% end %></td>
