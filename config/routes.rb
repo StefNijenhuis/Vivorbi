@@ -9,7 +9,9 @@ Vivorbi::Application.routes.draw do
   patch 'users/:id/profile/:step' => 'users#profile'
   post 'users/:id/profile/:step' => 'users#profile'
   resources :requests
-  resources :messages
+  resources :messages do
+    resources :comments
+  end
   resources :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
