@@ -5,7 +5,7 @@ class MessagesController < ApplicationController
   end
 
   def show
-    @message = Message.find(:id)
+    @message = Message.find(params[:id])
     # TODO create view
   end
 

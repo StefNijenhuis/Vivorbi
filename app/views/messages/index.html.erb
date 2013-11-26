@@ -1,4 +1,5 @@
 <h1>Messages index view</h1>
-<%=@messages.inspect%>
-
-<%=link_to :new_message_path %>
+<p>
+	<%=@messages.inspect%>
+</p>
+<%=link_to t('helpers.submit.message.create'), :new_message %>

@@ -22,6 +22,9 @@
 nl:
   activerecord:
     attributes:
+      message:
+        title: "Titel"
+        body: "Bericht"
       request:
         title: "Naam"
         date: "Datum"
@@ -59,6 +62,11 @@ nl:
     submit:
       request:
         create: "Nieuwe oproep"
+      message:
+        create: "Nieuw bericht"
+  messages:
+    create:
+      success: "Het plaatsen van uw bericht is geslaagd."
   requests:
     index:
       title: "Hulpvraag overzicht"
