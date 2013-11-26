@@ -3,6 +3,10 @@
 $primary-purple: #8f5aa1;
 $primary-green: #218235;
 
+$dark-grey: #393c3d;
+$normal-grey: #efefef;
+$light-grey: #f7f7f7;
+
 // Brand colors
 
 $brand-success: #55ae3a;
@@ -16,24 +20,24 @@ $brand-normal: #3b72b8;
 
 // Text colors
 
-$base-text-color: #000;
+$base-text-color: $dark-grey;
 
 // Button clors
 
 $button-text-color: #fff;
 
 // Logo colors
-$logo-color: #fff;
+$logo-color: $dark-grey;
 
 // Nav colors
-$nav-link-color: #fff;
+$nav-link-color: $dark-grey;
 
-$nav-link-active-bg-color: darken( $primary-purple, 10% );
+$nav-link-active-bg-color: darken( $dark-grey, 10% );
 
 // Body background color
 
-$body-bg: $primary-purple;
+$body-bg: $light-grey;
 
 // Wrapper background color
 
-$wrapper-bg: #fff;
+$wrapper-bg: $light-grey;

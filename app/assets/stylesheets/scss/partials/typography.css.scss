@@ -2,19 +2,8 @@ p,a{
   font-weight: $normal-font-weight;
 }
 
-h1,h3,h4,h5,h6{
+h1,h2,h3,h4,h5,h6{
   font-weight: $header-font-weight;
-}
-
-h2{
-  font-weight: $sub-header-font-weight;
-}
-
-h1,h2{
-  color: $primary-green;
-}
-
-h3,h4,h5,h6{
   color: $base-text-color;
 }
 

@@ -1,5 +1,5 @@
 .top-bar {
-    background: $primary-purple;
+    background: #ffffff;
     height: 45px;
     line-height: 45px;
     margin-bottom: 0;
@@ -7,25 +7,37 @@
     margin: 0 auto;
 }
 .top-bar-section ul {
-    background: $primary-purple;
+    background: #ffffff;
 }
 .top-bar-section .right li:hover a {
-    background-color: $primary-green;
-    color: #fff;
+    background-color: #ffffff;
+    color: $dark-grey;
 }
 .top-bar-section > ul > .divider {
-	border-left: none;
-	border-right: solid 1px white;
-	border-top: none;
-	border-bottom: none;
+    border-left: none;
+    border-right: solid 1px white;
+    border-top: none;
+    border-bottom: none;
 }
 .top-bar-section li a:not(.button) {
-    background: $primary-purple;
+    background: #ffffff;
     line-height: 45px;
 }
 .name {
-	background-color: $primary-purple;
+    background-color: #ffffff;
 }
 .toggle-topbar a span {
-	text-transform: none;
+    text-transform: none;
 }
+
+.top-bar-section li a:not(.button){
+    color: $dark-grey;
+}
+
+.top-bar .name h1 a{
+    color: $logo-color;
+}
+
+// .top-bar-section > ul > .divider{
+//     border-color: $dark-grey;
+// }
