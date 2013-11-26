@@ -1,9 +1,36 @@
-<h1>Messages new view</h1>
-<%=form_for @message do |f| %>
-	<%=f.label :title%>
-	<%=f.text_field :title%>
+<% content_for :title, t('requests.create.title') %>
 
-	<%=f.label :body%>
-	<%=f.text_area :body%>
-	<%=f.submit%>
+<%=form_for @message do |f| %>
+<div class="row">
+	<div class="small-12 large-10 message_wrapper">
+
+  <div class="row">
+    <div class="small-12 large-10 columns">
+      <h1 class="form_title" id="title_name"><%=t('.title')%></h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div id="request_form_name" class="small-12 large-12 columns">
+    	<%=f.label :title %>
+      	<%= f.text_field :title, placeholder:t('.title_placeholder'), title:t('.title_title') %>
+    </div>
+  </div>
+
+   <div class="row">
+    <div id="request_form_name" class="small-12 large-12 columns">
+    	<%=f.label :body %>
+      	<%= f.text_area :body, placeholder:t('.title_placeholder'), body:t('.title_title') %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-2 columns">
+      <%= f.submit @submit_text, class:"submit_button" %>
+    </div>
+  </div>
+
+</div>
+</div>
 <% end %>
+

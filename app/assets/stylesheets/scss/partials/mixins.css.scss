@@ -1,25 +1,24 @@
 // Mixin for text field
 @mixin text-field {
-    border: solid 2px #000;
-    font-size: ceil($font-size-base * 1.25);
+    border: solid 1px $border-color;
+    font-size: $font-size-base;
+    color: $base-text-color;
+    @include rounded($radius: 1px);
+    box-shadow: none;
 }
  
 // Mixin for button
-@mixin button($color: $brand-normal, $text-color: $button-text-color, $button-radius: 5px) {
-  width: 100%;
-  height: 80px;
-  line-height: 60px;
+@mixin button($color: $brand-normal, $text-color: $button-text-color, $button-radius: 1px) {
   display: inline-block;
   cursor: pointer;
-  font-weight: normal;
   text-align: center;
   text-decoration: none;
-  font-size: floor($font-size-base * 2.15);
-  padding: 10px 0;
+  // font-size: floor($font-size-base * 2.15);
+  padding: 5px 10px;
   border: none;
   margin: 10px 0;
   @include rounded($radius: $button-radius);
-  @include shadow($offset: 7px, $blur: 3px, $color: rgba(0, 0, 0, 0.35));
+  @include shadow($offset: 3px, $blur: 0px, $color: darken($color, 10%));
 
   color: $text-color !important;
   background: $color;
@@ -27,7 +26,7 @@
   &:hover {
     text-decoration: none;
     background: saturate($color, 10%);
-    @include shadow($offset: 4px, $blur: 3px, $color: rgba(0, 0, 0, 0.35));
+    @include shadow($offset: 2px, $blur: 0px, $color: darken($color, 10%));
   }
  
   &:active {
@@ -37,7 +36,7 @@
   }
 }
  
-@mixin rounded($radius: 10px) {
+@mixin rounded($radius: 1px) {
   -webkit-border-radius: $radius;
   -moz-border-radius: $radius;
   border-radius: $radius;

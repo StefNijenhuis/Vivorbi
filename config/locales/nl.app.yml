@@ -67,13 +67,12 @@ nl:
   messages:
     create:
       success: "Het plaatsen van uw bericht is geslaagd."
-  requests:
     index:
       title: "Hulpvraag overzicht"
       intro: "Hieronder ziet u het overzicht van de hulpvragen. Om in contact te komen klik op de reageerknop."
       details: "Details"
       respond: "Reageren"
-    new_step_1:
+    new:
       title: "Wat is uw oproep?"
       title_placeholder: "Naam van uw oproep"
       title_title: "Minimaal 10 karakters invullen"

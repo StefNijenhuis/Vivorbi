@@ -18,8 +18,14 @@ body{
 .wrapper{
 	background-color: $wrapper-bg;
 	// margin-top: 50px;
-	padding: 30px;
+	padding: 20px;
   @include rounded($radius: 0 0 10px 10px);
+}
+
+.message_wrapper{
+  background-color: #ffffff;
+  border: solid 1px $border-color;
+  padding: 20px;
 }
 
 .hidden {

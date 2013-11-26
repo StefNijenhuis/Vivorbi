@@ -1,13 +1,11 @@
 input[type="text"], input[type="email"], textarea {
 	@include text-field;
-	@include rounded($radius: $button-radius);
 }
-//Day of birth month selector style
-select {
-	@include rounded($radius: $button-radius);
-	height: 46px;
-	font-size: ceil($font-size-base * 1.25);
+
+textarea{
+	height: 200px;
 }
+
 // Disable placeholder on input focus
 input:focus::-webkit-input-placeholder {
   color: transparent!important;
@@ -21,6 +19,7 @@ input:focus:-ms-input-placeholder {
 input:focus:placeholder {
   color: transparent!important;
 }
+
 //styling for overview text
 .overview_val, .overview_title, .button_wrapper{
 	word-wrap: break-word;
