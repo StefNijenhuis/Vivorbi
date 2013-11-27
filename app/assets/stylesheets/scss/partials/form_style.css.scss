@@ -25,6 +25,10 @@ input:focus:placeholder {
 	word-wrap: break-word;
 }
 
+.message_row {
+	overflow: visible;
+	height: 100px !important;
+}
 .message_wrapper{
   background-color: #ffffff;
   border: solid 1px $border-color;
@@ -73,7 +77,7 @@ input:focus:placeholder {
 	overflow: hidden;
 	position: absolute;
 	left: -14px;
-	top: 35px;
+	top: 45px;
 }
 
 .arrow span{
