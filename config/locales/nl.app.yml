@@ -42,6 +42,7 @@ nl:
     label:
       message:
         title: "Wat voor bericht wilt u plaatsen?"
+        body: "Wat is de inhoud van uw bericht?"
       # user:
       #   first_name: "Wat is uw voornaam?"
       #   in_between: "Heeft uw naam een tussenvoegsel?"
@@ -65,7 +66,7 @@ nl:
       details: "Details"
       respond: "Reageren"
     new:
-      title: "Welk bericht wilt u plaatsen?"
+      title: "Bericht plaatsen"
       title_placeholder: "Naam van uw bericht"
       title_title: "Minimaal 10 karakters invullen"
       body_title: "Minimaal 10 karakters invullen"
