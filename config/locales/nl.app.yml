@@ -40,23 +40,20 @@ nl:
     yes_button: "Ja"
   helpers:
     label:
-      request:
-        title: "Wat voor oproep wilt u plaatsen?"
-        date: "Selecteer de datum waarop deze oproep uitgevoerd moet worden."
-      user:
-        first_name: "Wat is uw voornaam?"
-        in_between: "Heeft uw naam een tussenvoegsel?"
-        last_name: "Wat is uw achternaam?"
-        avatar: "Hoe ziet u eruit?"
-        postal_code: "Wat is uw postcode?"
-        house_number: "Wat is uw huisnummer?"
-        phone: "Wat is uw telefoonnummer?"
-        cellphone: "Wat is uw mobiele nummer?"
-        email: "Wat is uw e-mailadres?"
-        hobbies: "Wat zijn uw hobby's?"
+      message:
+        title: "Wat voor bericht wilt u plaatsen?"
+      # user:
+      #   first_name: "Wat is uw voornaam?"
+      #   in_between: "Heeft uw naam een tussenvoegsel?"
+      #   last_name: "Wat is uw achternaam?"
+      #   avatar: "Hoe ziet u eruit?"
+      #   postal_code: "Wat is uw postcode?"
+      #   house_number: "Wat is uw huisnummer?"
+      #   phone: "Wat is uw telefoonnummer?"
+      #   cellphone: "Wat is uw mobiele nummer?"
+      #   email: "Wat is uw e-mailadres?"
+      #   hobbies: "Wat zijn uw hobby's?"
     submit:
-      request:
-        create: "Nieuwe oproep"
       message:
         create: "Nieuw bericht"
   messages:
