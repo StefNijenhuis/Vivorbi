@@ -65,9 +65,11 @@ nl:
       details: "Details"
       respond: "Reageren"
     new:
-      title: "Wat is uw oproep?"
-      title_placeholder: "Naam van uw oproep"
+      title: "Welk bericht wilt u plaatsen?"
+      title_placeholder: "Naam van uw bericht"
       title_title: "Minimaal 10 karakters invullen"
+      body_title: "Minimaal 10 karakters invullen"
+      body_placeholder: "Typ hier uw bericht"
   # users:
   #   profile:
   #     months:
