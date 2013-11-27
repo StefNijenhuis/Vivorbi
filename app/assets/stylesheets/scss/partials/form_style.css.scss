@@ -25,23 +25,46 @@ input:focus:placeholder {
 	word-wrap: break-word;
 }
 
+.message_wrapper{
+  background-color: #ffffff;
+  border: solid 1px $border-color;
+  border-bottom: 0;
+  border-top: 0; 
+  padding: 20px;
+}
+
+.first_wrap{
+	border-top: solid 1px $border-color;
+}
+
+.last_wrap{
+	border-bottom: solid 1px $border-color;
+}
+
 // Hints
-.hint_wrapper_1{
+.hint_wrapper{
 	background-color: #ffffff;
 	border: solid 1px $border-color;
-	padding: 10px;
-	margin-top: 90px;
+	display: none;
+	float: right;
+	left: -7%;
+
+}
+
+.visible_hint{
+	display: inline-block;
+}
+
+@media screen and (max-width: 768px) {
+	.visible_hint{
+		display: none;
+	}
+
 }
 
 .hint{
 	color: $brand-normal;
 	font-weight: 700;
-}
-
-@media screen and (max-width: 768px) {
-	.hint_wrapper_1{
-		display: none;
-	}
 }
 
 .arrow{

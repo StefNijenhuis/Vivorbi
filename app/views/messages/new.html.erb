@@ -1,63 +1,62 @@
+<% content_for :title, t('messages.new.title') %>
+
 <div class="row">
+  <div class="large-12 columns new_message_wrapper">
 
-  <!-- Input fields -->
+    <%=form_for @message do |f| %>
 
-	<div class="large-8 columns new_message_wrapper">
+      <div class="row">
+        <div class="small-12 large-8 columns message_wrapper first_wrap">
+          <h1 class="form_title" id="title_name"><%=t('.title')%></h1>
+        </div>
+      </div>
 
-	<div class="row">
-		
-	<% content_for :title, t('messages.new.title') %>
+      <div class="row">
+        <div id="message_form_title" class="small-12 large-8 columns message_wrapper">
+        	<%=f.label :title %>
+          <%= f.text_field :title, class:'show_hint', placeholder:t('.title_placeholder'), title:t('.title_title') %>
+        </div>
 
-	<%=form_for @message do |f| %>
-	
-	<div class="small-12 large-12 message_wrapper">
+        <div class="large-3 small-12 columns hint_wrapper">
+          <p><span class="hint">Hint</span> Lorem Ipsum is slechts een proeftekst uit het drukkerij- en zetterijwezen. Lorem Ipsum is slechts een proeftekst uit het drukkerij- en zetterijwezen.Lorem Ipsum is slechts een proeftekst uit het drukkerij- en zetterijwezen.</p>
+          <span class="arrow">
+            <span></span>
+          </span> 
+        </div>
 
-  <div class="row">
-    <div class="small-12 large-12 columns">
-      <h1 class="form_title" id="title_name"><%=t('.title')%></h1>
-    </div>
-  </div>
+      </div>
 
-  <div class="row">
-    <div id="message_form_title" class="small-12 large-12 columns">
-    	<%=f.label :title %>
-      	<%= f.text_field :title, placeholder:t('.title_placeholder'), title:t('.title_title') %>
-    </div>
-  </div>
+       <div class="row">
+        <div id="message_form_description" class="small-12 large-8 columns message_wrapper">
+        	<%=f.label :body %>
+          <%= f.text_area :body, class:'show_hint', placeholder:t('.title_placeholder'), body:t('.title_title') %>
+        </div>
 
-   <div class="row">
-    <div id="message_form_description" class="small-12 large-12 columns">
-    	<%=f.label :body %>
-      	<%= f.text_area :body, placeholder:t('.title_placeholder'), body:t('.title_title') %>
-    </div>
-  </div>
+        <div class="large-3 small-12 columns hint_wrapper">
+          <p><span class="hint">Hint</span> Lorem Ipsum is slechts een proeftekst uit het drukkerij- en zetterijwezen.</p>
+          <span class="arrow">
+            <span></span>
+          </span> 
+        </div>
 
-  <div class="row">
-    <div class="small-2 columns">
-      <%= f.submit @submit_text, class:"submit_button" %>
-    </div>
+      </div>
+
+      <div class="row">
+        <div class="small-12 large-8 columns message_wrapper last_wrap">
+          <%= f.submit @submit_text, class:"submit_button" %>
+        </div>
+      </div>
+
+    <% end %>
+
   </div>
 
 </div>
 
-</div>
 
-<% end %>
 
 </div>
 
-<!-- Hints -->
-
-<div class="large-4 columns">
-
-	<div class="large-12 hint_wrapper_1">
-		<p><span class="hint">Hint</span> Lorem Ipsum is slechts een proeftekst uit het drukkerij- en zetterijwezen.</p>
-		<span class="arrow">
-			<span></span>
-		</span>	
-	</div>
-	
-</div>
 
 
 

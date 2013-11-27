@@ -22,12 +22,6 @@ body{
   @include rounded($radius: 0 0 10px 10px);
 }
 
-.message_wrapper{
-  background-color: #ffffff;
-  border: solid 1px $border-color;
-  padding: 20px;
-}
-
 .hidden {
   display: none;
 }
