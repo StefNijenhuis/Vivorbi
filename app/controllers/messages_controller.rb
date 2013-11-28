@@ -1,4 +1,5 @@
 class MessagesController < ApplicationController
+  skip_before_filter :verify_authenticity_token  
   def index
     # load all messages for index
     @user = User.first
@@ -10,7 +11,8 @@ class MessagesController < ApplicationController
     location = find_location_for_postal_code(search_params[:postal_code])
     # get radius from params
     radius = search_params[:radius].to_i
-    @messages = Message.find_by_location_and_radius(location[:latitude],location[:longitude],radius)
+    @messages = Message.find_by_location_and_radius(location['latitude'],location['longitude'].to_f,radius)
+    @user = User.first
     render action: 'index'
   end
 
