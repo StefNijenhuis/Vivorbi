@@ -28,6 +28,7 @@ class MessagesController < ApplicationController
     if @message.save
       redirect_to :action => 'index', notice: t('.success')
     else
+      @user = User.first
       render action: 'new'
     end
   end
