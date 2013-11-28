@@ -13,6 +13,7 @@ h1{
 
 p{
   font-size: $font-size-base;
+  margin-bottom: 10px;
 }
 
 h1{ font-size: floor($font-size-base * 2.60); }
@@ -22,6 +23,9 @@ h4{ font-size: ceil($font-size-base * 1.25); }
 h5{ font-size: $font-size-base; }
 h6{ font-size: ceil($font-size-base * 0.85); }
 
+.message_header {
+	margin-bottom: 0px;
+}
 // @media only screen and (max-width: 480px) {
 
 //    body { 
