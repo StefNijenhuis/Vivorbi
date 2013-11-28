@@ -57,6 +57,8 @@ nl:
     submit:
       message:
         create: "Nieuw bericht"
+      comment:
+        create: "Reageren"
   messages:
     create:
       success: "Het plaatsen van uw bericht is geslaagd."
@@ -71,6 +73,8 @@ nl:
       title_title: "Minimaal 10 karakters invullen"
       body_title: "Minimaal 10 karakters invullen"
       body_placeholder: "Typ hier uw bericht"
+    show:
+      title: "Bericht bekijken"
   # users:
   #   profile:
   #     months:
