@@ -20,6 +20,9 @@ In order to merge a branch to the master branch you need to do the following.
 2. `git reset --hard commit-id`
 3. `git push -f`
 
+## Remove files from a commit
+1. `git reset HEAD file_name`
+
 ## Pushing to a different remote branch
 1. `git push origin local_branch:remote_branch
 
