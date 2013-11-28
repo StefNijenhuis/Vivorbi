@@ -5,6 +5,15 @@ class MessagesController < ApplicationController
     @messages = Message.all
   end
   
+  def search
+    # get lat and long from api request with postal_code from params
+    location = find_location_for_postal_code(search_params[:postal_code])[:resource]
+    # get radius from params
+    radius = search_params[:radius].to_i
+    @messages = Message.find_by_location_and_radius(location[:latitude],location[:longitude],radius)
+    render action: 'index'
+  end
+
   def show
     @user = User.first
     @message = Message.find(params[:id])
@@ -38,5 +47,9 @@ class MessagesController < ApplicationController
   private
   def message_params
     params.require(:message).permit(:title, :body)
+  end
+
+  def search_params
+    params.require(:search).permit(:postal_code, :radius)
   end
 end
