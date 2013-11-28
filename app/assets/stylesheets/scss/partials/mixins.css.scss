@@ -48,3 +48,14 @@
   box-shadow:         $offset $offset $blur $color;
 }
 
+// Mixin for errors
+@mixin error($color: $brand-alert) {
+    border: solid 1px $border-color;
+    font-size: $font-size-base;
+    color: #ffffff;
+    font-style: italic;
+    padding: 2px 4px;
+    margin: 5px 0;
+    @include rounded($radius: 1px);
+    background-color: lighten($color, 0%)
+}

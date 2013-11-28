@@ -98,3 +98,7 @@ input:focus:placeholder {
 	border: solid 1px $border-color;
 	background: #ffffff;
 }
+
+.error{
+	@include error($color: $brand-alert);
+}
