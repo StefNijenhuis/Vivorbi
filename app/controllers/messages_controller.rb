@@ -30,6 +30,8 @@ class MessagesController < ApplicationController
     else
       @user = User.first
       render action: 'new'
+      #format.html { render action: 'new' }
+      #format.json { render json: @message.errors, status: :unprocessable_entity }
     end
   end
   

@@ -14,6 +14,9 @@
       <div class="row message_row">
         <div id="message_form_title" class="small-12 large-8 columns message_wrapper">
         	<%=f.label :title %>
+          <% if @message.errors[:title].any? %>
+            <%= @message.errors.full_messages_for(:title).first %>
+          <% end %>
           <%= f.text_field :title, class:'show_hint', placeholder:t('.title_placeholder'), title:t('.title_title') %>
         </div>
 
@@ -29,6 +32,9 @@
        <div class="row">
         <div id="message_form_description" class="small-12 large-8 columns message_wrapper">
         	<%=f.label :body %>
+          <% if @message.errors[:body].any? %>
+            <div><%= @message.errors.full_messages_for(:body).first %></div>
+          <% end %>
           <%= f.text_area :body, class:'show_hint', placeholder:t('.body_placeholder'), title:t('.body_title') %>
         </div>
 
