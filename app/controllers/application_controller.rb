@@ -7,7 +7,9 @@ class ApplicationController < ActionController::Base
     require 'net/http'
     require 'json'
 
-    url = "http://api.postcodeapi.nu/#{postal_code}"
+    postal_code.delete!(' ')
+
+    url = "http://api.posdtcodeapi.nu/#{postal_code}"
     uri = URI(url)
 
     req = Net::HTTP::Get.new(uri)
