@@ -16,7 +16,7 @@ select {
     height: 37px;
 }
 
-    .wrapper-dropdown-1 {
+    .wrapper-dropdown {
         position: relative;
         height: 35px;
         line-height: 35px;
@@ -29,7 +29,7 @@ select {
         z-index: 9999;
     }
 
-    .wrapper-dropdown-1 .dropdown {
+    .wrapper-dropdown .dropdown {
         position: absolute;
         top: 100%;
         left: 0;
@@ -43,7 +43,7 @@ select {
 
     }
 
-    .wrapper-dropdown-1 .dropdown li a {
+    .wrapper-dropdown .dropdown li a {
         display: block;
         text-decoration: none;
         color: $dark-grey;
@@ -53,17 +53,17 @@ select {
         right: 0;
     }
 
-    .wrapper-dropdown-1 .dropdown li:hover a {
+    .wrapper-dropdown .dropdown li:hover a {
         background: $border-color;
     }
 
-    .wrapper-dropdown-1.active .dropdown {
+    .wrapper-dropdown.active .dropdown {
         opacity: 1;
         pointer-events: auto;
     }
 
     //arrow
-    .wrapper-dropdown-1:after {
+    .wrapper-dropdown:after {
         content: "";
         width: 0;
         height: 0;
