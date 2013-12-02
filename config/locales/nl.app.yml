@@ -27,6 +27,7 @@ nl:
         body: "Bericht"
       user:
         name: "Naam"
+        city: "Woonplaats"
   errors:
     messages:
       cannot_be_in_the_past: 'mag niet in het verleden zijn'
