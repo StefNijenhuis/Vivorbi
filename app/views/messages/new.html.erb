@@ -15,10 +15,14 @@
         <div id="message_form_title" class="small-12 large-8 columns message_wrapper">
         	<%=f.label :title %>
           <!-- Error handling -->
-          <% if @message.errors[:title].any? %>
+          <%
+            custom_class="show_hint"
+            if @message.errors[:title].any?
+              custom_class+=" error"
+          %>
             <div class="error"><%= @message.errors.full_messages_for(:title).first %></div>
           <% end %>
-          <%= f.text_field :title, class:'show_hint', placeholder:t('.title_placeholder'), title:t('.title_title') %>
+          <%= f.text_field :title, class:custom_class, placeholder:t('.title_placeholder'), title:t('.title_title') %>
         </div>
 
         <div class="large-4 small-12 columns hint_wrapper">
@@ -40,10 +44,14 @@
         <div id="message_form_description" class="small-12 large-8 columns message_wrapper">
         	<%=f.label :body %>
           <!-- Error handling -->
-          <% if @message.errors[:body].any? %>
+          <%
+            custom_class="show_hint"
+            if @message.errors[:body].any?
+              custom_class+=" error"
+          %>
             <div class="error"><%= @message.errors.full_messages_for(:body).first %></div>
           <% end %>
-          <%= f.text_area :body, class:'show_hint', placeholder:t('.body_placeholder'), title:t('.body_title') %>
+          <%= f.text_area :body, class:custom_class, placeholder:t('.body_placeholder'), title:t('.body_title') %>
         </div>
 
         <div class="large-4 small-12 columns hint_wrapper">
