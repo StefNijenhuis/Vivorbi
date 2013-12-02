@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
 
     postal_code.delete!(' ')
 
-    url = "http://api.posdtcodeapi.nu/#{postal_code}"
+    url = "http://api.postcodeapi.nu/#{postal_code}"
     uri = URI(url)
 
     req = Net::HTTP::Get.new(uri)
