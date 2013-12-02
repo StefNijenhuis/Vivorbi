@@ -47,37 +47,34 @@
 
     <div class="search_bar">
             <div class="row">
-
-                <div class="large-5 columns">
-                    Zoekopdracht
-                    <input type="text" class="search_input"></input>
-                </div>
-
-                <div class="large-2 columns">
-                    Uw postcode
-                    <input type="text" class="search_input"></input>
-                </div>
-
-                <div class="large-3 columns">
-                    Zoekafstand
-                    <div id="dd" class="wrapper-dropdown" tabindex="1">
-                        <span>Kies afstand</span>
-                        <ul class="dropdown" tabindex="1">
-                            <li><a href="#">1KM</a></li>
-                            <li><a href="#">5KM</a></li>
-                            <li><a href="#">10KM</a></li>
-                            <li><a href="#">25KM</a></li>
-                            <li><a href="#">50KM</a></li>
-                            <li><a href="#">Alle afstanden</a></li>
-                        </ul>
+                <form action="/messages/search" method="post">
+                    <div class="large-5 columns">
+                        Zoekopdracht
+                        <input type="text" class="search_input"></input>
                     </div>
-                </div>
 
-                <div class="large-2 columns">
-                    
-                    <input type="submit" class="search_button" style="float:right; width:100%;" value="Zoeken">
-                </div>
+                    <div class="large-2 columns">
+                        Uw postcode
+                        <input name="search[postal_code]" placeholder="1234AA" input type="text" class="search_input"></input>
+                    </div>
 
+                    <div class="large-3 columns">
+                        Zoekafstand
+                        <label>
+                        <select input name="search[radius]">
+                          <option value="9999" selected>Alle afstanden</option>
+                          <option value="1">1 km</option>
+                          <option value="5">5 km</option>
+                          <option value="10">10 km</option>
+                        </select>
+                        </label>
+                    </div>
+
+                    <div class="large-2 columns">
+                        
+                        <input type="submit" class="search_button" value="Zoeken">
+                    </div>
+                </form>
             </div>
     </div>
 

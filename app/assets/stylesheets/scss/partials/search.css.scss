@@ -8,71 +8,33 @@
 .search_button {
 @include button($color: $brand-normal, $text-color: $button-text-color, $button-radius: 3px);
 margin-top: 18px;
+width: 100%;
+float: right;
 }
 
 //Dropdown menu
 select {
-    background-color: $base-text-color;
-    height: 37px;
+    background-color: #fff;
+    outline: none;
+    border: none;
+    height: 36px;
+    cursor: pointer;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+    padding-left: 7px;
+    border-radius: 1px;
+    border: 1px solid $border-color;
 }
 
-    .wrapper-dropdown {
-        position: relative;
-        height: 35px;
-        line-height: 35px;
-        padding-left: 5px;
-        border: 1px solid $border-color;
-        outline: none;
-        background: #fff;
-        color: #4c4e4f;
-        cursor: pointer;
-        z-index: 9999;
-    }
+label {position:relative}
+label:after {
+    content:'▼';
+    font-size: 12px;
+    color: $dark-grey;
+    right:10px; top:10px;
+    position:absolute;
+    pointer-events:none;
+}
 
-    .wrapper-dropdown .dropdown {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        outline: none;
-        list-style: none;
-        background: #fff;
-        opacity: 0;
-        pointer-events: none;
-        transition: all 0.3s ease-out;
-
-    }
-
-    .wrapper-dropdown .dropdown li a {
-        display: block;
-        text-decoration: none;
-        color: $dark-grey;
-        padding: 10px 20px;
-        outline: none;
-        left: 0;
-        right: 0;
-    }
-
-    .wrapper-dropdown .dropdown li:hover a {
-        background: $border-color;
-    }
-
-    .wrapper-dropdown.active .dropdown {
-        opacity: 1;
-        pointer-events: auto;
-    }
-
-    //arrow
-    .wrapper-dropdown:after {
-        content: "";
-        width: 0;
-        height: 0;
-        position: absolute;
-        top: 50%;
-        right: 15px;
-        margin-top: -3px;
-        border-width: 6px 6px 0 6px;
-        border-style: solid;
-        border-color: $dark-grey transparent;
-    }
 
