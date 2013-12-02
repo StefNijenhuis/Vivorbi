@@ -25,7 +25,7 @@
           <p>
             <span class="hint"><%=t('global.hint')%>:</span> <%=t('messages.hints.title') %>
             <p>
-              <span class="example"><%=t('global.hint_example') %>:</span>
+              <span class="example"><%=t('global.example') %>:</span>
               &ldquo;<%=t('messages.hints.title_example') %>&rdquo;
             </p>
           </p>
@@ -44,6 +44,19 @@
             <div class="error"><%= @message.errors.full_messages_for(:body).first %></div>
           <% end %>
           <%= f.text_area :body, class:'show_hint', placeholder:t('.body_placeholder'), title:t('.body_title') %>
+        </div>
+
+        <div class="large-4 small-12 columns hint_wrapper">
+          <p>
+            <span class="hint"><%=t('global.hint')%>:</span> <%=t('messages.hints.body') %>
+            <p>
+              <span class="example"><%=t('global.example') %>:</span>
+              &ldquo;<%=t('messages.hints.body_example') %>&rdquo;
+            </p>
+          </p>
+          <span class="arrow">
+            <span></span>
+          </span> 
         </div>
 
       </div>

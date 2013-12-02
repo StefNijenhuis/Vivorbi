@@ -39,7 +39,7 @@ nl:
     no_button: "Nee"
     yes_button: "Ja"
     hint: "Hint"
-    hint_example: "Voorbeeld"
+    example: "Voorbeeld"
   helpers:
     label:
       message:
@@ -76,8 +76,10 @@ nl:
       body_title: "Minimaal 10 karakters invullen"
       body_placeholder: "Typ hier uw bericht"
     hints:
-      title: "Vul hier in het kort uw bericht in"
-      title_example: "Hoe kan ik gemakkelijk een pot augurken openen"
+      title: "Vul hier een korte titel voor uw bericht in"
+      title_example: "Wie wil mijn kozijnen komen schilderen?"
+      body: "Vul hier uw bericht in"
+      body_example: "Hallo, ik kan niet meer goed ladders beklimmen, maar mijn kozijnen moeten nodig geschilderd worden. Zou iemand mij hierbij willen helpen?"
     show:
       title: "Bericht bekijken"
   # users:
