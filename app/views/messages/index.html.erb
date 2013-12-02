@@ -2,4 +2,14 @@
 <p>
 	<%=@messages.inspect%>
 </p>
+<% @messages.each do |m| %>
+<p>
+	<%=m.title+", ca. "+m.distance.to_s+"km"%>
+</p>
+<% end %>
+<form action="/messages/search" method="post">
+	<input name="search[postal_code]" placeholder="postcode">
+	<input name="search[radius]" placeholder="afstand">
+	<input type="submit">
+</form>
 <%=link_to t('helpers.submit.message.create'), :new_message %>

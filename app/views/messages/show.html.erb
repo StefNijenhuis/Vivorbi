@@ -1,13 +1,36 @@
-<h1>Messages show view</h1>
-<%=@message.inspect%>
+<% content_for :title, t('messages.show.title') %>
 
-<h2>Comments</h2>
-<% @message.comments.each do |comment| %>
-  <p><%=comment.inspect%></p>
-<% end %>
+ <div class="large-6 small-12 columns">
+	<h2 class="message_header"><%= @message.title %></h2>
+	<div class="row">
+		<div class="small-6 large-6 columns sub_header">
+			<small><strong>
+				<%= @message.user.city %>
+			</strong></small>
+		</div>
+		<div class="small-6 large-6 columns sub_header">
+			<small><strong>
+				<%= @message.created_at.strftime("%d-%m-%Y") %>
+			</strong></small>
+		</div>
+	</div>
+	<p><%=@message.body%></p>
+</div>
+<div class="large-6 small-12 columns comment_wrapper">
+	<h2>Reacties op dit bericht</h2>
+	<% if @message.comments.count == 0 %>
+		<p>Er zijn nog geen reacties. Wilt u reageren vul dan het formulier hieronder in.</p>
+	<% else %>
+		<% @message.comments.each do |comment| %>
+			<h5><%=comment.user.name%></h5>
+	  		<p><%=comment.body%></p>
+	  		<hr>
+		<% end %>
+	<% end %>
 
-<h2>Add a comment:</h2>
-<%= form_for([@message, @message.comments.build]) do |f| %>
-    <%= f.text_area :body %>
-    <%= f.submit %>
-<% end %>
+	<h2>Reageer zelf</h2>
+	<%= form_for([@message, @message.comments.build]) do |f| %>
+	    <%= f.text_area :body %>
+	    <%= f.submit :class => 'submit_button reageer' %>
+	<% end %>
+</div>

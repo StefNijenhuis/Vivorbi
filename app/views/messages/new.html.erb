@@ -14,11 +14,21 @@
       <div class="row message_row">
         <div id="message_form_title" class="small-12 large-8 columns message_wrapper">
         	<%=f.label :title %>
+          <!-- Error handling -->
+          <% if @message.errors[:title].any? %>
+            <div class="error"><%= @message.errors.full_messages_for(:title).first %></div>
+          <% end %>
           <%= f.text_field :title, class:'show_hint', placeholder:t('.title_placeholder'), title:t('.title_title') %>
         </div>
 
         <div class="large-4 small-12 columns hint_wrapper">
-          <p><span class="hint">Hint</span> Lorem Ipsum is slechts een proeftekst uit het drukkerij- en zetterijwezen. Lorem Ipsum is slechts een proeftekst uit het drukkerij- en zetterijwezen.Lorem Ipsum is slechts een proeftekst uit het drukkerij- en zetterijwezen.</p>
+          <p>
+            <span class="hint"><%=t('global.hint')%>:</span> <%=t('messages.hints.title') %>
+            <p>
+              <span class="example"><%=t('global.hint_example') %>:</span>
+              &ldquo;<%=t('messages.hints.title_example') %>&rdquo;
+            </p>
+          </p>
           <span class="arrow">
             <span></span>
           </span> 
@@ -29,14 +39,11 @@
        <div class="row">
         <div id="message_form_description" class="small-12 large-8 columns message_wrapper">
         	<%=f.label :body %>
+          <!-- Error handling -->
+          <% if @message.errors[:body].any? %>
+            <div class="error"><%= @message.errors.full_messages_for(:body).first %></div>
+          <% end %>
           <%= f.text_area :body, class:'show_hint', placeholder:t('.body_placeholder'), title:t('.body_title') %>
-        </div>
-
-        <div class="large-4 small-12 columns hint_wrapper">
-          <p><span class="hint">Hint</span> Lorem Ipsum is slechts een proeftekst uit het drukkerij- en zetterijwezen.</p>
-          <span class="arrow">
-            <span></span>
-          </span> 
         </div>
 
       </div>
@@ -52,11 +59,3 @@
   </div>
 
 </div>
-
-
-
-</div>
-
-
-
-

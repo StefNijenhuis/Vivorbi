@@ -54,6 +54,7 @@ input:focus:placeholder {
 	// left: 2%;
 	width: 31%;
 	padding: 8px;
+	min-height: 80px;
 
 }
 
@@ -71,6 +72,12 @@ input:focus:placeholder {
 .hint{
 	color: $brand-normal;
 	font-weight: 700;
+}
+
+.example {
+	color: $base-text-color;
+	font-weight: 700;
+	display: block;
 }
 
 .arrow{
@@ -97,4 +104,8 @@ input:focus:placeholder {
 	overflow: hidden;
 	border: solid 1px $border-color;
 	background: #ffffff;
+}
+
+.error{
+	@include error($color: $brand-alert);
 }
