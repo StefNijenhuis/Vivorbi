@@ -9,7 +9,7 @@ body{
 .wrapper {
 	background-color: $wrapper-bg;
 	// margin-top: 50px;
-	padding: 20px;
+	padding-top: 20px;
   @include rounded($radius: 0 0 10px 10px);
 }
 .wrapper hr {

@@ -7,16 +7,16 @@
 		</div>
 	</div>
 	<div class="row">
-		<div class="small-12 large-12 columns sub_header">
-			<%= @message.user.name %>
+		<div class="small-12 large-12 columns">
+			<span class="sub_header"><%= @message.user.name %></span>
 		</div>
 	</div>
 	<div class="row">
-		<div class="small-6 large-6 columns sub_header">
-			<%= @message.user.city %>
+		<div class="small-6 large-6 columns">
+			<span class="sub_header"><%= @message.user.city %></span>
 		</div>
-		<div class="small-6 large-6 columns sub_header message_date">
-			Geplaatst op <%= @message.created_at.strftime("%d-%m-%Y") %>
+		<div class="small-6 large-6 columns">
+			<span class="sub_header message_date">Geplaatst op <%= @message.created_at.strftime("%d-%m-%Y") %></span>
 		</div>
 	</div>
 	<p><%=@message.body%></p>
