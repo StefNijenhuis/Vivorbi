@@ -34,5 +34,10 @@ form {
 }
 
 .sub_header {
-  margin-bottom: 20px;
+  margin-bottom: 0px;
+  font-size: ceil($font-size-base * 0.85);
+  font-weight: bold;
+}
+.message_date {
+  text-align: right;
 }
