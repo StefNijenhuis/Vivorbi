@@ -43,6 +43,43 @@
                 </ul>
             </section>
     </nav>
+
+    <div class="search_bar">
+            <div class="row">
+
+                <div class="large-5 columns">
+                    Zoekopdracht
+                    <input type="text" class="search_input"></input>
+                </div>
+
+                <div class="large-2 columns">
+                    Uw postcode
+                    <input type="text" class="search_input"></input>
+                </div>
+
+                <div class="large-3 columns">
+                    Zoekafstand
+                    <div id="dd" class="wrapper-dropdown-1" tabindex="1">
+                        <span>Kies afstand</span>
+                        <ul class="dropdown" tabindex="1">
+                            <li><a href="#">1KM</a></li>
+                            <li><a href="#">5KM</a></li>
+                            <li><a href="#">10KM</a></li>
+                            <li><a href="#">25KM</a></li>
+                            <li><a href="#">50KM</a></li>
+                            <li><a href="#">Alle afstanden</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="large-2 columns">
+                    
+                    <input type="submit" class="search_button" style="float:right; width:100%;" value="Zoeken">
+                </div>
+
+            </div>
+    </div>
+
     </div>
     <div class="row wrapper">
       <%= yield %>

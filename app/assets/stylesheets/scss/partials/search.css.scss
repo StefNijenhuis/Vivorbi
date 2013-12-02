@@ -1,0 +1,78 @@
+.search_bar {
+	background: $normal-grey;
+	margin-bottom: 0;
+    margin: 0 auto;
+    padding-top: 10px;
+}
+
+.search_button {
+@include button($color: $brand-normal, $text-color: $button-text-color, $button-radius: 3px);
+margin-top: 25px;
+}
+
+//Dropdown menu
+select {
+    background-color: $base-text-color;
+    height: 37px;
+}
+
+    .wrapper-dropdown-1 {
+        position: relative;
+        height: 35px;
+        line-height: 35px;
+        padding-left: 5px;
+        border: 1px solid $border-color;
+        outline: none;
+        background: #fff;
+        color: #4c4e4f;
+        cursor: pointer;
+        z-index: 9999;
+    }
+
+    .wrapper-dropdown-1 .dropdown {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        outline: none;
+        list-style: none;
+        background: #fff;
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.3s ease-out;
+
+    }
+
+    .wrapper-dropdown-1 .dropdown li a {
+        display: block;
+        text-decoration: none;
+        color: $dark-grey;
+        padding: 10px 20px;
+        outline: none;
+        left: 0;
+        right: 0;
+    }
+
+    .wrapper-dropdown-1 .dropdown li:hover a {
+        background: $border-color;
+    }
+
+    .wrapper-dropdown-1.active .dropdown {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    //arrow
+    .wrapper-dropdown-1:after {
+        content: "";
+        width: 0;
+        height: 0;
+        position: absolute;
+        top: 50%;
+        right: 15px;
+        margin-top: -3px;
+        border-width: 6px 6px 0 6px;
+        border-style: solid;
+        border-color: $dark-grey transparent;
+    }
+
