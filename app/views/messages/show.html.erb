@@ -10,7 +10,7 @@
 		</div>
 		<div class="small-6 large-6 columns sub_header">
 			<small><strong>
-				<%= @message.created_at %>
+				<%= @message.created_at.strftime("%d-%m-%Y") %>
 			</strong></small>
 		</div>
 	</div>
@@ -18,10 +18,14 @@
 </div>
 <div class="large-6 small-12 columns comment_wrapper">
 	<h2>Reacties op dit bericht</h2>
-	<% @message.comments.each do |comment| %>
-		<h5><%=comment.user.name%></h5>
-  		<p><%=comment.body%></p>
-  		<hr>
+	<% if @message.comments.count == 0 %>
+		<p>Er zijn nog geen reacties. Wilt u reageren vul dan het formulier hieronder in.</p>
+	<% else %>
+		<% @message.comments.each do |comment| %>
+			<h5><%=comment.user.name%></h5>
+	  		<p><%=comment.body%></p>
+	  		<hr>
+		<% end %>
 	<% end %>
 
 	<h2>Reageer zelf</h2>
