@@ -38,10 +38,12 @@ nl:
     next: "Volgende"
     no_button: "Nee"
     yes_button: "Ja"
+    hint: "Hint"
+    hint_example: "Voorbeeld"
   helpers:
     label:
       message:
-        title: "Wat voor bericht wilt u plaatsen?"
+        title: "Wat is de titel van uw bericht?"
         body: "Wat is de inhoud van uw bericht?"
       # user:
       #   first_name: "Wat is uw voornaam?"
@@ -56,7 +58,7 @@ nl:
       #   hobbies: "Wat zijn uw hobby's?"
     submit:
       message:
-        create: "Nieuw bericht"
+        create: "Uw bericht plaatsen"
       comment:
         create: "Reageren"
   messages:
@@ -68,11 +70,14 @@ nl:
       details: "Details"
       respond: "Reageren"
     new:
-      title: "Bericht plaatsen"
-      title_placeholder: "Naam van uw bericht"
+      title: "Nieuw bericht plaatsen"
+      title_placeholder: "Typ hier de titel van uw bericht"
       title_title: "Minimaal 10 karakters invullen"
       body_title: "Minimaal 10 karakters invullen"
       body_placeholder: "Typ hier uw bericht"
+    hints:
+      title: "Vul hier in het kort uw bericht in"
+      title_example: "Hoe kan ik gemakkelijk een pot augurken openen"
     show:
       title: "Bericht bekijken"
   # users:
