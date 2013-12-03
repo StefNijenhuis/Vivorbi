@@ -41,6 +41,14 @@ nl:
     yes_button: "Ja"
     hint: "Hint"
     example: "Voorbeeld"
+    home: "Startpagina"
+    brand: "Vivorbi"
+    menu: "Menu"
+    search:
+      postal_code: "Uw postcode"
+      radius: "Zoekafstand"
+      all_radius: "Alle afstanden"
+      submit: "Zoeken"
   helpers:
     label:
       message:
