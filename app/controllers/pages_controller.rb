@@ -1,15 +1,15 @@
 class PagesController < ApplicationController
   def home
+    amount = 3
     @user = User.first
-    @last = Message.last(3)
-    @closest = Message.find_by_location_and_radius(@user.latitude,@user.longitude,999,3)
-    @popularity = Message.popularity(3)
+    last = Message.last(amount)
+    nearby = Message.find_by_location_and_radius(@user.latitude,@user.longitude,999,amount)
+    popular = Message.find_by_popularity(amount)
+    @row = []
 
-    @row = [
-      [@last[0], @closest[0], @popularity[0]],
-      [@last[1], @closest[1], @popularity[1]],
-      [@last[2], @closest[2], @popularity[2]]
-    ]
-
+    # loop amount of times
+    amount.times do |i|
+      @row << [last[i],nearby[i],popular[i]]
+    end
   end
 end
