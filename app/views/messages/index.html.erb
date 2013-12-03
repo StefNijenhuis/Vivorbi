@@ -1,7 +1,7 @@
-<div class="search_result_menu">	
+<div class="search_result_menu columns large-12 small-12">	
 	<div class="row">
 		<div class="small-6 large-8 columns">
-	Bericht
+			<%=@messages.count%> zoekresultaten
 		</div>
 
 		<div class="small-3 large-2 columns">
@@ -9,13 +9,21 @@
 		</div>
 
 		<div class="small-3 large-2 columns">
-	Tijd
+	Datum
 		</div>
 	</div>
 </div>
 
+<div class="search_result large-12 small-12 columns">
+	<%if @messages.empty? %>
+	Er zijn geen resultaten voor uw zoekopdracht.
+
+	<%=link_to t('helpers.submit.message.create'), :new_message%>
+	<%else%>
+</div>
+
 <% @messages.each do |m| %>
-<div class="search_result">
+<div class="search_result large-12 small-12 columns">
 	<div class="row">
 		<div class="small-6 large-8 columns">
 	<h3><%=m.title%></h3>
@@ -42,6 +50,5 @@
 	</div>
 </div>
 <% end %>
-
-<%=link_to t('helpers.submit.message.create'), :new_message %>
+<% end %>
 

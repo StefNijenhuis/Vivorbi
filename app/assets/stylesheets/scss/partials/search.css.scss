@@ -40,8 +40,9 @@ label.dd:after {
 //Results
 .search_result_menu {
     background: #fff;
-    padding: 10px;
-    font-weight: bold;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
 }
 
 .search_result:nth-of-type(2) {
@@ -50,19 +51,20 @@ label.dd:after {
 }
 
 .search_result:nth-of-type(even) {
-    padding: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 
 .search_result:nth-of-type(odd) {
     background-color: $normal-grey;
-    padding: 10px;
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding: 30px auto;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 
 .search_result {
-    margin-top: 35px;
-    margin-bottom: 35px;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 .distance_and_time {
