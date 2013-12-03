@@ -54,17 +54,20 @@
 
                     <div class="large-2 columns">
                         Uw postcode
-                        <input name="search[postal_code]" placeholder="1234AA" input type="text" class="search_input"></input>
+                        <input name="search[postal_code]" placeholder="1234AA" value="<%=@postal_code if @postal_code != nil%>" type="text" class="search_input"></input>
                     </div>
 
                     <div class="large-3 columns">
                         Zoekafstand
                         <label class="dd">
                         <select input name="search[radius]">
-                          <option value="9999" selected>Alle afstanden</option>
-                          <option value="1">1 km</option>
-                          <option value="5">5 km</option>
-                          <option value="10">10 km</option>
+                          <%
+                          distances = [9999,1,5,10,25,50]
+                          labels = ['Alle afstanden','1 km','5 km','10 km','25 km','50 km']
+                          %>
+                          <% distances.each_with_index do |d,i| %>
+                          <option value="<%=d%>"<%=' selected' if @radius==d%>><%=labels[i]%></option>
+                          <% end %>
                         </select>
                         </label>
                     </div>

@@ -10,8 +10,9 @@ class MessagesController < ApplicationController
     # get lat and long from api request with postal_code from params
     location = find_location_for_postal_code(search_params[:postal_code])
     # get radius from params
-    radius = search_params[:radius].to_i
-    @messages = Message.find_by_location_and_radius(location['latitude'],location['longitude'].to_f,radius)
+    @radius = search_params[:radius].to_i
+    @postal_code = search_params[:postal_code]
+    @messages = Message.find_by_location_and_radius(location['latitude'],location['longitude'].to_f,@radius)
     @user = User.first
     render action: 'index'
   end
