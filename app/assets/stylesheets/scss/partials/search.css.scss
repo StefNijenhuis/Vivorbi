@@ -27,8 +27,8 @@ select {
     border: 1px solid $border-color;
 }
 
-label {position:relative}
-label:after {
+label.dd {position:relative}
+label.dd:after {
     content:'▼';
     font-size: 12px;
     color: $dark-grey;
