@@ -27,7 +27,7 @@
         <nav class="top-bar">
                 <ul class="title-area">
                 <!-- Title Area -->
-                    <li class="name"><h1><a href="#">Vivorbi</a></h1></li>
+                    <li class="name"><h1><a href="/">Vivorbi</a></h1></li>
                     <li class="toggle-topbar"><a href="#"><span>Menu</span></a></li>
                 </ul>
                 <!-- The Section wrap -->
@@ -56,7 +56,7 @@
 
                     <div class="large-2 columns">
                         Uw postcode
-                        <input name="search[postal_code]" placeholder="1234AA" value="<%=@postal_code!=nil ? @postal_code : @user.postal_code%>" type="text" class="search_input"></input>
+                        <input name="search[postal_code]" placeholder="1234AA" value="<%=@postal_code!=nil ? @postal_code : ''%>" type="text" class="search_input"></input>
                     </div>
 
                     <div class="large-3 columns">
