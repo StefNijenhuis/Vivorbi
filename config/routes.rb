@@ -9,12 +9,14 @@ Vivorbi::Application.routes.draw do
   get 'users/:id/profile/:step' => 'users#profile'
   patch 'users/:id/profile/:step' => 'users#profile'
   post 'users/:id/profile/:step' => 'users#profile'
+  post 'messages/search' => 'messages#search'
+  get 'pages/home' => 'pages#home'
   resources :requests
   resources :messages do
     resources :comments
   end
-  post 'messages/search' => 'messages#search'
   resources :users
+  resources :pages
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
