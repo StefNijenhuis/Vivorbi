@@ -14,13 +14,15 @@
 	</div>
 </div>
 
-<div class="search_result large-12 small-12 columns">
-	<%if @messages.empty? %>
-	Er zijn geen resultaten voor uw zoekopdracht.
 
-	<%=link_to t('helpers.submit.message.create'), :new_message%>
+	<%if @messages.empty? %>
+		<div class="search_result large-12 small-12 columns">
+			Er zijn geen resultaten voor uw zoekopdracht.
+
+			<%=link_to t('helpers.submit.message.create'), :new_message%>
+		</div>
 	<%else%>
-</div>
+
 
 <% @messages.each do |m| %>
 <div class="search_result large-12 small-12 columns">
