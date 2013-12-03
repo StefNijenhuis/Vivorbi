@@ -18,6 +18,7 @@
 .item_box {
 	height: 190px;
 	word-wrap: break-word;
+	cursor: pointer;
 }
 .item_box:nth-of-type(4n+2) {
 	background-color: $normal-grey;
