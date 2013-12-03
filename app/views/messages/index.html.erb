@@ -1,6 +1,6 @@
 <div class="search_result_menu columns large-12 small-12">	
 	<div class="row">
-		<div class="small-6 large-8 columns">
+		<div class="small-6 large-7 columns">
 			<%=@messages.count%> zoekresultaten
 		</div>
 
@@ -8,7 +8,7 @@
 	Afstand
 		</div>
 
-		<div class="small-3 large-2 columns">
+		<div class="small-3 large-3 columns">
 	Datum
 		</div>
 	</div>
@@ -25,8 +25,8 @@
 <% @messages.each do |m| %>
 <div class="search_result large-12 small-12 columns">
 	<div class="row">
-		<div class="small-6 large-8 columns">
-	<h3><%=m.title%></h3>
+		<div class="small-6 large-7 columns">
+			<h3><%=m.title%></h3>
 		</div>
 
 		<div class="small-3 large-2 columns">
@@ -35,7 +35,7 @@
 			</div>
 		</div>
 
-		<div class="small-3 large-2 columns">
+		<div class="small-3 large-3 columns">
 			<div class="distance_and_time">
 				Geplaatst op<br>
 				<%=m.created_at.strftime("%d-%m-%Y")%>
@@ -44,8 +44,12 @@
 	</div>
 
 	<div class="row">
-		<div class="small-6 large-8 columns">
-		<%=m.body%>
+		<div class="small-6 large-7 columns">
+			<%=m.body%>
+		</div>
+
+		<div class="small-3 large-3 columns button_wrapper_right">
+			<input type="submit" class="result_button" value="Bericht bekijken">
 		</div>
 	</div>
 </div>

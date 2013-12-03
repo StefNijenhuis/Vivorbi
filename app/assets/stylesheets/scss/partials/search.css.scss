@@ -6,7 +6,7 @@
 }
 
 .search_button {
-    @include button($color: $brand-normal, $text-color: $button-text-color, $button-radius: 3px);
+    @include button($color: $brand-success, $text-color: $button-text-color, $button-radius: 3px);
     margin-top: 18px;
     width: 100%;
     float: right;
@@ -66,10 +66,20 @@ label.dd:after {
     margin-top: 15px;
     margin-bottom: 15px;
     word-wrap: break-word;
+    min-height: 150px;
 }
 
 .distance_and_time {
     margin-top: 17px;
+}
+
+.result_button {
+    @include button($color: $brand-normal, $text-color: $button-text-color, $button-radius: 3px);
+    margin-top: 18px;
+    width: 100%;
+    float: right;
+    word-wrap: normal;
+    position: bottom;
 }
 
 
