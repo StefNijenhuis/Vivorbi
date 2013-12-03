@@ -8,20 +8,34 @@
 		<h3>Populair</h3>
 	</div>
 </div>
-<div class="row">
-	<div class="small-12 large-4 columns">
-		<div class="row">
-			<div class="small-12 large-12 columns">
-				<h4>Dakgoot reinigen</h4>
+<% @row.each do |itemRow| %>
+  <div class="row">
+		<% itemRow.each do |item| %>
+			<div class="small-12 large-4 columns item_box">
+				<div class="row">
+					<div class="small-12 large-12 columns">
+						<h4><%= item.title %></h4>
+					</div>
+				</div>
+				<div class="row">
+					<div class="small-6 large-6 columns">
+						<span class="home_sub_header_city"><%= item.user.city%></span>
+					</div>
+					<div class="small-6 large-6 columns">
+						<span class="home_sub_header_date"><%= item.created_at.strftime("%d-%m-%Y") %></span>
+					</div>
+				</div>
+				<div class="row">
+					<div class="small-12 large-12 columns">
+						<p><%= truncate(item.body, length: 70, omission: '...') %></p>
+					</div>
+				</div>
+				<div class="row button_wrapper">
+					<div class="small-12 large-12 columns">
+						<%= link_to "Bericht bekijken", item, class:"bericht_button"%>
+					</div>
+				</div>
 			</div>
-		</div>
-		<div class="row">
-			<div class="small-6 large-6 columns">
-				<span class="home_sub_header_city">Leeuwarden</span>
-			</div>
-			<div class="small-6 large-6 columns">
-				<span class="home_sub_header_date">Leeuwarden</span>
-			</div>
-		</div>
+		<% end %>
 	</div>
-</div>
+<% end %>

@@ -12,3 +12,8 @@
 #react_button {
   @include button($color: $brand-success, $text-color: $button-text-color, $button-radius: 3px);
 }
+.bericht_button {
+	@include button($color: $brand-normal, $text-color: $button-text-color, $button-radius: 3px);
+	position: relative;
+	bottom: 0px;
+}

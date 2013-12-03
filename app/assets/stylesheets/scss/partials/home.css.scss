@@ -8,9 +8,21 @@
 }
 .home_near_header {
 	background-color: $normal-grey;
+	border-bottom: solid $light-grey 1px;
 }
 .home_sub_header_city, .home_sub_header_date {
 	margin-bottom: 0px;
   	font-size: ceil($font-size-base * 0.75);
   	font-weight: bold;
+}
+.item_box {
+	height: 190px;
+	word-wrap: break-word;
+}
+.item_box:nth-of-type(4n+2) {
+	background-color: $normal-grey;
+}
+.button_wrapper {
+	position: absolute;
+	bottom: 0;
 }
