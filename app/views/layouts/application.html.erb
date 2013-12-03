@@ -48,13 +48,15 @@
             <div class="row">
                 <form action="/messages/search" method="post">
                     <div class="large-5 columns">
-                        <!--Zoekopdracht
-                        <input type="text" class="search_input"></input>-->&nbsp;
+                        <!--
+                        Zoekopdracht
+                        <input type="text" class="search_input"></input>
+                        -->&nbsp;
                     </div>
 
                     <div class="large-2 columns">
                         Uw postcode
-                        <input name="search[postal_code]" placeholder="1234AA" value="<%=@postal_code if @postal_code != nil%>" type="text" class="search_input"></input>
+                        <input name="search[postal_code]" placeholder="1234AA" value="<%=@postal_code!=nil ? @postal_code : @user.postal_code%>" type="text" class="search_input"></input>
                     </div>
 
                     <div class="large-3 columns">
