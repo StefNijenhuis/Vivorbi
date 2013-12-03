@@ -1,15 +1,47 @@
-<h1>Messages index view</h1>
-<p>
-	<%=@messages.inspect%>
-</p>
+<div class="search_result_menu">	
+	<div class="row">
+		<div class="small-6 large-8 columns">
+	Bericht
+		</div>
+
+		<div class="small-3 large-2 columns">
+	Afstand
+		</div>
+
+		<div class="small-3 large-2 columns">
+	Tijd
+		</div>
+	</div>
+</div>
+
 <% @messages.each do |m| %>
-<p>
-	<%=m.title+", ca. "+m.distance.to_s+"km"%>
-</p>
+<div class="search_result">
+	<div class="row">
+		<div class="small-6 large-8 columns">
+	<h3><%=m.title%></h3>
+		</div>
+
+		<div class="small-3 large-2 columns">
+			<div class="distance_and_time">
+				<%=m.distance.round(1)%> km
+			</div>
+		</div>
+
+		<div class="small-3 large-2 columns">
+			<div class="distance_and_time">
+				Geplaatst op<br>
+				<%=m.created_at.strftime("%d-%m-%Y")%>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="small-6 large-8 columns">
+		<%=m.body%>
+		</div>
+	</div>
+</div>
 <% end %>
-<form action="/messages/search" method="post">
-	<input name="search[postal_code]" placeholder="postcode">
-	<input name="search[radius]" placeholder="afstand">
-	<input type="submit">
-</form>
+
 <%=link_to t('helpers.submit.message.create'), :new_message %>
+
