@@ -1,0 +1,16 @@
+.home_recent_header, .home_near_header, .home_populair_header {
+	margin-top: -20px;
+	border-bottom: solid $normal-grey 1px;
+	height: 55px;
+}
+.home_recent_header {
+
+}
+.home_near_header {
+	background-color: $normal-grey;
+}
+.home_sub_header_city, .home_sub_header_date {
+	margin-bottom: 0px;
+  	font-size: ceil($font-size-base * 0.75);
+  	font-weight: bold;
+}

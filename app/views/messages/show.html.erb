@@ -19,7 +19,11 @@
 			<span class="sub_header message_date">Geplaatst op <%= @message.created_at.strftime("%d-%m-%Y") %></span>
 		</div>
 	</div>
-	<p><%=@message.body%></p>
+	<div class="row">
+		<div class="small-12 large-12 columns">
+			<p><%=@message.body%></p>	
+		</div>
+	</div>
 </div>
 <div class="large-6 small-12 columns comment_wrapper">
 	<h2>Reacties op dit bericht</h2>
