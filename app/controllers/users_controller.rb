@@ -23,9 +23,13 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     
-    pc_info = find_location_for_postal_code(@user.postal_code)
-    @user.latitude = pc_info['latitude']
-    @user.longitude = pc_info['longitude']
+    location = find_location_for_postal_code(@user.postal_code)
+    if location
+      @user.latitude = location['latitude']
+      @user.longitude = location['longitude']
+    else
+      # TODO throw error, redirect to new
+    end
     if @user.save
       redirect_to @user, notice: t('users.create.success')
     else
@@ -35,9 +39,9 @@ class UsersController < ApplicationController
 
   # PATCH/PUT /users/1
   def update
-    if(@user.postal_code != user_params[:postal_code]) {
-      # update latitude and longitude
-    }
+    if(@user.postal_code != user_params[:postal_code])
+      # TODO update latitude and longitude
+    end
     if @user.update(user_params)
       redirect_to @user, notice: t('users.update.success')
     else

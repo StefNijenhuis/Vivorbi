@@ -1,14 +1,5 @@
 Vivorbi::Application.routes.draw do
   root "pages#home"
-  get "api_requests/postal_code/:pc/:nr" => 'api_requests#postal_code'
-  get "api_requests/postal_code/:pc" => 'api_requests#postal_code'
-  post "requests/create"
-  post "requests/new/:step" => 'requests#new'
-  get "requests/index"
-  
-  get 'users/:id/profile/:step' => 'users#profile'
-  patch 'users/:id/profile/:step' => 'users#profile'
-  post 'users/:id/profile/:step' => 'users#profile'
   post 'messages/search' => 'messages#search'
   get 'pages/home' => 'pages#home'
   resources :requests
