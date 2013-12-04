@@ -49,7 +49,13 @@ nl:
       radius: "Zoekafstand"
       all_radius: "Alle afstanden"
       submit: "Zoeken"
-      error: "U heeft geen geldige postcode opgegeven."
+  search:
+    error: "U heeft geen geldige postcode opgegeven."
+    results: "zoekresultaten rondom"
+    no_results: "Er zijn geen resultaten voor uw zoekopdracht."
+    distance: "Afstand"
+    date: "Datum"
+    message_date: "Geplaatst op"
   helpers:
     label:
       message:
@@ -92,6 +98,8 @@ nl:
       body_example: "Hallo, ik kan niet meer goed ladders beklimmen, maar mijn kozijnen moeten nodig geschilderd worden. Zou iemand mij hierbij willen helpen?"
     show:
       title: "Bericht bekijken"
+    search:
+      title: "Berichten zoeken"
   # users:
   #   profile:
   #     months:
