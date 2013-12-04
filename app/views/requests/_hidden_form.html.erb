@@ -1,8 +1,0 @@
-<div class="large-2 medium-3 small-4 end columns button_wrapper">
-<%= form_for @request, url: @form_path do |f| %>
-  <input type="hidden" name="origin" value="overview">
-  <%= f.hidden_field :title %>
-  <%= f.hidden_field :date %>
-  <%=f.submit t('global.edit'), :class => 'edit-button' %>
-<% end %>
-</div>
