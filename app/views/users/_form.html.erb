@@ -1,44 +1,23 @@
-<!-- # TODO obsolete file? -->
-<%= form_for @user, :url => users_path, :html => { :multipart => true } do |f| %>
-  <% if @errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@errors.count, "error") %> prohibited this user from being saved:</h2>
+<%= form_for @user do |f| %>
+  <% if @user.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
 
-      <ul>
-      <% @errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
+    <ul>
+    <% @user.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
   <% end %>
 
   <div class="field">
-    <%= f.label :avatar %><br>
-    <%= f.file_field :avatar %>
-    <%= f.label :first_name %><br>
-    <%= f.text_field :first_name %>
-    <%= f.label :in_between %><br>
-    <%= f.text_field :in_between %>
-    <%= f.label :last_name %><br>
-    <%= f.text_field :last_name %>
-    <%= f.label :street %><br>
-    <%= f.text_field :street %>
-    <%= f.label :house_number %><br>
-    <%= f.text_field :house_number %>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
     <%= f.label :postal_code %><br>
     <%= f.text_field :postal_code %>
-    <%= f.label :place %><br>
-    <%= f.text_field :place %>
-    <%= f.label :date_of_birth %><br>
-    <%= f.text_field :date_of_birth %>
-    <%= f.label :cellphone %><br>
-    <%= f.text_field :cellphone %>
-    <%= f.label :phone %><br>
-    <%= f.text_field :phone %>
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
-    <%= f.label :hobbies %><br>
-    <%= f.text_field :hobbies %>
+    <%= f.label :city %><br>
+    <%= f.text_field :city %>
   </div>
   <div class="actions">
     <%= f.submit %>

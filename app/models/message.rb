@@ -3,7 +3,13 @@ class Message < ActiveRecord::Base
   has_many :comments
 
   validates_presence_of :title, :body
-
+  
+  # attribute accessors
+  def distance
+    read_attribute(:distance).to_f
+  end
+  
+  # finders
   def self.find_by_popularity(limit = 10, offset = 0, order_count = "DESC", order_create = "DESC")
     self.all(:joins => :comments,
              :group => 'messages.id',
@@ -12,11 +18,10 @@ class Message < ActiveRecord::Base
              :offset => offset)
   end
 
-  def distance
-    read_attribute(:distance).to_f
-  end
-
-  def self.find_by_location_and_radius(s_lat,s_long,radius,limit = 999)
-    self.joins(:user).select("messages.*, 6371 * acos( cos( radians( #{s_lat} ) ) * cos( radians( users.latitude ) ) * cos( radians( users.longitude ) - radians( #{s_long} ) ) + sin( radians( #{s_lat} ) ) * sin( radians( users.latitude ) ) ) AS distance").where("6371 * acos( cos( radians( #{s_lat} ) ) * cos( radians( users.latitude ) ) * cos( radians( users.longitude ) - radians( #{s_long} ) ) + sin( radians( #{s_lat} ) ) * sin( radians( users.latitude ) ) ) <= #{radius}").order("distance").limit(limit)
+  def self.find_by_location_and_radius(location,radius,limit = 999)
+    latitude = location['latitude']
+    longitude = location['longitude']
+    distance = "6371 * acos( cos( radians( #{latitude} ) ) * cos( radians( users.latitude ) ) * cos( radians( users.longitude ) - radians( #{longitude} ) ) + sin( radians( #{latitude} ) ) * sin( radians( users.latitude ) ) )"
+    self.joins(:user).select("messages.*, #{distance} AS distance").where("#{distance} <= #{radius}").order("distance").limit(limit)
   end
 end

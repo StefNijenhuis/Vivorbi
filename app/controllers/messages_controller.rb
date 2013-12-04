@@ -1,53 +1,48 @@
 class MessagesController < ApplicationController
-  skip_before_filter :verify_authenticity_token  
+  skip_before_filter :verify_authenticity_token, only: :search
+  before_action :set_message, only: [:show, :edit, :update, :destroy]
+
   def index
-    # load all messages for index
-    @user = User.first
     @messages = Message.all
   end
   
   def search
-    # get lat and long from api request with postal_code from params
-    location = find_location_for_postal_code(search_params[:postal_code])
-    # get radius from params
-    @radius = search_params[:radius].to_i
     @postal_code = search_params[:postal_code]
-    @messages = Message.find_by_location_and_radius(location['latitude'],location['longitude'].to_f,@radius)
-    @user = User.first
-    render action: 'index'
+    @radius = search_params[:radius].to_i
+    @location = find_location_for_postal_code(@postal_code)
+    if @location 
+      @messages = Message.find_by_location_and_radius(@location,@radius)
+      render action: 'index'
+    else
+      @messages = Message.all
+      render action: 'index'
+    end
   end
 
   def show
-    @user = User.first
-    @message = Message.find(params[:id])
-    # TODO create view
   end
   
   def new
-    @user = User.first
     @message = Message.new
-    # TODO create view
   end
   
   def create
     @message = Message.new(message_params)
     # TODO change to user session after building login system
     @message.user = User.first
-    if @message.user==nil
-      render action: 'new'
-    end
-
+    
     if @message.save
       redirect_to :action => 'index', notice: t('.success')
     else
-      @user = User.first
       render action: 'new'
-      #format.html { render action: 'new' }
-      #format.json { render json: @message.errors, status: :unprocessable_entity }
     end
   end
   
   private
+  def set_message
+    @message = Message.find(params[:id])
+  end
+
   def message_params
     params.require(:message).permit(:title, :body)
   end

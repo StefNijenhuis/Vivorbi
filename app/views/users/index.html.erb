@@ -17,7 +17,7 @@
         <td>  <%= user.name %><%=user.inspect%></td>
         <td><%= link_to 'Show', user %></td>
         <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td><%= form_for user, url: "/users/"+user.id.to_s+"/profile/overview" do |f| %><%= f.hidden_field :id %><%= f.submit "Edit Profile" %><% end %></td>
+        <td><%= link_to 'Edit', edit_user_path(user.id) %></td>
       </tr>
     <% end %>
   </tbody>
