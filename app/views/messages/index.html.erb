@@ -1,63 +1,63 @@
 <%if !@location %>
-	<div class="error large-12 small-12 columns">
-		U heeft geen geldige postcode opgegeven.
-	</div>
+<div class="error large-12 small-12 columns">
+  <%=t 'global.search.error'%>
+</div>
 <% end %>
 
 <div class="search_result_menu columns large-12 small-12">
-	<div class="row">
-		<div class="small-6 large-7 columns">
-			<% if @location  %>
-				<%=@messages.count%> zoekresultaten rondom <%=@location['street']%>, <%=@location['postcode']%> <%=@location['town']%>
-			<% else %>
-				&nbsp;
-			<% end %>
-		</div>
-		<div class="small-3 large-2 columns">
-			Afstand
-		</div>
-		<div class="small-3 large-3 columns">
-			Datum
-		</div>
-	</div>
-</div>	
+  <div class="row">
+    <div class="small-6 large-7 columns">
+      <% if @location  %>
+        <%=@messages.count%> zoekresultaten rondom <%=@location['street']%>, <%=@location['postcode']%> <%=@location['town']%>
+      <% else %>
+        &nbsp;
+      <% end %>
+    </div>
+    <div class="small-3 large-2 columns">
+      Afstand
+    </div>
+    <div class="small-3 large-3 columns">
+      Datum
+    </div>
+  </div>
+</div>  
 
 <%if @messages.empty? %>
-	<div class="search_result large-12 small-12 columns">
-		Er zijn geen resultaten voor uw zoekopdracht.
+  <div class="search_result large-12 small-12 columns">
+    Er zijn geen resultaten voor uw zoekopdracht.
 
-		<%=link_to t('helpers.submit.message.create'), :new_message%>
-	</div>
+    <%=link_to t('helpers.submit.message.create'), :new_message%>
+  </div>
 <%else%>
-	<% @messages.each do |m| %>
-		<div class="search_result large-12 small-12 columns">
-			<div class="row">
-				<div class="small-12 large-7 columns">
-					<h3><%=m.title%></h3>
-				</div>
+  <% @messages.each do |m| %>
+    <div class="search_result large-12 small-12 columns">
+      <div class="row">
+        <div class="small-12 large-7 columns">
+          <h3><%=m.title%></h3>
+        </div>
 
-				<div class="small-4 large-2 columns">
-					<div class="distance">
-						<%=m.distance.round(1)%> km
-					</div>
-				</div>
+        <div class="small-4 large-2 columns">
+          <div class="distance">
+            <%=m.distance.round(1)%> km
+          </div>
+        </div>
 
-				<div class="small-8 large-3 columns">
-					<div class="time">
-						Geplaatst op <%=m.created_at.strftime("%d-%m-%Y")%>
-					</div>
-				</div>
-			</div>
+        <div class="small-8 large-3 columns">
+          <div class="time">
+            Geplaatst op <%=m.created_at.strftime("%d-%m-%Y")%>
+          </div>
+        </div>
+      </div>
 
-			<div class="row">
-				<div class="small-12 large-7 columns">
-					<%= truncate(m.body, length: 130, omission: '...') %>
-				</div>
-				<div class="small-12 large-3 columns">
-					<%= link_to "Bericht bekijken", m, class:"result_button"%>
-				</div>
-			</div>
-		</div>
-	<% end %>
+      <div class="row">
+        <div class="small-12 large-7 columns">
+          <%= truncate(m.body, length: 130, omission: '...') %>
+        </div>
+        <div class="small-12 large-3 columns">
+          <%= link_to "Bericht bekijken", m, class:"result_button"%>
+        </div>
+      </div>
+    </div>
+  <% end %>
 <% end %>
 

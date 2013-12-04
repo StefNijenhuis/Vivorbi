@@ -49,6 +49,7 @@ nl:
       radius: "Zoekafstand"
       all_radius: "Alle afstanden"
       submit: "Zoeken"
+      error: "U heeft geen geldige postcode opgegeven."
   helpers:
     label:
       message:
