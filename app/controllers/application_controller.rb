@@ -8,19 +8,24 @@ class ApplicationController < ActionController::Base
     require 'json'
 
     postal_code.delete!(' ')
+    
+    if postal_code.try(:match, /^[1-9][0-9]{3}[A-Za-z]{2}$/)
+      
+      url = "http://api.postcodeapi.nu/#{postal_code}"
+      uri = URI(url)
 
-    url = "http://api.postcodeapi.nu/#{postal_code}"
-    uri = URI(url)
+      req = Net::HTTP::Get.new(uri)
+      req['Api-Key'] = '6451884210699c31101d4309a92ba3253095b9e9'
 
-    req = Net::HTTP::Get.new(uri)
-    req['Api-Key'] = '6451884210699c31101d4309a92ba3253095b9e9'
+      res = Net::HTTP.start(uri.hostname, uri.port) {|http|
+        http.request(req)
+      }
 
-    res = Net::HTTP.start(uri.hostname, uri.port) {|http|
-      http.request(req)
-    }
+      parsed = JSON.parse res.body
+      parsed['resource']
+    else
 
-    parsed = JSON.parse res.body
-    parsed['resource']
-
+      false
+    end
   end
 end
