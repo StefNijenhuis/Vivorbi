@@ -50,16 +50,9 @@ p.dropdown:after {
 
 }
 
-.search_result:nth-of-type(even) {
-    padding-top: 15px;
-    padding-bottom: 15px;
-}
-
 .search_result:nth-of-type(odd) {
     background-color: $normal-grey;
     padding: 30px auto;
-    padding-top: 15px;
-    padding-bottom: 15px;
 }
 
 .search_result {
@@ -67,17 +60,23 @@ p.dropdown:after {
     margin-bottom: 15px;
     word-wrap: break-word;
     min-height: 150px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    cursor: pointer;
 }
 
-.distance_and_time {
+.distance, .time {
     margin-top: 17px;
+}
+.time {
+    text-align: right;
 }
 
 .result_button {
     @include button($color: $brand-normal, $text-color: $button-text-color, $button-radius: 3px);
     width: 100%;
 }
-.button_wrapper_right {
-    position: absolute;
-    bottom: 0;
-}
+// .button_wrapper_right {
+//     position: absolute;
+//     bottom: 0;
+// }

@@ -26,27 +26,24 @@
 				</div>
 
 				<div class="small-4 large-2 columns">
-					<div class="distance_and_time">
+					<div class="distance">
 						<%=m.distance.round(1)%> km
 					</div>
 				</div>
 
-				<div class="small-5 large-3 columns">
-					<div class="distance_and_time">
-						Geplaatst op<br>
-						<%=m.created_at.strftime("%d-%m-%Y")%>
+				<div class="small-8 large-3 columns">
+					<div class="time">
+						Geplaatst op <%=m.created_at.strftime("%d-%m-%Y")%>
 					</div>
 				</div>
 			</div>
 
 			<div class="row">
 				<div class="small-12 large-7 columns">
-					<%=m.body%>
+					<%= truncate(m.body, length: 130, omission: '...') %>
 				</div>
-			</div>
-			<div class="row">
-				<div class="small-12 large-3 columns button_wrapper_right">
-					<input type="submit" class="result_button" value="Bericht bekijken">
+				<div class="small-12 large-3 columns">
+					<%= link_to "Bericht bekijken", m, class:"result_button"%>
 				</div>
 			</div>
 		</div>
