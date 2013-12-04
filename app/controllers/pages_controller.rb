@@ -5,11 +5,7 @@ class PagesController < ApplicationController
     last = Message.last(amount)
     nearby = Message.find_by_location_and_radius(@user.latitude,@user.longitude,999,amount)
     popular = Message.find_by_popularity(amount)
-    @row = []
-
-    # loop amount of times
-    amount.times do |i|
-      @row << [last[i],nearby[i],popular[i]]
-    end
+    @columns = [last, nearby, popular]
+    @columnTitles = ["Recent", "In de buurt", "Populair"]
   end
 end

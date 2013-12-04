@@ -16,4 +16,14 @@
 	@include button($color: $brand-normal, $text-color: $button-text-color, $button-radius: 3px);
 	position: relative;
 	bottom: 0px;
+  width: 100%;
+}
+.button_wrapper {
+  margin-top: -10px;
+  margin-bottom: 20px;
+}
+.button_wrapper_right {
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
