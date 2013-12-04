@@ -1,7 +1,17 @@
+<%if @error %>
+	<div class="error large-12 small-12 columns">
+		U heeft geen geldige postcode opgegeven.
+	</div>
+<% end %>
+
 <div class="search_result_menu columns large-12 small-12">
 	<div class="row">
 		<div class="small-6 large-7 columns">
-			<%=@messages.count%> zoekresultaten
+			<% if !@error  %>
+				<%=@messages.count%> zoekresultaten
+			<% else %>
+				&nbsp;
+			<% end %>
 		</div>
 		<div class="small-3 large-2 columns">
 			Afstand
@@ -10,7 +20,8 @@
 			Datum
 		</div>
 	</div>
-</div>
+</div>	
+
 <%if @messages.empty? %>
 	<div class="search_result large-12 small-12 columns">
 		Er zijn geen resultaten voor uw zoekopdracht.
