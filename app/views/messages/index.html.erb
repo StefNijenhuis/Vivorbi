@@ -1,4 +1,4 @@
-<%if @error %>
+<%if !@location %>
 	<div class="error large-12 small-12 columns">
 		U heeft geen geldige postcode opgegeven.
 	</div>
@@ -7,8 +7,8 @@
 <div class="search_result_menu columns large-12 small-12">
 	<div class="row">
 		<div class="small-6 large-7 columns">
-			<% if !@error  %>
-				<%=@messages.count%> zoekresultaten
+			<% if @location  %>
+				<%=@messages.count%> zoekresultaten rondom <%=@location['street']%>, <%=@location['postcode']%> <%=@location['town']%>
 			<% else %>
 				&nbsp;
 			<% end %>
