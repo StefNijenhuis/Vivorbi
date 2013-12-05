@@ -11,18 +11,10 @@
     background: #ffffff;
 }
 
-// .top-bar.expanded li {
-//     background: #ffffff;
-//     border-bottom: solid 1px $border-color;
-// }
-
 .top-bar .toggle-topbar{
     border: solid 1px $border-color;
 }
 
-.top-bar.expanded .toggle-topbar a{
-    background-color: darken(#ffffff, 5%);
-}
 
 .top-bar-section .right li:hover a {
     background: #ffffff;
@@ -38,12 +30,6 @@
     background-color: #ffffff;
     color: $dark-grey;
     line-height: 45px;
-}
-
-@media screen and (max-width: 940px) {
-    .top-bar-section li a:not(.button) {
-        background-color: darken(#ffffff, 5%);
-    }
 }
 
 .name {
@@ -70,6 +56,8 @@
     box-shadow: none;
 }
 
-// .top-bar-section > ul > .divider{
-//     border-color: $dark-grey;
-// }
+@media screen and (max-width: 940px) {
+    .top-bar-section li a:not(.button) {
+        background-color: darken(#ffffff, 5%);
+    }
+}

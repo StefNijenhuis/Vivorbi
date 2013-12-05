@@ -1,4 +1,4 @@
-input[type="text"], input[type="email"], textarea {
+input[type="text"], textarea {
 	@include text-field;
 }
 
@@ -21,7 +21,7 @@ input:focus:placeholder {
 }
 
 //styling for overview text
-.overview_val, .overview_title, .button_wrapper{
+.button_wrapper{
 	word-wrap: break-word;
 }
 
@@ -56,10 +56,6 @@ input:focus:placeholder {
 	padding: 8px;
 	min-height: 80px;
 
-}
-
-.visible_hint{
-	display: inline-block;
 }
 
 @media screen and (max-width: 768px) {

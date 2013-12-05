@@ -20,17 +20,12 @@ body{
   display: none;
 }
 
-.none_visable {
+.none_visible {
   visibility: hidden;
 }
 
 form {
   margin: 0px
-}
-
-#avatar_placeholder {
-  color: $brand-alert;
-  line-height: 100px;
 }
 
 .sub_header {
