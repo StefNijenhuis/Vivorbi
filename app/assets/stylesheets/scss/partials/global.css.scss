@@ -51,8 +51,11 @@ form {
   background-color: $normal-grey;
 }
 
-.wrapper_white_comment_input{
-  border: solid 1px $border-color;
-  background-color: #ffffff;
-  padding-top: 20px;
+.show_wrapper .row {
+  margin-right: 0px;
+  margin-left: 0px;
+}
+
+.show_wrapper .wrapper_white {
+  padding: 5px;
 }
