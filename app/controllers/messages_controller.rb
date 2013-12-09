@@ -14,7 +14,7 @@ class MessagesController < ApplicationController
       @messages = Message.find_by_location_and_radius(@location,@radius)
       render action: 'index'
     else
-      @messages = Message.all
+      #@messages = Message.all
       render action: 'index'
     end
   end
