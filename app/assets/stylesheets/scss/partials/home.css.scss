@@ -1,10 +1,8 @@
 .home_header {
-	margin-top: -20px;
-	border-bottom: solid $normal-grey 1px;
-}
-.home_near_header {
+	border-left: solid $border-color 1px;
+	border-right: solid $border-color 1px;
+	border-top: solid $border-color 1px;
 	background-color: $normal-grey;
-	border-bottom: solid $light-grey 1px;
 }
 .home_sub_header_city, .home_sub_header_date {
 	margin-bottom: 0px;
@@ -19,22 +17,9 @@
 	display: inline-block;
 	word-wrap: break-word;
 	cursor: pointer;
+	border: solid 1px $border-color;
+	background-color: #fff;
 }
-.item_box_body {
-	height: 80px;
-}
-.column_items_wrapper:nth-of-type(2) .item_box, .column_items_wrapper:nth-of-type(2) .home_header {
-	background-color: $normal-grey;
-}
-.column_items_wrapper:nth-of-type(2) .home_header {
-	border-bottom: solid 1px $light-grey;
-}
-
-@media screen and (max-width: 768px) {
-	.home_header {
-		margin-top: 0px;
-	}
-	.item_box_body {
-		height: auto;
-	}
+.wrapper .row .column_items_wrapper .row {
+	margin-right: 0px;
 }

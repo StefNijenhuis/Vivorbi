@@ -3,28 +3,27 @@
 		<div class="small-12 large-4 columns column_items_wrapper">
 			<div class="row">
 				<div class="small-12 large-12 columns home_header">
-					<h3><%= @columnTitles[i] %></h3>
+					<h4><%= @columnTitles[i] %></h4>
 				</div>
-			<% column.each do |item| %>
-				<div class="item_box">
-		 			<div class="small-12 large-12 columns">
-		 				<h4><%= item.title %></h4>
-		 			</div>
-		 			<div class="small-6 large-6 columns">
-		 				<span class="home_sub_header_city"><%= item.user.city%></span>
-		 			</div>
-		 			<div class="small-6 large-6 columns">
-		 				<span class="home_sub_header_date text_right"><%= item.created_at.strftime("%d-%m-%Y") %></span>
-		 			</div>
-		 			<div class="small-12 large-12 columns item_box_body">
-		 				<p><%= truncate(item.body, length: 65, omission: '...') %></p>
-		 			</div>
-		 			<div class="small-12 large-8 columns button_wrapper">
-		 				<%= link_to "Bericht bekijken", item, class:"bericht_button"%>
-		 			</div>	
-		 		</div>
-			<% end %>
 			</div>
+			<% column.each do |item| %>
+				<div class="row">
+					<div class="item_box">
+						<div class="small-12 large-12 columns">
+							<h4><%= link_to item.title, item %></h4>
+						</div>
+						<div class="small-12 large-12 columns item_box_body">
+							<p><%= truncate(item.body, length: 55, omission: "") { link_to ".. meer", item } %></p>
+						</div>
+						<div class="small-6 large-6 columns">
+							<span class="home_sub_header_city"><%= item.user.city%></span>
+						</div>
+						<div class="small-6 large-6 columns">
+							<span class="home_sub_header_date text_right"><%= item.created_at.strftime("%d-%m-%Y") %></span>
+						</div>
+					</div>
+				</div>
+			<% end %>
 		</div>
 	<% end %>
 </div>
