@@ -44,6 +44,7 @@ nl:
     home: "Naar de startpagina"
     brand: "Vivorbi"
     menu: "Menu"
+    more: "lees meer"
     search:
       postal_code: "Uw postcode"
       radius: "Zoekafstand"
