@@ -42,7 +42,9 @@
 	</div>
 	
 		<% if @message.comments.count == 0 %>
-			<p><%=t('comment.none')%></p>
+			<div class="large-6 small-12 columns comment_white">
+				<p><%=t('comment.none')%></p>
+			</div>
 		<% else %>
 			<% @message.comments.each do |comment| %>
 				<div class="large-6 small-12 columns comment_white">
