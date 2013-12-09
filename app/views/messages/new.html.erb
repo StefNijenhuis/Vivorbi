@@ -18,7 +18,7 @@
         %>
         <div class="error"><%= @message.errors.full_messages_for(:title).first %></div>
         <% end %>
-        <%= f.text_field :title, class:custom_class, placeholder:t('.title_placeholder'), title:t('.title_title') %>
+        <%= f.text_field :title, class:custom_class, placeholder:t('.title_placeholder') %>
       </div>
 
       <div class="large-4 small-12 columns hint_wrapper">
@@ -46,7 +46,7 @@
         %>
         <div class="error"><%= @message.errors.full_messages_for(:body).first %></div>
         <% end %>
-        <%= f.text_area :body, class:custom_class, placeholder:t('.body_placeholder'), title:t('.body_title') %>
+        <%= f.text_area :body, class:custom_class, placeholder:t('.body_placeholder') %>
       </div>
 
       <div class="large-4 small-12 columns hint_wrapper">
@@ -65,23 +65,24 @@
 
     <div class="row"> <!-- YOLO, I DONT GIVE A SINGLE FUCK -->
       <div class="small-12 large-8 columns message_wrapper">
-
-        <%
-        grouped_options = [
-          ['Binnenshuis',
-            [
-              ['Binnenshuis', 1]
+        <p class="dropdown">
+          <%
+            grouped_options = [
+              ['Binnenshuis',
+                [
+                  ['Binnenshuis', 1]
+                ]
+              ],
+              ['Buitenshuis',
+                [
+                  ['Buitenshuis', 2]
+                ]
+              ]
             ]
-          ],
-          ['Buitenshuis',
-            [
-              ['Buitenshuis', 2]
-            ]
-          ]
-        ]
-        %>
+          %>
 
-        <%= f.select :category_id, grouped_options_for_select(grouped_options) %>
+          <%= f.select :category_id, grouped_options_for_select(grouped_options) %>
+        </p>
       </div>
     </div>
     

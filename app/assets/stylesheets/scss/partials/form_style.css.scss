@@ -7,16 +7,16 @@ textarea{
 }
 
 // Disable placeholder on input focus
-input:focus::-webkit-input-placeholder {
+input:focus::-webkit-input-placeholder, textarea:focus::-webkit-input-placeholder {
   color: transparent!important;
 }
-input:focus::-moz-placeholder {
+input:focus::-moz-placeholder, textarea:focus::-moz-placeholder {
   color: transparent!important;
 }
-input:focus:-ms-input-placeholder {
+input:focus:-ms-input-placeholder, textarea:focus:-ms-input-placeholder {
   color: transparent!important;
 }
-input:focus:placeholder {
+input:focus:placeholder, textarea:focus:placeholder {
   color: transparent!important;
 }
 

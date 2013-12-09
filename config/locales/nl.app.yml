@@ -86,8 +86,6 @@ nl:
     new:
       title: "Nieuw bericht plaatsen"
       title_placeholder: "Typ hier de titel van uw bericht"
-      title_title: "Minimaal 10 karakters invullen"
-      body_title: "Minimaal 10 karakters invullen"
       body_placeholder: "Typ hier uw bericht"
     hints:
       title: "Vul hier een korte titel voor uw bericht in"
@@ -103,6 +101,7 @@ nl:
     title: "Reacties op dit bericht"
     none: "Er zijn nog geen reacties op dit bericht, reageer nu zelf."
     form_title: "Reageer zelf"
+    placeholder: "Typ hier uw reactie"
   # users:
   #   profile:
   #     months:
