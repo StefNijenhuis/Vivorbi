@@ -87,6 +87,7 @@ nl:
       title: "Nieuw bericht plaatsen"
       title_placeholder: "Typ hier de titel van uw bericht"
       body_placeholder: "Typ hier uw bericht"
+      category_placeholder: "Kies een categorie waar uw bericht bij hoort"
     hints:
       title: "Vul hier een korte titel voor uw bericht in"
       title_example: "Wie wil mijn kozijnen komen schilderen?"

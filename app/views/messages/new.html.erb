@@ -63,25 +63,10 @@
       </div>
     </div>
 
-    <div class="row"> <!-- YOLO, I DONT GIVE A SINGLE FUCK -->
+    <div class="row">
       <div class="small-12 large-8 columns message_wrapper">
         <p class="dropdown">
-          <%
-            grouped_options = [
-              ['Binnenshuis',
-                [
-                  ['Binnenshuis', 1]
-                ]
-              ],
-              ['Buitenshuis',
-                [
-                  ['Buitenshuis', 2]
-                ]
-              ]
-            ]
-          %>
-
-          <%= f.select :category_id, grouped_options_for_select(grouped_options) %>
+          <%= f.select :category_id, options_for_select(@category_options) %>
         </p>
       </div>
     </div>
