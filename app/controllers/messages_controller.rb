@@ -44,7 +44,7 @@ class MessagesController < ApplicationController
   end
 
   def message_params
-    params.require(:message).permit(:title, :body)
+    params.require(:message).permit(:title, :body, :category_id)
   end
 
   def search_params

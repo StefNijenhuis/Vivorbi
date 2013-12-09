@@ -21,8 +21,17 @@ User.create([{
   city: 'Midlum'
 }])
 
+Category.create([{
+  title: 'Binnenshuis'
+}])
+
+Category.create([{
+  title: 'Buitenshuis'
+}])
+
 Message.create([{
   user_id: 1,
+  category_id: 2,
   title: 'Heg snoeien',
   body: 'Mijn heg is onderhand zo groot dat mijn buurvrouw hier last van heeft.
   ik ben zelf niet instaad om mijn heg te knippen daarom zoek ik iemand die dit voor mij wil doen.'
@@ -30,6 +39,7 @@ Message.create([{
 
 Message.create([{
   user_id: 1,
+  category_id: 2,
   title: 'Kozijnen verven',
   body: 'Ik wil graag mijn kozijnen geverft hebben voor de zomer.
   Is er iemand die dit kan doen of die iemand kent die dit kan doen?'
@@ -37,12 +47,14 @@ Message.create([{
 
 Message.create([{
   user_id: 1,
+  category_id: 2,
   title: 'Hulp bij boodschappen',
   body: 'Ik ben slecht te been en kan de boodschappen niet meer doen daarom zoek ik hier een oplossing voor.'
 }])
 
 Message.create([{
   user_id: 1,
+  category_id: 2,
   title: 'Dagje uit',
   body: 'Ik heb voor zondag 8 december een taxi busje besteld om naar de Amsterdam te gaan en ik heb nog 4 plekken over.
   Als je zin hebt in een leuk dagje uit meld je dan bij mij of laat het in de reacties weten.'
