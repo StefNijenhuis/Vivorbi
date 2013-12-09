@@ -37,15 +37,15 @@
   		</div>
   	</div>
   </div>
-	<div class="large-6 small-12 columns wrapper_grey">
-		<h4>Reacties op dit bericht</h4>
+	<div class="large-6 small-12 columns comment_grey">
+		<h4><%=t('comment.title')%></h4>
 	</div>
 	
 		<% if @message.comments.count == 0 %>
-			<p>Er zijn nog geen reacties. Wilt u reageren vul dan het formulier hieronder in.</p>
+			<p><%=t('comment.none')%></p>
 		<% else %>
 			<% @message.comments.each do |comment| %>
-				<div class="large-6 small-12 columns wrapper_white">
+				<div class="large-6 small-12 columns comment_white">
 					<h5><%=comment.user.name%></h5>
 					<p><%=comment.body%></p>
 				</div>
@@ -53,8 +53,8 @@
 		<% end %>
 	
 
-	<div class="large-6 small-12 columns wrapper_grey">
-		<h4>Reageer zelf</h4>
+	<div class="large-6 small-12 columns comment_form_grey">
+		<h4><%=t('comment.form_title')%></h4>
 		<%= form_for([@message, @message.comments.build]) do |f| %>
 			<%= f.text_area :body %>
 			<%= f.submit :class => 'submit_button reageer' %>

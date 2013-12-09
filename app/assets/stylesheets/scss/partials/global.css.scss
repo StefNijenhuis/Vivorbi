@@ -45,10 +45,18 @@ form {
   border: solid 1px $border-color;
   background-color: #ffffff;
 }
+.comment_white {
+  background-color: #fff;
+  border: solid 1px $border-color;
+  border-bottom: none;
+}
 
-.wrapper_grey{
+.wrapper_grey, .comment_grey, .comment_form_grey {
   border: solid 1px $border-color;
   background-color: $normal-grey;
+}
+.comment_grey {
+  border-bottom: none;
 }
 
 .show_wrapper .row {

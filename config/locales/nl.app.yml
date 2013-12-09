@@ -99,6 +99,10 @@ nl:
       success: "Het plaatsen van uw bericht is geslaagd."
     search:
       title: "Berichten zoeken"
+  comment:
+    title: "Reacties op dit bericht"
+    none: "Er zijn nog geen reacties op dit bericht, reageer nu zelf."
+    form_title: "Reageer zelf"
   # users:
   #   profile:
   #     months:
