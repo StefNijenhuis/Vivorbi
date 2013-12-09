@@ -1,4 +1,11 @@
 <% content_for :title, t('messages.show.title') %>
+<% if params[:success] %>
+  <div class="row">
+    <div class="small-12 large-12 columns">
+      <%= t('.success') %> <!-- Beter bericht hier en zo'n leuke groene box kthx ;) -->
+    </div>
+  </div>
+<% end %>
 <div class="row">
 	<div class="large-6 small-12 columns">
 	 	<div class="row">

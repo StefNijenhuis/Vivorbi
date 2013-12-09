@@ -32,7 +32,7 @@ class MessagesController < ApplicationController
     @message.user = User.first
     
     if @message.save
-      redirect_to :action => 'index', notice: t('.success')
+      redirect_to :action => 'show', :id => @message.id, :success => "1"
     else
       render action: 'new'
     end
