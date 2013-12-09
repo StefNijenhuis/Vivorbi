@@ -15,7 +15,9 @@ $brand-normal: #3b72b8;
 
 // Link colors
 
-// $link-color: ;
+$link-color: #3b95d2;
+$link-color-visited: complement($link-color) ;
+
 // $link-color-active: ;
 
 // Text colors

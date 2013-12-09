@@ -19,7 +19,7 @@
   margin: 10px 0;
   @include rounded($radius: $button-radius);
   @include shadow($offset: 3px, $blur: 0px, $color: darken($color, 10%));
-
+  width: 100%;
   color: $text-color !important;
   background: $color;
  

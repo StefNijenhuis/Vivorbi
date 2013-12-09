@@ -40,3 +40,19 @@ form {
   display: inline-block;
   width: 100%;
 }
+
+.wrapper_white{
+  border: solid 1px $border-color;
+  background-color: #ffffff;
+}
+
+.wrapper_grey{
+  border: solid 1px $border-color;
+  background-color: $normal-grey;
+}
+
+.wrapper_white_comment_input{
+  border: solid 1px $border-color;
+  background-color: #ffffff;
+  padding-top: 20px;
+}
