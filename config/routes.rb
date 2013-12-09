@@ -1,4 +1,6 @@
 Vivorbi::Application.routes.draw do
+  resources :categories
+
   root "pages#home"
   post 'messages/search' => 'messages#search'
   get 'pages/home' => 'pages#home'
@@ -8,6 +10,7 @@ Vivorbi::Application.routes.draw do
   end
   resources :users
   resources :pages
+  resources :categories
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
