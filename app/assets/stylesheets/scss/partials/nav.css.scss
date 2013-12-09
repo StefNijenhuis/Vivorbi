@@ -18,7 +18,7 @@
 
 .top-bar-section .right li:hover a {
     background: #ffffff;
-    color: $dark-grey;
+    color: $primary-color;
 }
 .top-bar-section > ul > .divider {
     border-left: none;
@@ -28,7 +28,7 @@
 }
 .top-bar-section li a:not(.button) {
     background-color: #ffffff;
-    color: $dark-grey;
+    color: $primary-color;
     line-height: 45px;
 }
 
