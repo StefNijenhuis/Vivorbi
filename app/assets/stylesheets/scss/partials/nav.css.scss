@@ -30,6 +30,7 @@
     background-color: #ffffff;
     color: $primary-color;
     line-height: 45px;
+    border: solid 1px $border-color;
 }
 
 .name {
@@ -56,8 +57,14 @@
     box-shadow: none;
 }
 
-@media screen and (max-width: 940px) {
-    .top-bar-section li a:not(.button) {
-        background-color: darken(#ffffff, 5%);
+// @media screen and (max-width: 940px) {
+//     .top-bar-section li a:not(.button) {
+//         background-color: darken(#ffffff, 5%);
+//     }
+// }
+
+@media screen and (min-width: 940px) {
+    .top-bar-section li a:not(.button){
+            border: none;
     }
 }

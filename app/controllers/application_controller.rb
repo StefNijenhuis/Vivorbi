@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   before_action :load_user
+  before_action :search_radius_options
   
   def find_location_for_postal_code(postal_code)
     require 'net/http'
@@ -32,5 +33,16 @@ class ApplicationController < ActionController::Base
   private
   def load_user
     @user = User.first
+  end
+
+  def search_radius_options
+    @radius_options = [
+      [t('global.search.all_radius'),9999],
+      ['1 km',1],
+      ['5 km',5],
+      ['10 km',10],
+      ['25 km',25],
+      ['50 km',50]
+    ]
   end
 end

@@ -43,9 +43,7 @@
 
     <div class="search_bar">
       <div class="row">
-        <% # TODO form_tag url %>
-        <% # meta_where meta_search gem %>
-        <form action="/messages/search" method="post">
+        <%=form_tag '/messages/search' do %>
           <div class="large-5 columns">
             <!--
             Zoekopdracht
@@ -54,29 +52,21 @@
           </div>
 
           <div class="large-2 columns">
-            <label for='search_postal_code'><%=t 'global.search.postal_code'%></label>
-            <input id='search_postal_code' name="search[postal_code]" placeholder="1234AA" value="<%=@postal_code!=nil ? @postal_code : ''%>" type="text" class="search_input">
+            <%=label_tag 'search_postal_code',t('global.search.postal_code')%>
+            <%=text_field_tag 'search[postal_code]',@postal_code!=nil ? @postal_code : '', placeholder:'1234AA', class:'search_input' %>
           </div>
 
           <div class="large-3 columns">
-            <label for="search_radius"><%=t 'global.search.radius'%></label>
+            <%=label_tag 'search_radius',t('global.search.radius')%>
             <p class="dropdown">
-              <select id="search_radius" name="search[radius]">
-                <%
-                distances = [9999,1,5,10,25,50]
-                labels = [t('global.search.all_radius'),'1 km','5 km','10 km','25 km','50 km']
-                %>
-                <% distances.each_with_index do |d,i| %>
-                <option value="<%=d%>"<%=' selected' if @radius==d%>><%=labels[i]%></option>
-                <% end %>
-              </select>
+              <%=select_tag 'search[radius]',options_for_select(@radius_options,@radius)%>
             </p>
           </div>
 
           <div class="large-2 columns">
-            <input type="submit" class="search_button" value="<%=t 'global.search.submit'%>">
+            <%=submit_tag t('global.search.submit'), class:'search_button'%>
           </div>
-        </form>
+        <% end %>
       </div>
     </div>
 
