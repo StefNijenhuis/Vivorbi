@@ -105,3 +105,6 @@ input:focus:placeholder {
 .error{
 	@include error($color: $brand-alert);
 }
+.succes {
+	@include error($color: $brand-success);
+}

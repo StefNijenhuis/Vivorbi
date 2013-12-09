@@ -1,13 +1,10 @@
 .home_header {
-	border-left: solid $border-color 1px;
-	border-right: solid $border-color 1px;
-	border-top: solid $border-color 1px;
+	border: solid $border-color 1px;
 	background-color: $normal-grey;
 }
 .home_sub_header_city, .home_sub_header_date {
-	margin-bottom: 0px;
+	margin-bottom: 10px;
   	font-size: ceil($font-size-base * 0.75);
-  	font-weight: bold;
 }
 .home_sub_header_date {
 	display: inline-block;
@@ -18,6 +15,7 @@
 	word-wrap: break-word;
 	cursor: pointer;
 	border: solid 1px $border-color;
+	border-top: none;
 	background-color: #fff;
 }
 .wrapper .row .column_items_wrapper .row {
