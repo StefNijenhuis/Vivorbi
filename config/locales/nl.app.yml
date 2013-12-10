@@ -106,6 +106,9 @@ nl:
     none: "Er zijn nog geen reacties op dit bericht, reageer nu zelf."
     form_title: "Reageer zelf"
     placeholder: "Typ hier uw reactie"
+  pages:
+    home:
+      title: "Homepagina - Vivorbi"
   # users:
   #   profile:
   #     months:
