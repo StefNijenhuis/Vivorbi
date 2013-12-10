@@ -45,11 +45,8 @@
       <div class="row">
         <%=form_tag '/messages/search' do %>
           <div class="large-5 columns">
-            <!--
-            TODO: Klaas dit veld nog vervangen
-            Zoekopdracht
-            <input type="text" class="search_input"></input>
-            -->&nbsp;
+            <%=label_tag 'search_keyword',t('global.search.keyword')%>
+            <%=text_field_tag 'search[keyword]',@keyword!=nil ? @keyword : '', placeholder:t('global.search.keyword'), class:'search_input' %>
           </div>
 
           <div class="large-2 columns">
