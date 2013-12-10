@@ -1,6 +1,8 @@
 .home_header {
 	border: solid $border-color 1px;
 	background-color: $normal-grey;
+	padding-left: 0.9375em;
+	padding-right: 0.9375em;
 }
 .home_sub_header_city, .home_sub_header_date {
 	margin-bottom: 10px;
@@ -18,11 +20,7 @@
 	border-top: none;
 	background-color: #fff;
 	width: 100%;
-	min-height: 131px;
 }
 .item_box_body {
 	min-height: 60px;
-}
-.wrapper .row .column_items_wrapper .row {
-	margin-right: 0px;
 }

@@ -2,79 +2,91 @@
 <div class="large-12 columns new_message_wrapper">
   <%=form_for @message do |f| %>
     <div class="row">
-      <div class="small-12 large-8 columns message_wrapper first_wrap">
-        <h1 class="form_title" id="title_name"><%=t('.title')%></h1>
+      <div class="small-12 large-8 columns">
+        <div class="message_wrapper first_wrap">
+          <h1 class="form_title" id="title_name"><%=t('.title')%></h1>
+        </div>
       </div>
     </div>
     
     <div class="row message_row">
-      <div id="message_form_title" class="small-12 large-8 columns message_wrapper">
-        <%=f.label :title %>
-        <%
-        # error handling
-        custom_class="show_hint"
-        if @message.errors[:title].any?
-          custom_class+=" error"
-        %>
-        <div class="error"><%= @message.errors.full_messages_for(:title).first %></div>
-        <% end %>
-        <%= f.text_field :title, class:custom_class, placeholder:t('.title_placeholder') %>
-      </div>
+      <div id="message_form_title" class="small-12 large-8 columns">
+          <div class="message_wrapper">
+          <%=f.label :title %>
+          <%
+          # error handling
+          custom_class="show_hint"
+          if @message.errors[:title].any?
+            custom_class+=" error"
+          %>
+          <div class="error"><%= @message.errors.full_messages_for(:title).first %></div>
+          <% end %>
+          <%= f.text_field :title, class:custom_class, placeholder:t('.title_placeholder') %>
+        </div>
 
-      <div class="large-4 small-12 columns hint_wrapper">
-        <p>
-          <span class="hint"><%=t('global.hint')%>:</span> <%=t('messages.hints.title') %>
+        <div class="large-4 small-12 columns hint_wrapper">
           <p>
-            <span class="example"><%=t('global.example') %>:</span>
-            &ldquo;<%=t('messages.hints.title_example') %>&rdquo;
+            <span class="hint"><%=t('global.hint')%>:</span> <%=t('messages.hints.title') %>
+            <p>
+              <span class="example"><%=t('global.example') %>:</span>
+              &ldquo;<%=t('messages.hints.title_example') %>&rdquo;
+            </p>
           </p>
-        </p>
-        <span class="arrow">
-          <span></span>
-        </span>
+          <span class="arrow">
+            <span></span>
+          </span>
+        </div>
       </div>
     </div>
 
     <div class="row">
-      <div class="small-12 large-8 columns message_wrapper">
-      <%=f.label :category %>
-        <p class="dropdown">
-          <%=f.select :category_id, options_from_collection_for_select(@category_options,'id','title',{:selected=>0,:disabled=>0})%>
-        </p>
+      <div class="small-12 large-8 columns">
+        <div class="message_wrapper">
+          <%=f.label :category %>
+          <p class="dropdown">
+            <%=f.select :category_id, options_from_collection_for_select(@category_options,'id','title',{:selected=>0,:disabled=>0})%>
+          </p>
+        </div>
       </div>
     </div>
 
     <div class="row">
-      <div id="message_form_description" class="small-12 large-8 columns message_wrapper">
-        <%=f.label :body %>
-        <%
-        # error handling
-        custom_class="show_hint"
-        if @message.errors[:body].any?
-          custom_class+=" error"
-        %>
-        <div class="error"><%= @message.errors.full_messages_for(:body).first %></div>
-        <% end %>
-        <%= f.text_area :body, class:custom_class, placeholder:t('.body_placeholder') %>
+      <div id="message_form_description" class="small-12 large-8 columns">
+        <div class="message_wrapper">
+          <%=f.label :body %>
+          <%
+          # error handling
+          custom_class="show_hint"
+          if @message.errors[:body].any?
+            custom_class+=" error"
+          %>
+          <div class="error"><%= @message.errors.full_messages_for(:body).first %></div>
+          <% end %>
+          <%= f.text_area :body, class:custom_class, placeholder:t('.body_placeholder') %>
+        </div>
       </div>
 
-      <div class="large-4 small-12 columns hint_wrapper">
-        <p>
-          <span class="hint"><%=t('global.hint')%>:</span> <%=t('messages.hints.body') %>
+      <div class="large-4 small-12 columns">
+        <div class="hint_wrapper">
           <p>
-            <span class="example"><%=t('global.example') %>:</span>
-            &ldquo;<%=t('messages.hints.body_example') %>&rdquo;
+            <span class="hint"><%=t('global.hint')%>:</span> <%=t('messages.hints.body') %>
+            <p>
+              <span class="example"><%=t('global.example') %>:</span>
+              &ldquo;<%=t('messages.hints.body_example') %>&rdquo;
+            </p>
           </p>
-        </p>
-        <span class="arrow">
-          <span></span>
-        </span> 
+          <span class="arrow">
+            <span></span>
+          </span> 
+        </div>
       </div>
     </div>
     
     <div class="row">
-      <div class="small-12 large-8 columns message_wrapper last_wrap">
-        <%= f.submit @submit_text, class:"submit_button" %>
+      <div class="small-12 large-8 columns">
+        <div class="message_wrapper last_wrap">
+          <%= f.submit @submit_text, class:"submit_button" %>
+        </div>
       </div>
     </div>
   <% end %>
