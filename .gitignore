@@ -7,6 +7,9 @@
 # Ignore bundler config.
 /.bundle
 
+# Ignore the Gemfile.lock
+Gemfile.lock
+
 # Ignore the default SQLite database.
 /db/*.sqlite3
 /db/*.sqlite3-journal
@@ -28,11 +31,6 @@
 config/database.yml
 
 # Ignore sunspot solr folder
-/solr/development
+/solr/*
+/solr/
 /solr
-
-Gemfile.lock
-
-solr/development/data/index/segments.gen
-
-solr/pids/development/sunspot-solr-development.pid
