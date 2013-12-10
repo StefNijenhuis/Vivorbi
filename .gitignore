@@ -26,3 +26,13 @@
 
 # Ignore database file
 config/database.yml
+
+# Ignore sunspot solr folder
+/solr/development
+/solr
+
+Gemfile.lock
+
+solr/development/data/index/segments.gen
+
+solr/pids/development/sunspot-solr-development.pid
