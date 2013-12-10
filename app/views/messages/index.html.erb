@@ -9,7 +9,7 @@
   <div class="row search_result_menu">
     <div class="small-6 large-7 columns">
       <% if @location  %>
-      <%=@messages.count%> <%=t 'search.results'%> <%=@location['street']%>, <%=@location['postcode']%> <%=@location['town']%>
+        <%=@messages.count%> <%=t 'search.results'%> <%=@location['street']%>, <%=@location['postcode']%> <%=@location['town']%>
       <% else %>
         &nbsp;
       <% end %>
@@ -25,10 +25,12 @@
 
 <% if @location %>
   <% if !@messages || @messages.empty? %>
-    <div class="search_result large-12 small-12 columns">
-      <%=t 'search.no_results' %>
+    <div class="row">
+      <div class="no_result large-12 small-12 columns">
+        <%=t 'search.no_results' %>
 
-      <%=link_to t('helpers.submit.message.create'), :new_message%>
+        <%=link_to t('helpers.submit.message.create'), :new_message%>
+      </div>
     </div>
   <%else%>
     <% @messages.each do |m| %>

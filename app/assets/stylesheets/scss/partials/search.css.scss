@@ -56,6 +56,14 @@ p.dropdown:after {
     border-bottom: none;
     background-color: #fff;
 }
+.no_result {
+    word-wrap: break-word;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    cursor: pointer;
+    border: solid 1px $border-color;
+    background-color: #fff;
+}
 
 .distance, .time {
     margin-top: 17px;
