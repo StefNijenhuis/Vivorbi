@@ -5,6 +5,14 @@ class Message < ActiveRecord::Base
 
   validates_presence_of :title, :body
   
+  searchable do
+    text :title, :body
+    text :comments do
+      comments.map { |comment| comment.body }
+    end
+    latlon(:location) { Sunspot::Util::Coordinates.new(user.latitude,user.longitude)}
+  end
+
   # attribute accessors
   def distance
     read_attribute(:distance).to_f
