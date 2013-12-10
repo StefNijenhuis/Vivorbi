@@ -46,6 +46,7 @@ nl:
     menu: "Menu"
     more: "lees meer"
     search:
+      keyword: "Zoekopdracht"
       postal_code: "Uw postcode"
       radius: "Zoekafstand"
       all_radius: "Alle afstanden"
