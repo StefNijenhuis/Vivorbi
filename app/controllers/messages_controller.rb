@@ -24,8 +24,11 @@ class MessagesController < ApplicationController
   
   def new
     @message = Message.new
-    @category_options = [[t('messages.new.category_placeholder'), 0, {:selected => true, :disabled => true}]]
-    Category.all(:order => "title").each{ |category| @category_options.push([category.title,category.id]) }
+    cat = Category.new(id:0,title:t('messages.new.category_placeholder'))
+    @category_options = Category.all(:order=>'title')
+    @category_options.unshift(cat)
+    #@category_options = [[t('messages.new.category_placeholder'), 0, {:selected => true, :disabled => true}]]
+    #Category.all(:order => "title").each{ |category| @category_options.push([category.title,category.id]) }
   end
   
   def create
