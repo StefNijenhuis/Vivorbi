@@ -52,4 +52,5 @@ gem 'zurb-foundation'
 # gem "paperclip", "~> 3.0"
 
 # Sunspot
+gem 'sunspot_solr'
 gem 'sunspot_rails'
