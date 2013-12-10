@@ -25,4 +25,11 @@ class Message < ActiveRecord::Base
     distance = "6371 * acos( cos( radians( #{latitude} ) ) * cos( radians( users.latitude ) ) * cos( radians( users.longitude ) - radians( #{longitude} ) ) + sin( radians( #{latitude} ) ) * sin( radians( users.latitude ) ) )"
     self.joins(:user).select("messages.*, #{distance} AS distance").where("#{distance} <= #{radius}").order("distance").limit(limit)
   end
+
+  def self.find_by_keyword_location_and_radius(keyword,location,radius,limit = 999)
+    latitude = location['latitude']
+    longitude = location['longitude']
+    distance = "6371 * acos( cos( radians( #{latitude} ) ) * cos( radians( users.latitude ) ) * cos( radians( users.longitude ) - radians( #{longitude} ) ) + sin( radians( #{latitude} ) ) * sin( radians( users.latitude ) ) )"
+    self.where('lower(title) LIKE ? OR (lower(messages.body) LIKE ? AND lower(comments.body) NOT LIKE ?) OR (lower(comments.body) LIKE ? AND lower(messages.body) NOT LIKE ?)',"%#{keyword.downcase}%","%#{keyword.downcase}%","%#{keyword.downcase}%","%#{keyword.downcase}%","%#{keyword.downcase}%").joins(:user).joins(:comments).select("DISTINCT messages.*, #{distance} AS distance").where("#{distance} <= #{radius}").order("distance").limit(limit)
+  end
 end

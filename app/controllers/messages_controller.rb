@@ -10,8 +10,14 @@ class MessagesController < ApplicationController
     @postal_code = search_params[:postal_code]
     @radius = search_params[:radius].to_i
     @location = find_location_for_postal_code(@postal_code)
-    if @location 
-      @messages = Message.find_by_location_and_radius(@location,@radius)
+    @keyword = search_params[:keyword]
+    if @location
+      if search_params[:keyword]!=nil
+        @messages = Message.find_by_keyword_location_and_radius(search_params[:keyword],@location,@radius)
+        # abort(@messages.inspect)
+      else
+        @messages = Message.find_by_location_and_radius(@location,@radius)
+      end
       render action: 'index'
     else
       #@messages = Message.all
@@ -53,6 +59,6 @@ class MessagesController < ApplicationController
   end
 
   def search_params
-    params.require(:search).permit(:postal_code, :radius)
+    params.require(:search).permit(:keyword,:postal_code, :radius)
   end
 end

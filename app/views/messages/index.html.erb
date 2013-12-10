@@ -9,7 +9,7 @@
   <div class="row search_result_menu">
     <div class="small-6 large-7 columns">
       <% if @location  %>
-        <%=@messages.count%> <%=t 'search.results'%> <%=@location['street']%>, <%=@location['postcode']%> <%=@location['town']%>
+        <%=@messages.length%> <%=t 'search.results'%> <%=@location['street']%>, <%=@location['postcode']%> <%=@location['town']%>
       <% else %>
         &nbsp;
       <% end %>
