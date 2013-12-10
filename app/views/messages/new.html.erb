@@ -36,6 +36,14 @@
     </div>
 
     <div class="row">
+      <div class="small-12 large-8 columns message_wrapper">
+        <p class="dropdown">
+          <%=f.select :category_id, options_from_collection_for_select(@category_options,'id','title',{:selected=>0,:disabled=>0})%>
+        </p>
+      </div>
+    </div>
+
+    <div class="row">
       <div id="message_form_description" class="small-12 large-8 columns message_wrapper">
         <%=f.label :body %>
         <%
@@ -60,14 +68,6 @@
         <span class="arrow">
           <span></span>
         </span> 
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="small-12 large-8 columns message_wrapper">
-        <p class="dropdown">
-          <%=f.select :category_id, options_from_collection_for_select(@category_options,'id','title',{:selected=>0,:disabled=>0})%>
-        </p>
       </div>
     </div>
     
