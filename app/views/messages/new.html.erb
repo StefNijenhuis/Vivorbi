@@ -37,6 +37,7 @@
 
     <div class="row">
       <div class="small-12 large-8 columns message_wrapper">
+      <%=f.label :category %>
         <p class="dropdown">
           <%=f.select :category_id, options_from_collection_for_select(@category_options,'id','title',{:selected=>0,:disabled=>0})%>
         </p>

@@ -61,6 +61,7 @@ nl:
     label:
       message:
         title: "Wat is de titel van uw bericht?"
+        category: "Onder welke categorie valt uw bericht?"
         body: "Wat is de inhoud van uw bericht?"
       # user:
       #   first_name: "Wat is uw voornaam?"
