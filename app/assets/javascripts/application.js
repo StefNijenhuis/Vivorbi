@@ -13,6 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
+//= require parsley
+//= require parsley.i18n.nl
 //= require_tree .
 
 $(function(){ $(document).foundation(); });

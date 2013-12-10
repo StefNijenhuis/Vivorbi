@@ -50,3 +50,6 @@ gem 'zurb-foundation'
 
 # Paperclip
 # gem "paperclip", "~> 3.0"
+
+# Parsley
+gem "parsley-rails"
