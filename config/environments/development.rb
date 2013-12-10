@@ -26,4 +26,12 @@ Vivorbi::Application.configure do
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
   config.assets.debug = true
+
+  # Bad practice!
+  # http://stackoverflow.com/questions/4419059/is-this-a-simple-way-to-ensure-sunspot-solr-starts-or-this-bad
+  begin
+    Sunspot::Rails::Server.new.start
+  rescue
+    # solr is already running
+  end
 end
