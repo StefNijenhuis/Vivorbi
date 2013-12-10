@@ -49,4 +49,7 @@ end
 gem 'zurb-foundation'
 
 # Paperclip
-gem "paperclip", "~> 3.0"
+# gem "paperclip", "~> 3.0"
+
+# Sunspot
+gem 'sunspot_rails'
