@@ -21,6 +21,14 @@ User.create([{
   city: 'Midlum'
 }])
 
+User.create([{
+    name: 'Test gebruiker #3',
+    postal_code: '6883JM',
+    longitude: '5.484374',
+    latitude: '53.217316',
+    city: 'Sexbierum'
+}])
+
 Category.create([{
   title: 'Binnenshuis'
 }])
@@ -58,6 +66,13 @@ Message.create([{
   title: 'Dagje uit',
   body: 'Ik heb voor zondag 8 december een taxi busje besteld om naar de Amsterdam te gaan en ik heb nog 4 plekken over.
   Als je zin hebt in een leuk dagje uit meld je dan bij mij of laat het in de reacties weten.'
+}])
+
+Message.create([{
+  user_id: 3,
+  category_id: 2,
+  title: 'RTL 4 werkt niet meer',
+  body: 'Mijn RTL 4 werkt niet meer en nu kan ik The Voice niet meer kijken, er heeft een tijdje een balk boven in gestaan die iets zei over nieuwe frequenties maar ik begrijp dit niet. Zou iemand bij mij langs kunnen komen om dit te repareren?'
 }])
 
 Comment.create([{
