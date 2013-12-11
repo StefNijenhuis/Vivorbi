@@ -11,11 +11,21 @@ class MessagesController < ApplicationController
     @postal_code = search_params[:postal_code]
     @radius = search_params[:radius].to_i
     @location = find_location_for_postal_code(@postal_code)
-    if @location 
+
+    if @keyword.present? && @postal_code.present? && !@location
+      # Keyword and Postal code provided but invalid
+      render action: 'index'
+    elsif @keyword.present?
+      # Keyword provided, postal_code optional
+      #@messages = Message.find_by_keyword(@keyword, @location);
+      @messages = []
+      render action: 'index'
+    elsif @location
+      # Only postal_code has been provided
       @messages = Message.find_by_location_and_radius(@location,@radius)
       render action: 'index'
     else
-      #@messages = Message.all
+      # Nothing has been provided
       render action: 'index'
     end
   end

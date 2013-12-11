@@ -53,7 +53,7 @@ nl:
       submit: "Zoeken"
   search:
     error:
-      keyword_and_location: "U moet minimaal één zoek veld invullen."
+      keyword_and_location: "U moet minimaal één zoekveld invullen."
       location: "U heeft geen geldige postcode opgegeven."
     results: "zoekresultaten rondom"
     no_results: "Er zijn geen resultaten voor uw zoekopdracht."
