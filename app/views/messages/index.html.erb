@@ -1,8 +1,9 @@
 <% content_for :title, t('messages.search.title') %>
-<%if !@location %>
+<%if @messages.empty? %>
   <div class="row">
     <div class="large-12 small-12 columns error">
       <%=t 'search.error'%>
+      <%=@messages.inspect %>
     </div>
   </div>
 <% else %>
@@ -23,7 +24,7 @@
   </div>
 <% end %>
 
-<% if @location %>
+<% if true %>
   <% if !@messages || @messages.empty? %>
     <div class="row">
       <div class="no_result large-12 small-12 columns">

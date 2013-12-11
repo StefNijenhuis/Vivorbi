@@ -15,15 +15,21 @@ class MessagesController < ApplicationController
     # message_ids = @messages.all.map(&:id)
     # @comments = Comment.search_by_keyword(@keyword).where("message_id not in (?)",message_ids.join(','))
     if @location
-      if search_params[:keyword]!=nil
-        @messages = Message.find_by_keyword_location_and_radius(search_params[:keyword],@location,@radius)
-      else
-        @messages = Message.find_by_location_and_radius(@location,@radius)
+      if !@keyword.empty?
+        @messages = Message.find_by_keyword_location_and_radius(@keyword,@location,@radius).order('distance')
+      end
+      if @keyword.empty? || @messages.empty?
+        @messages = Message.find_by_location_and_radius(@location,@radius).order('distance')
       end
       render action: 'index'
     else
-      #@messages = Message.all
-      render action: 'index'
+      if @keyword != nil
+        @messages = Message.find_by_keyword(@keyword)#order by comments count
+        render action: 'index'
+      else
+        @messages = nil
+        render action: 'index'
+      end
     end
   end
 

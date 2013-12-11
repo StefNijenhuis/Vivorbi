@@ -14,6 +14,7 @@ class Message < ActiveRecord::Base
         :any_word => true
       }
     }
+
   # attribute accessors
   def distance
     read_attribute(:distance).to_f
@@ -28,17 +29,23 @@ class Message < ActiveRecord::Base
              :offset => offset)
   end
 
-  def self.find_by_location_and_radius(location,radius,limit = 999)
+  def self.find_by_keyword(keyword)
+    self.search_by_keyword(keyword)
+  end
+  
+  # order and limit in controller!
+  def self.find_by_keyword_location_and_radius(keyword,location,radius)
     latitude = location['latitude']
     longitude = location['longitude']
     distance = "6371 * acos( cos( radians( #{latitude} ) ) * cos( radians( users.latitude ) ) * cos( radians( users.longitude ) - radians( #{longitude} ) ) + sin( radians( #{latitude} ) ) * sin( radians( users.latitude ) ) )"
-    self.joins(:user).select("messages.*, #{distance} AS distance").where("#{distance} <= #{radius}").order("distance").limit(limit)
+    self.search_by_keyword(keyword).joins(:user).select("messages.*, #{distance} AS distance").where("#{distance} <= #{radius}")
   end
 
-  def self.find_by_keyword_location_and_radius(keyword,location,radius,limit = 999)
+  # order and limit in controller!
+  def self.find_by_location_and_radius(location,radius)
     latitude = location['latitude']
     longitude = location['longitude']
     distance = "6371 * acos( cos( radians( #{latitude} ) ) * cos( radians( users.latitude ) ) * cos( radians( users.longitude ) - radians( #{longitude} ) ) + sin( radians( #{latitude} ) ) * sin( radians( users.latitude ) ) )"
-    self.where('lower(title) LIKE ? OR lower(messages.body) LIKE ? OR lower(comments.body) LIKE ?',"%#{keyword.downcase}%","%#{keyword.downcase}%","%#{keyword.downcase}%").joins(:user).joins(:comments).select("DISTINCT messages.*, #{distance} AS distance").where("#{distance} <= #{radius}").order("distance").limit(limit)
+    self.joins(:user).select("messages.*, #{distance} AS distance").where("#{distance} <= #{radius}")
   end
 end
