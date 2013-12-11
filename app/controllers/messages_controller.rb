@@ -11,10 +11,12 @@ class MessagesController < ApplicationController
     @radius = search_params[:radius].to_i
     @location = find_location_for_postal_code(@postal_code)
     @keyword = search_params[:keyword]
+    # @messages = Message.search_by_keyword(@keyword)
+    # message_ids = @messages.all.map(&:id)
+    # @comments = Comment.search_by_keyword(@keyword).where("message_id not in (?)",message_ids.join(','))
     if @location
       if search_params[:keyword]!=nil
         @messages = Message.find_by_keyword_location_and_radius(search_params[:keyword],@location,@radius)
-        # abort(@messages.inspect)
       else
         @messages = Message.find_by_location_and_radius(@location,@radius)
       end

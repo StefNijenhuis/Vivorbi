@@ -5,6 +5,15 @@ class Message < ActiveRecord::Base
 
   validates_presence_of :title, :body
 
+  include PgSearch
+  pg_search_scope :search_by_keyword,
+    :against => [:title,:body],
+    :using => {
+      :tsearch => {
+        :dictionary => "dutch",
+        :any_word => true
+      }
+    }
   # attribute accessors
   def distance
     read_attribute(:distance).to_f
@@ -30,6 +39,6 @@ class Message < ActiveRecord::Base
     latitude = location['latitude']
     longitude = location['longitude']
     distance = "6371 * acos( cos( radians( #{latitude} ) ) * cos( radians( users.latitude ) ) * cos( radians( users.longitude ) - radians( #{longitude} ) ) + sin( radians( #{latitude} ) ) * sin( radians( users.latitude ) ) )"
-    self.where('lower(title) LIKE ? OR (lower(messages.body) LIKE ? AND lower(comments.body) NOT LIKE ?) OR (lower(comments.body) LIKE ? AND lower(messages.body) NOT LIKE ?)',"%#{keyword.downcase}%","%#{keyword.downcase}%","%#{keyword.downcase}%","%#{keyword.downcase}%","%#{keyword.downcase}%").joins(:user).joins(:comments).select("DISTINCT messages.*, #{distance} AS distance").where("#{distance} <= #{radius}").order("distance").limit(limit)
+    self.where('lower(title) LIKE ? OR lower(messages.body) LIKE ? OR lower(comments.body) LIKE ?',"%#{keyword.downcase}%","%#{keyword.downcase}%","%#{keyword.downcase}%").joins(:user).joins(:comments).select("DISTINCT messages.*, #{distance} AS distance").where("#{distance} <= #{radius}").order("distance").limit(limit)
   end
 end
