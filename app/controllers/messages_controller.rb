@@ -7,6 +7,7 @@ class MessagesController < ApplicationController
   end
   
   def search
+    @keyword = search_params[:keyword]
     @postal_code = search_params[:postal_code]
     @radius = search_params[:radius].to_i
     @location = find_location_for_postal_code(@postal_code)
@@ -53,6 +54,6 @@ class MessagesController < ApplicationController
   end
 
   def search_params
-    params.require(:search).permit(:postal_code, :radius)
+    params.require(:search).permit(:keyword, :postal_code, :radius)
   end
 end

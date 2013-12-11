@@ -1,9 +1,17 @@
 <% content_for :title, t('messages.search.title') %>
-<%if !@location %>
+<% if @keyword.empty? && @postal_code.empty? %>
   <div class="row">
     <div class="large-12 small-12 columns">
       <div class="error">
-        <%=t 'search.error'%>
+        <%=t 'search.error.keyword_and_location'%>
+      </div>
+    </div>
+  </div>
+<% elsif !@location %>
+  <div class="row">
+    <div class="large-12 small-12 columns">
+      <div class="error">
+        <%=t 'search.error.location'%>
       </div>
     </div>
   </div>

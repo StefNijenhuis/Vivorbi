@@ -52,7 +52,9 @@ nl:
       all_radius: "Alle afstanden"
       submit: "Zoeken"
   search:
-    error: "U heeft geen geldige postcode opgegeven."
+    error:
+      keyword_and_location: "U moet minimaal één zoek veld invullen."
+      location: "U heeft geen geldige postcode opgegeven."
     results: "zoekresultaten rondom"
     no_results: "Er zijn geen resultaten voor uw zoekopdracht."
     distance: "Afstand"
