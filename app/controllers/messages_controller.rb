@@ -43,6 +43,7 @@ class MessagesController < ApplicationController
     cat = Category.new(id:0,title:t('messages.new.category_placeholder'))
     @category_options = Category.all(:order=>'title')
     @category_options.unshift(cat)
+    @select = 0
     #@category_options = [[t('messages.new.category_placeholder'), 0, {:selected => true, :disabled => true}]]
     #Category.all(:order => "title").each{ |category| @category_options.push([category.title,category.id]) }
   end
@@ -55,6 +56,16 @@ class MessagesController < ApplicationController
     if @message.save
       redirect_to :action => 'show', :id => @message.id, :success => "1"
     else
+      cat = Category.new(id:0,title:t('messages.new.category_placeholder'))
+      @category_options = Category.all(:order=>'title')
+      @category_options.unshift(cat)
+
+      if(@message.category_id.present?)
+        @select = @message.category_id
+      else
+        @select = 0
+      end
+
       render action: 'new'
     end
   end

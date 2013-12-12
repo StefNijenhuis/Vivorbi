@@ -42,9 +42,17 @@
     <div class="row">
       <div class="small-12 large-8 columns">
         <div class="message_wrapper">
-          <%=f.label :category %>
+          <%=f.label :category_id %>
+          <%
+             # error handling
+             custom_class="show_hint"
+             if @message.errors[:category_id].any?
+               custom_class+=" error"
+          %>
+          <div class="error"><%= @message.errors.full_messages_for(:category_id).first %></div>
+          <% end %>
           <p class="dropdown">
-            <%=f.select :category_id, options_from_collection_for_select(@category_options,'id','title',{:selected=>0,:disabled=>0})%>
+            <%=f.select :category_id, options_from_collection_for_select(@category_options,'id','title',{:selected=>@select,:disabled=>0})%>
           </p>
         </div>
       </div>

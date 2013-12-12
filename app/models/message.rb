@@ -4,6 +4,7 @@ class Message < ActiveRecord::Base
   has_many :comments
 
   validates_presence_of :title, :body
+  validates :category_id, :numericality => true
 
   # attribute accessors
   def distance
