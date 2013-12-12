@@ -60,10 +60,9 @@ class MessagesController < ApplicationController
       @category_options = Category.all(:order=>'title')
       @category_options.unshift(cat)
 
+      @select = 0
       if(@message.category_id.present?)
         @select = @message.category_id
-      else
-        @select = 0
       end
 
       render action: 'new'
