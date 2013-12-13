@@ -102,6 +102,7 @@ nl:
     show:
       title: "Bericht bekijken"
       success: "Het plaatsen van uw bericht is geslaagd."
+      comment: "Het plaatsen van uw reactie is geslaagd."
     search:
       title: "Berichten zoeken"
   comment:

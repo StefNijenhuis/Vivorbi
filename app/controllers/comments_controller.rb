@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
     @comment.user = User.last
     
     @comment.save
-    redirect_to message_path(@message)
+    redirect_to url_for(:controller => :messages, :action => :show, :id => @message.id, :comment => @comment.id)
   end
 
   private

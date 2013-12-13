@@ -1,10 +1,14 @@
 <% content_for :title, t('messages.show.title') %>
 
-<% if params[:success] %>
+<% if params[:success] || params[:comment] %>
 	<div class="row">
 		<div class="small-12 large-12 columns">
 		    <div class="succes">
-					<%= t('.success') %>
+          <% if params[:success] %>
+            <%= t('.success') %>
+          <% elsif params[:comment] %>
+            <%= t('.comment') %>
+          <% end %>
 		    </div>
 		</div>
 	</div>
@@ -48,7 +52,7 @@
 			</div>
 		<% else %>
 			<% @message.comments.each do |comment| %>
-				<div class="large-12 small-12 columns comment_white">
+				<div class="large-12 small-12 columns comment_white<% if comment.id == params[:comment].to_i %> comment_highlight<% end %>">
 					<h5><%=comment.user.name%></h5>
 					<p><%=comment.body%></p>
 				</div>
