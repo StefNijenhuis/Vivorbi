@@ -25,6 +25,7 @@ nl:
       message:
         title: "Titel"
         body: "Bericht"
+        category_id: "Categorie"
       user:
         name: "Naam"
         city: "Woonplaats"
