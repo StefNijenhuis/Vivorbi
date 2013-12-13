@@ -3,7 +3,7 @@ class Message < ActiveRecord::Base
   belongs_to :category
   has_many :comments
 
-  validates_presence_of :title, :body
+  validates_presence_of :title, :body, :category_id
   validates :category_id, :numericality => true
 
   # attribute accessors

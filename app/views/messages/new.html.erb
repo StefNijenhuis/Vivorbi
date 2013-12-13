@@ -1,6 +1,6 @@
 <% content_for :title, t('messages.new.title') %>
 <div class="large-12 columns new_message_wrapper">
-  <%=form_for @message do |f| %>
+  <%=form_for @message, html: {novalidate: true} do |f| %>
     <div class="row">
       <div class="small-12 large-8 columns">
         <div class="message_wrapper first_wrap">
@@ -21,7 +21,7 @@
           %>
           <div class="error"><%= @message.errors.full_messages_for(:title).first %></div>
           <% end %>
-          <%= f.text_field :title, class:custom_class, placeholder:t('.title_placeholder') %>
+          <%= f.text_field :title, class:custom_class, placeholder:t('.title_placeholder'), :required=>true %>
         </div>
 
         <div class="large-4 small-12 columns hint_wrapper">
@@ -45,14 +45,14 @@
           <%=f.label :category_id %>
           <%
              # error handling
-             custom_class="show_hint"
+             custom_class="show_hint empty"
              if @message.errors[:category_id].any?
                custom_class+=" error"
           %>
           <div class="error"><%= @message.errors.full_messages_for(:category_id).first %></div>
           <% end %>
           <p class="dropdown">
-            <%=f.select :category_id, options_from_collection_for_select(@category_options,'id','title',{:selected=>@select,:disabled=>0})%>
+            <%=f.select :category_id, options_from_collection_for_select(@category_options,'id','title',{:selected=>@select}), { :include_blank => t('messages.new.category_placeholder') }, class:custom_class, :required => true%>
           </p>
         </div>
       </div>
@@ -70,7 +70,7 @@
           %>
           <div class="error"><%= @message.errors.full_messages_for(:body).first %></div>
           <% end %>
-          <%= f.text_area :body, class:custom_class, placeholder:t('.body_placeholder') %>
+          <%= f.text_area :body, class:custom_class, placeholder:t('.body_placeholder'), :required=>true %>
         </div>
       </div>
 

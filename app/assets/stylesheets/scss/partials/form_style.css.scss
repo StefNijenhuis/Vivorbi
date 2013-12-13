@@ -108,3 +108,36 @@ input:focus:placeholder, textarea:focus:placeholder {
 .succes {
 	@include error($color: $brand-success);
 }
+
+/* Select gray placeholder */
+
+select option {
+  color: black;
+}
+select option:first-child {
+  color: grey;
+}
+select.empty {
+  color: grey;
+}
+
+select option[disabled]:first-child {
+  display: none;
+}
+
+/* Johan, dit werkt wel maar is volgens mij niet de bedoeling dat het hier zo staat maar ik weet het verder niet.
+ Volgens mij moet er een .error select {} komen die gewoon op alle selects werkt
+ Daarnaast zie ik graag dat die error kleur van de dropdown niet zo rood is maar meer dat licht rode dat de andere inputs wel krijgen.
+*/
+
+.dropdown select.empty {
+  color: grey;
+}
+
+.dropdown select.error {
+  @include error($color: $brand-alert);
+}
+
+.dropdown select.error option {
+  color: #fff;
+}
