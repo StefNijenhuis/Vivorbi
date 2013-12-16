@@ -35,10 +35,13 @@
   <% if !@messages || @messages.empty? %>
     <div class="row">
       <div class="large-12 small-12 columns">
-        <div class="no_result">
-          <%=t 'search.no_results' %>
-
-          <%=link_to t('helpers.submit.message.create'), :new_message%>
+        <div class=" large-12 columns no_result">
+          <div class="large-12 small-12 columns">
+            <%=t 'search.no_results' %>
+          </div>
+          <div class="large-3 small-12 columns pull-9">
+            <%=link_to t('helpers.submit.message.create'), :new_message, class:"submit_button"%>
+          </div>
         </div>
       </div>
     </div>
