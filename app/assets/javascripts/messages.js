@@ -4,9 +4,9 @@ $(document).ready(function() {
     window.location = $(this).find("a").attr("href");
   });
 
-  $('select option:first-child').attr('disabled', 'disabled');
+  $('#new_message select option:first-child').attr('disabled', 'disabled');
 
-  $("select:has(option[value=]:first-child)").on('change', function() {
+  $("#new_message select:has(option[value=]:first-child)").on('change', function() {
     $(this).toggleClass("empty", $.inArray($(this).val(), ['', null]) >= 0);
   }).trigger('change');
 

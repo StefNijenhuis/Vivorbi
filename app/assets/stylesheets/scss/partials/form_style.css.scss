@@ -117,17 +117,17 @@ input:focus:placeholder, textarea:focus:placeholder {
 
 /* Select gray placeholder */
 
-select option {
+#new_message select option {
   color: black;
 }
-select option:first-child {
+#new_message select option:first-child {
   color: #A9A9A9;
 }
-select.empty {
+#new_message select.empty {
   color: #A9A9A9;
 }
 
-select option[disabled]:first-child {
+#new_message select option[disabled]:first-child {
   display: none;
 }
 
