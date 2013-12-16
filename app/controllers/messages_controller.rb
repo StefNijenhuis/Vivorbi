@@ -16,6 +16,10 @@ class MessagesController < ApplicationController
       # Keyword and postal_code provided but postal_code is invalid
       @search_error = t 'search.error.location'
       render action: 'index'
+    elsif @keyword.present? && @location
+      # Keyword and location search function
+      @messages = []
+      render action: 'index'
     elsif @keyword.present?
       # Keyword provided
       @messages = []
