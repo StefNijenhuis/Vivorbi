@@ -21,7 +21,7 @@
           %>
           <div class="error"><%= @message.errors.full_messages_for(:title).first %></div>
           <% end %>
-          <%= f.text_field :title, class:custom_class, placeholder:t('.title_placeholder'), :required=>true %>
+          <%= f.text_field :title, class:custom_class, placeholder:t('.title_placeholder'), :required=>true, 'parsley-required-message'=>t('activerecord.attributes.message.title') + ' ' + t('errors.messages.blank') %>
         </div>
 
         <div class="large-4 small-12 columns hint_wrapper">
@@ -52,7 +52,7 @@
           <div class="error"><%= @message.errors.full_messages_for(:category_id).first %></div>
           <% end %>
           <p class="dropdown">
-            <%=f.select :category_id, options_from_collection_for_select(@category_options,'id','title',{:selected=>@select}), { :include_blank => t('messages.new.category_placeholder') }, class:custom_class, :required => true%>
+            <%=f.select :category_id, options_from_collection_for_select(@category_options,'id','title',{:selected=>@select}), { :include_blank => t('messages.new.category_placeholder') }, class:custom_class, :required => true, 'parsley-required-message'=>t('activerecord.attributes.message.category_id') + ' ' + t('errors.messages.blank') %>
           </p>
         </div>
       </div>
@@ -70,7 +70,7 @@
           %>
           <div class="error"><%= @message.errors.full_messages_for(:body).first %></div>
           <% end %>
-          <%= f.text_area :body, class:custom_class, placeholder:t('.body_placeholder'), :required=>true %>
+          <%= f.text_area :body, class:custom_class, placeholder:t('.body_placeholder'), :required=>true, 'parsley-required-message'=>t('activerecord.attributes.message.body') + ' ' + t('errors.messages.blank') %>
         </div>
       </div>
 
