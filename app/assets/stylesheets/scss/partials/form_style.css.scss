@@ -1,6 +1,12 @@
 input[type="text"], textarea {
 	@include text-field;
 }
+input[type="text"].error {
+	border-color: #c60f13;
+}
+input[type="text"].error:focus {
+	@include text-field;
+}
 
 textarea{
 	height: 200px;
@@ -115,10 +121,10 @@ select option {
   color: black;
 }
 select option:first-child {
-  color: grey;
+  color: #A9A9A9;
 }
 select.empty {
-  color: grey;
+  color: #A9A9A9;
 }
 
 select option[disabled]:first-child {
@@ -130,12 +136,12 @@ select option[disabled]:first-child {
  Daarnaast zie ik graag dat die error kleur van de dropdown niet zo rood is maar meer dat licht rode dat de andere inputs wel krijgen.
 */
 
-.dropdown select.empty {
-  color: grey;
+select.error {
+	@include form-error-color;
 }
 
-.dropdown select.error {
-  @include error($color: $brand-alert);
+.dropdown select.empty {
+  color: #A9A9A9;
 }
 
 .dropdown select.error option {
