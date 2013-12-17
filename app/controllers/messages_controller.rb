@@ -11,6 +11,9 @@ class MessagesController < ApplicationController
     @postal_code = search_params[:postal_code]
     @radius = search_params[:radius].to_i
     @location = find_location_for_postal_code(@postal_code)
+    # @messages = Message.search_by_keyword(@keyword)
+    # message_ids = @messages.all.map(&:id)
+    # @comments = Comment.search_by_keyword(@keyword).where("message_id not in (?)",message_ids.join(','))
 
     if @keyword.present? && @postal_code.present? && !@location
       # Keyword and postal_code provided but postal_code is invalid
@@ -18,11 +21,11 @@ class MessagesController < ApplicationController
       render action: 'index'
     elsif @keyword.present? && @location
       # Keyword and location search function
-      @messages = []
+      @messages = Message.find_by_keyword_location_and_radius(@keyword,@location,@radius).order('distance')
       render action: 'index'
     elsif @keyword.present?
       # Keyword provided
-      @messages = []
+      @messages = Message.find_by_keyword(@keyword)#order by comments count
       render action: 'index'
     elsif @location
       # Provided postal_code is valid
