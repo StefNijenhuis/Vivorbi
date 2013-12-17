@@ -6,6 +6,16 @@ class Message < ActiveRecord::Base
   validates_presence_of :title, :body, :category_id
   validates :category_id, :numericality => true
 
+  include PgSearch
+  pg_search_scope :search_by_keyword,
+    :against => [:title,:body],
+    :using => {
+      :tsearch => {
+        :dictionary => "dutch",
+        :any_word => true
+      }
+    }
+
   # attribute accessors
   def distance
     read_attribute(:distance).to_f
@@ -20,10 +30,29 @@ class Message < ActiveRecord::Base
              :offset => offset)
   end
 
-  def self.find_by_location_and_radius(location,radius,limit = 999)
+  def self.find_by_keyword(keyword)
+    self.search_by_keyword(keyword)
+  end
+  
+  # order and limit in controller!
+  def self.find_by_keyword_location_and_radius(keyword,location,radius)
     latitude = location['latitude']
     longitude = location['longitude']
     distance = "6371 * acos( cos( radians( #{latitude} ) ) * cos( radians( users.latitude ) ) * cos( radians( users.longitude ) - radians( #{longitude} ) ) + sin( radians( #{latitude} ) ) * sin( radians( users.latitude ) ) )"
-    self.joins(:user).select("messages.*, #{distance} AS distance").where("#{distance} <= #{radius}").order("distance").limit(limit)
+    foobar = self.search_by_keyword(keyword)
+    # TODO: Return false when there is no search result returned, this needs to be handled in the controller
+    if(foobar.empty?)
+      return false
+    else
+      foobar.joins(:user).select("messages.*, #{distance} AS distance").where("#{distance} <= #{radius}")
+    end
+  end
+
+  # order and limit in controller!
+  def self.find_by_location_and_radius(location,radius)
+    latitude = location['latitude']
+    longitude = location['longitude']
+    distance = "6371 * acos( cos( radians( #{latitude} ) ) * cos( radians( users.latitude ) ) * cos( radians( users.longitude ) - radians( #{longitude} ) ) + sin( radians( #{latitude} ) ) * sin( radians( users.latitude ) ) )"
+    self.joins(:user).select("messages.*, #{distance} AS distance").where("#{distance} <= #{radius}")
   end
 end
