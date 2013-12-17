@@ -10,6 +10,7 @@ class CategoriesController < ApplicationController
   # GET /categories/1
   # GET /categories/1.json
   def show
+    @messages = @category.messages.all(:order=>'created_at DESC')
   end
 
   # GET /categories/new
