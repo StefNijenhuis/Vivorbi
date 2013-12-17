@@ -39,12 +39,12 @@ class Message < ActiveRecord::Base
     latitude = location['latitude']
     longitude = location['longitude']
     distance = "6371 * acos( cos( radians( #{latitude} ) ) * cos( radians( users.latitude ) ) * cos( radians( users.longitude ) - radians( #{longitude} ) ) + sin( radians( #{latitude} ) ) * sin( radians( users.latitude ) ) )"
-    foobar = self.search_by_keyword(keyword)
-    # TODO: Return false when there is no search result returned, this needs to be handled in the controller
-    if(foobar.empty?)
+    search_result = self.search_by_keyword(keyword)
+    # return false when there is no search result returned
+    if(search_result.empty?)
       return false
     else
-      foobar.joins(:user).select("messages.*, #{distance} AS distance").where("#{distance} <= #{radius}")
+      search_result.joins(:user).select("messages.*, #{distance} AS distance").where("#{distance} <= #{radius}")
     end
   end
 

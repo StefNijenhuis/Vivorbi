@@ -21,7 +21,11 @@ class MessagesController < ApplicationController
       render action: 'index'
     elsif @keyword.present? && @location
       # Keyword and location search function
-      @messages = Message.find_by_keyword_location_and_radius(@keyword,@location,@radius).order('distance')
+      @messages = Message.find_by_keyword_location_and_radius(@keyword,@location,@radius)
+      unless @messages == false
+        @messages .order('distance')
+      end
+      # abort(@messages.inspect)
       render action: 'index'
     elsif @keyword.present?
       # Keyword provided

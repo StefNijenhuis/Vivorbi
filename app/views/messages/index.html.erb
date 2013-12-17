@@ -13,7 +13,7 @@
       <div class="search_result_menu">
         <div class="row">
           <div class="small-6 large-7 columns">
-            <% if @location  %>
+            <% if @location && !@messages == false %>
               <%=@messages.length%> <%=t 'search.results'%> <%=@location['street']%>, <%=@location['postcode']%> <%=@location['town']%>
             <% else %>
               &nbsp;
