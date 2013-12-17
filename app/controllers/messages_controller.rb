@@ -25,7 +25,8 @@ class MessagesController < ApplicationController
     elsif @keyword.present?
       # Keyword provided
       @messages = Message.find_by_keyword(@keyword)#order by comments count
-      # @comments = Comment.find_by_keyword(@keyword)#order by ?
+      @comments = Comment.find_by_keyword(@keyword)#order by ?
+      # abort(@comments.inspect)
     elsif @location
       # Provided postal_code is valid
       @messages = Message.find_by_location_and_radius(@location,@radius).order('distance')

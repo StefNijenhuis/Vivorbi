@@ -13,4 +13,8 @@ class Comment < ActiveRecord::Base
         :any_word => true
       }
     }
+  # finders
+  def self.find_by_keyword(keyword)
+    self.search_by_keyword(keyword)
+  end 
 end
