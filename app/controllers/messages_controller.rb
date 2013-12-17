@@ -18,32 +18,23 @@ class MessagesController < ApplicationController
     if @keyword.present? && @postal_code.present? && !@location
       # Keyword and postal_code provided but postal_code is invalid
       @search_error = t 'search.error.location'
-      render action: 'index'
     elsif @keyword.present? && @location
       # Keyword and location search function
-      @messages = Message.find_by_keyword_location_and_radius(@keyword,@location,@radius)
-      unless @messages == false
-        @messages .order('distance')
-      end
-      # abort(@messages.inspect)
-      render action: 'index'
+      @messages = Message.find_by_keyword_location_and_radius(@keyword,@location,@radius).order('distance')
     elsif @keyword.present?
       # Keyword provided
       @messages = Message.find_by_keyword(@keyword)#order by comments count
-      render action: 'index'
     elsif @location
       # Provided postal_code is valid
       @messages = Message.find_by_location_and_radius(@location,@radius)
-      render action: 'index'
     elsif @postal_code.present? && !@location
       # Provided postal_code is invalid
       @search_error = t 'search.error.location'
-      render action: 'index'
     else
       # Nothing has been provided
       @search_error = t 'search.error.keyword_and_location'
-      render action: 'index'
     end
+    render action: 'index'
   end
 
   def show

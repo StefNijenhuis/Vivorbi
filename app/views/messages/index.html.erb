@@ -13,7 +13,7 @@
       <div class="search_result_menu">
         <div class="row">
           <div class="small-6 large-7 columns">
-            <% if @location && !@messages == false %>
+            <% if @location %>
               <%=@messages.length%> <%=t 'search.results'%> <%=@location['street']%>, <%=@location['postcode']%> <%=@location['town']%>
             <% else %>
               &nbsp;
@@ -31,7 +31,7 @@
   </div>
 <% end %>
 
-<% if !@messages || @messages.empty? %>
+<% if @messages == nil || @messages.empty? %>
   <% unless @search_error.present? %>
     <div class="row">
       <div class="large-12 small-12 columns">
