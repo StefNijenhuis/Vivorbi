@@ -21,12 +21,15 @@ class MessagesController < ApplicationController
     elsif @keyword.present? && @location
       # Keyword and location search function
       @messages = Message.find_by_keyword_location_and_radius(@keyword,@location,@radius).order('distance')
+      # @comments = Comment.find_by_keyword_location_and_radius(@keyword,@location,@radius).order('distance')
     elsif @keyword.present?
       # Keyword provided
       @messages = Message.find_by_keyword(@keyword)#order by comments count
+      # @comments = Comment.find_by_keyword(@keyword)#order by ?
     elsif @location
       # Provided postal_code is valid
-      @messages = Message.find_by_location_and_radius(@location,@radius)
+      @messages = Message.find_by_location_and_radius(@location,@radius).order('distance')
+      # @comments = Comment.find_by_location_and_radius(@location,@radius).order('distance')
     elsif @postal_code.present? && !@location
       # Provided postal_code is invalid
       @search_error = t 'search.error.location'
