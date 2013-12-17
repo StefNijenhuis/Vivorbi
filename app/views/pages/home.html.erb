@@ -17,6 +17,7 @@
 							<div class="item_box">
 								<div class="small-12 large-12 columns">
 									<h4><%= link_to item.title, item %></h4>
+                  <%=item.category.title%>
 								</div>
 								<div class="small-12 large-12 columns item_box_body">
 									<p><%= truncate(item.body, length: 50, omission: "") { link_to ".. #{t('global.more')}", item } %></p>
