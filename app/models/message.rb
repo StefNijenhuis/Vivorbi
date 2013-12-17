@@ -49,10 +49,10 @@ class Message < ActiveRecord::Base
   end
 
   # order and limit in controller!
-  def self.find_by_location_and_radius(location,radius)
+  def self.find_by_location_and_radius(location,radius,amount)
     latitude = location['latitude']
     longitude = location['longitude']
     distance = "6371 * acos( cos( radians( #{latitude} ) ) * cos( radians( users.latitude ) ) * cos( radians( users.longitude ) - radians( #{longitude} ) ) + sin( radians( #{latitude} ) ) * sin( radians( users.latitude ) ) )"
-    self.joins(:user).select("messages.*, #{distance} AS distance").where("#{distance} <= #{radius}")
+    self.joins(:user).select("messages.*, #{distance} AS distance").where("#{distance} <= #{radius}").limit(amount)
   end
 end
