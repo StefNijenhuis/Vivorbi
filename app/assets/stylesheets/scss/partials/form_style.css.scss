@@ -1,6 +1,9 @@
 input[type="text"], textarea {
 	@include text-field;
 }
+input[type="text"], select {
+	height: 44px;
+}
 input[type="text"].error {
 	border-color: #c60f13;
 }
@@ -10,6 +13,19 @@ input[type="text"].error:focus {
 
 textarea{
 	height: 200px;
+}
+select {
+    background-color: #fff;
+    outline: none;
+    border: none;
+    height: 44px;
+    cursor: pointer;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+    padding-left: 7px;
+    border-radius: 1px;
+    border: 1px solid $border-color;
 }
 
 // Disable placeholder on input focus

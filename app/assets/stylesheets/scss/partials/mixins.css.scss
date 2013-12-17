@@ -24,6 +24,9 @@
   background: $color;
  
   &:hover {
+    position: relative;
+    top: 1px;
+    left: 1px;
     text-decoration: none;
     background: saturate($color, 10%);
     @include shadow($offset: 2px, $blur: 0px, $color: darken($color, 10%));
@@ -31,8 +34,10 @@
  
   &:active {
     position: relative;
-    top: 1px;
+    top: 2px;
+    left: 2px;
     color: saturate($color, 15%);
+    @include shadow($offset: 1px, $blur: 0px, $color: darken($color, 10%));
   }
 }
  

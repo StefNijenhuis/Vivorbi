@@ -40,6 +40,11 @@ form {
   display: inline-block;
   width: 100%;
 }
+.message_category {
+  width: 100%;
+  display: block;
+  margin: 0;
+}
 
 .wrapper_white{
   border: solid 1px $border-color;

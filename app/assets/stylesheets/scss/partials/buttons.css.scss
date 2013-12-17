@@ -1,11 +1,25 @@
 .submit_button {
-  @include button($color: $brand-normal, $text-color: $button-text-color, $button-radius: 3px);
+  @include button($color: $button-background-color, $text-color: $button-text-color, $button-radius: 3px);
+  height: 44px;
 }
 .bericht_button {
-	@include button($color: $brand-normal, $text-color: $button-text-color, $button-radius: 3px);
+	@include button($color: $button-background-color, $text-color: $button-text-color, $button-radius: 3px);
 	position: relative;
 	bottom: 0px;
   width: 100%;
+  height: 44px;
+}
+.search_button {
+  @include button($color: $button-background-color, $text-color: $button-text-color, $button-radius: 3px);
+  margin-top: 27px;
+  width: 100%;
+  float: right;
+  height: 44px;
+}
+.result_button {
+    @include button($color: $brand-normal, $text-color: $button-text-color, $button-radius: 3px);
+    width: 100%;
+    margin: 0;
 }
 .button_wrapper {
   margin-top: -10px;

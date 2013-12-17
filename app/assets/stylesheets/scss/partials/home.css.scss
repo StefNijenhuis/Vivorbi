@@ -4,13 +4,22 @@
 	padding-left: 0.9375em;
 	padding-right: 0.9375em;
 }
-.home_sub_header_city, .home_sub_header_date {
+.home_sub_header_city, .home_sub_header_date{
 	margin-bottom: 10px;
   	font-size: ceil($font-size-base * 0.75);
 }
+.home_sub_header_category {
+	margin-top: 10px;
+	font-size: ceil($font-size-base * 0.75);
+}
+
 .home_sub_header_date {
 	display: inline-block;
 	width: 100%;
+}
+.home_message_title {
+	white-space: nowrap;
+	overflow: hidden;
 }
 .item_box {
 	display: inline-block;
@@ -22,5 +31,20 @@
 	width: 100%;
 }
 .item_box_body {
-	min-height: 60px;
+	height: 80px;
+}
+.item_box_body p {
+	display: block;
+	display: -webkit-box;
+	height: $font-size-base*3;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+	text-overflow: ellipsis;
+	height: 100%;
+	overflow:hidden;
+	text-overflow: ellipsis;
+	-o-text-overflow: ellipsis;
+}
+.message_header {
+	overflow: hidden;
 }

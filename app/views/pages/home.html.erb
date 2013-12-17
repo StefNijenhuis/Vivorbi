@@ -15,12 +15,14 @@
 					<div class="row">
 						<div class="small-12 large-12 columns">
 							<div class="item_box">
-								<div class="small-12 large-12 columns">
+								<div class="small-7 large-7 columns home_message_title">
 									<h4><%= link_to item.title, item %></h4>
-                  <%=item.category.title%>
+								</div>
+								<div class="small-5 large-5 columns home_sub_header_category text_right">
+									<%=item.category.title%>
 								</div>
 								<div class="small-12 large-12 columns item_box_body">
-									<p><%= truncate(item.body, length: 50, omission: "") { link_to ".. #{t('global.more')}", item } %></p>
+									<p><%= item.body %></p>
 								</div>
 								<div class="small-6 large-6 columns">
 									<span class="home_sub_header_city"><%= item.user.city%></span>

@@ -5,28 +5,7 @@
     padding-top: 10px;
 }
 
-.search_button {
-    @include button($color: $brand-success, $text-color: $button-text-color, $button-radius: 3px);
-    margin-top: 18px;
-    width: 100%;
-    float: right;
-}
-
 //Select menu
-select {
-    background-color: #fff;
-    outline: none;
-    border: none;
-    height: 36px;
-    cursor: pointer;
-    -webkit-appearance:none;
-    -moz-appearance:none;
-    appearance:none;
-    padding-left: 7px;
-    border-radius: 1px;
-    border: 1px solid $border-color;
-}
-
 p.dropdown {position:relative}
 p.dropdown:after {
     content:'▼';
@@ -68,11 +47,6 @@ p.dropdown:after {
 }
 .time {
     text-align: right;
-}
-
-.result_button {
-    @include button($color: $brand-normal, $text-color: $button-text-color, $button-radius: 3px);
-    width: 100%;
 }
 // .button_wrapper_right {
 //     position: absolute;
