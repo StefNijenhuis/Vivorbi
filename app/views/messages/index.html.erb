@@ -78,20 +78,22 @@
       </div>
     </div>
   <% end %>
-  <% @comments.each do |c| %>
-    <div class="row">
-      <div class="small-12 large-12 columns">
-        <div class="search_result">      
-          <div class="small-8 large-3 columns">
-            <div class="time">
-              <%=t 'search.message_date'%> <%=l c.created_at, format: :short_date%>
+  <% unless @comments == nil || @comments.empty? %>
+    <% @comments.each do |c| %>
+      <div class="row">
+        <div class="small-12 large-12 columns">
+          <div class="search_result">      
+            <div class="small-8 large-3 columns">
+              <div class="time">
+                <%=t 'search.message_date'%> <%=l c.created_at, format: :short_date%>
+              </div>
             </div>
-          </div>
-          <div class="small-12 large-7 columns">
-            <%= truncate(c.body, length: 130, omission: '...') %>
+            <div class="small-12 large-7 columns">
+              <%= truncate(c.body, length: 130, omission: '...') %>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    <% end %>
   <% end %>
 <% end %>
