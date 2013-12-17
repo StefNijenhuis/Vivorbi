@@ -12,7 +12,8 @@ class Message < ActiveRecord::Base
     :using => {
       :tsearch => {
         :dictionary => "dutch",
-        :any_word => true
+        :any_word => true,
+        :prefix => true
       }
     }
 
