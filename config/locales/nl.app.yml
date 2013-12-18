@@ -65,7 +65,9 @@ nl:
     error:
       keyword_and_location: "U moet minimaal één zoekveld invullen."
       location: "U heeft geen geldige postcode opgegeven."
-    results: "zoekresultaten rondom"
+    results:
+      postal: "zoekresultaten rondom"
+      keyword: "zoekresultaten voor de woord(en)"
     no_results: "Er zijn geen resultaten voor uw zoekopdracht."
     distance: "Afstand"
     date: "Datum"

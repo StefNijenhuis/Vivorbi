@@ -21,7 +21,6 @@ p.dropdown:after {
     background: $normal-grey;
     padding: 10px;
     border: solid 1px $border-color;
-    border-bottom: none;
 }
 
 .search_result {
@@ -31,9 +30,12 @@ p.dropdown:after {
     padding-bottom: 15px;
     cursor: pointer;
     border: solid 1px $border-color;
-    border-bottom: none;
+    border-top: none;
     background-color: #fff;
 }
+// .row .small-12 .search_result:last-of-type {
+//     border: solid 1px $border-color;
+// }
 .no_result {
     word-wrap: break-word;
     padding: 15px 10px;
