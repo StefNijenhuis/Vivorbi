@@ -46,6 +46,15 @@ nl:
     brand: "Vivorbi"
     menu: "Menu"
     more: "lees meer"
+    categories:
+      groceries: "Boodschappen doen"
+      electronics_and_computer: "Electronica en computer"
+      finance: "Financiën"
+      household: "Huishoudelijk"
+      lift: "Meerijden"
+      sports_and_recreation: "Sport en recreatie"
+      gardening: "Tuin en buitenwerk"
+      other: "Overig"
     search:
       keyword: "Zoekopdracht"
       postal_code: "Uw postcode"

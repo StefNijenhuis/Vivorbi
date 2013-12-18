@@ -1,0 +1,230 @@
+// base settings //
+
+$category_width: 100%;
+$category_height: 150px;
+$category_margin: 27px;
+$category_padding: 0px;
+
+$category_image_height: 100px;
+$category_image_width: 100%;
+$category_image_margin: 12px;
+$category_image_radius: 3px;
+
+// category 1 //
+
+.category_button_1 {
+  @include button($text-color: $button-text-color, $button-radius: 3px);
+  width: $category_width;
+  height: $category_height;
+  margin-bottom: $category_margin;
+  padding: $category_padding;
+  background-color: $cat_1;
+  box-shadow: 3px 3px 0px darken($cat_1, 10%);
+}
+
+.category_button_1:hover {
+	background-color: $cat_1;
+  box-shadow: 2px 2px 0px darken($cat_1, 10%);
+}
+
+.category_button_image_1 {
+	height: $category_image_height;
+	width: $category_image_width;
+	margin-bottom: $category_image_margin;
+	background-image: url(cat_img.jpg);
+	background-position: 20% 40%;
+	border-top-left-radius: $category_image_radius;
+	border-top-right-radius: $category_image_radius;
+}
+
+// category 2 //
+
+.category_button_2 {
+  @include button($text-color: $button-text-color, $button-radius: 3px);
+  width: $category_width;
+  height: $category_height;
+  margin-bottom: $category_margin;
+  padding: $category_padding;
+  background-color: $cat_2;
+  box-shadow: 3px 3px 0px darken($cat_2, 10%);
+}
+
+.category_button_2:hover {
+	background-color: $cat_2;
+  box-shadow: 2px 2px 0px darken($cat_2, 10%);
+}
+
+.category_button_image_2 {
+	height: $category_image_height;
+	width: $category_image_width;
+	margin-bottom: $category_image_margin;
+	background-image: url(cat_img.jpg);
+	background-position: 20% 40%;
+	border-top-left-radius: $category_image_radius;
+	border-top-right-radius: $category_image_radius;
+}
+
+// category 3 //
+
+.category_button_3 {
+  @include button($text-color: $button-text-color, $button-radius: 3px);
+  width: $category_width;
+  height: $category_height;
+  margin-bottom: $category_margin;
+  padding: $category_padding;
+  background-color: $cat_3;
+  box-shadow: 3px 3px 0px darken($cat_3, 10%);
+}
+
+.category_button_3:hover {
+	background-color: $cat_3;
+  box-shadow: 2px 2px 0px darken($cat_3, 10%);
+}
+
+.category_button_image_3 {
+	height: $category_image_height;
+	width: $category_image_width;
+	margin-bottom: $category_image_margin;
+	background-image: url(cat_img.jpg);
+	background-position: 20% 40%;
+	border-top-left-radius: $category_image_radius;
+	border-top-right-radius: $category_image_radius;
+}
+
+
+// category 4 //
+
+.category_button_4 {
+  @include button($text-color: $button-text-color, $button-radius: 3px);
+  width: $category_width;
+  height: $category_height;
+  margin-bottom: $category_margin;
+  padding: $category_padding;
+  background-color: $cat_4;
+  box-shadow: 3px 3px 0px darken($cat_4, 10%);
+}
+
+.category_button_4:hover {
+	background-color: $cat_4;
+  box-shadow: 2px 2px 0px darken($cat_4, 10%);
+}
+
+.category_button_image_4 {
+	height: $category_image_height;
+	width: $category_image_width;
+	margin-bottom: $category_image_margin;
+	background-image: url(cat_img.jpg);
+	background-position: 20% 40%;
+	border-top-left-radius: $category_image_radius;
+	border-top-right-radius: $category_image_radius;
+}
+
+
+// category 5 //
+
+.category_button_5 {
+  @include button($text-color: $button-text-color, $button-radius: 3px);
+  width: $category_width;
+  height: $category_height;
+  margin-bottom: $category_margin;
+  padding: $category_padding;
+  background-color: $cat_5;
+  box-shadow: 3px 3px 0px darken($cat_5, 10%);
+}
+
+.category_button_5:hover {
+	background-color: $cat_5;
+  box-shadow: 2px 2px 0px darken($cat_5, 10%);
+}
+
+.category_button_image_5 {
+	height: $category_image_height;
+	width: $category_image_width;
+	margin-bottom: $category_image_margin;
+	background-image: url(cat_img.jpg);
+	background-position: 20% 40%;
+	border-top-left-radius: $category_image_radius;
+	border-top-right-radius: $category_image_radius;
+}
+
+
+// category 6 //
+
+.category_button_6 {
+  @include button($text-color: $button-text-color, $button-radius: 3px);
+  width: $category_width;
+  height: $category_height;
+  margin-bottom: $category_margin;
+  padding: $category_padding;
+  background-color: $cat_6;
+  box-shadow: 3px 3px 0px darken($cat_6, 10%);
+}
+
+.category_button_6:hover {
+	background-color: $cat_6;
+  box-shadow: 2px 2px 0px darken($cat_6, 10%);
+}
+
+.category_button_image_6 {
+	height: $category_image_height;
+	width: $category_image_width;
+	margin-bottom: $category_image_margin;
+	background-image: url(cat_img.jpg);
+	background-position: 20% 40%;
+	border-top-left-radius: $category_image_radius;
+	border-top-right-radius: $category_image_radius;
+}
+
+// category 7 //
+
+.category_button_7 {
+  @include button($text-color: $button-text-color, $button-radius: 3px);
+  width: $category_width;
+  height: $category_height;
+  margin-bottom: $category_margin;
+  padding: $category_padding;
+  background-color: $cat_7;
+  box-shadow: 3px 3px 0px darken($cat_7, 10%);
+}
+
+.category_button_7:hover {
+	background-color: $cat_7;
+  box-shadow: 2px 2px 0px darken($cat_7, 10%);
+}
+
+.category_button_image_7 {
+	height: $category_image_height;
+	width: $category_image_width;
+	margin-bottom: $category_image_margin;
+	background-image: url(cat_img.jpg);
+	background-position: 20% 40%;
+	border-top-left-radius: $category_image_radius;
+	border-top-right-radius: $category_image_radius;
+}
+
+// category 8 //
+
+.category_button_8 {
+  @include button($text-color: $button-text-color, $button-radius: 3px);
+  width: $category_width;
+  height: $category_height;
+  margin-bottom: $category_margin;
+  padding: $category_padding;
+  background-color: $cat_8;
+  box-shadow: 3px 3px 0px darken($cat_8, 10%);
+}
+
+.category_button_8:hover {
+	background-color: $cat_8;
+  box-shadow: 2px 2px 0px darken($cat_8, 10%);
+}
+
+.category_button_image_8 {
+	height: $category_image_height;
+	width: $category_image_width;
+	margin-bottom: $category_image_margin;
+	background-image: url(cat_img.jpg);
+	background-position: 20% 40%;
+	border-top-left-radius: $category_image_radius;
+	border-top-right-radius: $category_image_radius;
+}
