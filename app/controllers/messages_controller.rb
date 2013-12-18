@@ -21,11 +21,13 @@ class MessagesController < ApplicationController
     elsif @keyword.present? && @location
       # Keyword and location search function
       @messages = Message.find_by_keyword_location_and_radius(@keyword,@location,@radius).order('distance')
-      # @comments = Comment.find_by_keyword_location_and_radius(@keyword,@location,@radius).order('distance')
+      message_ids = @messages.all.map(&:id)
+      @comments = Comment.find_by_keyword(@keyword).where("message_id not in (?)",message_ids.join(','))
     elsif @keyword.present?
       # Keyword provided
-      @messages = Message.find_by_keyword(@keyword)#order by comments count
-      @comments = Comment.find_by_keyword(@keyword)#order by ?
+      @messages = Message.find_by_keyword(@keyword)
+      message_ids = @messages.all.map(&:id)
+      @comments = Comment.find_by_keyword(@keyword).where("message_id not in (?)",message_ids.join(','))#order by ?
       # abort(@comments.inspect)
     elsif @location
       # Provided postal_code is valid
