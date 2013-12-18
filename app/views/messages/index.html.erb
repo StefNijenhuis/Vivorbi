@@ -98,6 +98,9 @@
             <div class="small-12 large-7 columns">
               <%= truncate(c.message.body, length: 130, omission: '...') %>
             </div>
+            <div class="small-12 large-3 columns">
+              <%= link_to t('messages.show.title'), c.message, class:"result_button"%>
+            </div>
           </div>
         </div>
       </div>
