@@ -22,12 +22,20 @@ class MessagesController < ApplicationController
       # Keyword and location search function
       @messages = Message.find_by_keyword_location_and_radius(@keyword,@location,@radius).order('distance')
       message_ids = @messages.all.map(&:id)
-      @comments = Comment.find_by_keyword(@keyword).where("message_id not in (?)",message_ids.join(','))
+      if message_ids.empty?
+        @comments = Comment.find_by_keyword(@keyword)
+      else
+        @comments = Comment.find_by_keyword(@keyword).where("message_id not in (?)",message_ids.join(','))#order by ?
+      end  
     elsif @keyword.present?
       # Keyword provided
       @messages = Message.find_by_keyword(@keyword)
       message_ids = @messages.all.map(&:id)
-      @comments = Comment.find_by_keyword(@keyword).where("message_id not in (?)",message_ids.join(','))#order by ?
+      if message_ids.empty?
+        @comments = Comment.find_by_keyword(@keyword)
+      else
+        @comments = Comment.find_by_keyword(@keyword).where("message_id not in (?)",message_ids.join(','))#order by ?
+      end
       # abort(@comments.inspect)
     elsif @location
       # Provided postal_code is valid
