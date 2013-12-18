@@ -22,26 +22,17 @@
 	  			</div>
 	  		</div>
 	  		<div class="row">
-	  			<div class="small-6 large-6 columns">
-	  				<span class="sub_header"><%= @message.user.name %></span>
-	  			</div>
-	  			<div class="small-6 large-6 columns">
-            <span class="sub_header message_category text-right"><%= @message.category.title %></span>
-          </div>
-	  		</div>
-	  		<div class="row">
-	  			<div class="small-6 large-6 columns">
-	  				<span class="sub_header"><%= @message.user.city %></span>
-	  			</div>
-	  			<div class="small-6 large-6 columns">
-	  				<span class="sub_header message_date text_right"><%= @message.created_at.strftime("%d-%m-%Y") %></span>
-	  			</div>
-	  		</div>
-	  		<div class="row">
 	  			<div class="small-12 large-12 columns">
 	  				<p><%=@message.body%></p>	
 	  			</div>
 	  		</div>
+	  		<div class="row">
+	  			<div class="small-12 large-12 columns">
+	  				<div class="sub_header">
+	  					Geplaatst op <span class="sub_header_bold"><%= @message.created_at.strftime("%d-%m-%Y") %></span> door <span class="sub_header_bold"><%= @message.user.name %> (<%= @message.user.city %>)</span> in de categorie <span class="sub_header_bold"><%= @message.category.title %></span> 
+	  				</div>
+	  			</div>
+			</div>
 	  	</div>
   	</div>
 	<div class="large-6 small-12 columns">
