@@ -48,7 +48,7 @@ class MessagesController < ApplicationController
   
   def new
     @message = Message.new
-    @category_options = Category.all(:order=>'title')
+    @category_options = Category.all.order('title')
     @select = false
   end
   
@@ -60,7 +60,7 @@ class MessagesController < ApplicationController
     if @message.save
       redirect_to :action => 'show', :id => @message.id, :success => "1"
     else
-      @category_options = Category.all(:order=>'title')
+      @category_options = Category.all.order('title')
 
       @select = false
       if(@message.category_id.present?)

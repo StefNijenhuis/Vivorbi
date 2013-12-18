@@ -24,11 +24,10 @@ class Message < ActiveRecord::Base
   
   # finders
   def self.find_by_popularity(limit = 10, offset = 0, order_count = "DESC", order_create = "DESC")
-    self.all(:joins => :comments,
-             :group => 'messages.id',
-             :order => "count(*) #{order_count}, created_at #{order_create}",
-             :limit => limit,
-             :offset => offset)
+    self.all.joins(:comments)
+            .group('messages.id')
+            .order("count(*) #{order_count}, created_at #{order_create}")
+            .limit(limit).offset(offset)
   end
 
   def self.find_by_keyword(keyword)
