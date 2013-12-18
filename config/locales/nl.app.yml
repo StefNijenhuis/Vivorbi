@@ -72,6 +72,7 @@ nl:
     distance: "Afstand"
     date: "Datum"
     message_date: "Geplaatst op"
+    category: "Categorie"
   helpers:
     label:
       message:
