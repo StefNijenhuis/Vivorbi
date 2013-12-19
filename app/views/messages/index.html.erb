@@ -14,19 +14,23 @@
         <div class="row">
           <div class="small-12 large-6 columns">
             <% if !@keyword.empty? %>
-              <%=@messages.count + @comments.count%> <%=t'search.results.keyword'%> "<%=@keyword%>"
+              <%=@messages.count + @comments.count%> <%=t('search.results.keyword', :count => @messages.count + @comments.count)%> "<%=@keyword%>"
             <% else %>
               <%=@messages.count%> <%=t 'search.results.postal'%> <%=@location['street']%>, <%=@location['postcode']%> <%=@location['town']%>
             <% end %>
           </div>
-          <div class="show-for-medium-up large-2 columns">
+          <% if @postal_code.empty? %>
+            <div class="show-for-medium-up large-4 columns">
+          <% else %>
+            <div class="show-for-medium-up large-2 columns">
+          <% end %>
             <%= t 'search.category' %>
           </div>
-          <div class="show-for-medium-up large-2 columns">
-            <% unless @postal_code.empty? %>
+          <% unless @postal_code.empty? %>
+            <div class="show-for-medium-up large-2 columns">
               <%=t 'search.distance' %>
-            <% end %>
-          </div>
+            </div>
+          <% end %>
           <div class="show-for-medium-up large-2 columns">
             <%=t 'search.date' %>
           </div>
@@ -56,27 +60,35 @@
     <div class="row">
       <div class="small-12 large-12 columns">
         <div class="search_result">
-          <div class="small-12 large-6 columns">
-            <h3><%=m.title%></h3>
-          </div>
-          <div class="small-4 large-2 columns">
-            <div class="distance">
-              <%=m.category.title%>
-            </div>
-          </div>
-          <div class="small-4 large-2 columns">
-            <div class="distance">
-              <% unless @postal_code.empty? %>
-                <%=m.distance.round(1)%> km
+          <div class="row">
+            <div class="small-12 large-12 columns">
+              <div class="small-12 large-6 columns">
+                <h3><%= link_to m.title, m %></h3>
+              </div>
+              <% if @postal_code.empty? %>
+                <div class="small-6 large-4 columns">
+              <% else %>
+                <div class="small-4 large-2 columns">
               <% end %>
+                  <div class="distance">
+                    <%=m.category.title%>
+                  </div>
+                </div>
+              <% unless @postal_code.empty? %>
+                <div class="small-4 large-2 columns">
+                  <div class="distance">
+                    <%=m.distance.round(1)%> km
+                  </div>
+                </div>
+              <% end %>
+              <div class="small-4 large-2 columns">
+                <div class="time">
+                  <%=l m.created_at, format: :short_date%>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="small-4 large-2 columns">
-            <div class="time">
-              <%=l m.created_at, format: :short_date%>
-            </div>
-          </div>
-          <div class="small-12 large-8 columns search_body">
+          <div class="small-12 large-6 columns search_body">
             <p><%= m.body %></p>
           </div>
           <div class="small-12 large-3 columns">
@@ -89,37 +101,45 @@
   <% unless @comments == nil || @comments.empty? %>
     <% @comments.each do |c| %>
       <div class="row">
-      <div class="small-12 large-12 columns">
-        <div class="search_result">
-          <div class="small-12 large-6 columns">
-            <h3><%=c.message.title%></h3>
-          </div>
-          <div class="small-4 large-2 columns">
-            <div class="distance">
-              <%=c.message.category.title%>
+        <div class="small-12 large-12 columns">
+          <div class="search_result">
+            <div class="row">
+              <div class="small-12 large-12 columns">
+                <div class="small-12 large-6 columns">
+                  <h3><%= link_to c.message.title, c.message %></h3>
+                </div>
+                <% if @postal_code.empty? %>
+                  <div class="small-6 large-4 columns">
+                <% else %>
+                  <div class="small-4 large-2 columns">
+                <% end %>
+                    <div class="distance">
+                      <%=c.message.category.title%>
+                    </div>
+                  </div>
+                <% unless @postal_code.empty? %>
+                  <div class="small-4 large-2 columns">
+                    <div class="distance">
+                      <%=c.distance.round(1)%> km
+                    </div>
+                  </div>
+                <% end %>
+                <div class="small-4 large-2 columns">
+                  <div class="time">
+                    <%=l c.created_at, format: :short_date%>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="small-4 large-2 columns">
-            <div class="distance">
-              <% unless @postal_code.empty? %>
-                <%=c.message.distance.round(1)%> km
-              <% end %>
+            <div class="small-12 large-6 columns search_body">
+              <p><%= c.message.body %></p>
             </div>
-          </div>
-          <div class="small-4 large-2 columns">
-            <div class="time">
-              <%=l c.created_at, format: :short_date%>
+            <div class="small-12 large-3 columns">
+              <%= link_to t('messages.show.title'), c.message, class:"result_button"%>
             </div>
-          </div>
-          <div class="small-12 large-8 columns search_body">
-            <p><%= c.message.body %></p>
-          </div>
-          <div class="small-12 large-3 columns">
-            <%= link_to t('messages.show.title'), c.message, class:"result_button"%>
           </div>
         </div>
       </div>
-    </div>
     <% end %>
   <% end %>
 <% end %>
