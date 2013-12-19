@@ -38,7 +38,7 @@ Category.create([{
 }])
 
 Category.create([{
-  title: 'financiën'
+  title: 'Financiën'
 }])
 
 Category.create([{
