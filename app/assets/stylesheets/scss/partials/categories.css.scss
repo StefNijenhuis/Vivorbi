@@ -20,15 +20,56 @@ $category_image_radius: 3px;
   padding: $category_padding;
 }
 
-.category_button_image_1 {
+.category_image {
 	height: $category_image_height;
 	width: $category_image_width;
 	margin-bottom: $category_image_margin;
-	background-image: url(cat_img.jpg);
-	background-position: 20% 40%;
 	border-top-left-radius: $category_image_radius;
 	border-top-right-radius: $category_image_radius;
+	background-size: cover;
+	background-repeat: none;
 }
+
+.boodschappen_doen_image {
+	background-image: url(boodschappen.jpg);
+	background-position: 20% 60%;
+}
+
+.electronica_en_computer_image {
+	background-image: url(computer.jpg);
+	background-position: 20% 40%;
+}
+
+.financiën_image {
+	background-image: url(financien.jpg);
+	background-position: 20% 45%;
+}
+
+.huishoudelijk_image {
+	background-image: url(huishouden.jpg);
+	background-position: 20% 40%;
+}
+
+.meerijden_image {
+	background-image: url(meerijden.jpg);
+	background-position: 20% 40%;
+}
+
+.sport_en_recreatie_image {
+	background-image: url(recreatie.png);
+	background-position: 20% 20%;
+}
+
+.tuin_en_buitenwerk_image {
+	background-image: url(tuin.jpg);
+	background-position: 20% 20%;
+}
+
+.overig_image {
+	background-image: url(overig.jpg);
+	background-position: 20% 60%;
+}
+
 
 .boodschappen_doen_color {
 	background-color: $cat_1;
