@@ -2,8 +2,10 @@
 
 <div class="row">
   <% @categories.each do |category| %>
-    <div class="small-12 large-6 columns <%=category.color%>">
-      <a href='' class='category_button_1'><div class="category_button_image_1"></div><%=category.title%></a>
+    <div class="small-12 large-6 columns">
+      <%= link_to category.title, category, :class => "category_button " + category.title.downcase.tr(' ', '_') + "_color" do %>
+      	<div class="category_button_image_1"></div>
+      <% end %>
     </div>
   <% end %>
 </div>
