@@ -120,13 +120,13 @@
                 <% unless @postal_code.empty? %>
                   <div class="small-4 large-2 columns">
                     <div class="distance">
-                      <%=c.distance.round(1)%> km
+                      <%=c.message.distance.round(1)%> km
                     </div>
                   </div>
                 <% end %>
                 <div class="small-4 large-2 columns">
                   <div class="time">
-                    <%=l c.created_at, format: :short_date%>
+                    <%=l c.message.created_at, format: :short_date%>
                   </div>
                 </div>
               </div>
