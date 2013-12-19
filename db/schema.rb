@@ -13,14 +13,10 @@
 
 ActiveRecord::Schema.define(version: 20131219094221) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "categories", force: true do |t|
     t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "color"
   end
 
   create_table "comments", force: true do |t|

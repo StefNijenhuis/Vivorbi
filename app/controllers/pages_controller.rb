@@ -7,7 +7,7 @@ class PagesController < ApplicationController
     popular = Message.find_by_popularity(amount)
     @columns = [last, nearby, popular]
     @columnTitles = ["Recent", "In de buurt", "Populair"]
-    @categories = Category.all.where.not(title: "Overig").order('title')
-    @categories += Category.all.where(title: "Overig")
+    @categories = Category.where.not(title: "Overig").order('title')
+    @categories += Category.where(title: "Overig")
   end
 end
