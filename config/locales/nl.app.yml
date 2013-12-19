@@ -61,6 +61,8 @@ nl:
       radius: "Zoekafstand"
       all_radius: "Alle afstanden"
       submit: "Zoeken"
+    comment:
+      submit: "Reactie plaatsen"
   search:
     error:
       keyword_and_location: "U moet minimaal één zoekveld invullen."

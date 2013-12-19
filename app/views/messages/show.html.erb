@@ -58,7 +58,7 @@
 			<h4><%=t('comment.form_title')%></h4>
 			<%= form_for([@message, @message.comments.build]) do |f| %>
 				<%= f.text_area :body, placeholder:t('comment.placeholder') %>
-				<%= f.submit :class => 'submit_button reageer' %>
+				<%= f.submit t('global.comment.submit'), :class => 'submit_button reageer' %>
 			<% end %>
 		</div>
 	</div>

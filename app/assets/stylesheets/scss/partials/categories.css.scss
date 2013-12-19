@@ -20,11 +20,14 @@ $category_image_radius: 3px;
   padding: $category_padding;
   background-color: $cat_1;
   box-shadow: 3px 3px 0px darken($cat_1, 10%);
-}
-
-.category_button_1:hover {
-	background-color: $cat_1;
-  box-shadow: 2px 2px 0px darken($cat_1, 10%);
+	&:hover {
+		background-color: $cat_1;
+		box-shadow: 2px 2px 0px darken($cat_1, 10%);
+	}
+	&:active {
+		background-color: $cat_1;
+		box-shadow: 1px 1px 0px darken($cat_1, 10%);
+	}
 }
 
 .category_button_image_1 {
@@ -47,11 +50,14 @@ $category_image_radius: 3px;
   padding: $category_padding;
   background-color: $cat_2;
   box-shadow: 3px 3px 0px darken($cat_2, 10%);
-}
-
-.category_button_2:hover {
-	background-color: $cat_2;
-  box-shadow: 2px 2px 0px darken($cat_2, 10%);
+  	&:hover {
+		background-color: $cat_2;
+		box-shadow: 2px 2px 0px darken($cat_2, 10%);
+	}
+	&:active {
+		background-color: $cat_2;
+		box-shadow: 1px 1px 0px darken($cat_2, 10%);
+	}
 }
 
 .category_button_image_2 {
@@ -74,11 +80,14 @@ $category_image_radius: 3px;
   padding: $category_padding;
   background-color: $cat_3;
   box-shadow: 3px 3px 0px darken($cat_3, 10%);
-}
-
-.category_button_3:hover {
-	background-color: $cat_3;
-  box-shadow: 2px 2px 0px darken($cat_3, 10%);
+	&:hover {
+		background-color: $cat_3;
+		box-shadow: 2px 2px 0px darken($cat_3, 10%);
+	}
+	&:active {
+		background-color: $cat_3;
+		box-shadow: 1px 1px 0px darken($cat_3, 10%);
+	}
 }
 
 .category_button_image_3 {
@@ -102,11 +111,14 @@ $category_image_radius: 3px;
   padding: $category_padding;
   background-color: $cat_4;
   box-shadow: 3px 3px 0px darken($cat_4, 10%);
-}
-
-.category_button_4:hover {
-	background-color: $cat_4;
-  box-shadow: 2px 2px 0px darken($cat_4, 10%);
+ 	&:hover {
+		background-color: $cat_4;
+		box-shadow: 2px 2px 0px darken($cat_4, 10%);
+	}
+	&:active {
+		background-color: $cat_4;
+		box-shadow: 1px 1px 0px darken($cat_4, 10%);
+	}
 }
 
 .category_button_image_4 {
@@ -130,11 +142,14 @@ $category_image_radius: 3px;
   padding: $category_padding;
   background-color: $cat_5;
   box-shadow: 3px 3px 0px darken($cat_5, 10%);
-}
-
-.category_button_5:hover {
-	background-color: $cat_5;
-  box-shadow: 2px 2px 0px darken($cat_5, 10%);
+  &:hover {
+		background-color: $cat_5;
+		box-shadow: 2px 2px 0px darken($cat_5, 10%);
+	}
+	&:active {
+		background-color: $cat_5;
+		box-shadow: 1px 1px 0px darken($cat_5, 10%);
+	}
 }
 
 .category_button_image_5 {
@@ -158,11 +173,14 @@ $category_image_radius: 3px;
   padding: $category_padding;
   background-color: $cat_6;
   box-shadow: 3px 3px 0px darken($cat_6, 10%);
-}
-
-.category_button_6:hover {
-	background-color: $cat_6;
-  box-shadow: 2px 2px 0px darken($cat_6, 10%);
+  &:hover {
+		background-color: $cat_6;
+		box-shadow: 2px 2px 0px darken($cat_6, 10%);
+	}
+	&:active {
+		background-color: $cat_6;
+		box-shadow: 1px 1px 0px darken($cat_6, 10%);
+	}
 }
 
 .category_button_image_6 {
@@ -185,11 +203,14 @@ $category_image_radius: 3px;
   padding: $category_padding;
   background-color: $cat_7;
   box-shadow: 3px 3px 0px darken($cat_7, 10%);
-}
-
-.category_button_7:hover {
-	background-color: $cat_7;
-  box-shadow: 2px 2px 0px darken($cat_7, 10%);
+  &:hover {
+		background-color: $cat_7;
+		box-shadow: 2px 2px 0px darken($cat_7, 10%);
+	}
+	&:active {
+		background-color: $cat_7;
+		box-shadow: 1px 1px 0px darken($cat_7, 10%);
+	}
 }
 
 .category_button_image_7 {
@@ -212,11 +233,14 @@ $category_image_radius: 3px;
   padding: $category_padding;
   background-color: $cat_8;
   box-shadow: 3px 3px 0px darken($cat_8, 10%);
-}
-
-.category_button_8:hover {
-	background-color: $cat_8;
-  box-shadow: 2px 2px 0px darken($cat_8, 10%);
+  &:hover {
+		background-color: $cat_8;
+		box-shadow: 2px 2px 0px darken($cat_8, 10%);
+	}
+	&:active {
+		background-color: $cat_8;
+		box-shadow: 1px 1px 0px darken($cat_8, 10%);
+	}
 }
 
 .category_button_image_8 {
