@@ -12,22 +12,12 @@ $category_image_radius: 3px;
 
 // category 1 //
 
-.category_button_1 {
+.category_button {
   @include button($text-color: $button-text-color, $button-radius: 3px);
   width: $category_width;
   height: $category_height;
   margin-bottom: $category_margin;
   padding: $category_padding;
-  background-color: $cat_1;
-  box-shadow: 3px 3px 0px darken($cat_1, 10%);
-	&:hover {
-		background-color: $cat_1;
-		box-shadow: 2px 2px 0px darken($cat_1, 10%);
-	}
-	&:active {
-		background-color: $cat_1;
-		box-shadow: 1px 1px 0px darken($cat_1, 10%);
-	}
 }
 
 .category_button_image_1 {
@@ -40,17 +30,22 @@ $category_image_radius: 3px;
 	border-top-right-radius: $category_image_radius;
 }
 
-// category 2 //
-
-.category_button_2 {
-  @include button($text-color: $button-text-color, $button-radius: 3px);
-  width: $category_width;
-  height: $category_height;
-  margin-bottom: $category_margin;
-  padding: $category_padding;
-  background-color: $cat_2;
+.boodschappen_doen_color {
+	background-color: $cat_1;
+  box-shadow: 3px 3px 0px darken($cat_1, 10%);
+  &:hover {
+		background-color: $cat_1;
+		box-shadow: 2px 2px 0px darken($cat_1, 10%);
+	}
+	&:active {
+		background-color: $cat_1;
+		box-shadow: 1px 1px 0px darken($cat_1, 10%);
+	}
+}
+.electronica_en_computer_color {
+	background-color: $cat_2;
   box-shadow: 3px 3px 0px darken($cat_2, 10%);
-  	&:hover {
+  &:hover {
 		background-color: $cat_2;
 		box-shadow: 2px 2px 0px darken($cat_2, 10%);
 	}
@@ -59,28 +54,10 @@ $category_image_radius: 3px;
 		box-shadow: 1px 1px 0px darken($cat_2, 10%);
 	}
 }
-
-.category_button_image_2 {
-	height: $category_image_height;
-	width: $category_image_width;
-	margin-bottom: $category_image_margin;
-	background-image: url(cat_img.jpg);
-	background-position: 20% 40%;
-	border-top-left-radius: $category_image_radius;
-	border-top-right-radius: $category_image_radius;
-}
-
-// category 3 //
-
-.category_button_3 {
-  @include button($text-color: $button-text-color, $button-radius: 3px);
-  width: $category_width;
-  height: $category_height;
-  margin-bottom: $category_margin;
-  padding: $category_padding;
-  background-color: $cat_3;
+.financiën_color {
+	background-color: $cat_3;
   box-shadow: 3px 3px 0px darken($cat_3, 10%);
-	&:hover {
+  &:hover {
 		background-color: $cat_3;
 		box-shadow: 2px 2px 0px darken($cat_3, 10%);
 	}
@@ -89,29 +66,10 @@ $category_image_radius: 3px;
 		box-shadow: 1px 1px 0px darken($cat_3, 10%);
 	}
 }
-
-.category_button_image_3 {
-	height: $category_image_height;
-	width: $category_image_width;
-	margin-bottom: $category_image_margin;
-	background-image: url(cat_img.jpg);
-	background-position: 20% 40%;
-	border-top-left-radius: $category_image_radius;
-	border-top-right-radius: $category_image_radius;
-}
-
-
-// category 4 //
-
-.category_button_4 {
-  @include button($text-color: $button-text-color, $button-radius: 3px);
-  width: $category_width;
-  height: $category_height;
-  margin-bottom: $category_margin;
-  padding: $category_padding;
-  background-color: $cat_4;
+.huishoudelijk_color {
+	background-color: $cat_4;
   box-shadow: 3px 3px 0px darken($cat_4, 10%);
- 	&:hover {
+  &:hover {
 		background-color: $cat_4;
 		box-shadow: 2px 2px 0px darken($cat_4, 10%);
 	}
@@ -120,27 +78,8 @@ $category_image_radius: 3px;
 		box-shadow: 1px 1px 0px darken($cat_4, 10%);
 	}
 }
-
-.category_button_image_4 {
-	height: $category_image_height;
-	width: $category_image_width;
-	margin-bottom: $category_image_margin;
-	background-image: url(cat_img.jpg);
-	background-position: 20% 40%;
-	border-top-left-radius: $category_image_radius;
-	border-top-right-radius: $category_image_radius;
-}
-
-
-// category 5 //
-
-.category_button_5 {
-  @include button($text-color: $button-text-color, $button-radius: 3px);
-  width: $category_width;
-  height: $category_height;
-  margin-bottom: $category_margin;
-  padding: $category_padding;
-  background-color: $cat_5;
+.meerijden_color {
+	background-color: $cat_5;
   box-shadow: 3px 3px 0px darken($cat_5, 10%);
   &:hover {
 		background-color: $cat_5;
@@ -151,27 +90,8 @@ $category_image_radius: 3px;
 		box-shadow: 1px 1px 0px darken($cat_5, 10%);
 	}
 }
-
-.category_button_image_5 {
-	height: $category_image_height;
-	width: $category_image_width;
-	margin-bottom: $category_image_margin;
-	background-image: url(cat_img.jpg);
-	background-position: 20% 40%;
-	border-top-left-radius: $category_image_radius;
-	border-top-right-radius: $category_image_radius;
-}
-
-
-// category 6 //
-
-.category_button_6 {
-  @include button($text-color: $button-text-color, $button-radius: 3px);
-  width: $category_width;
-  height: $category_height;
-  margin-bottom: $category_margin;
-  padding: $category_padding;
-  background-color: $cat_6;
+.sport_en_recreatie_color {
+	background-color: $cat_6;
   box-shadow: 3px 3px 0px darken($cat_6, 10%);
   &:hover {
 		background-color: $cat_6;
@@ -182,26 +102,8 @@ $category_image_radius: 3px;
 		box-shadow: 1px 1px 0px darken($cat_6, 10%);
 	}
 }
-
-.category_button_image_6 {
-	height: $category_image_height;
-	width: $category_image_width;
-	margin-bottom: $category_image_margin;
-	background-image: url(cat_img.jpg);
-	background-position: 20% 40%;
-	border-top-left-radius: $category_image_radius;
-	border-top-right-radius: $category_image_radius;
-}
-
-// category 7 //
-
-.category_button_7 {
-  @include button($text-color: $button-text-color, $button-radius: 3px);
-  width: $category_width;
-  height: $category_height;
-  margin-bottom: $category_margin;
-  padding: $category_padding;
-  background-color: $cat_7;
+.tuin_en_buitenwerk_color {
+	background-color: $cat_7;
   box-shadow: 3px 3px 0px darken($cat_7, 10%);
   &:hover {
 		background-color: $cat_7;
@@ -212,26 +114,8 @@ $category_image_radius: 3px;
 		box-shadow: 1px 1px 0px darken($cat_7, 10%);
 	}
 }
-
-.category_button_image_7 {
-	height: $category_image_height;
-	width: $category_image_width;
-	margin-bottom: $category_image_margin;
-	background-image: url(cat_img.jpg);
-	background-position: 20% 40%;
-	border-top-left-radius: $category_image_radius;
-	border-top-right-radius: $category_image_radius;
-}
-
-// category 8 //
-
-.category_button_8 {
-  @include button($text-color: $button-text-color, $button-radius: 3px);
-  width: $category_width;
-  height: $category_height;
-  margin-bottom: $category_margin;
-  padding: $category_padding;
-  background-color: $cat_8;
+.overig_color {
+	background-color: $cat_8;
   box-shadow: 3px 3px 0px darken($cat_8, 10%);
   &:hover {
 		background-color: $cat_8;
@@ -241,14 +125,4 @@ $category_image_radius: 3px;
 		background-color: $cat_8;
 		box-shadow: 1px 1px 0px darken($cat_8, 10%);
 	}
-}
-
-.category_button_image_8 {
-	height: $category_image_height;
-	width: $category_image_width;
-	margin-bottom: $category_image_margin;
-	background-image: url(cat_img.jpg);
-	background-position: 20% 40%;
-	border-top-left-radius: $category_image_radius;
-	border-top-right-radius: $category_image_radius;
 }
