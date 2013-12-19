@@ -30,11 +30,35 @@ User.create([{
 }])
 
 Category.create([{
-  title: 'Binnenshuis'
+  title: 'Boodschappen doen'
 }])
 
 Category.create([{
-  title: 'Buitenshuis'
+  title: 'Electronica en computer'
+}])
+
+Category.create([{
+  title: 'financiën'
+}])
+
+Category.create([{
+  title: 'Huishoudelijk'
+}])
+
+Category.create([{
+  title: 'Meerijden'
+}])
+
+Category.create([{
+  title: 'Sport en recreatie'
+}])
+
+Category.create([{
+  title: 'Tuin en buitenwerk'
+}])
+
+Category.create([{
+  title: 'Overig'
 }])
 
 Message.create([{
