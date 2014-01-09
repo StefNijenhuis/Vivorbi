@@ -16,7 +16,7 @@
             <% if !@keyword.empty? %>
               <%=@messages.count + @comments.count%> <%=t('search.results.keyword', :count => @messages.count + @comments.count)%> "<%=@keyword%>"
             <% else %>
-              <%=@messages.count%> <%=t 'search.results.postal'%> <%=@location['street']%>, <%=@location['postcode']%> <%=@location['town']%>
+              <%=@messages.count%> <%=t 'search.results.postal', :count => @messages.count%> <%=@location['street']%>, <%=@location['postcode']%> <%=@location['town']%>
             <% end %>
           </div>
           <% if @postal_code.empty? %>

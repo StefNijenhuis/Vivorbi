@@ -70,7 +70,7 @@ nl:
     results:
       postal:
         one: "zoekresultaat rondom"
-        other: "zoekresultaten voor de woord(en)"
+        other: "zoekresultaten rondom"
       keyword:
         one:  "zoekresultaat voor de woord(en)"
         other: "zoekresultaten voor de woord(en)"
